@@ -16,8 +16,8 @@ public class OpenApi {
 
 		BufferedReader br = null;
 
-		String urlstr = "http://apis.data.go.kr/1360000/"
-				+ "VilageFcstMsgService/getLandFcst?serviceKey=GFUH3QC%2FdPbJrb88KS8hUbbLltKIH01daK9kWkQIKnTAPpvbxZxUlqU64pR1nyKCnFzyZt0R3VjAT9pxl5cUfQ%3D%3D"
+		String urlstr = "http://apis.data.go.kr/1360000/VilageFcstMsgService/"
+				+ "getLandFcst?serviceKey=GFUH3QC%2FdPbJrb88KS8hUbbLltKIH01daK9kWkQIKnTAPpvbxZxUlqU64pR1nyKCnFzyZt0R3VjAT9pxl5cUfQ%3D%3D"
 				+ "&pageNo=1&numOfRows=10&dataType=JSON&regId=11B20603";
 
 		URL url = new URL(urlstr);
