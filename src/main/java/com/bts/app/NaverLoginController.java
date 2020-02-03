@@ -32,19 +32,7 @@ public class NaverLoginController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
-	}
+	
 	@RequestMapping(value = "/openapi", method = RequestMethod.GET)
 	public void oa() {
 	}
@@ -70,7 +58,7 @@ public class NaverLoginController {
 	this.naverLoginBO = naverLoginBO;
 	}
 	//로그인 첫 화면 요청 메소드
-	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/login2", method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(Model model, HttpSession session) {
 	/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 	String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
@@ -82,7 +70,7 @@ public class NaverLoginController {
 	return "login2";
 	}
 	//네이버 로그인 성공시 callback호출 메소드
-	@RequestMapping(value = "/callback", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/callback2", method = { RequestMethod.GET, RequestMethod.POST })
 	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws IOException, ParseException {
 	System.out.println("여기는 callback");
 	OAuth2AccessToken oauthToken;
@@ -107,7 +95,7 @@ public class NaverLoginController {
 	//4.파싱 닉네임 세션으로 저장
 	session.setAttribute("sessionId",jsonObj.get("response")); //세션 생성
 	model.addAttribute("result", apiResult);
-	return "login";
+	return "login2";
 	}
 	//로그아웃
 	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })

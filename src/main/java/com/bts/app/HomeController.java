@@ -35,16 +35,11 @@ public class HomeController {
 		
 		return "home";
 	}
-	@RequestMapping(value = "/openapi", method = RequestMethod.GET)
-	public void oa() {
-	}
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public void login() {
 
 
 
 		
 	
 	}
-}
+
 	
