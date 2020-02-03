@@ -58,7 +58,7 @@ public class NaverLoginController {
 	this.naverLoginBO = naverLoginBO;
 	}
 	//로그인 첫 화면 요청 메소드
-	@RequestMapping(value = "/login2", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(Model model, HttpSession session) {
 	/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 	String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
@@ -67,7 +67,7 @@ public class NaverLoginController {
 	System.out.println("네이버:" + naverAuthUrl);
 	//네이버
 	model.addAttribute("url", naverAuthUrl);
-	return "login2";
+	return "login";
 	}
 	//네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "/callback2", method = { RequestMethod.GET, RequestMethod.POST })
@@ -95,7 +95,7 @@ public class NaverLoginController {
 	//4.파싱 닉네임 세션으로 저장
 	session.setAttribute("sessionId",jsonObj.get("response")); //세션 생성
 	model.addAttribute("result", apiResult);
-	return "login2";
+	return "login";
 	}
 	//로그아웃
 	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
