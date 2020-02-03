@@ -26,14 +26,19 @@
           url: '/v1/user/me',
           success: function(res) {
         	  
-        	var inf = JSON.stringify(res);    
-        alert(JSON.stringify(res));
+        
+    
          alert(res.properties.nickname+'님 환영합니다.' + JSON.stringify(res.kaccount_email));
+         var inf = JSON.stringify(res);   
+         var loginemail = document.getElementById("kakao");
+         loginemail.innerHTML = JSON.stringify(res.kaccount_email);
+         
          /* console.log(JSON.stringify(res.kaccount_email));
          console.log(JSON.stringify(res.id));
          console.log(JSON.stringify(res.properties.profile_image));
          console.log(JSON.stringify(res.properties.nickname)); 
        		location.href="openapi";*/
+       		
           },
           fail: function(error) {
             alert(JSON.stringify(error));
