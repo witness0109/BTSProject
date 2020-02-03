@@ -10,9 +10,9 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
+
 <body>
-<body>
-<a id="custom-login-btn" href="javascript:loginWithKakao()">
+<a id="kakao-login-btn" href="javascript:loginWithKakao()">
 <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
 </a>
 <script type='text/javascript'>
@@ -23,10 +23,19 @@
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function(authObj) {
-        alert(JSON.stringify(authObj));
+        // 로그인 성공시, API를 호출합니다.
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function(res) {
+            alert(JSON.stringify(res));
+          },
+          fail: function(error) {
+            alert(JSON.stringify(error));
+          }
+        });
       },
       fail: function(err) {
-         alert(JSON.stringify(err));
+        alert(JSON.stringify(err));
       }
     });
   //]]>
