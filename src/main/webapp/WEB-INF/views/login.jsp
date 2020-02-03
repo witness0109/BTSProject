@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
-<title>API Demo - Kakao JavaScript SDK</title>
+<title>로그인 화면</title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
@@ -29,11 +29,11 @@
         	var inf = JSON.stringify(res);    
         alert(JSON.stringify(res));
          alert(res.properties.nickname+'님 환영합니다.' + JSON.stringify(res.kaccount_email));
-         console.log(JSON.stringify(res.kaccount_email));
+         /* console.log(JSON.stringify(res.kaccount_email));
          console.log(JSON.stringify(res.id));
          console.log(JSON.stringify(res.properties.profile_image));
-         console.log(JSON.stringify(res.properties.nickname));
-       		//location.href="openapi";
+         console.log(JSON.stringify(res.properties.nickname)); 
+       		location.href="openapi";*/
           },
           fail: function(error) {
             alert(JSON.stringify(error));
