@@ -40,14 +40,11 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void login() {
-		  //사용자 정보 요청
 
-     
-		}
 
 
 		
-		
-	}
 	
+	}
+}
 	
