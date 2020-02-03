@@ -79,7 +79,7 @@ public class NaverLoginController {
 	System.out.println("네이버:" + naverAuthUrl);
 	//네이버
 	model.addAttribute("url", naverAuthUrl);
-	return "login";
+	return "login2";
 	}
 	//네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "/callback", method = { RequestMethod.GET, RequestMethod.POST })
