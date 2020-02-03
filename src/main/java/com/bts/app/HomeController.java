@@ -38,5 +38,9 @@ public class HomeController {
 	@RequestMapping(value = "/openapi", method = RequestMethod.GET)
 	public void oa() {
 	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public void login() {
+	}
+	
 	
 }
