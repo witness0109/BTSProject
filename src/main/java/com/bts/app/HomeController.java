@@ -39,12 +39,13 @@ public class HomeController {
 	public void oa() {
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public void login() {
-
-
-
-		
-	
+	public void login() {	
+	}
+	@RequestMapping(value = "/NewFile", method = RequestMethod.GET)
+	public void d() {	
+	}
+	@RequestMapping(value = "/kakaologin", method = RequestMethod.GET)
+	public void da() {	
 	}
 }
 	
