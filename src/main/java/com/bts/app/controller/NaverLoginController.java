@@ -61,7 +61,7 @@ public class NaverLoginController {
 	}
 
 	// 로그인 첫 화면 요청 메소드
-	@RequestMapping(value = "/logindesign", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(Model model, HttpSession session) {
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
@@ -70,7 +70,7 @@ public class NaverLoginController {
 		System.out.println("네이버:" + naverAuthUrl);
 		// 네이버
 		model.addAttribute("url", naverAuthUrl);
-		return "logindesign";
+		return "login";
 	}
 
 	// 네이버 로그인 성공시 callback호출 메소드 (로그인 결과로 날아온 사용자 정보를 이용해서 추가 작업을 할 수 있다.)
@@ -99,6 +99,7 @@ public class NaverLoginController {
 			return "login";
 		} else {
 			model.addAttribute("result", apiResult);
+			model.addAttribute("url", "./login2");
 			return "login2";
 		}
 

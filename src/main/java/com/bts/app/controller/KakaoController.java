@@ -17,7 +17,7 @@ public class KakaoController {
 	public String kakaoMemberCheck(HttpSession session, String email, String name){
 		service.membercheck(session,"kakao_"+email, name);
 		
-		return "login";
+		return "login2";
 	}
 	
 	
