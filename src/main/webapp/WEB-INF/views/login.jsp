@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="kr">
@@ -367,11 +367,15 @@ body .container .content .signup-cont {
         					        </form>
     				        </div>
     				        <div class="signup-cont cont">
-                <form action="/BTS/insertmember" method="post" enctype="multipart/form-data">
+
+                <form action="" method="post" enctype="multipart/form-data">
+                <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your id">
+                						    <label for="id">Your ID</label>
+
 						                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
 						                    <label for="name">Your name</label>
                     <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
+						                    <label for="email">Your email</label><div id="email_check"></div>
 						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
                 						    <label for="password">Your password</label>
 						                    <div class="submit-wrap">
@@ -404,12 +408,38 @@ $('.tabs .tab').click(function(){
         $('.cont').hide();
         $('.signup-cont').show();
     }
+    
+    
 });
 $('.container .bg').mousemove(function(e){
     var amountMovedX = (e.pageX * -1 / 30);
     var amountMovedY = (e.pageY * -1 / 9);
     $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
 });
+
+var submitbt = $('input[type="submit"]');
+
+$("#id").blur(function(e){
+  	 $.ajax({
+           url:'https://192.168.0.17/BTS/checkmember',
+           data : {'id':$(this).val()},
+           type : 'post',
+           datatype : 'json',
+           success:function(data){
+               if(data=='1'){
+              	 $('#email_check').html("<p style='color:red'>사용 불가능한 아이디 입니다</p>");
+              	submitbt.attr( 'disabled', true );
+               }else{
+              	 $('#email_check').html("<p style='color:green'>사용 가능한 아이디 입니다</p>");
+              	submitbt.attr( 'disabled', false );
+               }
+           },
+           error : function (e) {
+               console.log(e.message)
+           }
+       })
+  	
+  });
 </script>
 </body>
 </html>
