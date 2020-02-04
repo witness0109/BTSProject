@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bts.app.MemberService;
-import com.bts.app.MemberVO;
 import com.bts.app.NaverLoginBO;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
@@ -94,14 +93,12 @@ public class NaverLoginController {
 		// 3. µ¥ÀÌÅÍ ÆÄ½Ì
 		// Top·¹º§ ´Ü°è _response ÆÄ½Ì
 		JSONObject response_obj = (JSONObject) jsonObj.get("response");
-		service.membercheck(session, (String) response_obj.get("email"), (String) response_obj.get("name"));
+		String email = "naver_" + ((String) response_obj.get("email"));
+		service.membercheck(session, email, (String) response_obj.get("name"));
 
 		model.addAttribute("result", apiResult);
 		return "login";
-}
-	
-
-	
+	}
 
 	// ·Î±×¾Æ¿ô
 	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
