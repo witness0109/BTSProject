@@ -1,11 +1,15 @@
 package com.bts.app;
 
 public class MemberVO {
-String id, pw, name, email, phone;
+String id, pw="", name="", email, phone="";
 
 
 
 
+@Override
+public String toString() {
+	return "MemberVO [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", phone=" + phone + "]";
+}
 public String getId() {
 	return id;
 }

@@ -6,7 +6,7 @@
     <title>회원가입 화면</title>
     
     <!-- css 파일 분리 -->
-    <link href='../../css/join_style.css' rel='stylesheet' style='text/css'/>
+    <link href='./resources/joinform.css' rel='stylesheet' style='text/css'/>
  
     <script type="text/javascript">
     
@@ -137,5 +137,3 @@
 </body>
 </html>
 
-
-출처: https://all-record.tistory.com/114 [세상의 모든 기록]

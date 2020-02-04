@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="mem">
-  <insert id="memberJoin" parameterType="mem">
+  <insert id="memberjoin" parameterType="mem">
   insert into member (id, pw, name, email, phone)
   values (#{id}, #{pw}, #{name}, #{email}, #{phone})
   </insert>
