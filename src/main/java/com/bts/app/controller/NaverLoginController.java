@@ -94,29 +94,14 @@ public class NaverLoginController {
 		// 3. 데이터 파싱
 		// Top레벨 단계 _response 파싱
 		JSONObject response_obj = (JSONObject) jsonObj.get("response");
-		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
-
-			String id = ((String) response_obj.get("email")).split("@")[0];
-
-			if (service.checkID(id) == 0) { // 가입이 안된 상태
-				MemberVO vo = new MemberVO();
-				vo.setId(id);
-
-				// response에서 email, name 파싱
-				vo.setEmail((String) response_obj.get("email"));
-				vo.setName((String) response_obj.get("name"));
-				int result = service.joinMember(vo);
-				if (result == 1) {// db작업 성공
-					System.out.println("가입 성공 -" + id);
-				}
-			}
-
-			session.setAttribute("loginID", response_obj.get("email")); // 세션 생성
-		}
+		service.membercheck(session, (String) response_obj.get("email"), (String) response_obj.get("name"));
 
 		model.addAttribute("result", apiResult);
 		return "login";
-	}
+}
+	
+
+	
 
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })

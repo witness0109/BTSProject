@@ -13,7 +13,7 @@ public class MemberController {
 @Autowired
 MemberService service;
 
-@RequestMapping(value="/", method = RequestMethod.POST)
+@RequestMapping(value="/joinmember", method = RequestMethod.POST)
 public void joinMemberService(MemberVO vo) {
 	service.joinMember(vo);
 	
