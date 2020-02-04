@@ -20,7 +20,7 @@ public class MemberInfoService implements MemberService {
 	public int checkID(String id) {
 		return dao.checkID(id);
 	}
-	
+
 	@Override
 	public void membercheck(HttpSession session, String email, String name) {
 		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
@@ -32,7 +32,7 @@ public class MemberInfoService implements MemberService {
 				vo.setId(id);
 
 				// response에서 email, name 파싱
-				vo.setEmail(email);
+				vo.setEmail(email.split("_")[1]);
 				vo.setName(name);
 				int result = joinMember(vo);
 				if (result == 1) {// db작업 성공
