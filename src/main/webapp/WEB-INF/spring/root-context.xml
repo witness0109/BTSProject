@@ -4,5 +4,36 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<!-- 1. 드라이버 이름, 연결한 db ip, port, 계정, 암호 설정 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.0.17:1521:xe" />
+		<property name="username" value="bts" />
+		<property name="password" value="bts" />
+	</bean>
+
+	<!-- 2. SqlSessionFactory 생성 스프링 - qlSessionFactoryBean설정 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- setter -->
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"
+			value="classpath:/com/bts/app/db-config.xml" />
+		<property name="mapperLocations"
+				value = "classpath:/mapper/db-mapping.xml"/>
+
+
+	</bean>
+
+
+	<!-- 3. mybatis 일때 sqlsession 객체 생성 설정 스프링 - sqlsessiontemplate(A a1) - 
+		생성설정 -->
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<!-- 생성자 호출 -->
+		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+	</bean>	
 </beans>
