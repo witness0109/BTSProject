@@ -1,4 +1,4 @@
-package com.bts.app;
+package com.bts.app.controller;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bts.app.NaverLoginBO;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
 /**
