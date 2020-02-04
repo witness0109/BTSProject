@@ -167,6 +167,7 @@ body .container .content input.submit {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+  
 }
 body .container .content input.submit:hover {
   background-color: #263238;
