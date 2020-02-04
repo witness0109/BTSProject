@@ -12,6 +12,6 @@ public class MemberDAO {
 
 	public int joinMember(MemberVO vo) {
 
-		return session.insert("memberjoin", vo);
+		return session.insert("mem.memberjoin", vo);
 	}
 }
