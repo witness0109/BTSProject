@@ -4,7 +4,7 @@
 <html lang="kr">
 	<head>
 	<meta charset="UTF-8">
-	<title>http://www.blueb.co.kr</title>
+	<title>ㅎㅎㅎㅎ</title>
 
 <style rel="stylesheet">
 @charset "UTF-8";
@@ -362,12 +362,12 @@ body .container .content .signup-cont {
 		<!-- 로그인 끝  -->
 						                    <div class="submit-wrap">
 							                        <input type="submit" value="Log in" class="submit">
-							                        <a href="#" class="more">Forgot your password?</a>
+							                        <a href="/BTS/checkpw" class="more">Forgot your password?</a>
 						                    </div>
         					        </form>
     				        </div>
     				        <div class="signup-cont cont">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="/BTS/insertmember" method="post" enctype="multipart/form-data">
 						                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
 						                    <label for="name">Your name</label>
                     <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">

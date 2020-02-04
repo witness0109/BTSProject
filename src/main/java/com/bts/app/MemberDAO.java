@@ -16,6 +16,10 @@ public class MemberDAO {
 
 	public int checkID(String id) {
 
-		return session.selectOne("idcheck", id);
+		return session.selectOne("mem.idcheck", id);
+	}
+	
+	public String checkPw(String id) {
+		return session.selectOne("mem.pwcheck",id);
 	}
 }

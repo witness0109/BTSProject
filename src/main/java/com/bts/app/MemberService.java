@@ -9,4 +9,6 @@ public interface MemberService {
 	public int checkID(String id);
 
 	public void membercheck(HttpSession session, String email, String name);
+	
+	public String checkPw(String id);
 }
