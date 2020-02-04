@@ -45,8 +45,10 @@ public class HomeController {
 		return "home";
 	}
 	
-
-
+	@RequestMapping(value = "/NewFile", method = RequestMethod.GET)
+	public void of3() {
+	}
+	
 
 		
 	
