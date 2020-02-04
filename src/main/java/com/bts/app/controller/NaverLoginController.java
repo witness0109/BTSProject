@@ -96,7 +96,7 @@ public class NaverLoginController {
 			String email = "naver_" + ((String) response_obj.get("email"));
 			service.membercheck(session, email, (String) response_obj.get("name"));
 			model.addAttribute("result", apiResult);
-			return "login";
+			return "logindesign";
 		} else {
 			model.addAttribute("result", apiResult);
 			return "login2";

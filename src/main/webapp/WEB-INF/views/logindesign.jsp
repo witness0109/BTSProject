@@ -310,7 +310,10 @@ body .container .content .signup-cont {
          console.log(JSON.stringify(res.id));
          console.log(JSON.stringify(res.properties.profile_image));
          console.log(JSON.stringify(res.properties.nickname)); */ 
-       	location.href="membercheck?id="+JSON.stringify(res.kaccount_email)+"&name="+JSON.stringify(res.properties.nickname);
+         var email = res.kaccount_email;
+         var name = res.properties.nickname;
+         
+       location.href='kakaocheck?email='+email+"&name="+name;
        		
        		
        		
