@@ -11,7 +11,7 @@
   	select count(*) from member where id=#{id}
   </select>
   
-  <select id="pwcheck" parameterType="string" resultType="mem">
+  <select id="pwcheck" parameterType="string" resultType="string">
    select pw from member where id=#{id}
   </select>
   
