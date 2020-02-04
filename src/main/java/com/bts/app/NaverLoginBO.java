@@ -1,11 +1,14 @@
 package com.bts.app;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.model.OAuthRequest;
@@ -22,7 +25,7 @@ public class NaverLoginBO {
 //state: 애플리케이션이 생성한 상태 토큰
 	private final static String CLIENT_ID = "SK9mw0Nh_8titxXIknJ4";
 	private final static String CLIENT_SECRET = "c3IR2doBAu";
-	private final static String REDIRECT_URI = "https://localhost/BTS/callback2";
+	private final static String REDIRECT_URI = "https://192.168.0.17/BTS/callback2";
 	private final static String SESSION_STATE = "oauth_state";
 	/* 프로필 조회 API URL */
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
@@ -46,7 +49,8 @@ public class NaverLoginBO {
 		String sessionState = getSession(session);
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
-					.callback(REDIRECT_URI).state(state).build(NaverLoginApi.instance());
+					.callback("https://" + InetAddress.getLocalHost().getHostAddress() + "/BTS/callback2").state(state)
+					.build(NaverLoginApi.instance());
 			/* Scribe에서 제공하는 AccessToken 획득 기능으로 네아로 Access Token을 획득 */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
 			return accessToken;
