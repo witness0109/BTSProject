@@ -1,17 +1,12 @@
 package com.bts.app.controller;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bts.app.MemberService;
+import com.bts.app.MemberVO;
 import com.bts.app.NaverLoginBO;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
@@ -28,7 +25,8 @@ import com.github.scribejava.core.model.OAuth2AccessToken;
 @Controller
 public class NaverLoginController {
 
-	private static final Logger logger = LoggerFactory.getLogger(NaverLoginController.class);
+	@Autowired
+	MemberService service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -76,7 +74,7 @@ public class NaverLoginController {
 		return "login";
 	}
 
-	// 네이버 로그인 성공시 callback호출 메소드
+	// 네이버 로그인 성공시 callback호출 메소드 (로그인 결과로 날아온 사용자 정보를 이용해서 추가 작업을 할 수 있다.)
 	@RequestMapping(value = "/callback2", method = { RequestMethod.GET, RequestMethod.POST })
 	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
 			throws IOException, ParseException {
@@ -96,11 +94,26 @@ public class NaverLoginController {
 		// 3. 데이터 파싱
 		// Top레벨 단계 _response 파싱
 		JSONObject response_obj = (JSONObject) jsonObj.get("response");
-		// response의 nickname값 파싱
-		String nickname = (String) response_obj.get("email");
-		System.out.println(nickname);
-		// 4.파싱 닉네임 세션으로 저장
-		session.setAttribute("sessionId", jsonObj.get("response")); // 세션 생성
+		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
+
+			String id = ((String) response_obj.get("email")).split("@")[0];
+
+			if (service.checkID(id) == 0) { // 가입이 안된 상태
+				MemberVO vo = new MemberVO();
+				vo.setId(id);
+
+				// response에서 email, name 파싱
+				vo.setEmail((String) response_obj.get("email"));
+				vo.setName((String) response_obj.get("name"));
+				int result = service.joinMember(vo);
+				if (result == 1) {// db작업 성공
+					System.out.println("가입 성공 -" + id);
+				}
+			}
+
+			session.setAttribute("loginID", response_obj.get("email")); // 세션 생성
+		}
+
 		model.addAttribute("result", apiResult);
 		return "login";
 	}
