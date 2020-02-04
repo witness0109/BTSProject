@@ -1,11 +1,14 @@
 package com.bts.app;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.model.OAuthRequest;
@@ -47,6 +50,7 @@ public class NaverLoginBO {
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
 					.callback("https://192.168.0.17/BTS/callback2").state(state).build(NaverLoginApi.instance());
+
 			/* Scribe¿¡¼­ Á¦°øÇÏ´Â AccessToken È¹µæ ±â´ÉÀ¸·Î ³×¾Æ·Î Access TokenÀ» È¹µæ */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
 			return accessToken;

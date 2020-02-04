@@ -95,9 +95,13 @@ public class NaverLoginController {
 			JSONObject response_obj = (JSONObject) jsonObj.get("response");
 			String email = "naver_" + ((String) response_obj.get("email"));
 			service.membercheck(session, email, (String) response_obj.get("name"));
+			model.addAttribute("result", apiResult);
+			return "login";
+		} else {
+			model.addAttribute("result", apiResult);
+			return "login2";
 		}
-		model.addAttribute("result", apiResult);
-		return "login";
+
 	}
 
 	// ·Î±×¾Æ¿ô
