@@ -105,7 +105,7 @@ public class NaverLoginController {
 	public String logout(HttpSession session) throws IOException {
 		System.out.println("¿©±â´Â logout");
 		session.invalidate();
-		return "redirect:index.jsp";
+		return "redirect:login";
 	}
 
 }

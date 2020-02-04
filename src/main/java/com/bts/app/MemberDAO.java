@@ -10,7 +10,7 @@ public class MemberDAO {
 	SqlSession session;
 
 	public int joinMember(MemberVO vo) {
-
+		System.out.println(vo);
 		return session.insert("mem.memberjoin", vo);
 	}
 
