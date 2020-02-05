@@ -21,10 +21,12 @@
 </style>
 <script>
 var busID;
+var url;
 function searchBusLaneAJAX() {
 	var busNo = document.getElementById('busNo').value;
+	var CID = document.getElementById('CID').value;
 	var xhr = new XMLHttpRequest();
-	var url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busNo="+busNo;
+	url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busNo="+busNo+"&CID="+CID;
 	xhr.open("GET", url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
@@ -36,6 +38,8 @@ function searchBusLaneAJAX() {
 
 			var str = "";
 			for (var i = 0; i < resultArr.length; i++) {
+				
+				if(busNo==(resultArr[i].busNo)){
 				str += "<div class='box'>";
 				str += "<p>지역이름 : " + resultArr[i].busCityName + "</p>";
 				str += "<p>버스회사 : " + resultArr[i].busCompanyNameKor + "</p>";
@@ -43,42 +47,36 @@ function searchBusLaneAJAX() {
 				str += "<p>출발점 / 도착점 : " + resultArr[i].busStartPoint + " - "
 					+ resultArr[i].busEndPoint + "</p>";
 				str += "<p>버스노선 ID : " + resultArr[i].busID + "</p>";
-				busID = resultArr[i].busID;				
-				str += "<label onclick ='searchdetailBusLaneAJAX();'> 노선 자세히 보기1</label></div>";
-				
+				busID = resultArr[i].busID;			
+				str += "<label onclick ='searchdetailBusLaneAJAX("+busID+");'> 노선 자세히 보기1</label></div>";											
+				}				
 			}
-			
+		
 			document.getElementById("resultDiv").innerHTML = str;
 		}
 	}
 	
 }
-function searchdetailBusLaneAJAX() {
+function searchdetailBusLaneAJAX(busIDID) {
 	var xhr = new XMLHttpRequest();
-	var url = "https://api.odsay.com/v1/api/busLaneDetail?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busID="+busID;
+	url = "https://api.odsay.com/v1/api/busLaneDetail?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busID="+busIDID;
 	xhr.open("GET", url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
-			var resultObj = JSON.parse(xhr.responseText);
-			console.log(resultObj.result);
+			var resultObj = JSON.parse(xhr.responseText);		
 			var resultArr = resultObj["result"]["station"];
-			console.log(resultArr);
-
 			var str = "";
 			str += "<div class='box'>";
-			for (var i = 0; i < resultArr.length; i++) {
-				
-				str += "<p> " + resultArr[i].idx + ".	"+ resultArr[i].stationName + "</p>";
-						
-				
-				
+			for (var i = 0; i < resultArr.length; i++) {				
+				str += "<p>" + resultArr[i].idx + ".	"+ resultArr[i].stationName + "</p>";
 			}
 			str += "</div>";
 			document.getElementById("detailDiv").innerHTML = str;
 		}
 	}
 }
+
 function totalAJAX(){
 	searchBusLaneAJAX();
 	
@@ -90,11 +88,11 @@ function totalAJAX(){
 <body>
 <div>
 <input type="text" id="busNo">
+<input type="text" id ="CID">
 <button onclick="totalAJAX();">click</button>
 
 </div>
 <div id="resultDiv">
-
 
 <!-- 결과창 -->
 </div>

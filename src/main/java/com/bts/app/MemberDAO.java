@@ -1,6 +1,10 @@
 package com.bts.app;
 
+
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +37,7 @@ public class MemberDAO {
 		return session.selectList("mem.mailcheck",list);
 	}
 	
-	
-	
+	public void logout(HttpSession session) {
+	}
+
 }

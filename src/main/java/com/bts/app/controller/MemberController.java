@@ -1,5 +1,6 @@
 package com.bts.app.controller;
 
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -8,6 +9,13 @@ import java.util.ListIterator;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -61,6 +69,7 @@ public class MemberController {
 		
 	}
 	
+
 	@RequestMapping(value="/checkpw",method = RequestMethod.POST)
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
@@ -132,5 +141,25 @@ public class MemberController {
 	 
 	
 
+
+	
+	  @RequestMapping(value="/checkpw" ,method = RequestMethod.POST) 
+	  public ModelAndView checkPwServiceSuccess(String id) { 
+	  ModelAndView mav = new ModelAndView(); 
+	  String c_pw = service.checkPw(id);
+	  
+  	  mav.addObject("password",c_pw); mav.addObject("check", "no_id");
+	  mav.setViewName("checkpw"); return mav; }
+	  
+	  @RequestMapping("/logout") public String logout(HttpSession session) {
+	  service.logout(session);
+	  
+	 return "redirect:/BTS/login";
+	  
+	  }
+	
+	
+	 
+	
 
 }

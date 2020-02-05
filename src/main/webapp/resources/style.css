@@ -223,6 +223,11 @@ Stretchy Nav style - common to:
   background-position: -16px 0;
   background: url(./icon.png) no-repeat 0 0;
 }
+.cd-stretchy-nav ul li:nth-of-type(6) a::after {
+  background-position: -16px 0;
+  background: url(./logout.png) no-repeat 0 0;
+}
+
 .cd-stretchy-nav ul span {
   /* navigation item labels */
   display: block;
@@ -324,6 +329,7 @@ Stretchy Nav style - common to:
   -moz-animation-delay: 0.25s;
   animation-delay: 0.25s;
 }
+
 
 /* -------------------------------- 
 

@@ -72,5 +72,13 @@ public class MemberInfoService implements MemberService {
 
 
 
+	@Override
+	public void logout(HttpSession session) {
+		session.invalidate();
+		
+	}
+
+
+
 
 }
