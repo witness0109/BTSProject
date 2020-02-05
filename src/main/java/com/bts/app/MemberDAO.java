@@ -1,5 +1,7 @@
 package com.bts.app;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,7 +23,11 @@ public class MemberDAO {
 		return session.selectOne("mem.idcheck", id);
 	}
 	
-	public String checkPw(String id) {
-		return session.selectOne("mem.pwcheck",id);
+	public List<String> checkPw(String[] list) {
+
+		return session.selectList("mem.pwcheck",list);
 	}
+	
+	
+	
 }

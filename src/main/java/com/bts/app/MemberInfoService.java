@@ -1,5 +1,7 @@
 package com.bts.app;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +49,8 @@ public class MemberInfoService implements MemberService {
 
 	// 비밀번호 찾기 
 	@Override
-	public String checkPw(String id) {
-		return dao.checkPw(id);
+	public List<String> checkPw(String[] list) {
+		 return dao.checkPw(list);
 		
 	}
 

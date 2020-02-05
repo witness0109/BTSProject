@@ -1,10 +1,16 @@
 package com.bts.app;
 
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+
 import javax.servlet.http.HttpSession;
 
 public interface MemberService {
 
-	//카카오, 네이버
+
 	public int joinMember(MemberVO vo);
 
 
@@ -12,5 +18,9 @@ public interface MemberService {
 
 	public void membercheck(HttpSession session, String email, String name);
 	
-	public String checkPw(String id);
+	public List<String> checkPw(String[] list);
+	
+
+	
+	
 }
