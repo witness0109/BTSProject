@@ -13,8 +13,10 @@ public class MemberDAO {
 
 	public int joinMember(MemberVO vo) {
 		System.out.println(vo);
+	
 		return session.insert("mem.memberjoin", vo);
 	}
+
 
 	public int checkID(String id) {
 

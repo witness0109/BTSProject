@@ -17,20 +17,18 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  /* background-color: #f8f8f8; */
+  /* background-color: #f8f8f8; */  
   
-  /* 배경 수정 중
+ /*  
   background-image: url(./resources/background.png);
-   -webkit-filter: blur(5px); 
+  -webkit-filter: blur(5px); 
   -moz-filter: blur(5px); 
   -o-filter: blur(5px); 
   -ms-filter: blur(5px); 
   filter: blur(5px);
-    */
- 
-
-
+   */
 }
+
 body .container {
   position: relative;
   overflow: hidden;
@@ -339,64 +337,78 @@ body .container .content .signup-cont {
         alert(JSON.stringify(err));
       }
     });
+
+    
 }
+   
+
 </script>
 </head>
 <body>
 
 <section class="container">
 		    <article class="half">
-			        <h1>BTS 가즈아</h1>
+			        <h1>BTS 가즈아 </h1>
 			        <div class="tabs">
 				            <span class="tab signin active"><a href="#signin">Log in</a></span>
 				            <span class="tab signup"><a href="#signup">Sign up</a></span>
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="#" method="post" enctype="multipart/form-data">
-						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
-						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+					                <form action="#" method="post">
+						                    <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id">
+						                    <label for="email">Your ID</label>
+						                    <input type="password" name="pw" id="password" class="inpt" required="required" placeholder="Your password">
                 						    <label for="password">Your password</label>
 						                    <input type="checkbox" id="remember" class="checkbox" checked>
 						                    <label for="remember">Remember me</label>
 						                    <!-- 카카오 , 네이버 로그인-->
 						                    
-						                    <div id="naver_id_login" style="text-align: center">
+						                    <div id="naver_id_login" style="text-align: center" class="inpt">
 											<a href="${url}"> <img width="223"
 						src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png" /></a>
 				</div>
 				
 				
-		<div id="kakao" style="text-align: center"><a id="kakao-login-btn" style="text-align: center"></a></div>
+		<div id="kakao" style="text-align: center"><a id="kakao-login-btn" style="text-align: center" class="inpt"></a></div>
 		 
 		
 		<!-- 로그인 끝  -->
 						                    <div class="submit-wrap">
 							                        <input type="submit" value="Log in" class="submit">
-							                        <a href="/BTS/checkpw" class="more">Forgot your password?</a>
+							                        <!-- ajax 비밀번호 찾기 -->
+							                       <a href="/BTS/checkpw" class="more">Forgot your password?</a>
+							                       <label onclick = "searchdetailBusLaneAJAX();"for="remember">Forgot your password?</label>
+							                       
+							                      
 						                    </div>
         					        </form>
     				        </div>
     				        <div class="signup-cont cont">
 
-                <form action="" method="post" enctype="multipart/form-data">
-                <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your id">
-                						    <label for="id">Your ID</label>
-
-						                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
-						                    <label for="name">Your name</label>
-                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label><div id="email_check"></div>
-						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                						    <label for="password">Your password</label>
-						                    <div class="submit-wrap">
+                <form action="/BTS/insertmember" method="post" onsubmit="return confirm()">
+                <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id">
+                			    <label for="id">Your ID</label>
+								<div id="email_check"></div>
+				<input type="password" name="pw" id="password" class="inpt" required="required" placeholder="Your Password">
+                			    <label for="password">Your password</label>
+				<input type="text" name="name" id="name" class="inpt" required="required" placeholder="Your Name">
+						        <label for="name">Your name</label>
+                <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your Email">
+						        <label for="email">Your email</label>
+				<input type="text" name="phone" id="phone" class="inpt" placeholder="Your PhoneNumber">
+					            <label for="phone">Your Phonenumber</label>
+						                   
+						        <div class="submit-wrap">
 						                    
-							                        <input type="submit" value="Sign up" class="submit">
-							                        <a href="#" class="more">Terms and conditions</a>
-						                    </div>
-						                    
-        					        </form>
+						    <input type="submit" value="Sign up" class="submit" >
+						    <script type="text/javascript">
+						    function confirm(){
+						    	alert("회원가입성공");
+						        }
+						    </script>
+			                    </div>
+			                          </form>
             </div>
 			        </div>
 		    </article>
@@ -452,6 +464,10 @@ $("#id").blur(function(e){
        })
   	
   });
+  
+  function fpAJAX(){
+	  
+  }
 </script>
 </body>
 </html>

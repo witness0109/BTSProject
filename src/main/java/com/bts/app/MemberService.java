@@ -4,7 +4,9 @@ import javax.servlet.http.HttpSession;
 
 public interface MemberService {
 
+	//카카오, 네이버
 	public int joinMember(MemberVO vo);
+
 
 	public int checkID(String id);
 

@@ -1,53 +1,142 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>지도 범위 재설정 하기</title>
-    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>http://www.blueb.co.kr</title>
+
+
+	<link rel="stylesheet" href="./resources/style1.css" />
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
 </head>
+
 <body>
-<div id="map" style="width:100%;height:350px;"></div>
-<p>
-<button onclick="setBounds()">지도 범위 재설정 하기</button> 
-</p>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
+<div class="site-wrapper">
+	<div class="main">
+		<div class="wrap"> <a href="#navigation" title="navigation menu" aria-label="navigation menu"> Navigation Menu <span class="bar bar-1"></span> <span class="bar bar-2"></span> <span class="bar bar-3"></span> </a>
+			<h1 class="content">상단 메뉴 아이콘을 클릭하세요</h1>
+		</div>
+	</div>
+
+	<nav id="navigation" role="navigation">
+		<ul>
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">blueb</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">CSS/HTML</a></li>
+			<li><a href="#">Design</a></li>
+		</ul>
+	</nav>
+</div>
+
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
- 
-// 버튼을 클릭하면 아래 배열의 좌표들이 모두 보이게 지도 범위를 재설정합니다 
-var points = [
-    new kakao.maps.LatLng(33.452278, 126.567803),
-    new kakao.maps.LatLng(33.452671, 126.574792),
-    new kakao.maps.LatLng(33.451744, 126.572441)
-];
-
-// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
-var bounds = new kakao.maps.LatLngBounds();    
-
-var i, marker;
-for (i = 0; i < points.length; i++) {
-    // 배열의 좌표들이 잘 보이게 마커를 지도에 추가합니다
-    marker =     new kakao.maps.Marker({ position : points[i] });
-    marker.setMap(map);
+var Nav = function($) {
+  
+  return {
     
-    // LatLngBounds 객체에 좌표를 추가합니다
-    bounds.extend(points[i]);
-}
+    init: function() {
+      this.cacheDom();
+      this.setupAria();
+      this.bindEvents();
+    },
+    
+    cacheDom: function() {
+      this.$site = $('.site-wrapper');
+      this.$navBtn = this.$site.find('[href="#navigation"]');
+      this.$navBtnExpanded = this.$site.find('[aria-expanded]');
+      this.$nav = $('#navigation');
+      this.$navFirstLink = this.$nav.find('li:first-child a');
+      this.$navLastLink = this.$nav.find('li:last-child a');
+      this.$content = this.$site.find('.content');
+    },
+    
+    bindEvents: function() {
+      this.$navBtn.on('click', this.toggleMenu.bind(this));
+      this.$navBtnExpanded.on('keydown', this.setFocus.bind(this));
+      this.$navFirstLink.on('keydown', this.returnFocusFirst.bind(this));
+      this.$navLastLink.on('keydown', this.returnFocusLast.bind(this));
+    },
+    
+    setupAria: function() {
+      this.$navBtn.attr({
+			  'role': 'button',
+			  'aria-controls': 'navigation',
+			  'aria-expanded': 'false'
+			});
+      
+      this.$site.attr({
+			  'data-nav-visible': 'false'
+			});
+    },
+    
+    toggleMenu: function() {
+      var self = $(event.currentTarget);
+      event.preventDefault();    
+			self.attr('aria-expanded') === 'true' ? this.closeMenu() : this.openMenu();
+    },
+    
+    openMenu: function() {
+      this.$site.attr({
+			  'data-nav-visible': 'true'
+			});
+      this.$navBtn.attr({
+        'aria-expanded': 'true'
+      });
+    },
+    
+    closeMenu: function() {
+      this.$site.attr({
+			  'data-nav-visible': 'false'
+			});
+      this.$navBtn.attr({
+        'aria-expanded': 'false'
+      });
+    },
+    
+    returnFocusFirst: function() {
+      if (event.keyCode === 9) {
+        if (event.shiftKey) {
+          event.preventDefault();
+          this.$navBtn.focus();
+        }
+      }
+    },
+    
+    returnFocusLast: function() {
+      if (event.keyCode === 9) {
+        if (!event.shiftKey) {
+          event.preventDefault();
+          this.$navBtn.focus();
+        }
+      }
+    },
+    
+    setFocus: function() {
+      var self = $(event.target);
+      if (event.keyCode === 9) {
+        if (self.attr('aria-expanded') == 'true') {
+          if (!event.shiftKey) {
+            event.preventDefault();
+            this.$navFirstLink.focus();
+          } else {
+            if (event.shiftKey) {
+              event.preventDefault();
+              this.$content.focus();
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}(jQuery);
 
-function setBounds() {
-    // LatLngBounds 객체에 추가된 좌표들을 기준으로 지도의 범위를 재설정합니다
-    // 이때 지도의 중심좌표와 레벨이 변경될 수 있습니다
-    map.setBounds(bounds);
-}
+Nav.init();
 </script>
+
 </body>
 </html>

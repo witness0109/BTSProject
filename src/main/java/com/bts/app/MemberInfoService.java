@@ -12,10 +12,11 @@ public class MemberInfoService implements MemberService {
 
 	@Override
 	public int joinMember(MemberVO vo) {
-
+		
 		return dao.joinMember(vo);
 	}
-
+	
+	
 	@Override
 	public int checkID(String id) {
 		return dao.checkID(id);
@@ -51,10 +52,14 @@ public class MemberInfoService implements MemberService {
 		
 	}
 
+
 	@Override
 	public void logout(HttpSession session) {
 		session.invalidate();
 		
 	}
+
+
+
 
 }

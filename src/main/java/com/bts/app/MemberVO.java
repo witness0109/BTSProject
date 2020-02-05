@@ -1,7 +1,7 @@
 package com.bts.app;
 
 public class MemberVO {
-String id, pw="", name="", email, phone="";
+String id="", pw="", name="", email="", phone="";
 
 
 
