@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- 1. 드라이버 이름, 연결한 db ip, port, 계정, 암호 설정 -->
 	<bean id="dataSource"
@@ -23,17 +23,32 @@
 		<property name="configLocation"
 			value="classpath:/com/bts/app/db-config.xml" />
 		<property name="mapperLocations"
-				value = "classpath:/mapper/db-mapping.xml"/>
-
-
+			value="classpath:/mapper/db-mapping.xml" />
 	</bean>
+	
+	  <bean id="mailSender" class = "org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="smtp.gmail.com" />
+      <property name="port" value="587" />
+      <property name="username" value="witness0109@gmail.com" />
+      <property name="password" value="Tlqwkrk3801!!!" />
+      <property name="javaMailProperties">
+         <props>
+               <prop key="mail.transport.protocol">smtp</prop>
+               <prop key="mail.smtp.auth">true</prop>
+               <prop key="mail.smtp.starttls.enable">true</prop>
+               <prop key="mail.debug">true</prop>
+         </props>
+      </property>
+ 
+   </bean>
 
 
+	
 	<!-- 3. mybatis 일때 sqlsession 객체 생성 설정 스프링 - sqlsessiontemplate(A a1) - 
 		생성설정 -->
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<!-- 생성자 호출 -->
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
-	</bean>	
+	</bean>
 </beans>

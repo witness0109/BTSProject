@@ -2,15 +2,21 @@ package com.bts.app;
 
 import java.util.List;
 
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MemberInfoService implements MemberService {
 	@Autowired
 	MemberDAO dao;
+	@Autowired
+	JavaMailSender mailSender;
 
 	@Override
 	public int joinMember(MemberVO vo) {
@@ -53,6 +59,17 @@ public class MemberInfoService implements MemberService {
 		 return dao.checkPw(list);
 		
 	}
+
+	//메일 조회
+	@Override
+	public List<String> checkMail(String[] list) {
+	
+		return dao.checkMail(list);
+	}
+
+
+
+
 
 
 

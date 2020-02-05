@@ -43,7 +43,7 @@ body .container .content input.inpt {
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 }
-
+ 
 body .container .inpt::-webkit-input-placeholder {
 	font-size: 14px;
 	color: #999999;
@@ -80,8 +80,13 @@ body .container .inpt:focus {
 			location.href = '/BTS/login';
 		}
 	}
+	
+	
+	
 </script>
 <body>
+
+
 	<article class="container">
 		<article class="half">
 			<h1>비밀번호 찾기</h1>
@@ -92,8 +97,10 @@ body .container .inpt:focus {
 				<input type="text" name="name" placeholder="Your Name" class="inpt"><br>
 				<br>
 				<button>비밀번호 조회</button>
+				<input type="hidden" name="password" value="${password}">
 			</form>
 			</div>
+			
 		</article>
 	</article>
 </body>

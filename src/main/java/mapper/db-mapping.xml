@@ -20,5 +20,10 @@
    select pw from member where id=#{array[0]} and name=#{array[1]} 
   </select>
   
+  <select id="mailcheck" parameterType="java.util.ArrayList" resultType="string">
+   select email from member where id=#{array[0]} and name=#{array[1]} 
+  </select>
+  
+ 
   
   </mapper>

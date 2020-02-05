@@ -18,9 +18,11 @@ public interface MemberService {
 
 	public void membercheck(HttpSession session, String email, String name);
 	
+	//암호조회
 	public List<String> checkPw(String[] list);
 	
-
+	//이메일조회
+	public List<String> checkMail(String[] list);
 	
 	
 }

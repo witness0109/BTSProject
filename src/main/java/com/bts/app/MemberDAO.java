@@ -28,6 +28,11 @@ public class MemberDAO {
 		return session.selectList("mem.pwcheck",list);
 	}
 	
+	public List<String> checkMail(String[] list) {
+
+		return session.selectList("mem.mailcheck",list);
+	}
+	
 	
 	
 }
