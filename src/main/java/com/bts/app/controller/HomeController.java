@@ -54,6 +54,13 @@ public class HomeController {
 	@RequestMapping(value = "/NewFile2", method = RequestMethod.GET)
 	public void of10() {
 	}
+	@RequestMapping(value = "/bus_search", method = RequestMethod.GET)
+	public void of11() {
+	}
+	@RequestMapping(value = "/bus_search2", method = RequestMethod.GET)
+	public void of12() {
+	}
+	
 	
 
 		
