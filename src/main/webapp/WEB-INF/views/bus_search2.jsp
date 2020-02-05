@@ -76,6 +76,7 @@ function searchdetailBusLaneAJAX(busIDID) {
 		}
 	}
 }
+
 function totalAJAX(){
 	searchBusLaneAJAX();
 	
