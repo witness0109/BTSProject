@@ -1,5 +1,7 @@
 package com.bts.app;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +25,8 @@ public class MemberDAO {
 	
 	public String checkPw(String id) {
 		return session.selectOne("mem.pwcheck",id);
+	}
+	
+	public void logout(HttpSession session) {
 	}
 }
