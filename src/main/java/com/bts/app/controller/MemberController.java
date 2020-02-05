@@ -38,15 +38,19 @@ public class MemberController {
 	
 	//비밀번호 찾기 
 	@RequestMapping(value="/checkpw" , method = RequestMethod.GET)
-	public String checkPwService(String id) {
-		
-		return service.checkPw(id);
+	public void checkPwService() {
+	
 	}
 	
 	@RequestMapping(value="/checkpw" ,method = RequestMethod.POST)
-	public String checkPwServiceSuccess(String id) {
+	public ModelAndView checkPwServiceSuccess(String id) {
+		ModelAndView mav = new ModelAndView();
+		String c_pw = service.checkPw(id);
 		
-		return service.checkPw(id);
-	}
+		mav.addObject("password",c_pw);
+		mav.addObject("check", "no_id");
+		mav.setViewName("checkpw");
+		return mav;
+		}
 
 }
