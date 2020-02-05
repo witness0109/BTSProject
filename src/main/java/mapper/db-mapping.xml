@@ -17,7 +17,7 @@
   </select>
   
   <select id="pwcheck" parameterType="java.util.ArrayList" resultType="string">
-   select pw from member where id=#{array[0]} and name=#{array[1]}
+   select pw from member where id=#{array[0]} and name=#{array[1]} 
   </select>
   
   
