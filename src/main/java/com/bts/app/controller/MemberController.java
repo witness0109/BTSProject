@@ -15,18 +15,22 @@ public class MemberController {
 	@Autowired
 	MemberService service;
 
-	@RequestMapping(value = "/insertmember", method = RequestMethod.GET)
-	public ModelAndView joinMemberService(MemberVO vo) {
-		ModelAndView mav = new ModelAndView();
-		return mav;
-	}
+	/*
+	 * @RequestMapping(value = "/insertmember", method = RequestMethod.GET) public
+	 * ModelAndView joinMemberService(MemberVO vo) { ModelAndView mav = new
+	 * ModelAndView(); return mav; }
+	 */
 
 	@RequestMapping(value = "/insertmember", method = RequestMethod.POST)
 	public String joinMemberServiceresult(MemberVO vo) {
+		
 		service.joinMember(vo);
-
+		System.out.println(vo);
 		return "login";
 	}
+	
+
+	
 
 	// 회원가입창 아이디 중복체크
 	@RequestMapping(value = "/checkmember", method = RequestMethod.POST)

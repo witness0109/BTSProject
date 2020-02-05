@@ -7,6 +7,11 @@
   values (#{id}, #{pw}, #{name}, #{email}, #{phone})
   </insert>
   
+    <insert id="dbmemberjoin" parameterType="mem">
+  insert into member (id, pw, name, email, phone)
+  values (#{id}, #{pw}, #{name}, #{email}, #{phone})
+  </insert>
+  
   <select id="idcheck" parameterType="string" resultType="int">
   	select count(*) from member where id=#{id}
   </select>
