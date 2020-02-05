@@ -340,13 +340,15 @@ body .container .content .signup-cont {
 
     
 }
+   
+
 </script>
 </head>
 <body>
 
 <section class="container">
 		    <article class="half">
-			        <h1>BTS 가즈아</h1>
+			        <h1>BTS 가즈아 </h1>
 			        <div class="tabs">
 				            <span class="tab signin active"><a href="#signin">Log in</a></span>
 				            <span class="tab signup"><a href="#signup">Sign up</a></span>
@@ -374,7 +376,11 @@ body .container .content .signup-cont {
 		<!-- 로그인 끝  -->
 						                    <div class="submit-wrap">
 							                        <input type="submit" value="Log in" class="submit">
-							                        <a href="/BTS/checkpw" class="more">Forgot your password?</a>
+							                        <!-- ajax 비밀번호 찾기 -->
+							                       <a href="/BTS/checkpw" class="more">Forgot your password?</a>
+							                       <label onclick = "searchdetailBusLaneAJAX();"for="remember">Forgot your password?</label>
+							                       
+							                      
 						                    </div>
         					        </form>
     				        </div>
@@ -458,6 +464,10 @@ $("#id").blur(function(e){
        })
   	
   });
+  
+  function fpAJAX(){
+	  
+  }
 </script>
 </body>
 </html>
