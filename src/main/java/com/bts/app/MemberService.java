@@ -11,4 +11,6 @@ public interface MemberService {
 	public void membercheck(HttpSession session, String email, String name);
 	
 	public String checkPw(String id);
+
+	public void logout(HttpSession session);
 }

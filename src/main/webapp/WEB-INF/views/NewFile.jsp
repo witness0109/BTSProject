@@ -23,10 +23,14 @@
 
 		<ul>
 			<li><a href="#0" class="active"><span>MyPage</span></a></li>
+			
 			<li><a href="#0"><span>SEARCH</span></a></li>
 			<li><a href="#0"><span>BUS</span></a></li>
 			<li><a href="#0"><span>TRAIN</span></a></li>
 			<li><a href="#0"><span>SUBWAY</span></a></li>
+			<li><a href="./logout" id="logoutbtn">로그아웃</a></li>
+			
+			
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -37,9 +41,11 @@
 	<!-- main content here -->
 	
 	
+	
+	
 
 
-
+ 
 	
 </main>
 
@@ -71,6 +77,17 @@ navigator.geolocation.getCurrentPosition(function(gg){
 	marker.setMap(map);
 	
 })
+
+$(document).ready(function(){ 
+	$("#logoutbtn").on('click', function(){
+		alert("로그아웃 되었습니다.");
+		location.href="./logout"
+	});
+});
+
+
+
+
 
 </script>
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
