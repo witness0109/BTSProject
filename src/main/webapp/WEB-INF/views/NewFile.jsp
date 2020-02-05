@@ -22,25 +22,24 @@
 		</a>
 
 		<ul>
-			<li><a href="#0" class="active"><span>Home</span></a></li>
-			<li><a href="#0"><span>Portfolio</span></a></li>
-			<li><a href="#0"><span>Services</span></a></li>
-			<li><a href="#0"><span>Store</span></a></li>
-			<li><a href="#0"><span>Contact</span></a></li>
+			<li><a href="#0" class="active"><span>MyPage</span></a></li>
+			<li><a href="#0"><span>SEARCH</span></a></li>
+			<li><a href="#0"><span>BUS</span></a></li>
+			<li><a href="#0"><span>TRAIN</span></a></li>
+			<li><a href="#0"><span>SUBWAY</span></a></li>
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
 </header>
 
-<main class="cd-main-content">
+<main class="cd-main-content" id ="map11">
 	<!-- main content here -->
 	
 	
-<div id="map11" style="width:100%;height:800px;">
 
 
-</div>	
+
 	
 </main>
 
@@ -54,7 +53,7 @@ navigator.geolocation.getCurrentPosition(function(gg){
 	lng = gg.coords.longitude;
 	var markerPosition  = new kakao.maps.LatLng(lat, lng); 
 	var container = document.getElementById('map11'); //지도를 담을 영역의 DOM 레퍼런스
-	var options = { //지도를 생성할 때 필요한 기본 옵션
+		var options = { //지도를 생성할 때 필요한 기본 옵션
 		center: markerPosition, //지도의 중심좌표.
 		level: 3 //지도의 레벨(확대, 축소 정도)
 	};

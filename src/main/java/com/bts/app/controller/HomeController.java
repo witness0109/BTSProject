@@ -48,6 +48,12 @@ public class HomeController {
 	@RequestMapping(value = "/NewFile", method = RequestMethod.GET)
 	public void of3() {
 	}
+	@RequestMapping(value = "/BTS_MAIN", method = RequestMethod.GET)
+	public void of9() {
+	}
+	@RequestMapping(value = "/NewFile2", method = RequestMethod.GET)
+	public void of10() {
+	}
 	
 
 		

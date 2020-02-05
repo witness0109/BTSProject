@@ -17,7 +17,19 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
+  
+  /* 배경 수정 중
+  background-image: url(./resources/background.png);
+   -webkit-filter: blur(5px); 
+  -moz-filter: blur(5px); 
+  -o-filter: blur(5px); 
+  -ms-filter: blur(5px); 
+  filter: blur(5px);
+    */
+ 
+
+
 }
 body .container {
   position: relative;
