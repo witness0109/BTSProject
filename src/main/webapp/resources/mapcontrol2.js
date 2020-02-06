@@ -132,14 +132,12 @@ function setStarting() {
     closeOverlay();
     
     sy = startingMarker.getPosition().Ha;
-    sx = startingMarker.getPosition().Ga;
-   
-    
-    
+	sx = startingMarker.getPosition().Ga;
+  
 }
 
 function setDestination() {
-    console.log("도착지 : " + clickmarker.getPosition())
+/*    console.log("도착지 : " + clickmarker.getPosition())
     if(destov != undefined){
         destov.setMap(null);
     }
@@ -158,17 +156,47 @@ function setDestination() {
     });
     destov.setMap(map);
     destMarker.setMap(map);
-    closeOverlay();
+    closeOverlay();*/
   
-    ey = destMarker.getPosition().Ha;
-    ex = destMarker.getPosition().Ga;
-    searchPubTransPathAJAX();
+    
+    if(sy!=null){
+    	
+        console.log("도착지 : " + clickmarker.getPosition())
+        if(destov != undefined){
+            destov.setMap(null);
+        }
+        if(destMarker!=undefined){
+            destMarker.setMap(null);
+        }
+        destov = new kakao.maps.CustomOverlay({
+            content: '<div class="markingov" style="background-color: white;">도착지</div>',
+            map: map,
+            position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
+        });
+        
+        destMarker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga) // 마커를 표시할 위치
+        });
+        destov.setMap(map);
+        destMarker.setMap(map);
+        closeOverlay();
+    	
+    	ey = destMarker.getPosition().Ha;
+        ex = destMarker.getPosition().Ga;
+    	searchPubTransPathAJAX();
+    	
+    }else{   	
+    	setStarting();
+    }
+    
 }
 
 
 
 function searchPubTransPathAJAX() {
 	var xhr = new XMLHttpRequest();
+	
 	//ODsay apiKey 입력
 	var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX="+sx+"&SY="+sy+"&EX="+ex+"&EY="+ey+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";	
 	
@@ -240,6 +268,7 @@ function drawkakaoPolyLine(data){
 				    strokeWeight: 20,
 				    strokeColor: '#003499'
 				});
+				polyline.setMap(null)
 			}else if(data.result.lane[i].type == 2){
 				var polyline = new kakao.maps.Polyline({
 				    map: map,
@@ -247,6 +276,7 @@ function drawkakaoPolyLine(data){
 				    strokeWeight: 20,
 				    strokeColor: '#37b42d'
 				});
+				polyline.setMap(null)
 			}else{
 				var polyline = new kakao.maps.Polyline({
 				    map: map,
@@ -254,6 +284,7 @@ function drawkakaoPolyLine(data){
 				    strokeWeight: 20,
 				    strokeColor:  '#5F00FF'
 				});
+				//polyline.setMap(null)
 			}
 		}
 	}
