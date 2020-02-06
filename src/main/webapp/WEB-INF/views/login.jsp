@@ -24,12 +24,12 @@
 					url : '/v1/user/me',
 					success : function(res) {
 
-						alert(res.properties.nickname + '님 환영합니다.'
-								+ JSON.stringify(res.kaccount_email));
+				/* 		alert(res.properties.nickname + '님 환영합니다.'
+								+ JSON.stringify(res.kaccount_email)); 
 						var inf = JSON.stringify(res);
-						var loginemail = document.getElementById("kakao");
+				 		var loginemail = document.getElementById("kakao");
 						loginemail.innerHTML = JSON
-								.stringify(res.kaccount_email);
+								.stringify(res.kaccount_email) */;
 
 						/*   console.log(JSON.stringify(res.kaccount_email));
 						 console.log(JSON.stringify(res.id));
@@ -38,8 +38,7 @@
 						var email = res.kaccount_email;
 						var name = res.properties.nickname;
 
-						location.href = 'kakaocheck?email=' + email + "&name="
-								+ name;
+						location.href = 'kakaocheck?email=' + email + "&name=" + name;
 
 					},
 					fail : function(error) {
@@ -79,7 +78,7 @@
 							<a href="${url}"> <img width="223"
 								src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png" /></a>
 						</div>
-						<p>${sessionScope.loginID}</p>
+
 
 						<div id="kakao" style="text-align: center" class="inpt">
 							<a id="kakao-login-btn" style="text-align: center" class="inpt"></a>
