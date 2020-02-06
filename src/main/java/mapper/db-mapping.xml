@@ -24,6 +24,10 @@
    select email from member where id=#{array[0]} and name=#{array[1]} 
   </select>
   
+ <select id="login" resultType="int" >
+select count(*) from member
+where id = #{id} and pw = #{pw}
+ </select>
  
   
   </mapper>

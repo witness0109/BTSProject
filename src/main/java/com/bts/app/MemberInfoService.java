@@ -19,6 +19,14 @@ public class MemberInfoService implements MemberService {
 	JavaMailSender mailSender;
 
 	@Override
+	public int login(HttpSession session) {
+		return dao.loginMember(session);
+		}
+	
+	
+	
+	
+	@Override
 	public int joinMember(MemberVO vo) {
 		
 		return dao.joinMember(vo);

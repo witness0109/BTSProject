@@ -25,7 +25,8 @@ public interface MemberService {
 	//이메일조회
 	public List<String> checkMail(String[] list);
 
-
+	public int login(HttpSession session);
+	
 	public void logout(HttpSession session);
 
 }

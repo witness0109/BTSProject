@@ -355,7 +355,7 @@ body .container .content .signup-cont {
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="#" method="post">
+					                <form action="./login" method="post">
 						                    <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id">
 						                    <label for="email">Your ID</label>
 						                    <input type="password" name="pw" id="password" class="inpt" required="required" placeholder="Your password">
@@ -371,14 +371,14 @@ body .container .content .signup-cont {
 				
 				
 		<div id="kakao" style="text-align: center"><a id="kakao-login-btn" style="text-align: center" class="inpt"></a></div>
-		 
+		 <br>
 		
 		<!-- 로그인 끝  -->
 						                    <div class="submit-wrap">
 							                        <input type="submit" value="Log in" class="submit">
 							                        <!-- ajax 비밀번호 찾기 -->
 							                       <a href="/BTS/checkpw" class="more">Forgot your password?</a>
-							                       <label onclick = "searchdetailBusLaneAJAX();"for="remember">Forgot your password?</label>
+							                       <label onclick = "searchdetailBusLaneAJAX();"for="remember"></label>
 							                       
 							                      
 						                    </div>
@@ -397,7 +397,7 @@ body .container .content .signup-cont {
                 <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your Email">
 						        <label for="email">Your email</label>
 				<input type="text" name="phone" id="phone" class="inpt" placeholder="Your PhoneNumber">
-					            <label for="phone">Your Phonenumber</label>
+<!-- 					            <label for="phone">Your Phonenumber</label> -->
 						                   
 						        <div class="submit-wrap">
 						                    

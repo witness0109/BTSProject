@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +42,15 @@ public class MemberController {
 	 * ModelAndView(); return mav; }
 	 */
 
+	@RequestMapping(value = "/login", method =  RequestMethod.POST )
+	public int login(HttpSession session) {
+	
+	
+		return service.login(session);
+	}
+
+	
+	
 	@RequestMapping(value = "/insertmember", method = RequestMethod.POST)
 	public String joinMemberServiceresult(MemberVO vo) {
 
