@@ -62,7 +62,7 @@ body .container .tabs {
 body .container .tabs .tab {
   display: inline-block;
   margin-bottom: -1px;
-  padding: 20px 15px 10px;
+  padding: 20px 17% 10px;
   cursor: pointer;
   letter-spacing: 0;
   border-bottom: 1px solid #d9d9d9;
