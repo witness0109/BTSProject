@@ -20,6 +20,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bts.app.MemberService;
 import com.bts.app.MemberVO;
+import com.bts.app.NaverLoginBO;
 
 @Controller
 public class MemberController {
@@ -36,21 +38,61 @@ public class MemberController {
 	@Autowired
 	private JavaMailSender mailSender;
 
+	/* NaverLoginBO */
+	private NaverLoginBO naverLoginBO;
+	private String apiResult = null;
+
+	@Autowired
+	private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
+		this.naverLoginBO = naverLoginBO;
+	}
+
 	/*
 	 * @RequestMapping(value = "/insertmember", method = RequestMethod.GET) public
 	 * ModelAndView joinMemberService(MemberVO vo) { ModelAndView mav = new
 	 * ModelAndView(); return mav; }
 	 */
+	// 로그인 첫 화면 요청 메소드
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model, HttpSession session) {
+		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
 
-	@RequestMapping(value = "/login", method =  RequestMethod.POST )
-	public int login(HttpSession session) {
-	
-	
-		return service.login(session);
+			/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+			String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
+			// https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
+			// redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
+			System.out.println("네이버:" + naverAuthUrl);
+			// 네이버
+			model.addAttribute("url", naverAuthUrl);
+			return "login";
+		} else { // 세션에 있을시 못넘어가게
+
+			return "redirect:NewFile";
+		}
+
 	}
 
-	
-	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login(@RequestParam String id, String pw, HttpSession session) {
+		
+		ModelAndView mav = new ModelAndView();
+		String[] inf = new String[2];
+		inf[0] = id;
+		inf[1] = pw;
+		int result = service.login(inf);
+		
+		if (result == 1) { // 로그인 성공
+			// main.jsp로 이동
+			mav.setViewName("NewFile");
+			session.setAttribute("ID", id);
+		} else { // 로그인 실패
+			mav.setViewName("NewFile");
+
+		}
+		return mav;
+
+	}
+
 	@RequestMapping(value = "/insertmember", method = RequestMethod.POST)
 	public String joinMemberServiceresult(MemberVO vo) {
 
@@ -73,7 +115,7 @@ public class MemberController {
 
 	}
 
-	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 
@@ -85,17 +127,17 @@ public class MemberController {
 
 		String email = c_mail.get(0);
 		String password = c_pw.get(0);
-		
+
 		mav.addObject("mail", c_mail);
 		mav.addObject("check", "no_id");
 
-		//수신자 인코딩을 위한 설정
+		// 수신자 인코딩을 위한 설정
 		String charSet = "UTF-8";
 		String fromName = "BTS 운영자";
-		InternetAddress from = new InternetAddress() ;
-				
+		InternetAddress from = new InternetAddress();
+
 		try {
-			from= new InternetAddress(new String(fromName.getBytes(charSet), "8859_1")+"<witness0109@gmail.com>");		
+			from = new InternetAddress(new String(fromName.getBytes(charSet), "8859_1") + "<witness0109@gmail.com>");
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 

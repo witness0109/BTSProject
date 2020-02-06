@@ -25,8 +25,15 @@ public interface MemberService {
 	//이메일조회
 	public List<String> checkMail(String[] list);
 
-	public int login(HttpSession session);
+	//로그인
+	public int login(String[] inf);
+	
+	//로그인시 필요한 멤버조회
+
 	
 	public void logout(HttpSession session);
+
+
+	
 
 }
