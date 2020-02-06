@@ -67,22 +67,21 @@
 			<div class="content">
 				<div class="signin-cont cont">
 					<form action="/BTS/login" method="post">
-						<input type="text" name="id" id="id" class="inpt"
-							required="required" placeholder="Your Id"> <label
-							for="email">Your ID</label> <input type="password" name="pw"
-							id="password" class="inpt" required="required"
-							placeholder="Your password"> <label for="password">Your
-							password</label> <input type="checkbox" id="remember" class="checkbox"
-							checked> <label for="remember">Remember me</label>
+						<input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id"> 
+							<label for="email">Your ID</label> 
+							<input type="password" name="pw" id="password" class="inpt" required="required"	placeholder="Your password">
+							<label for="password">Your password</label> 
+							<input type="checkbox" id="remember" class="checkbox" checked>
+							<label for="remember">Remember me</label>
 						<!-- 카카오 , 네이버 로그인-->
 
-						<div id="naver_id_login" style="text-align: center" class="inpt">
+						<div id="naver_id_login" style="text-align: center" class="inpt" > 
 							<a href="${url}"> <img width="223"
 								src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png" /></a>
 						</div>
 						<p>${sessionScope.loginID}</p>
 
-						<div id="kakao" style="text-align: center">
+						<div id="kakao" style="text-align: center" class="inpt">
 							<a id="kakao-login-btn" style="text-align: center" class="inpt"></a>
 						</div>
 						<br>
