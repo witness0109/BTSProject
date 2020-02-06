@@ -365,7 +365,7 @@ body .container .content .signup-cont {
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="./login" method="post">
+					                <form action="/BTS/login" method="post">
 						                    <input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id">
 						                    <label for="email">Your ID</label>
 						                    <input type="password" name="pw" id="password" class="inpt" required="required" placeholder="Your password">
@@ -378,7 +378,7 @@ body .container .content .signup-cont {
 											<a href="${url}"> <img width="223"
 						src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png" /></a>
 				</div>
-				
+				<p>${sessionScope.loginID}</p>
 				
 		<div id="kakao" style="text-align: center"><a id="kakao-login-btn" style="text-align: center" class="inpt"></a></div>
 		 <br>
@@ -411,7 +411,7 @@ body .container .content .signup-cont {
 						                   
 						        <div class="submit-wrap">
 						                    
-						    <input type="submit" value="Sign up" class="submit" >
+						    <input type="submit" value="Sign up" class="submit" id="submit_enroll" >
 						    <script type="text/javascript">
 						    function confirm(){
 						    	alert("회원가입성공");
@@ -451,7 +451,7 @@ $('.container .bg').mousemove(function(e){
     $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
 });
 
-var submitbt = $('input[type="submit"]');
+var submitbt = $('#submit_enroll');
 
 $("#id").blur(function(e){
   	 $.ajax({

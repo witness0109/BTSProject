@@ -18,12 +18,13 @@ public class MemberInfoService implements MemberService {
 	@Autowired
 	JavaMailSender mailSender;
 
+
 	@Override
-	public int login(HttpSession session) {
-		return dao.loginMember(session);
-		}
-	
-	
+	public int login(String[] inf) {
+		
+		return dao.loginMember(inf);
+	}
+
 	
 	
 	@Override
@@ -81,6 +82,10 @@ public class MemberInfoService implements MemberService {
 		session.invalidate();
 		
 	}
+
+
+
+
 
 
 
