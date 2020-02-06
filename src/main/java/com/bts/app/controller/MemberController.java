@@ -63,7 +63,7 @@ public class MemberController {
 
 	}
 
-	@RequestMapping(value = "/checkpw", method = RequestMethod.POST)
+	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 
@@ -72,19 +72,25 @@ public class MemberController {
 		list[1] = name;
 		List<String> c_mail = service.checkMail(list);
 		List<String> c_pw = service.checkPw(list);
-		System.out.println(c_pw.get(1));
+
+		String email = c_mail.get(0);
+		String password = c_pw.get(0);
 		
 		mav.addObject("mail", c_mail);
 		mav.addObject("check", "no_id");
 
-		String password = request.getParameter("password");
-
+		//수신자 인코딩을 위한 설정
+		String charSet = "UTF-8";
+		String fromName = "BTS 운영자";
+		InternetAddress from = new InternetAddress() ;
+				
 		try {
+			from= new InternetAddress(new String(fromName.getBytes(charSet), "8859_1")+"<witness0109@gmail.com>");		
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-			messageHelper.setFrom("witness0109@gmail.com"); // 보내는사람 생략하거나 하면 정상작동을 안함
-			messageHelper.setTo("witness0109@gmail.com"); // 받는사람 이메일
+			messageHelper.setFrom(from); // 보내는사람 생략하거나 하면 정상작동을 안함
+			messageHelper.setTo(email); // 받는사람 이메일
 			messageHelper.setSubject("비밀번호 입니다"); // 메일제목은 생략이 가능하다
 			messageHelper.setText(password + " 입니다. "); // 메일 내용
 
