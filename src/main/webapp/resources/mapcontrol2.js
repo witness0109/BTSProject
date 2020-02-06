@@ -8,26 +8,19 @@ navigator.geolocation.getCurrentPosition(function (gg) {
     lat = gg.coords.latitude;
     lng = gg.coords.longitude;
     // var markerPosition  = new kakao.maps.LatLng(lat, lng); 
-    var markerPosition = new kakao.maps.LatLng(37.490134,126.705715); // 지도의 중심좌표
+    var markerPosition = new kakao.maps.LatLng(lat, lng);
+    // var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667); // 지도의 중심좌표
 
     var container = document.getElementById('map11'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
         center: markerPosition, //지도의 중심좌표.
-        level: 3 //지도의 레벨(확대, 축소 정도)
+        level: 8 //지도의 레벨(확대, 축소 정도)
     };
 
     //////////////////////
-    map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    map = new kakao.maps.Map(container, options); 
 
-
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        position: markerPosition
-    });
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
+    //////////////////////
 
     // // 지도를 클릭한 위치에 표출할 마커입니다
     // var marker = new kakao.maps.Marker({ 
@@ -123,9 +116,18 @@ function setStarting() {
         position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
     });
 
+    var imageSrc = "./resources/start_marker.png";
+
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(44, 60);
+
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
     startingMarker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)// 마커를 표시할 위치
+        position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga),// 마커를 표시할 위치
+        image: markerImage // 마커 이미지 
     });
     startingov.setMap(map);
     startingMarker.setMap(map);
@@ -137,30 +139,7 @@ function setStarting() {
 }
 
 function setDestination() {
-/*    console.log("도착지 : " + clickmarker.getPosition())
-    if(destov != undefined){
-        destov.setMap(null);
-    }
-    if(destMarker!=undefined){
-        destMarker.setMap(null);
-    }
-    destov = new kakao.maps.CustomOverlay({
-        content: '<div class="markingov" style="background-color: white;">도착지</div>',
-        map: map,
-        position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
-    });
-    
-    destMarker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga) // 마커를 표시할 위치
-    });
-    destov.setMap(map);
-    destMarker.setMap(map);
-    closeOverlay();*/
-  
-    
-    if(sy!=null){
-    	
+
         console.log("도착지 : " + clickmarker.getPosition())
         if(destov != undefined){
             destov.setMap(null);
@@ -174,21 +153,23 @@ function setDestination() {
             position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
         });
         
+        var imageSrc = "./resources/dest_marker.png";
+        var imageSize = new kakao.maps.Size(44, 60);
+
+        // 마커 이미지를 생성합니다    
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
         destMarker = new kakao.maps.Marker({
             map: map, // 마커를 표시할 지도
-            position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga) // 마커를 표시할 위치
+            position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga), // 마커를 표시할 위치
+            image: markerImage
         });
+    	
         destov.setMap(map);
         destMarker.setMap(map);
         closeOverlay();
-    	
     	ey = destMarker.getPosition().Ha;
         ex = destMarker.getPosition().Ga;
     	searchPubTransPathAJAX();
-    	
-    }else{   	
-    	setStarting();
-    }
     
 }
 
@@ -249,10 +230,14 @@ function drawkakaoMarker(x,y){
 }
 
 // 노선그래픽 데이터를 이용하여 지도위 폴리라인 그려주는 함수
+var polyarr= new Array();
 function drawkakaoPolyLine(data){
 	var lineArray;
-	
+for(var j=0 ; j <polyarr.length; j++){
+			polyarr[j].setMap(null)
+		}
 	for(var i = 0 ; i < data.result.lane.length; i++){
+		
 		for(var j=0 ; j <data.result.lane[i].section.length; j++){
 			lineArray = null;
 			lineArray = new Array();
@@ -260,25 +245,28 @@ function drawkakaoPolyLine(data){
 				lineArray.push(new kakao.maps.LatLng(data.result.lane[i].section[j].graphPos[k].y, data.result.lane[i].section[j].graphPos[k].x));
 			}
 			
+			
+			
 		//지하철결과의 경우 노선에 따른 라인색상 지정하는 부분 (1,2호선의 경우만 예로 들음)
+			var polyline
 			if(data.result.lane[i].type == 1){
-				var polyline = new kakao.maps.Polyline({
+				polyline = new kakao.maps.Polyline({
 				    map: map,
 				    path: lineArray,
 				    strokeWeight: 20,
 				    strokeColor: '#003499'
 				});
-				polyline.setMap(null)
+				//
 			}else if(data.result.lane[i].type == 2){
-				var polyline = new kakao.maps.Polyline({
+				polyline = new kakao.maps.Polyline({
 				    map: map,
 				    path: lineArray,
 				    strokeWeight: 20,
 				    strokeColor: '#37b42d'
 				});
-				polyline.setMap(null)
+				//polyline.setMap(null)
 			}else{
-				var polyline = new kakao.maps.Polyline({
+				polyline = new kakao.maps.Polyline({
 				    map: map,
 				    path: lineArray,
 				    strokeWeight: 20,
@@ -286,6 +274,7 @@ function drawkakaoPolyLine(data){
 				});
 				//polyline.setMap(null)
 			}
+			polyarr.push(polyline)
 		}
 	}
 }

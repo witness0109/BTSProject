@@ -146,7 +146,7 @@
 
 	<!-- main content here -->
 	<div class="divcontainer">
-        <div id="leftside"><div><button class="findbtn" id="findpath">길찾기</button>
+        <div id="leftside" class="cd-main-content"><div><button class="findbtn" id="findpath">길찾기</button>
             <button class="findbtn" id="findpath2">길찾기2</button>
             <select id="searchOption"><option>검색먼저</option></select><button id="applyopt">조건 적용</button>
         </div>
@@ -179,8 +179,9 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
-<!-- <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
- --><script src="./resources/main.js"></script> <!-- Resource jQuery -->
+ <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+ 
+ <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>
 </body>
 </html>
