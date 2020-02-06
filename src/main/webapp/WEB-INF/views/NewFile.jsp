@@ -116,8 +116,8 @@ $(document).ready(function(){
 
 </script>
 
-<!--  <script type="text/javascript" src="./resources/mapcontrol1.js"></script>  -->
-<script type="text/javascript" src="./resources/mapPath.js"></script> 
+<!-- <script type="text/javascript" src="./resources/mapcontrol1.js"></script> -->
+<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>

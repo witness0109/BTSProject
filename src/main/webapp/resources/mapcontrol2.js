@@ -3,12 +3,12 @@ var lat, lng;
 var clickmarker, startingMarker, destMarker;
 var positions = [];
 var map;
-var start
+var sx,sy,ex,ey;
 navigator.geolocation.getCurrentPosition(function (gg) {
     lat = gg.coords.latitude;
     lng = gg.coords.longitude;
     // var markerPosition  = new kakao.maps.LatLng(lat, lng); 
-    var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667); // 지도의 중심좌표
+    var markerPosition = new kakao.maps.LatLng(37.490134,126.705715); // 지도의 중심좌표
 
     var container = document.getElementById('map11'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
@@ -21,8 +21,13 @@ navigator.geolocation.getCurrentPosition(function (gg) {
 
 
 
-    
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
 
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
 
     // // 지도를 클릭한 위치에 표출할 마커입니다
     // var marker = new kakao.maps.Marker({ 
@@ -49,7 +54,7 @@ navigator.geolocation.getCurrentPosition(function (gg) {
         //     }
         // )
         let clickPosition = new kakao.maps.LatLng(latlng.Ha, latlng.Ga)
-
+        
         var content = '<div class="wrap"><div class = "setContainer"><div id="startset" onClick="setStarting()">출발지</div><div id="destset" onClick="setDestination()">도착지</div></div>' +
             '<div onClick="closeOverlay()">닫기</div></div>';
 
@@ -73,15 +78,22 @@ navigator.geolocation.getCurrentPosition(function (gg) {
             });
             overlay.setMap(map);
 
+//            clickmarker = new kakao.maps.Marker({
+//                map: map, // 마커를 표시할 지도
+//                position: clickPosition, // 마커를 표시할 위치
+//            });
+//            재영오빠거
             clickmarker = new kakao.maps.Marker({
                 map: map, // 마커를 표시할 지도
-                position: clickPosition, // 마커를 표시할 위치
+                position: clickPosition, // 마커를 표시할 위치             
+                
             });
         }
 
     });
 
 })
+
 
 
 
@@ -118,6 +130,12 @@ function setStarting() {
     startingov.setMap(map);
     startingMarker.setMap(map);
     closeOverlay();
+    
+    sy = startingMarker.getPosition().Ha;
+    sx = startingMarker.getPosition().Ga;
+   
+    
+    
 }
 
 function setDestination() {
@@ -141,20 +159,103 @@ function setDestination() {
     destov.setMap(map);
     destMarker.setMap(map);
     closeOverlay();
+  
+    ey = destMarker.getPosition().Ha;
+    ex = destMarker.getPosition().Ga;
+    searchPubTransPathAJAX();
 }
 
-var polyline = new kakao.maps.Polyline({
-    map: map,
-    path: [
-        new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),
-        new kakao.maps.LatLng(33.452739313807456, 126.5709308145358),
-        new kakao.maps.LatLng(33.45178067090639, 126.5726886938753) 
-    ],
-    strokeWeight: 2,
-    strokeColor: '#FF00FF',
-    strokeOpacity: 0.8,
-    strokeStyle: 'dashed'
-});
 
-polyline.setMap(map); // 지도에 올린다.
-polyline.getMap();
+
+function searchPubTransPathAJAX() {
+	var xhr = new XMLHttpRequest();
+	//ODsay apiKey 입력
+	var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX="+sx+"&SY="+sy+"&EX="+ex+"&EY="+ey+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";	
+	
+	//var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.705715&SY=37.490134&EX=126.723525&EY=37.489521&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
+	xhr.open("GET", url, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+		console.log( JSON.parse(xhr.responseText) ); // <- xhr.responseText 로 결과를 가져올 수 있음
+		//노선그래픽 데이터 호출
+		callMapObjApiAJAX((JSON.parse(xhr.responseText))["result"]["path"][0].info.mapObj);
+		}
+	}
+	
+}
+
+//길찾기 API 호출
+
+
+function callMapObjApiAJAX(mabObj){
+	var xhr = new XMLHttpRequest();
+	//ODsay apiKey 입력
+	var url = "https://api.odsay.com/v1/api/loadLane?mapObject=0:0@"+mabObj+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
+	xhr.open("GET", url, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var resultJsonData = JSON.parse(xhr.responseText);
+			startingMarker;				// 출발지 마커 표시
+			destMarker;				// 도착지 마커 표시		
+			drawkakaoPolyLine(resultJsonData);		// 노선그래픽데이터 지도위 표시
+			// boundary 데이터가 있을경우, 해당 boundary로 지도이동
+			/*if(resultJsonData.result.boundary){
+					var boundary = new kakao.maps.LatLngBounds(
+			                new kakao.maps.LatLng(resultJsonData.result.boundary.top, resultJsonData.result.boundary.left),
+			                new kakao.maps.LatLng(resultJsonData.result.boundary.bottom, resultJsonData.result.boundary.right)
+			                );
+					map.panToBounds(boundary);
+			}*/
+		}
+	}
+}
+
+// 지도위 마커 표시해주는 함수
+function drawkakaoMarker(x,y){
+	var marker = new kakao.maps.Marker({
+	    position: new kakao.maps.LatLng(y, x),
+	    map: map
+	});
+}
+
+// 노선그래픽 데이터를 이용하여 지도위 폴리라인 그려주는 함수
+function drawkakaoPolyLine(data){
+	var lineArray;
+	
+	for(var i = 0 ; i < data.result.lane.length; i++){
+		for(var j=0 ; j <data.result.lane[i].section.length; j++){
+			lineArray = null;
+			lineArray = new Array();
+			for(var k=0 ; k < data.result.lane[i].section[j].graphPos.length; k++){
+				lineArray.push(new kakao.maps.LatLng(data.result.lane[i].section[j].graphPos[k].y, data.result.lane[i].section[j].graphPos[k].x));
+			}
+			
+		//지하철결과의 경우 노선에 따른 라인색상 지정하는 부분 (1,2호선의 경우만 예로 들음)
+			if(data.result.lane[i].type == 1){
+				var polyline = new kakao.maps.Polyline({
+				    map: map,
+				    path: lineArray,
+				    strokeWeight: 20,
+				    strokeColor: '#003499'
+				});
+			}else if(data.result.lane[i].type == 2){
+				var polyline = new kakao.maps.Polyline({
+				    map: map,
+				    path: lineArray,
+				    strokeWeight: 20,
+				    strokeColor: '#37b42d'
+				});
+			}else{
+				var polyline = new kakao.maps.Polyline({
+				    map: map,
+				    path: lineArray,
+				    strokeWeight: 20,
+				    strokeColor:  '#5F00FF'
+				});
+			}
+		}
+	}
+}
+
