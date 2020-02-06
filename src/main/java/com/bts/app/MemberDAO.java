@@ -14,7 +14,6 @@ public class MemberDAO {
 	SqlSession session;
 
 	public int joinMember(MemberVO vo) {
-		System.out.println(vo);
 
 		return session.insert("mem.memberjoin", vo);
 	}
@@ -34,9 +33,8 @@ public class MemberDAO {
 		return session.selectList("mem.mailcheck", list);
 	}
 
-	public int loginMember(HttpSession hsession) {
-
-		return 0;
+	public int loginMember(String[] inf) {
+		return session.selectOne("mem.login",inf);
 	}
 
 	public void logout(HttpSession session) {
