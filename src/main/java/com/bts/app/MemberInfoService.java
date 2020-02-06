@@ -19,6 +19,14 @@ public class MemberInfoService implements MemberService {
 	JavaMailSender mailSender;
 
 	@Override
+	public int login(HttpSession session) {
+		return dao.loginMember(session);
+		}
+	
+	
+	
+	
+	@Override
 	public int joinMember(MemberVO vo) {
 		
 		return dao.joinMember(vo);
@@ -68,10 +76,6 @@ public class MemberInfoService implements MemberService {
 	}
 
 
-
-
-
-
 	@Override
 	public void logout(HttpSession session) {
 		session.invalidate();
@@ -84,6 +88,9 @@ public class MemberInfoService implements MemberService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 
 
 
