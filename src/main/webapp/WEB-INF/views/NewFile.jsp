@@ -7,24 +7,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	    <style>
-
-        .markingov{
+        .markingov {
             position: absolute;
-            width: 50px;
-            margin-left: -25px;
-            bottom: 50px;
-            border: 1px solid;
-        } 
+            width: 80px;
+            margin-left: -40px;
+            bottom: 70px;
+            border: 1px solid black;
+            font-size: 20px;
+            font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+            text-align: center;
+        }
+
         .wrap {
             position: absolute;
             left: 0;
             bottom: 46px;
-            width: 100px;
-            height: 50px;
-            margin-left: -50px;
+            width: 150px;
+            height: 80px;
+            margin-left: -75px;
             text-align: center;
             overflow: hidden;
-            font-size: 12px;
+            font-size: 20px;
             font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
             line-height: 1.5;
             background: #fff;
@@ -50,6 +53,63 @@
         .wrap #destset {
             background-color: yellowgreen;
             padding-top: 8px;
+        }
+
+        button.findbtn {
+            border-radius: 50px;
+            width: 50px;
+            float: left;
+            color: white;
+            z-index: 1;
+            background-color: red;
+            font-size: 15px;
+            ;
+        }
+
+        .divcontainer {
+            width: inherit;
+            height: 800px;
+        }
+
+        .divcontainer #map11 {
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+
+        .divcontainer #leftside {
+            width: 30%;
+            height: 100%;
+            float: left;
+            overflow: scroll;
+            background-color : #ffffff;
+        }
+
+        .divcontainer #leftside .box {
+            width: 85%;
+            height: AUTO;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .divcontainer #leftside .box.expbus {
+            width: 85%;
+            height: AUTO;
+            border: 1px solid violet;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .divcontainer #leftside .box.train {
+            width: 85%;
+            height: AUTO;
+            border: 1px solid red;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
         }
     </style>
 	
@@ -84,17 +144,19 @@
 	</nav>
 </header>
 
-<main class="cd-main-content" id ="map11">
 	<!-- main content here -->
-	
-	
-	
-	
+	<div class="divcontainer">
+        <div id="leftside"><div><button class="findbtn" id="findpath">길찾기</button>
+            <button class="findbtn" id="findpath2">길찾기2</button>
+            <select id="searchOption"><option>검색먼저</option></select><button id="applyopt">조건 적용</button>
+        </div>
+            <div id="findresult">
 
-
- 
-	
-</main>
+            </div>
+        </div>
+        <div id="map11" class="cd-main-content">
+        </div>
+    </div>
 
 	
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -116,8 +178,9 @@ $(document).ready(function(){
 
 </script>
 
-<!-- <script type="text/javascript" src="./resources/mapcontrol1.js"></script> -->
-<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
-<script src="./resources/main.js"></script> <!-- Resource jQuery -->
+<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
+<!-- <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+ --><script src="./resources/main.js"></script> <!-- Resource jQuery -->
+<script src="./resources/pathcontrol1.js"></script>
 </body>
 </html>

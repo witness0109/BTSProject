@@ -752,7 +752,8 @@ main content basic style
   z-index: 1;
   min-height: 100vh;
   padding: 100px 0;
-  background-color: #003c5d;
+  /* background-color: #003c5d; */
+  background-color: #ffffff;
 }
 
 /* -------------------------------- 
