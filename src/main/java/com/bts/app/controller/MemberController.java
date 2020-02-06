@@ -72,7 +72,8 @@ public class MemberController {
 		list[1] = name;
 		List<String> c_mail = service.checkMail(list);
 		List<String> c_pw = service.checkPw(list);
-		mav.addObject("password", c_pw);
+		System.out.println(c_pw.get(1));
+		
 		mav.addObject("mail", c_mail);
 		mav.addObject("check", "no_id");
 
