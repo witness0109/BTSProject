@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="board">
+  
+  <select id="allboard" resultType="board">
+select * from board order by seq desc
+</select>	
+
+
+
+<insert id="insertboard" parameterType="board">
+insert into board(seq, title , contents, writer, pw, time) 
+values((select max(seq)+1 from board), #{title}, #{contents}, #{writer}, #{pw}, sysdate )
+</insert>
+
+<select id="detail" resultType="board" parameterType="int">
+select * from board where seq = #{seq}
+</select>
+
+<update id="update" parameterType="board">
+update board
+set title = #{title},
+	contents = #{contents},
+	pw = #{pw},
+	time = sysdate
+where seq = #{seq}
+</update> 
+
+<delete id="delete" parameterType="int">
+delete from board where seq = #{seq}
+</delete>
+
+<select id="namecheck" parameterType="board" resultType="int">
+select count(id) from member where id = #{writer}
+</select>
+
+  
+  </mapper>
