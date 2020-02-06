@@ -79,6 +79,13 @@ public class MemberInfoService implements MemberService {
 	}
 
 
+	@Override
+	public String checkPw(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 }
