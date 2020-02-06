@@ -10,7 +10,7 @@
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url"
-			value="jdbc:oracle:thin:@192.168.0.17:1521:xe" />
+			value="jdbc:oracle:thin:@192.168.15.131:1521:xe" />
 		<property name="username" value="bts" />
 		<property name="password" value="bts" />
 	</bean>
@@ -23,7 +23,7 @@
 		<property name="configLocation"
 			value="classpath:/com/bts/app/db-config.xml" />
 		<property name="mapperLocations"
-			value="classpath:/mapper/db-mapping.xml" />
+			value="classpath:/mapper/*-mapping.xml" />
 	</bean>
 	
 	  <bean id="mailSender" class = "org.springframework.mail.javamail.JavaMailSenderImpl">

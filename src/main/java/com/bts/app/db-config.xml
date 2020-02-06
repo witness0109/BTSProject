@@ -7,9 +7,8 @@
 <!-- 0.  -->
 <typeAliases>
 <typeAlias type="com.bts.app.MemberVO" alias="mem"/>
+<typeAlias type="com.bts.app.board.BoardVO" alias="board"/>
 </typeAliases>
-
-
 
 
 </configuration>
