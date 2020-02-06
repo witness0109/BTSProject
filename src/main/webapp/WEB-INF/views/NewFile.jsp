@@ -82,6 +82,7 @@
             height: 100%;
             float: left;
             overflow: scroll;
+            background-color : #ffffff;
         }
 
         .divcontainer #leftside .box {
@@ -144,7 +145,7 @@
 </header>
 
 	<!-- main content here -->
-	<div class="divcontainer cd-main-content">
+	<div class="divcontainer">
         <div id="leftside"><div><button class="findbtn" id="findpath">길찾기</button>
             <button class="findbtn" id="findpath2">길찾기2</button>
             <select id="searchOption"><option>검색먼저</option></select><button id="applyopt">조건 적용</button>
@@ -153,7 +154,7 @@
 
             </div>
         </div>
-        <div id="map11">
+        <div id="map11" class="cd-main-content">
         </div>
     </div>
 
