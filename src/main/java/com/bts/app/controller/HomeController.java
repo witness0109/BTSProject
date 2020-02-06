@@ -32,17 +32,9 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home() {
 
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
-		return "home";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/NewFile", method = RequestMethod.GET)
@@ -60,7 +52,9 @@ public class HomeController {
 	@RequestMapping(value = "/bus_search2", method = RequestMethod.GET)
 	public void of12() {
 	}
-	
+	@RequestMapping(value = "/train_search", method = RequestMethod.GET)
+	public void of13() {
+	}
 	
 
 		
