@@ -42,14 +42,15 @@
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var resultObj = JSON.parse(xhr.responseText);
 				
-				console.log(resultObj.result);
+				
 				startCityTerminal =resultObj["result"];			
 				str += "<div class='box'><h1> 출발역 선택</h1>";
 
 				for (var i = 0; i < startCityTerminal.length; i++) {			
-						
-						str += "<p><label onclick ='destinationTerminalsAJAX("+startCityTerminal[i].stationID+");'>"+startCityTerminal[i].stationName+"</label></p>";							
-						startID[i] = startCityTerminal[i].stationID;						
+						//"+startCityTerminal[i].stationID+",
+						str += "<p><label onclick ='destinationTerminalsAJAX("+startCityTerminal[i].stationID+",\""+startCityTerminal[i].stationName+"\");'>"+startCityTerminal[i].stationName+"</label></p>";							
+						startID[i] = startCityTerminal[i].stationID;	
+						console.log(startID[i]);
 						}
 						str += "</div>";
 						document.getElementById("resultDiv").innerHTML = str;
@@ -59,12 +60,12 @@
 
 				}
 			}
-	function destinationTerminalsAJAX(startTerminal) {
+	function destinationTerminalsAJAX(startTerminalID, statTerminalName) {
 
-		cityname = document.getElementById("startCityTerminal").value;
+		
 		xhr = new XMLHttpRequest();
 		url = "https://api.odsay.com/v1/api/intercityBusTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
-				+ cityname;
+				+ statTerminalName;
 		xhr.open("GET", url, true);
 		xhr.send();
 		xhr.onreadystatechange = function() {
@@ -74,21 +75,21 @@
 				
 				
 				//startTerminal =resultObj["result"];	
-				destinationTerminal = resultObj["result"]['1']["destinationTerminals"];
+				//['1']["destinationTerminals"]
+				destinationTerminal = resultObj["result"]["0"]["destinationTerminals"];
 				console.log(destinationTerminal);
-				console.log(startTerminal);
+			
 				str += "<div class='box'><h1> 도착역 선택</h1>";
-
+ 
 				for (var i = 0; i < destinationTerminal.length; i++) {			
 						//str+="<p>"+destinationTerminal[i].stationName+ "</p>";
 						//onclick ='searchIntercityBusinformationAJAX("+startID,destinationTerminal[i].stationID+");'
-						str += "<p><label>"+destinationTerminal[i].stationName+"</label></p>";								
+						str += "<p><label onclick ='searchIntercityBusinformationAJAX("+startTerminalID+","+destinationTerminal[i].stationID+");'>"+destinationTerminal[i].stationName+"</label></p>";								
 						}
 						str += "</div>";
 						document.getElementById("resultDiv").innerHTML = str;
-					
 
-					}
+					} 
 
 				}
 			}
@@ -109,27 +110,34 @@ function searchIntercityBusinformationAJAX(start, end) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var resultObj = JSON.parse(xhr.responseText);
 				console.log(resultObj.result);
-				var inf = resultObj["result"][start][end]["station"];
+				//[1][start][end]
+				var inf = resultObj["result"]["station"];
 
 				var str = "";
-
+					
 				for (var i = 0; i < inf.length; i++) {
-					str += "<div class='box'>";
-					str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
-					/* str += "<p>도착 터미널 : " + inf[i]+ "</p>";
-					str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
-					str += "<p>도착시간 : " + inf[i].arrivalTime + "</p>";
-					str += "<p>소요시간 : " + inf[i].wasteTime + "</p>";   */
+					
+					str += "<div class='box'> <h1> 노선 정보</h1>";
+					str += "<p> 출발 터미널:	" +inf[i].startTerminal+ "</p>";
+					str += "<p> 도착 터미널:	" + inf[i].destTerminal+ "</p>";
+					str += "<p>스케줄 : " + inf[i].schedule + "</p>";
+					str += "<p>소요시간 : " + (inf[i].wasteTime-inf[i].wasteTime%60)/60+"시간	"+inf[i].wasteTime%60+"분"+ "</p>"; 
+					if(inf[i].normalFare>=10000){
+						str += "<p>금액 : " + (inf[i].normalFare-inf[i].normalFare%10000)/10000+"만	"+ inf[i].normalFare%10000+"원"+ "</p>";
+						}else{
+							"<p> 첫차:	" +inf[i].normalFare+"원"+ "</p>";
+						}
+					
+					str += "<p> 첫차:	" +inf[i].firstTime+"	막차 :	" + inf[i].lastTime+ "</p>";
 					str += "</div>";
 				}
-
+				
 				document.getElementById("resultDiv").innerHTML = str;
-			}
+			
 		
 		}
 	} 
-
-	
+	}	
 </script>
 </head>
 <body>
