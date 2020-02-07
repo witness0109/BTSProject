@@ -43,7 +43,7 @@ public class HomeController {
 	@RequestMapping(value = "/BTS_MAIN", method = RequestMethod.GET)
 	public void of9() {
 	}
-	@RequestMapping(value = "/NewFile2", method = RequestMethod.GET)
+	@RequestMapping(value = "/bus_search2-version03", method = RequestMethod.GET)
 	public void of10() {
 	}
 	@RequestMapping(value = "/line", method = RequestMethod.GET)

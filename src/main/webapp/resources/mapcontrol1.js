@@ -2,11 +2,23 @@
         var clickmarker, startingMarker, destMarker;
         var positions = [];
         var map;
+        
         navigator.geolocation.getCurrentPosition(function (gg) {
             lat = gg.coords.latitude;
             lng = gg.coords.longitude;
+            var markerPosition = new kakao.maps.LatLng(lat, lng);
             //지도 생성 및 객체 리턴
-
+            var container = document.getElementById('map11'); //지도를 담을 영역의 DOM 레퍼런스
+            var options = { //지도를 생성할 때 필요한 기본 옵션
+                center: markerPosition, //지도의 중심좌표.
+                level: 8 //지도의 레벨(확대, 축소 정도)
+            };
+        
+            //////////////////////
+            map = new kakao.maps.Map(container, options); 
+        
+            //////////////////////
+        
             // // 지도를 클릭한 위치에 표출할 마커입니다
             // var marker = new kakao.maps.Marker({ 
             //     // 지도 중심좌표에 마커를 생성합니다 
@@ -82,3 +94,73 @@
         }
 
 
+        function setStarting() {
+            console.log("출발지 : "+clickmarker.getPosition())
+            if(startingov != undefined){
+                startingov.setMap(null);
+            }
+            if(startingMarker!=undefined){
+                startingMarker.setMap(null);
+            }
+            startingov = new kakao.maps.CustomOverlay({
+                content: '<div  class="markingov" style="background-color: white;">출발지</div>',
+                map: map,
+                position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
+            });
+        
+            var imageSrc = "./resources/start_marker.png";
+        
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(44, 60);
+        
+            // 마커 이미지를 생성합니다    
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+        
+            startingMarker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga),// 마커를 표시할 위치
+                image: markerImage // 마커 이미지 
+            });
+            startingov.setMap(map);
+            startingMarker.setMap(map);
+            closeOverlay();
+            
+            sy = startingMarker.getPosition().Ha;
+            sx = startingMarker.getPosition().Ga;
+          
+        }
+        
+        function setDestination() {
+        
+                console.log("도착지 : " + clickmarker.getPosition())
+                if(destov != undefined){
+                    destov.setMap(null);
+                }
+                if(destMarker!=undefined){
+                    destMarker.setMap(null);
+                }
+                destov = new kakao.maps.CustomOverlay({
+                    content: '<div class="markingov" style="background-color: white;">도착지</div>',
+                    map: map,
+                    position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga)
+                });
+                
+                var imageSrc = "./resources/dest_marker.png";
+                var imageSize = new kakao.maps.Size(44, 60);
+        
+                // 마커 이미지를 생성합니다    
+                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+                destMarker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: new kakao.maps.LatLng(clickmarker.getPosition().Ha, clickmarker.getPosition().Ga), // 마커를 표시할 위치
+                    image: markerImage
+                });
+                
+                destov.setMap(map);
+                destMarker.setMap(map);
+                closeOverlay();
+                ey = destMarker.getPosition().Ha;
+                ex = destMarker.getPosition().Ga;
+                searchPubTransPathAJAX();
+            
+        }
