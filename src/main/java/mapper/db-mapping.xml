@@ -27,9 +27,9 @@
    select email from member where id=#{array[0]} and name=#{array[1]} 
   </select>
   
- <select id="login" resultType="int" >
+ <select id="login" resultType="int" parameterType="java.util.ArrayList">
 select count(*) from member
-where id = #{id} and pw = #{pw}
+where id = #{array[0]} and pw = #{array[1]}
  </select>
  
   
