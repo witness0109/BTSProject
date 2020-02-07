@@ -23,16 +23,15 @@
 	var citycode;
 	var xhr;
 	var str = "";
-	var startid;
-	var endid;
+	var startID=new Array();
+	var endID;
+	var startCityTerminal;
+	var destinationTerminal;
 
+	
+	function searchIntercityBusTerminalAJAX() {
 
-
-	function searchIntercityBusAJAX() {
-
-		cityname = document.getElementById("cityname").value;
-		endname = document.getElementById("endname").value;
-
+		cityname = document.getElementById("startCityTerminal").value;
 		xhr = new XMLHttpRequest();
 		url = "https://api.odsay.com/v1/api/intercityBusTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
 				+ cityname;
@@ -42,37 +41,59 @@
 
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var resultObj = JSON.parse(xhr.responseText);
-				console.log(resultObj.result);
-				var start = resultObj["result"];
-				var end = resultObj["result"]["destinationTerminals"];
-				console.log(end);
 				
-				str += "<div class='box'>";
+				console.log(resultObj.result);
+				startCityTerminal =resultObj["result"];			
+				str += "<div class='box'><h1> 출발역 선택</h1>";
 
-				for (var i = 0; i < start.length; i++) {
-
-					if (cityname == start[i].stationName) {
-						str += "<p>출발정류장코드 : " + start[i].stationID+ "</p>";
-						startid = start[i].stationID
-						for (var j = 0; j < end.length; j++) {
-							if (endname == end[j].stationName) {
-
-								endid = end[j].stationID
-								str += "<p>도착정류장코드 : " + end[j].stationID
-										+ "</p>";
-							}
-
+				for (var i = 0; i < startCityTerminal.length; i++) {			
+						
+						str += "<p><label onclick ='destinationTerminalsAJAX("+startCityTerminal[i].stationID+");'>"+startCityTerminal[i].stationName+"</label></p>";							
+						startID[i] = startCityTerminal[i].stationID;						
 						}
 						str += "</div>";
-						//document.getElementById("resultDiv").innerHTML = str;
-						searchIntercityBusinformationAJAX(startid, endid);
+						document.getElementById("resultDiv").innerHTML = str;
+					
 
 					}
 
 				}
 			}
-		}
-	}// 역코드 조회 끝
+	function destinationTerminalsAJAX(startTerminal) {
+
+		cityname = document.getElementById("startCityTerminal").value;
+		xhr = new XMLHttpRequest();
+		url = "https://api.odsay.com/v1/api/intercityBusTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
+				+ cityname;
+		xhr.open("GET", url, true);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var resultObj = JSON.parse(xhr.responseText);
+				
+				
+				//startTerminal =resultObj["result"];	
+				destinationTerminal = resultObj["result"]['1']["destinationTerminals"];
+				console.log(destinationTerminal);
+				console.log(startTerminal);
+				str += "<div class='box'><h1> 도착역 선택</h1>";
+
+				for (var i = 0; i < destinationTerminal.length; i++) {			
+						//str+="<p>"+destinationTerminal[i].stationName+ "</p>";
+						//onclick ='searchIntercityBusinformationAJAX("+startID,destinationTerminal[i].stationID+");'
+						str += "<p><label>"+destinationTerminal[i].stationName+"</label></p>";								
+						}
+						str += "</div>";
+						document.getElementById("resultDiv").innerHTML = str;
+					
+
+					}
+
+				}
+			}
+	
+
 
 	//열차 . ktx 운행정보 검색
 function searchIntercityBusinformationAJAX(start, end) {
@@ -94,10 +115,11 @@ function searchIntercityBusinformationAJAX(start, end) {
 
 				for (var i = 0; i < inf.length; i++) {
 					str += "<div class='box'>";
-					str += "<p>도착 터미널 : " + inf[i]+ "</p>";
-				/* 	str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
+					str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
+					/* str += "<p>도착 터미널 : " + inf[i]+ "</p>";
+					str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
 					str += "<p>도착시간 : " + inf[i].arrivalTime + "</p>";
-					str += "<p>소요시간 : " + inf[i].wasteTime + "</p>";  */
+					str += "<p>소요시간 : " + inf[i].wasteTime + "</p>";   */
 					str += "</div>";
 				}
 
@@ -112,9 +134,8 @@ function searchIntercityBusinformationAJAX(start, end) {
 </head>
 <body>
 	<div>
-		<input type="text" id="cityname"> <input type="text"
-			id="endname">
-		<button onclick="searchIntercityBusAJAX();">click</button>
+		<input type="text" id="startCityTerminal">
+		<button onclick="searchIntercityBusTerminalAJAX();">click</button>
 
 	</div>
 	<div id="resultDiv">
