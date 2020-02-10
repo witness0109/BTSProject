@@ -58,13 +58,18 @@ public class HomeController {
 	@RequestMapping(value = "/train_search", method = RequestMethod.GET)
 	public void of13() {
 	}
+
 	@RequestMapping(value = "/boardlist", method = RequestMethod.GET)
 	public String of14() {
 		return "Board/boardlist";
+
+	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
+	public void of15() {
+
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public ModelAndView of15(String id,HttpSession session) {
+	public ModelAndView of16(String id,HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		
 		session.setAttribute("id", id);
