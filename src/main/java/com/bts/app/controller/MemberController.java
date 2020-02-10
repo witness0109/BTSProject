@@ -67,7 +67,7 @@ public class MemberController {
 			return "login";
 		} else { // 세션에 있을시 못넘어가게
 
-			return "redirect:NewFile";
+			return "redirect:BTSMap";
 		}
 
 	}
@@ -83,10 +83,10 @@ public class MemberController {
 		
 		if (result == 1) { // 로그인 성공
 			// main.jsp로 이동
-			mav.setViewName("NewFile");
-			session.setAttribute("ID", id);
+			mav.setViewName("redirect:BTSMap");
+			session.setAttribute("id", id);
 		} else { // 로그인 실패
-			mav.setViewName("NewFile");
+			mav.setViewName("login");
 
 		}
 		return mav;
