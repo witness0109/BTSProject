@@ -27,13 +27,16 @@
 	var endID;
 	var startCityTerminal;
 	var destinationTerminal;
+	var apikey ="apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
+	var inf;
+	var infd = new Array();
 
 	
 	function searchIntercityBusTerminalAJAX() {
 
 		cityname = document.getElementById("startCityTerminal").value;
 		xhr = new XMLHttpRequest();
-		url = "https://api.odsay.com/v1/api/intercityBusTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
+		url = "https://api.odsay.com/v1/api/intercityBusTerminals?"+apikey+"&lang=0&terminalName="
 				+ cityname;
 		xhr.open("GET", url, true);
 		xhr.send();
@@ -64,7 +67,7 @@
 
 		
 		xhr = new XMLHttpRequest();
-		url = "https://api.odsay.com/v1/api/intercityBusTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
+		url = "https://api.odsay.com/v1/api/intercityBusTerminals?"+apikey+"&lang=0&terminalName="
 				+ statTerminalName;
 		xhr.open("GET", url, true);
 		xhr.send();
@@ -99,9 +102,9 @@
 	//열차 . ktx 운행정보 검색
 function searchIntercityBusinformationAJAX(start, end) {
 		
-
+		str = "";
 		xhr = new XMLHttpRequest();
-		url = "https://api.odsay.com/v1/api/intercityServiceTime?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&startStationID="
+		url = "https://api.odsay.com/v1/api/intercityServiceTime?"+apikey+"&lang=0&startStationID="
 				+ start + "&endStationID=" + end;
 		xhr.open("GET", url, true);
 		xhr.send();
@@ -110,30 +113,84 @@ function searchIntercityBusinformationAJAX(start, end) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var resultObj = JSON.parse(xhr.responseText);
 				console.log(resultObj.result);
-				//[1][start][end]
-				var inf = resultObj["result"]["station"];
+				inf = resultObj["result"]["station"];
 
-				var str = "";
+				if(inf.length==2){
 					
-				for (var i = 0; i < inf.length; i++) {
-					
-					str += "<div class='box'> <h1> 노선 정보</h1>";
-					str += "<p> 출발 터미널:	" +inf[i].startTerminal+ "</p>";
-					str += "<p> 도착 터미널:	" + inf[i].destTerminal+ "</p>";
-					str += "<p>스케줄 : " + inf[i].schedule + "</p>";
-					str += "<p>소요시간 : " + (inf[i].wasteTime-inf[i].wasteTime%60)/60+"시간	"+inf[i].wasteTime%60+"분"+ "</p>"; 
-					if(inf[i].normalFare>=10000){
-						str += "<p>금액 : " + (inf[i].normalFare-inf[i].normalFare%10000)/10000+"만	"+ inf[i].normalFare%10000+"원"+ "</p>";
-						}else{
-							"<p> 첫차:	" +inf[i].normalFare+"원"+ "</p>";
+					for (var i = 0; i < inf.length; i++) {
+						
+						infd[i] = resultObj["result"]["station"][i];
+						
+						if(i==0){
+							
+							str += "<div class='box'> <h1> 노선 정보</h1>";
+							str += "<h3> 시외 우등 버스 입니다.</h3>";
+							str += "<p> 출발 터미널:	" +infd[i].startTerminal+ "</p>";
+							str += "<p> 도착 터미널:	" + infd[i].destTerminal+ "</p>";
+							str += "<p>스케줄 : " + infd[i].schedule + "</p>";
+							str += "<p>소요시간 : " + (infd[i].wasteTime-infd[i].wasteTime%60)/60+":"+infd[i].wasteTime%60+ "</p>"; 
+							if(infd[i].normalFare>=10000){
+								str += "<p>금액 : " + (infd[i].normalFare-infd[i].normalFare%10000)/10000+"만	"+ infd[i].normalFare%10000+"원"+ "</p>";
+								}else{
+									"<p> 첫차:	" +infd[i].normalFare+"원"+ "</p>";
+								}
+							
+							str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
+							str += "</div>";
 						}
+						
+						document.getElementById("resultDiv").innerHTML = str;
+						
+						
+						
+					}else if(i==1){
+						
+						str += "<div class='box'> <h1> 노선 정보</h1>";
+						str += "<h3> 시외 일반 버스 입니다.</h3>";
+						str += "<p> 출발 터미널:	" +infd[i].startTerminal+ "</p>";
+						str += "<p> 도착 터미널:	" + infd[i].destTerminal+ "</p>";
+						str += "<p>스케줄 : " + infd[i].schedule + "</p>";
+						str += "<p>소요시간 : " + (infd[i].wasteTime-infd[i].wasteTime%60)/60+":"+infd[i].wasteTime%60+ "</p>"; 
+						if(infd[i].normalFare>=10000){
+							str += "<p>금액 : " + (infd[i].normalFare-infd[i].normalFare%10000)/10000+"만	"+ infd[i].normalFare%10000+"원"+ "</p>";
+							}else{
+								"<p> 첫차:	" +infd[i].normalFare+"원"+ "</p>";
+							}
+						
+						str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
+						str += "</div>";
+					}
 					
-					str += "<p> 첫차:	" +inf[i].firstTime+"	막차 :	" + inf[i].lastTime+ "</p>";
-					str += "</div>";
-				}
-				
-				document.getElementById("resultDiv").innerHTML = str;
-			
+					document.getElementById("resultDiv").innerHTML = str;
+					
+						
+					}else{
+						str += "<div class='box'> <h1> 노선 정보</h1>";
+						str += "<h3> 시외 일반 버스 입니다.</h3>";
+						str += "<p> 출발 터미널:	" +infd[i].startTerminal+ "</p>";
+						str += "<p> 도착 터미널:	" + infd[i].destTerminal+ "</p>";
+						str += "<p>스케줄 : " + infd[i].schedule + "</p>";
+						str += "<p>소요시간 : " + (infd[i].wasteTime-infd[i].wasteTime%60)/60+":"+infd[i].wasteTime%60+ "</p>"; 
+						if(infd[i].normalFare>=10000){
+							str += "<p>금액 : " + (infd[i].normalFare-infd[i].normalFare%10000)/10000+"만	"+ infd[i].normalFare%10000+"원"+ "</p>";
+							}else{
+								"<p> 첫차:	" +infd[i].normalFare+"원"+ "</p>";
+							}
+						
+						str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
+						str += "</div>";
+					}
+					
+					document.getElementById("resultDiv").innerHTML = str;
+					
+					}
+						}
+							
+							
+						}
+						
+						
+	
 		
 		}
 	} 
