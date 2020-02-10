@@ -30,15 +30,18 @@ $(document).ready(function() {
 </head>
 
 <style type="text/css">
-/* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 */
+ /* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 
 #boardcss_list_add_button_table { width: 100%; margin: 0 auto 15px; position: relative; background: #bddcff; font-weight: bold; }
 
-/* 화면에 보여지는 글 등록 버튼 */
+/* 화면에 보여지는 글 등록 버튼 
 #boardcss_list_add_button_table .add_button { cursor: pointer; border: 1px solid #bebebe; position: absolute; right: 10px; top: 10px; width: 85px; padding: 6px 0 6px; text-align: center; font-weight: bold; }
 #boardcss_list_add_button_table .add_button a { color: #ffffff; }
-
+ */
+ #write {text-align: right; float: right; }
+ 
+ 
 /* 글 등록 버튼과 글 목록이 겹치지 않게 만들어준 아무것도 아닌것 */
-#boardcss_list_add_button_table .boardcss_list_add_button ul { width: 100%; overflow: hidden; height: 10px;}
+#boardcss_list_add_button_table .boardcss_list_add_button { width: 100%; overflow: hidden; height: 10px;}
 
 /* boardcss_list 에서 사용하는 글 목록 테이블 크기*/
 .boardcss_list_table { width: 100%; }
@@ -55,7 +58,8 @@ $(document).ready(function() {
 /* list_table 에서 사용되는 tbody */
 .list_table tbody td { text-align: center;  border-bottom: 1px solid #e5e5e5; padding: 5px 0; }
 
-#write{}
+#pagingDiv{margin: auto;}
+
 </style>
 
 <body>
@@ -93,13 +97,9 @@ $(document).ready(function() {
 
 </div>
 
-<div id="boardcss_list_add_button_table">
-<div class="boardcss_list_add_button">
-<p class="add_button">등록</p>
-<ul></ul>
+<div>
+<input type="button" value="글쓰기" onclick="location.href='./boardwrite'" id=write>
 </div>
-</div>
-
 
 <div id="pagingDiv">
 			<c:if test="${paging.prev}">
