@@ -115,7 +115,8 @@
 	
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="./resources/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
 	<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
   	
 	<title>BTS</title>
@@ -160,7 +161,7 @@
 
 	
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
 
 <script>
 
@@ -179,7 +180,7 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
- <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
  
  <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>

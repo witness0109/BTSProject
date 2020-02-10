@@ -1,8 +1,3 @@
-
-<%@page import="java.net.URL"%>
-<%@page import="java.net.HttpURLConnection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,54 +15,109 @@
 }
 </style>
 <script>
+	//전역변수
+	var url;
+	var cityname;
+	var endname;
+	var citycode;
+	var xhr;
 
-var url;
-function searchTrainLaneAJAX() {
-	
-	
-	var xhr = new XMLHttpRequest();
-	url = "https://api.odsay.com/v1/api/trainServiceTime?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&startStationID=3300128&endStationID=3300108"
-	//url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busNo="+busNo+"&CID="+CID;
-	xhr.open("GET", url, true);
-	xhr.send();
-	xhr.onreadystatechange = function() {
-		
-	
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			var resultObj = JSON.parse(xhr.responseText);
-			console.log(resultObj.result);
-			var result = resultObj["result"];
 
-			var resultArr2 = resultObj["result"]["station"];
-			var str = "";
-			for (var i = 0; i < resultArr2.length; i++) {
+	function searchTrainStationAJAX() {
+
+		cityname = document.getElementById("cityname").value;
+		endname = document.getElementById("endname").value;
+
+		xhr = new XMLHttpRequest();
+		url = "https://api.odsay.com/v1/api/trainTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
+				+ cityname;
+		xhr.open("GET", url, true);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var resultObj = JSON.parse(xhr.responseText);
+				console.log(resultObj.result);
+				var start = resultObj["result"];
+				var end = resultObj["result"]["0"]["arrivalTerminals"];
+				console.log(end)
+				var str = "";
+				var startid;
+				var endid;
+
 				str += "<div class='box'>";
-				str += "<p>출발역명 : " + result.startStationName + "</p>";
-				str += "<p>도착역명 : " + result.endStationName + "</p>";
-				str += "<p>노선명 : " + resultArr2[i].railName + "</p>";
-				str += "<p>열차종류 - 열차번호 : " + resultArr2[i].trainClass + " - "
-					+ resultArr2[i].trainNo + "</p>";
-				str += "</div>";
+
+				for (var i = 0; i < start.length; i++) {
+
+					if (cityname == start[i].stationName) {
+						str += "<p>출발역코드 : " + start[i].stationID + "</p>";
+						startid = start[i].stationID
+						for (var j = 0; j < end.length; j++) {
+							if (endname == end[j].stationName) {
+
+								endid = end[j].stationID
+								str += "<p>도착역코드 : " + end[j].stationID
+										+ "</p>";
+							}
+
+						}
+						str += "</div>";
+						//document.getElementById("resultDiv").innerHTML = str;
+						searchTraininformationAJAX(startid, endid);
+
+					}
+
+				}
 			}
-			
-			document.getElementById("resultDiv").innerHTML = str;
+		}
+	}// 역코드 조회 끝
+
+	//열차 . ktx 운행정보 검색
+	function searchTraininformationAJAX(start, end) {
+
+		xhr = new XMLHttpRequest();
+		url = "https://api.odsay.com/v1/api/trainServiceTime?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&startStationID="
+				+ start + "&endStationID=" + end;
+		xhr.open("GET", url, true);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var resultObj = JSON.parse(xhr.responseText);
+				console.log(resultObj.result);
+				var inf = resultObj["result"]["station"];
+
+				var str = "";
+
+				for (var i = 0; i < inf.length; i++) {
+					str += "<div class='box'>";
+					str += "<p>열차종류 : " + inf[i].trainClass + " - 열차번호 : " + inf[i].trainNo + "</p>";
+					str += "<p>출발시간 : " + inf[i].departureTime + "</p>";
+					str += "<p>도착시간 : " + inf[i].arrivalTime + "</p>";
+					str += "<p>소요시간 : " + inf[i].wasteTime + "</p>";
+					str += "</div>";
+				}
+
+				document.getElementById("resultDiv").innerHTML = str;
+			}
+		
 		}
 	}
-}
 
+	
 </script>
 </head>
 <body>
-<div>
-<input type="text" id="start">
-<input type="text" id ="end">
-<button onclick="searchTrainLaneAJAX();">click</button>
+	<div>
+		<input type="text" id="cityname"> <input type="text"
+			id="endname">
+		<button onclick="searchTrainStationAJAX();">click</button>
 
-</div>
-<div id="resultDiv">
+	</div>
+	<div id="resultDiv">
 
-<!-- 결과창 -->
+		<!-- 결과창 -->
 </div>
-<div id="detailDiv"></div>
+
 </body>
 </html>
