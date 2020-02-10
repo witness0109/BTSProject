@@ -45,4 +45,16 @@ public class BoardInfoService implements BoardService {
 		return dao.namecheck(vo);
 		
 	}
+
+	@Override
+	public List<BoardVO> getBoardList(PagingCriteria paging) {
+		return dao.getBoardList(paging);
+	}
+
+	@Override
+	public int totalCnt() {
+		return dao.totalCnt();
+	}
+
+
 }

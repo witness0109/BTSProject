@@ -15,4 +15,9 @@ public interface BoardService {
 	public void delete(int seq);
 	
 	public int namecheck(BoardVO vo);
+	
+	List<BoardVO> getBoardList(PagingCriteria paging);
+	
+	int totalCnt();
+	
 }

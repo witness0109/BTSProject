@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,7 +18,7 @@ public class BoardController {
 	
 	//Modelattribute =  mav.addbject 
 	
-	@RequestMapping("/boardlist")
+	/*@RequestMapping("/boardlist")
 	public ModelAndView getAllBoard() {
 		ModelAndView mav = new ModelAndView();
 		
@@ -26,6 +27,18 @@ public class BoardController {
 		mav.setViewName("Board/boardlist");
 		
 		return mav;
+		
+	}*/
+	
+	@RequestMapping("/boardlist")
+	public String getBoardList(PagingCriteria cri, Model model) {
+		List<BoardVO> list = service.getBoardList(cri);
+		int total = service.totalCnt();
+		
+		// Model 정보 저장
+		model.addAttribute("boardlist",list);
+		model.addAttribute("paging",new PageMaker(cri,total));
+		return "Board/boardlist"; // View 이름 리턴
 		
 	}
 	
@@ -98,6 +111,8 @@ public class BoardController {
 		
 		return "redirect:/boardlist";
 	}
+	
+	
 
 	
 
