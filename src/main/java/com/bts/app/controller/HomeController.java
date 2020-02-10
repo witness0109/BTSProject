@@ -62,7 +62,7 @@ public class HomeController {
 	@RequestMapping(value = "/boardlist", method = RequestMethod.GET)
 	public String of14() {
 		return "Board/boardlist";
-
+	}
 	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
 	public void of15() {
 
