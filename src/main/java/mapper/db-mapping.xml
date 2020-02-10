@@ -32,6 +32,17 @@ select count(*) from member
 where id = #{array[0]} and pw = #{array[1]}
  </select>
  
+<update id="updatemember">
+update member
+set 
+pw = #{pw},
+name = #{name},
+email = #{email},
+phone = #{phone}
+where id = #{id}
+
+</update>
+ 
   
   </mapper>
 

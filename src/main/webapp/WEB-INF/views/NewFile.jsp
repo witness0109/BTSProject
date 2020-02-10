@@ -130,7 +130,7 @@
 		</a>
 
 		<ul>
-			<li><a href="#0" class="active"><span>MyPage</span></a></li>
+			<li><a href="./Mypage" class="active"><span>MyPage</span></a></li>
 			
 			<li><a href="#0"><span>SEARCH</span></a></li>
 			<li><a href="#0"><span>BUS</span></a></li>

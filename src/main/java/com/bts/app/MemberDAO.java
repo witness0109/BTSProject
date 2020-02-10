@@ -40,5 +40,10 @@ public class MemberDAO {
 	public void logout(HttpSession session) {
 		session.invalidate();
 	}
+	
+	
+	public void updatemember(MemberVO vo) {
+		session.update("mem.updatemember", vo);
+	}
 
 }

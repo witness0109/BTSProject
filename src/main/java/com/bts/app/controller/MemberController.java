@@ -171,5 +171,22 @@ public class MemberController {
 		return "redirect:/BTS/login";
 
 	}
+	
+	
+	
+	@RequestMapping(value="/Mypage", method=RequestMethod.GET)
+		public String updatemember() {
+			return "Mypage";
+		}
+		
+	
+		@RequestMapping(value="/Mypage", method=RequestMethod.POST)
+			public String updatemember(MemberVO vo, HttpSession session) {
+				service.updatemember(vo);
+				
+				return "redirect:/";
+			}
+	
+
 
 }
