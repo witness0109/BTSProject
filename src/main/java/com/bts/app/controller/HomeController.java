@@ -59,7 +59,6 @@ public class HomeController {
 	public void of13() {
 	}
 
-
 	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
 	public void of15() {
 
