@@ -31,7 +31,9 @@ $(document).ready(function() {
 
 <style type="text/css">
 /* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 */
+/*  밑에 수정해야돼 */
 #boardcss_list_add_button_table { width: 100%; margin: 0 auto 15px; position: relative; background: #bddcff; font-weight: bold; }
+
 
 /* 화면에 보여지는 글 등록 버튼 */
 #boardcss_list_add_button_table .add_button { cursor: pointer; border: 1px solid #bebebe; position: absolute; right: 10px; top: 10px; width: 85px; padding: 6px 0 6px; text-align: center; font-weight: bold; }
