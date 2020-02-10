@@ -218,7 +218,7 @@ var pathArr;
                                 }
                                 subt+='</p>'
                                 subt+='<p>도착역 '+subpath.endName+'역 '
-                                if(subpath.startExitNo!=undefined){
+                                if(subpath.endExitNo!=undefined){
                                     subt+=subpath.endExitNo+'번 출구</p>'
                                 }
                                 subt+='</p>'
