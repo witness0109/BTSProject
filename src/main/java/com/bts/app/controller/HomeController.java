@@ -9,6 +9,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
@@ -19,6 +21,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -37,7 +40,7 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/NewFile", method = RequestMethod.GET)
+	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
 	public void of3() {
 	}
 	@RequestMapping(value = "/BTS_MAIN", method = RequestMethod.GET)
@@ -55,7 +58,20 @@ public class HomeController {
 	@RequestMapping(value = "/train_search", method = RequestMethod.GET)
 	public void of13() {
 	}
+	@RequestMapping(value = "/boardlist", method = RequestMethod.GET)
+	public String of14() {
+		return "Board/boardlist";
+	}
 	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public ModelAndView of15(String id,HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		
+		session.setAttribute("id", id);
+		mav.setViewName("mypage");
+		
+		return mav;
+	}
 
 		
 	

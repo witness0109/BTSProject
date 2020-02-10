@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	    <style>
+
+	    
         .markingov {
             position: absolute;
             width: 80px;
@@ -111,6 +113,7 @@
             padding: 15px;
             margin: 15px;
         }
+        
     </style>
 	
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
@@ -118,32 +121,12 @@
     <link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
     <link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
 	<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
+
   	
 	<title>BTS</title>
 </head>
 <body>
-<header>
-	<nav class="cd-stretchy-nav">
-		<a class="cd-nav-trigger" href="#0">
-			Menu
-			<span aria-hidden="true"></span>
-		</a>
 
-		<ul>
-			<li><a href="#0" class="active"><span>MyPage</span></a></li>
-			
-			<li><a href="#0"><span>SEARCH</span></a></li>
-			<li><a href="#0"><span>BUS</span></a></li>
-			<li><a href="#0"><span>TRAIN</span></a></li>
-			<li><a href="#0"><span>SUBWAY</span></a></li>
-			<li><a href="./logout" id="logoutbtn">로그아웃</a></li>
-			
-			
-		</ul>
-
-		<span aria-hidden="true" class="stretchy-nav-bg"></span>
-	</nav>
-</header>
 
 	<!-- main content here -->
 	<div class="divcontainer">
@@ -154,6 +137,13 @@
             <div id="findresult">
 
             </div>
+            <div id="buttons">
+          	<%=session.getAttribute("id") %>
+
+            <input type="button" id="mypagebtn" value="MyPage">
+             <input type="button" id="logoutbtn" value="로그아웃">
+            <input type="button" id="boardbtn" value="고객의소리">
+             </div>
         </div>
         <div id="map11" class="cd-main-content">
         </div>
@@ -169,7 +159,17 @@
 $(document).ready(function(){ 
 	$("#logoutbtn").on('click', function(){
 		alert("로그아웃 되었습니다.");
-		location.href="./logout"
+		location.href="./logout";
+	});
+	
+	$("#mypagebtn").on('click', function(){
+		
+		location.href="./mypage";
+	});
+	
+	$("#boardbtn").on('click', function(){
+		
+		location.href="./boardlist";
 	});
 });
 
@@ -182,7 +182,7 @@ $(document).ready(function(){
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
  
- <script src="./resources/main.js"></script> <!-- Resource jQuery -->
+<script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>
 </body>
 </html>

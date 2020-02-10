@@ -55,7 +55,7 @@
 </script>
 </head>
 <body>
-
+	<div id="bg" alt="배경"></div>
 	<section class="container">
 		<article class="half">
 			<h1>BTS 가즈아</h1>
@@ -198,5 +198,6 @@
 
 		}
 	</script>
+
 </body>
 </html>
