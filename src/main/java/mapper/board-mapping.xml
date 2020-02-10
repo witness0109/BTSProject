@@ -35,5 +35,19 @@ delete from board where seq = #{seq}
 select count(id) from member where id = #{writer}
 </select>
 
+<select id="getBoardList" resultType="board">
+<![CDATA[
+select seq, title, contents, writer, time
+from (select rownum rn, seq, title, contents, writer, time from board where rownum <= #{pageNum} * #{amount})
+where rn > (#{pageNum}-1) * #{amount}
+order by seq desc
+]]>
+</select>
+
+<select id="getTotalCnt" resultType="int">
+select count(*) from board
+</select>
+
+
   
   </mapper>

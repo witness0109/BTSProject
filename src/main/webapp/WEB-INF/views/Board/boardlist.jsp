@@ -6,13 +6,24 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+			li {list-style: none; float: left; padding: 6px;}
+		</style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function() {
 
-	$('#write').on('click',function(){
+	$('#boardcss_list_add_button_table').on('click',function(){
 		location.href="./boardwrite";
 	});
+	
+	$('#pagingDiv a').click(function(e){
+		e.preventDefault();
+		$('#pageNum').val($(this).attr("href"));
+		pagingForm.submit();
+		
+	});
+	
 	
 });
 </script>
@@ -20,7 +31,7 @@ $(document).ready(function() {
 
 <style type="text/css">
 /* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 */
-#boardcss_list_add_button_table { width: 100%; margin: 0 auto 15px; /*position: relative; background: #bddcff; font-weight: bold;*/ }
+#boardcss_list_add_button_table { width: 100%; margin: 0 auto 15px; position: relative; background: #bddcff; font-weight: bold; }
 
 /* 화면에 보여지는 글 등록 버튼 */
 #boardcss_list_add_button_table .add_button { cursor: pointer; border: 1px solid #bebebe; position: absolute; right: 10px; top: 10px; width: 85px; padding: 6px 0 6px; text-align: center; font-weight: bold; }
@@ -44,6 +55,7 @@ $(document).ready(function() {
 /* list_table 에서 사용되는 tbody */
 .list_table tbody td { text-align: center;  border-bottom: 1px solid #e5e5e5; padding: 5px 0; }
 
+#write{}
 </style>
 
 <body>
@@ -78,8 +90,32 @@ $(document).ready(function() {
 </tbody>
 </c:forEach>
 </table>
-</div>
-<input type="button" value="글쓰기" id="write">
 
+</div>
+
+<div id="boardcss_list_add_button_table">
+<div class="boardcss_list_add_button">
+<p class="add_button">등록</p>
+<ul></ul>
+</div>
+</div>
+
+
+<div id="pagingDiv">
+			<c:if test="${paging.prev}">
+				<a href="${paging.startPage - 1 }">이전</a>
+			</c:if>
+			<c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage }">
+				&nbsp;<a href="${num }">${num }</a>&nbsp;
+			</c:forEach>
+			<c:if test="${paging.next}">
+				<a id="next" href="${paging.endPage + 1 }">다음</a>
+			</c:if>
+	</div>
+	
+	<form id="pagingFrm" name="pagingForm" action="boardlist" method="get">
+		<input type="hidden" id="pageNum" name="pageNum" value="${paging.cri.pageNum }">
+		<input type="hidden" id="amount" name="amount" value="${paging.cri.amount }">
+	</form>
 </body>
 </html>

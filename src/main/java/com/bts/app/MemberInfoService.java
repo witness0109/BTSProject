@@ -59,6 +59,7 @@ public class MemberInfoService implements MemberService {
 			}
 
 			session.setAttribute("loginID", email); // 技记 积己
+			session.setAttribute("name", name);
 		}
 	}
 
@@ -81,6 +82,12 @@ public class MemberInfoService implements MemberService {
 	public void logout(HttpSession session) {
 		session.invalidate();
 		
+	}
+
+	
+	@Override
+	public void updatemember(MemberVO vo) {
+		dao.updatemember(vo);
 	}
 
 

@@ -32,6 +32,9 @@ public interface MemberService {
 
 	
 	public void logout(HttpSession session);
+	
+	
+	public void updatemember(MemberVO vo);
 
 
 	

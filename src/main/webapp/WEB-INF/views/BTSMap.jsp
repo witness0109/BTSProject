@@ -127,7 +127,6 @@
 </head>
 <body>
 
-
 	<!-- main content here -->
 	<div class="divcontainer">
         <div id="leftside" class="cd-main-content"><div><button class="findbtn" id="findpath">길찾기</button>

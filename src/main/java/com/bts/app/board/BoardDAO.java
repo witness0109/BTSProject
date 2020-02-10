@@ -38,5 +38,14 @@ public class BoardDAO {
 		return session.selectOne("board.namecheck", vo);
 	}
 	
+	public List<BoardVO> getBoardList(PagingCriteria paging){
+		return session.selectList("board.getBoardList", paging); 
+	}
+	
+	public int totalCnt() {
+		return session.selectOne("board.getTotalCnt");
+	}
+
 	
 }
+

@@ -83,6 +83,8 @@ function totalAJAX(){
 	
 	
 }
+
+
 </script>
 </head>
 <body>
