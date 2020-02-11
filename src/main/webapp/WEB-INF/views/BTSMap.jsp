@@ -121,7 +121,10 @@
     <link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
     <link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
 	<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
-
+	
+	<script type="text/javascript">
+	var id = '<%=session.getAttribute("id") %>';
+	</script>
   	
 	<title>BTS</title>
 </head>
@@ -141,7 +144,7 @@
             <div id="buttons"><br><br>
             
             <div id="weather"> </div>
-             로그인 아이디<%=session.getAttribute("id") %>
+             
 
             <input type="button" id="mypagebtn" value="MyPage">
              <input type="button" id="logoutbtn" value="로그아웃">
@@ -190,6 +193,7 @@ $(document).ready(function(){
 
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+<script type="text/javascript" src="./resources/whole_control.js"></script>
  
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>
