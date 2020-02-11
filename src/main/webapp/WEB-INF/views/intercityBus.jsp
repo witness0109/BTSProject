@@ -137,9 +137,10 @@ function searchIntercityBusinformationAJAX(start, end) {
 							
 							str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
 							str += "</div>";
-						}
+							document.getElementById("resultDiv").innerHTML = str;
 						
-						document.getElementById("resultDiv").innerHTML = str;
+						
+						
 						
 						
 						
@@ -162,8 +163,11 @@ function searchIntercityBusinformationAJAX(start, end) {
 					}
 					
 					document.getElementById("resultDiv").innerHTML = str;
-					
-						
+				}
+			
+				
+				
+				
 					}else{
 						str += "<div class='box'> <h1> 노선 정보</h1>";
 						str += "<h3> 시외 일반 버스 입니다.</h3>";
@@ -184,17 +188,10 @@ function searchIntercityBusinformationAJAX(start, end) {
 					document.getElementById("resultDiv").innerHTML = str;
 					
 					}
-						}
-							
-							
-						}
-						
-						
-	
-		
+				}
+								
 		}
-	} 
-	}	
+		
 </script>
 </head>
 <body>

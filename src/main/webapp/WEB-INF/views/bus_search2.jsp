@@ -22,11 +22,12 @@
 <script>
 var busID;
 var url;
+var str;
 function searchBusLaneAJAX() {
 	var busNo = document.getElementById('busNo').value;
-	var CID = document.getElementById('CID').value;
+	
 	var xhr = new XMLHttpRequest();
-	url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busNo="+busNo+"&CID="+CID;
+	url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busNo="+busNo;
 	xhr.open("GET", url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
@@ -36,7 +37,7 @@ function searchBusLaneAJAX() {
 			var resultArr = resultObj["result"]["lane"];
 			console.log(resultArr);
 
-			var str = "";
+			str = "";
 			for (var i = 0; i < resultArr.length; i++) {
 				
 				if(busNo==(resultArr[i].busNo)){
@@ -58,6 +59,7 @@ function searchBusLaneAJAX() {
 	
 }
 function searchdetailBusLaneAJAX(busIDID) {
+	str="";
 	var xhr = new XMLHttpRequest();
 	url = "https://api.odsay.com/v1/api/busLaneDetail?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&busID="+busIDID;
 	xhr.open("GET", url, true);
@@ -66,13 +68,13 @@ function searchdetailBusLaneAJAX(busIDID) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var resultObj = JSON.parse(xhr.responseText);		
 			var resultArr = resultObj["result"]["station"];
-			var str = "";
+			 str = "";
 			str += "<div class='box'>";
 			for (var i = 0; i < resultArr.length; i++) {				
 				str += "<p>" + resultArr[i].idx + ".	"+ resultArr[i].stationName + "</p>";
 			}
 			str += "</div>";
-			document.getElementById("detailDiv").innerHTML = str;
+			document.getElementById("resultDiv").innerHTML = str;
 		}
 	}
 }
@@ -90,7 +92,6 @@ function totalAJAX(){
 <body>
 <div>
 <input type="text" id="busNo">
-<input type="text" id ="CID">
 <button onclick="totalAJAX();">click</button>
 
 </div>
