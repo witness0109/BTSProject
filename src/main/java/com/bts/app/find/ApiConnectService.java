@@ -12,4 +12,10 @@ public interface ApiConnectService {
 
 	JSONObject getGGRealTimeBusInfo(String stdid);
 
+	JSONObject getGGBusDetail(String routeId);
+
+	JSONObject getBusanRealTimeBusInfo(String stdid);
+
+	JSONObject getETCRealTimeBusInfo(String cityCode, String stationID);
+
 }
