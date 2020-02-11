@@ -40,8 +40,11 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
+	@RequestMapping(value = "/BTSMap2", method = RequestMethod.GET)
 	public void of3() {
+	}
+	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
+	public void of98() {
 	}
 	@RequestMapping(value = "/BTS_MAIN", method = RequestMethod.GET)
 	public void of9() {
@@ -56,11 +59,18 @@ public class HomeController {
 	public void of12() {
 	}
 	@RequestMapping(value = "/train_search", method = RequestMethod.GET)
-	public void of13() {
+	public String of13() {
+		
+		return "Search/train_search";
 	}
 
 	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
 	public void of15() {
+
+	}
+	
+	@RequestMapping(value = "/MypageTest1", method = RequestMethod.GET)
+	public void of17() {
 
 	}
 	
