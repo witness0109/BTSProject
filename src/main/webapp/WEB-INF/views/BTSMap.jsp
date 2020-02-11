@@ -163,7 +163,7 @@ $(document).ready(function(){
 	
 	$("#mypagebtn").on('click', function(){
 		
-		location.href="./mypage";
+		location.href="./Mypage";
 	});
 	
 	$("#boardbtn").on('click', function(){

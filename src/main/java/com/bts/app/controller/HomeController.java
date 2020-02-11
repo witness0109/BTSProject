@@ -64,15 +64,15 @@ public class HomeController {
 
 	}
 	
-	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public ModelAndView of16(String id,HttpSession session) {
-		ModelAndView mav = new ModelAndView();
-		
-		session.setAttribute("id", id);
-		mav.setViewName("mypage");
-		
-		return mav;
-	}
+	/*
+	 * @RequestMapping(value = "/Mypage", method = RequestMethod.POST) public
+	 * ModelAndView of16(String id, HttpSession session) { ModelAndView mav = new
+	 * ModelAndView();
+	 * 
+	 * session.setAttribute("id", id); mav.setViewName("Mypage");
+	 * 
+	 * return mav; }
+	 */
 
 		
 	
