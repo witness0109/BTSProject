@@ -67,7 +67,7 @@ public class MemberController {
 			return "login";
 		} else { // 세션에 있을시 못넘어가게
 
-			return "redirect:BTSMap";
+			return "redirect:loginsuccess";
 		}
 
 	}
@@ -83,7 +83,7 @@ public class MemberController {
 		
 		if (result == 1) { // 로그인 성공
 			// main.jsp로 이동
-			mav.setViewName("redirect:BTSMap");
+			mav.setViewName("redirect:loginsuccess");
 			session.setAttribute("id", id);
 		} else { // 로그인 실패
 			mav.setViewName("login");
@@ -114,7 +114,9 @@ public class MemberController {
 	public void checkPwService() {
 
 	}
-
+	@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
+	public void lginsss() {
+	}
 	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
