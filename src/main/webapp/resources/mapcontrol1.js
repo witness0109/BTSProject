@@ -15,7 +15,7 @@
             };
         
             //////////////////////
-            map = new kakao.maps.Map(container, options); 
+            map = new kakao.maps.Map(container, options);  //지도생성
         
             //////////////////////
         
