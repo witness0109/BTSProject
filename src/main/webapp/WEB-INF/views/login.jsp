@@ -66,7 +66,7 @@
 			<div class="content">
 				<div class="signin-cont cont">
 					<form action="/BTS/login" method="post">
-						<input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id"> 
+						<input type="text" name="id" id="id1" class="inpt" required="required" placeholder="Your Id"> 
 							<label for="email">Your ID</label> 
 							<input type="password" name="pw" id="password" class="inpt" required="required"	placeholder="Your password">
 							<label for="password">Your password</label> 
@@ -90,7 +90,7 @@
 							<input type="submit" value="Log in" class="submit">
 							<!-- ajax 비밀번호 찾기 -->
 							<a href="/BTS/checkpw" class="more">Forgot your password?</a> <label
-								onclick="searchdetailBusLaneAJAX();" for="remember"></label>
+								 for="remember"></label>
 
 
 						</div>
@@ -100,19 +100,16 @@
 
 					<form action="/BTS/insertmember" method="post"
 						onsubmit="return confirm()">
-						<input type="text" name="id" id="id" class="inpt"
-							required="required" placeholder="Your Id"> <label
-							for="id">Your ID</label>
-						<div id="email_check"></div>
-						<input type="password" name="pw" id="password" class="inpt"
-							required="required" placeholder="Your Password"> <label
-							for="password">Your password</label> <input type="text"
-							name="name" id="name" class="inpt" required="required"
-							placeholder="Your Name"> <label for="name">Your
-							name</label> <input type="email" name="email" id="email" class="inpt"
-							required="required" placeholder="Your Email"> <label
-							for="email">Your email</label> <input type="text" name="phone"
-							id="phone" class="inpt" placeholder="Your PhoneNumber">
+						<input type="text" name="id" id="id" class="inpt" required="required" placeholder="Your Id"> 
+							<label for="id">Your ID</label>
+					<div id="email_check"></div>
+						<input type="password" name="pw" id="password" class="inpt"	required="required" placeholder="Your Password"> 
+							<label for="password">Your password</label> 
+						<input type="text" name="name" id="name" class="inpt" required="required" placeholder="Your Name"> 
+							<label for="name">Your name</label> 
+						<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your Email"> 
+							<label for="email">Your email</label> 
+						<input type="text" name="phone" id="phone" class="inpt" placeholder="Your PhoneNumber">
 						<!-- 					            <label for="phone">Your Phonenumber</label> -->
 
 						<div class="submit-wrap">
@@ -162,41 +159,29 @@
 
 		var submitbt = $('#submit_enroll');
 
-		$("#id")
-				.blur(
-						function(e) {
-							$
-									.ajax({
-										url : 'https://192.168.0.17/BTS/checkmember',
-										data : {
-											'id' : $(this).val()
-										},
-										type : 'post',
-										datatype : 'json',
-										success : function(data) {
-											if (data == '1') {
-												$('#email_check')
-														.html(
-																"<p style='color:red'>사용 불가능한 아이디 입니다</p>");
-												submitbt.attr('disabled', true);
-											} else {
-												$('#email_check')
-														.html(
-																"<p style='color:green'>사용 가능한 아이디 입니다</p>");
-												submitbt
-														.attr('disabled', false);
-											}
-										},
-										error : function(e) {
-											console.log(e.message)
+		$("#id").blur(function(e) {					
+			$.ajax({
+					url : 'https://192.168.0.17/BTS/checkmember',
+					data : {'id' : $(this).val()},
+					type : 'post',
+					datatype : 'json',
+					success : function(data) {
+						if (data == '1') {
+							$('#email_check').html("<p style='color:red'>사용 불가능한 아이디 입니다</p>");
+							submitbt.attr('disabled', true);
+						} else {
+							$('#email_check').html("<p style='color:green'>사용 가능한 아이디 입니다</p>");
+							submitbt.attr('disabled', false);
+						}
+					},
+					error : function(e) {
+						console.log(e.message)
 										}
 									})
 
 						});
 
-		function fpAJAX() {
 
-		}
 	</script>
 
 </body>

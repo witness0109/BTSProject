@@ -285,10 +285,8 @@
 						</li>
 						<li><a href="pages-sign-up.html">회원 정보 수정</a>
 						</li>
-					</ui>
+						</ui>
 				</li>
-				
-				
 			</ul>
 
 

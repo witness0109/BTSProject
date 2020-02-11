@@ -65,6 +65,7 @@
                 <tr>
                 	<td colspan="2" align="center">
                 	<input type="submit" width="60pt" value="수정" id="updatebtn">
+                	<input type="button" value="취소" onclick="location.href='./BTSMap'">
                 	</td>
                 </tr>	
         </table>
