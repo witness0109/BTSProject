@@ -16,11 +16,12 @@
                 level: 8 // 지도의 레벨(확대, 축소 정도)
             };
         
+
+            //////////////////////
+            map = new kakao.maps.Map(container, options);  //지도생성
+
             // ////////////////////
-            
-            
-            map = new kakao.maps.Map(container, options); 
-        
+ 
           // 지도 중심 좌표 변경시 얻어오기
             kakao.maps.event.addListener(map, 'dragend', function() {
 
