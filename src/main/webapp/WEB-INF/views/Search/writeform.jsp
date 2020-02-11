@@ -19,7 +19,7 @@ $(document).ready(function() {
 <form action="./boardwrite" method="post">
 제목<input type="text" value="제목" name="title"><br>
 내용입력<textarea placeholder="내용입력" rows="5" cols="40" name="contents"></textarea><br>
-작성자<input type="text" value="작성자" name="writer"><br>
+작성자<input type="text" value="<%=session.getAttribute("id") %>" name="writer"><br>
 암호<input type="password" value="암호" name="pw"><br>
 <input type="submit" value="작성완료" >
 </form>

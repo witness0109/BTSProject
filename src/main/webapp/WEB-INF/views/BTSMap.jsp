@@ -127,6 +127,8 @@
 </head>
 <body>
 
+
+
 	<!-- main content here -->
 	<div class="divcontainer">
         <div id="leftside" class="cd-main-content"><div><button class="findbtn" id="findpath">길찾기</button>
@@ -136,8 +138,10 @@
             <div id="findresult">
 
             </div>
-            <div id="buttons">
-          	<%=session.getAttribute("id") %>
+            <div id="buttons"><br><br>
+            
+            <div id="weather"> </div>
+             로그인 아이디<%=session.getAttribute("id") %>
 
             <input type="button" id="mypagebtn" value="MyPage">
              <input type="button" id="logoutbtn" value="로그아웃">
@@ -170,6 +174,12 @@ $(document).ready(function(){
 		
 		location.href="./boardlist";
 	});
+	
+
+	
+	
+	
+	
 });
 
 
