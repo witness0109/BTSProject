@@ -15,6 +15,8 @@
 	overflow-y: scroll;
 }
 </style>
+</head>
+<body>
 <script>
 	//전역변수
 	var url;
@@ -207,8 +209,7 @@ function searchExpressBusinformationAJAX(start, end) {
 	
 		
 </script>
-</head>
-<body>
+
 	<div>
 		<input type="text" id="startCityTerminal">
 		<button onclick="searchExpressBusTerminalAJAX();">click</button>

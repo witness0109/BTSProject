@@ -251,6 +251,9 @@ function searchTraininformationAJAX(start, end) {
 
 			document.getElementById("fareDiv").innerHTML = fare;
 
+			document.getElementById("resultDiv3").classList.remove('box')
+			document.getElementById("resultDiv4").classList.remove('box')
+			document.getElementById("resultDiv5").classList.remove('box')
 
 			document.getElementById("resultDiv3").innerHTML = str2;
 			if (cnt1 != 0) {

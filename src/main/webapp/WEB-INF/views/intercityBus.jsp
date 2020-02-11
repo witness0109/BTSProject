@@ -15,6 +15,8 @@
 	overflow-y: scroll;
 }
 </style>
+</head>
+<body>
 <script>
 	//전역변수
 	var url;
@@ -169,6 +171,9 @@ function searchIntercityBusinformationAJAX(start, end) {
 				
 				
 					}else{
+						for(var i =0;i<inf.length;i++){
+							
+							infd[i] = resultObj["result"]["station"][i];
 						str += "<div class='box'> <h1> 노선 정보</h1>";
 						str += "<h3> 시외 일반 버스 입니다.</h3>";
 						str += "<p> 출발 터미널:	" +infd[i].startTerminal+ "</p>";
@@ -181,7 +186,7 @@ function searchIntercityBusinformationAJAX(start, end) {
 								"<p> 첫차:	" +infd[i].normalFare+"원"+ "</p>";
 							}
 						
-						str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
+						str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";}
 						str += "</div>";
 					}
 					
@@ -193,8 +198,7 @@ function searchIntercityBusinformationAJAX(start, end) {
 		}
 		
 </script>
-</head>
-<body>
+
 	<div>
 		<input type="text" id="startCityTerminal">
 		<button onclick="searchIntercityBusTerminalAJAX();">click</button>

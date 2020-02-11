@@ -250,18 +250,18 @@
       <li class="sub-menu">
         <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>기차 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>
-          <li><a  id="train_tm">기차 시간표 조회</a>
+          <li><a  id="train_TM">기차 시간표 조회</a>
           </li>
         </ul>
       </li>
       <li class="sub-menu">
         <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>버스 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>
-          <li><a href="map-google.html">시내 버스 노선 조회</a>
+          <li><a id = "busTM">시내 버스 노선 조회</a>
           </li>
-          <li><a href="map-vector.html">시외 버스 시간표 조회</a>
+          <li><a id = "intercityBusTM">시외 버스 시간표 조회</a>
           </li>
-          <li><a href="map-vector.html">고속 버스 시간표 조회</a>
+          <li><a id = "expressBusTM">고속 버스 시간표 조회</a>
           </li>
         </ul>
       </li>

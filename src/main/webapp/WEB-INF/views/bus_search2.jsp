@@ -19,6 +19,8 @@
 	overflow-y: scroll;
 }
 </style>
+</head>
+<body>
 <script>
 var busID;
 var url;
@@ -88,8 +90,7 @@ function totalAJAX(){
 
 
 </script>
-</head>
-<body>
+
 <div>
 <input type="text" id="busNo">
 <button onclick="totalAJAX();">click</button>
