@@ -2,48 +2,54 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  <mapper namespace="mem">
-  
-  
-  <insert id="memberjoin" parameterType="mem">
-  insert into member (id, pw, name, email, phone)
-  values (#{id}, #{pw}, #{name}, #{email}, #{phone})
-  </insert>
-  
-    <insert id="dbmemberjoin" parameterType="mem">
-  insert into member (id, pw, name, email, phone)
-  values (#{id}, #{pw}, #{name}, #{email}, #{phone})
-  </insert>
-  
-  <select id="idcheck" parameterType="string" resultType="int">
-  	select count(*) from member where id=#{id}
-  </select>
-  
-  <select id="pwcheck" parameterType="java.util.ArrayList" resultType="string">
-   select pw from member where id=#{array[0]} and name=#{array[1]} 
-  </select>
-  
-  <select id="mailcheck" parameterType="java.util.ArrayList" resultType="string">
-   select email from member where id=#{array[0]} and name=#{array[1]} 
-  </select>
-  
- <select id="login" resultType="int" parameterType="java.util.ArrayList">
-select count(*) from member
-where id = #{array[0]} and pw = #{array[1]}
- </select>
- 
-<update id="updatemember">
-update member
-set 
-pw = #{pw},
-name = #{name},
-email = #{email},
-phone = #{phone}
-where id = #{id}
+<mapper namespace="mem">
 
-</update>
- 
-  
-  </mapper>
+
+	<insert id="memberjoin" parameterType="mem">
+		insert into member (id, pw, name, email, phone)
+		values (#{id}, #{pw}, #{name}, #{email}, #{phone})
+	</insert>
+
+	<insert id="dbmemberjoin" parameterType="mem">
+		insert into member (id, pw, name, email, phone)
+		values (#{id}, #{pw}, #{name}, #{email}, #{phone})
+	</insert>
+
+	<select id="idcheck" parameterType="string" resultType="int">
+		select count(*) from member where id=#{id}
+	</select>
+
+	<select id="pwcheck" parameterType="java.util.ArrayList"
+		resultType="string">
+		select pw from member where id=#{array[0]} and name=#{array[1]}
+	</select>
+
+	<select id="mailcheck" parameterType="java.util.ArrayList"
+		resultType="string">
+		select email from member where id=#{array[0]} and name=#{array[1]}
+	</select>
+
+	<select id="login" resultType="int"
+		parameterType="java.util.ArrayList">
+		select count(*) from member
+		where id = #{array[0]} and pw = #{array[1]}
+	</select>
+
+	<update id="updatemember">
+		update member 
+		set
+		pw = #{pw},
+		name = #{name},
+		email = #{email},
+		phone = #{phone}
+		where id = #{id}
+	</update>
+
+	<delete id="kickmember" parameterType="string">
+		delete member where id=#{id}
+	</delete>
+
+
+</mapper>
 
 

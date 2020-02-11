@@ -50,6 +50,7 @@ $(document).ready(function() {
 
 </style>
 <body>
+
 <div class="write">
 <form action="./boardwrite" method="post" name="write" onsubmit="return checkValue()">
 <table class="write_table">
@@ -98,7 +99,6 @@ $(document).ready(function() {
 	<input type="submit" id="edit" value="글작성">
 	<input type="button" id="cancel" value="취소" onclick="location.href='./BTSMap'">
 	</div>
-
 
 </form>
 </div>

@@ -216,11 +216,19 @@
     <link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
     <link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
 	<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
-
+	
+	<script type="text/javascript">
+	var id = '<%=session.getAttribute("id") %>';
+	</script>
   	
 	<title>BTS</title>
 </head>
 <body>
+
+
+
+
+	<!-- main content here -->
 
 <aside class="sidebar">
   <div id="leftside-navigation" class="nano">
@@ -276,6 +284,7 @@
 
 <div class="divcontainer">
   	
+
         <div id="leftside" class="cd-main-content"><div><button class="findbtn" id="findpath">길찾기</button>
             <button class="findbtn" id="findpath2">길찾기2</button>
             <select id="searchOption" class= "content"><option>검색먼저</option></select><button id="applyopt" class= "content">조건 적용</button>
@@ -284,7 +293,20 @@
             <!-- class=content 수정해야돼  css 바꿔야돼 -->
 
             </div>
-     
+
+            <div id="buttons"><br><br>
+            
+            <div id="weather"> </div>
+             
+
+            <input type="button" id="mypagebtn" value="MyPage">
+             <input type="button" id="logoutbtn" value="로그아웃">
+            <input type="button" id="boardbtn" value="고객의소리">
+             </div>
+        </div>
+        <div id="map11" class="cd-main-content">
+
+
         </div>
        
     </div>
@@ -318,6 +340,7 @@ $(document).ready(function(){
 		location.href="./boardlist";
 	});
 	
+
 	
 });
 
@@ -340,6 +363,7 @@ $("#leftside-navigation .sub-menu > a").click(function(e) {
 
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+<script type="text/javascript" src="./resources/whole_control.js"></script>
  
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>
