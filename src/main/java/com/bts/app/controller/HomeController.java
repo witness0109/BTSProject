@@ -40,8 +40,11 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
+	@RequestMapping(value = "/BTSMap2", method = RequestMethod.GET)
 	public void of3() {
+	}
+	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
+	public void of98() {
 	}
 	@RequestMapping(value = "/BTS_MAIN", method = RequestMethod.GET)
 	public void of9() {
@@ -56,7 +59,9 @@ public class HomeController {
 	public void of12() {
 	}
 	@RequestMapping(value = "/train_search", method = RequestMethod.GET)
-	public void of13() {
+	public String of13() {
+		
+		return "Search/train_search";
 	}
 
 	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
@@ -64,15 +69,22 @@ public class HomeController {
 
 	}
 	
-	/*
-	 * @RequestMapping(value = "/Mypage", method = RequestMethod.POST) public
-	 * ModelAndView of16(String id, HttpSession session) { ModelAndView mav = new
-	 * ModelAndView();
-	 * 
-	 * session.setAttribute("id", id); mav.setViewName("Mypage");
-	 * 
-	 * return mav; }
-	 */
+
+	@RequestMapping(value = "/MypageTest1", method = RequestMethod.GET)
+	public void of17() {
+
+	}
+	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public ModelAndView of16(String id,HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		
+		session.setAttribute("id", id);
+		mav.setViewName("mypage");
+		
+		return mav;
+	}
+
 
 		
 	

@@ -1,4 +1,4 @@
-package com.bts.app.board;
+package com.bts.app.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,6 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.bts.app.board.BoardService;
+import com.bts.app.board.BoardVO;
+import com.bts.app.board.PageMaker;
+import com.bts.app.board.PagingCriteria;
 
 @Controller
 public class BoardController {
