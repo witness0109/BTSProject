@@ -69,6 +69,7 @@ public class HomeController {
 
 	}
 	
+
 	@RequestMapping(value = "/MypageTest1", method = RequestMethod.GET)
 	public void of17() {
 
@@ -83,6 +84,7 @@ public class HomeController {
 		
 		return mav;
 	}
+
 
 		
 	

@@ -60,6 +60,9 @@ $(document).ready(function() {
 </style>
 
 <body>
+<div>
+<input type="button" value="메인화면" onclick="location.href='./BTSMap'">
+</div>
 
 
 <div class="boardcss_list_table">

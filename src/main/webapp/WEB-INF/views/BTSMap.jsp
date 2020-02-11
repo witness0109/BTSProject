@@ -328,6 +328,13 @@ $(document).ready(function(){
 		location.href="./logout";
 	});
 	
+
+	$("#mypagebtn").on('click', function(){
+		
+		location.href="./Mypage";
+	});
+
+
 	
 	$("#boardbtn").on('click', function(){	
 		location.href="./boardlist";
