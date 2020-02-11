@@ -181,8 +181,9 @@ public class MemberController {
 		
 	
 		@RequestMapping(value="/Mypage", method=RequestMethod.POST)
-			public String updatemember(MemberVO vo, HttpSession session) {
+			public String updatemember(String id, MemberVO vo, HttpSession session) {
 				service.updatemember(vo);
+				session.setAttribute("id", id);
 				
 				return "redirect:/";
 			}

@@ -27,7 +27,7 @@ public class FindController {
 			@RequestParam double ey) {
 		String option = "&lang=0&SX=" + sx + "&SY=" + sy + "&EX=" + ex + "&EY=" + ey;
 		JSONObject map = fservice.findpath(sx, sy, ex, ey);
-		return apiService.GetApiResponse("searchPubTransPathR", option);
+		return map.toString();
 	}
 
 	@RequestMapping(value = "/findapi/findpath", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")

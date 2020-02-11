@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.core.io.ClassPathResource;
 
 public class JSONLoader {
@@ -24,13 +23,11 @@ public class JSONLoader {
 			for (String a : tmp) {
 				sb.append(a);
 			}
-			obj = parser.parse(sb.toString());
-			return (JSONObject) obj;
+			// obj = parser.parse(sb.toString());
+			return new JSONObject(sb.toString());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 

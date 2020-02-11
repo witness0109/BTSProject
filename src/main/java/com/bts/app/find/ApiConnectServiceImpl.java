@@ -22,10 +22,9 @@ import org.springframework.stereotype.Service;
 public class ApiConnectServiceImpl implements ApiConnectService {
 	@Override
 	public JSONObject GetOdsayApiResponseMap(String apiAddress, String option) {
-		StringBuffer res = new StringBuffer();
 		try {
 
-			getOdsayConnection(apiAddress, option, res);
+			StringBuffer res = getOdsayConnection(apiAddress, option);
 			JSONObject jsonObj = new JSONObject(res.toString());
 
 			return jsonObj;
@@ -41,7 +40,7 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		StringBuffer res = new StringBuffer();
 		try {
 
-			getOdsayConnection(apiAddress, option, res);
+			res = getOdsayConnection(apiAddress, option);
 			// JSONObject jsonObj = new JSONObject(new String(res.toString().getBytes(),
 			// "utf-8"));
 
@@ -53,14 +52,14 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		return res.toString();
 	}
 
-	private void getOdsayConnection(String apiAddress, String option, StringBuffer res)
+	private StringBuffer getOdsayConnection(String apiAddress, String option)
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
 		String apiKey = "bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";// api key;
 		String apiURL = "https://api.odsay.com/v1/api/" + apiAddress + "?&lang=0&apiKey=" + apiKey + option;
-		connectAPI(res, apiURL);
+		return connectAPI(apiURL);
 	}
 
-	private void connectAPI(StringBuffer res, String apiURL)
+	private StringBuffer connectAPI(String apiURL)
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
 		System.out.println(apiURL);
 		URL url = new URL(apiURL);
@@ -76,12 +75,13 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		}
 
 		String inputLine;
-
+		StringBuffer sb = new StringBuffer();
 		while ((inputLine = br.readLine()) != null) {
 			System.out.println(inputLine);
-			res.append(inputLine);
+			sb.append(inputLine);
 		}
 		br.close();
+		return sb;
 	}
 
 	private Map<String, Object> ConvertJSONToMap(JSONObject jsonObj) {
@@ -130,10 +130,9 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 
 	@Override
 	public JSONObject getSeoulRealTimeBusInfo(String stdid) {
-		StringBuffer res = new StringBuffer();
 		try {
 			String url = "http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D&arsId=";
-			getAPIResult(url, stdid, res);
+			StringBuffer res = getAPIResult(url, stdid);
 
 			JSONObject jsonObj = XML.toJSONObject(res.toString());
 
@@ -145,18 +144,66 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		return new JSONObject();
 	}
 
-	private void getAPIResult(String apiurl, String stdid, StringBuffer res)
+	private StringBuffer getAPIResult(String apiurl, String stdid)
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
 		String apiURL = apiurl + stdid;
-		connectAPI(res, apiURL);
+		return connectAPI(apiURL);
 	}
 
 	@Override
 	public JSONObject getGGRealTimeBusInfo(String stdid) { // Gyenggi
-		StringBuffer res = new StringBuffer();
 		try {
 			String url = "http://openapi.gbis.go.kr/ws/rest/busarrivalservice/station?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D&stationId=";
-			getAPIResult(url, stdid, res);
+			StringBuffer res = getAPIResult(url, stdid);
+
+			JSONObject jsonObj = XML.toJSONObject(res.toString());
+
+			return jsonObj;
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return new JSONObject();
+	}
+
+	@Override
+	public JSONObject getGGBusDetail(String routeId) { // Gyenggi
+		try {
+			String url = "http://openapi.gbis.go.kr/ws/rest/busrouteservice/info?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D&routeId=";
+			StringBuffer res = getAPIResult(url, routeId);
+
+			JSONObject jsonObj = XML.toJSONObject(res.toString());
+
+			return jsonObj;
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return new JSONObject();
+	}
+
+	@Override
+	public JSONObject getBusanRealTimeBusInfo(String stdid) { // Gyenggi
+		try {
+			String url = "http://61.43.246.153/openapi-data/service/busanBIMS2/stopArr?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D&bstopid=";
+			StringBuffer res = getAPIResult(url, stdid);
+
+			JSONObject jsonObj = XML.toJSONObject(res.toString());
+
+			return jsonObj;
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return new JSONObject();
+	}
+
+	@Override
+	public JSONObject getETCRealTimeBusInfo(String cityCode, String stationID) {
+		try {
+			String url = "http://openapi.tago.go.kr/openapi/service/ArvlInfoInqireService/getSttnAcctoArvlPrearngeInfoList?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D"
+					+ "&cityCode=" + cityCode + "&nodeId=";
+			StringBuffer res = getAPIResult(url, stationID);
 
 			JSONObject jsonObj = XML.toJSONObject(res.toString());
 
