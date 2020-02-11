@@ -12,10 +12,10 @@ function searchTrainStationAJAX() {
 
 	xhr = new XMLHttpRequest();
 	url = "https://api.odsay.com/v1/api/trainTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
-			+ cityname;
+		+ cityname;
 	xhr.open("GET", url, true);
 	xhr.send();
-	xhr.onreadystatechange = function() {
+	xhr.onreadystatechange = function () {
 
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var resultObj = JSON.parse(xhr.responseText);
@@ -28,9 +28,17 @@ function searchTrainStationAJAX() {
 			for (var i = 0; i < start.length; i++) {
 				_startid = start[i].stationID;
 				startcity = start[i].stationName;
-				str += "<p><label onclick ='trainDestinationAJAX(\""
-						+ startcity + "\")'>" + startcity + "</label></p>";
+				if(i!=0 && startcity == '용산'){
+					startcity = 'ITX 용산'
+					str += "<p><label onclick ='trainDestinationAJAX(\""
+					+ start[i].stationName + "\")'>" + startcity + "</label></p>";
+				}else{
+					str += "<p><label onclick ='trainDestinationAJAX(\""
+					+ startcity + "\")'>" + startcity + "</label></p>";
+				}
+				
 				// output arrivestations
+				
 
 			}
 
@@ -48,15 +56,26 @@ function trainDestinationAJAX(startStation) {
 
 	xhr = new XMLHttpRequest();
 	url = "https://api.odsay.com/v1/api/trainTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
-			+ cityname;
+		+ cityname;
 	xhr.open("GET", url, true);
 	xhr.send();
-	xhr.onreadystatechange = function() {
+	xhr.onreadystatechange = function () {
 
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var resultObj = JSON.parse(xhr.responseText);
 			var start = resultObj["result"];
-			var end = resultObj["result"]['0']["arrivalTerminals"];
+			var index = 0;
+			for (let i = 0; i < start.length; i++) {
+				const result = start[i];
+
+				if(result.stationID == _startid){
+					index = i;
+					break;
+				}
+				
+			}
+
+			var end = resultObj["result"][index]["arrivalTerminals"];
 			var str = "";
 			var endid;
 
@@ -65,8 +84,8 @@ function trainDestinationAJAX(startStation) {
 			for (var i = 0; i < end.length; i++) {
 				endid = end[i].stationID;
 				str += "<pre><label onclick = 'searchTraininformationAJAX("
-						+ _startid + "," + endid + ")'도착 : >"
-						+ end[i].stationName + "</label></pre>";
+					+ _startid + "," + endid + ")'도착 : >"
+					+ end[i].stationName + "</label></pre>";
 				// <label onclick
 				// ='trainDestinationAJAX(\""+startcity+"\")'>"+startcity+"</label></p>";
 
@@ -84,10 +103,10 @@ function searchTraininformationAJAX(start, end) {
 
 	xhr = new XMLHttpRequest();
 	url = "https://api.odsay.com/v1/api/trainServiceTime?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&startStationID="
-			+ start + "&endStationID=" + end;
+		+ start + "&endStationID=" + end;
 	xhr.open("GET", url, true);
 	xhr.send();
-	xhr.onreadystatechange = function() {
+	xhr.onreadystatechange = function () {
 
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var resultObj = JSON.parse(xhr.responseText);
@@ -102,7 +121,7 @@ function searchTraininformationAJAX(start, end) {
 
 			var str = "", str2 = "", str3 = "", str4 = "", fare = "";
 
-			str += "<div class='box'>";
+			str += "<div class='box expbus'>";
 			str += "<p>출발역 : " + station_inf.startStationName + "</p>";
 			str += "<p>도착역 : " + station_inf.endStationName + "</p>";
 			str += "<p>검색결과개수 : " + station_inf.count + "</p>";
@@ -110,18 +129,18 @@ function searchTraininformationAJAX(start, end) {
 
 			for (var i = 0; i < train_inf.length; i++) {
 				if ((train_inf[i].trainClass.includes("KTX")) && cnt1 == 0) {
-					str2 += "<table>";
+					str2 += "<table class='traintable'>";
 					str2 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt1++;
-				} 
-				
-				if (train_inf[i].trainClass.includes("ITX-새마을")&&cnt2==0) {
-					str3 += "<table>";
+				}
+
+				if (train_inf[i].trainClass.includes("ITX") && cnt2 == 0) {
+					str3 += "<table class='traintable'>";
 					str3 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt2++;
 				}
-				if (train_inf[i].trainClass.includes("누리로")||train_inf[i].trainClass.includes("무궁화")&&cnt3==0) {
-					str4 += "<table>";
+				if (train_inf[i].trainClass.includes("누리로") || train_inf[i].trainClass.includes("무궁화") && cnt3 == 0) {
+					str4 += "<table class='traintable'>";
 					str4 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt3++;
 				}
@@ -130,19 +149,19 @@ function searchTraininformationAJAX(start, end) {
 
 			for (var i = 0; i < train_inf.length; i++) {
 
-				if (train_inf[i].trainClass == "KTX") {
+				if (train_inf[i].trainClass.includes("KTX")) {
 
 					str2 += "<tr><td>" + train_inf[i].trainClass + "</td>"
-							+ "<td> " + train_inf[i].trainNo + "</td>";
+						+ "<td> " + train_inf[i].trainNo + "</td>";
 					str2 += "<td> " + train_inf[i].departureTime + "</td>";
 					str2 += "<td> " + train_inf[i].arrivalTime + "</td>";
 					str2 += "<td> " + train_inf[i].wasteTime + "</td>";
-					str2 += "<td> " + train_inf[i].railName + "</td></tr>";
+					str2 += "<td> " + train_inf[i].railName + "</td></tr>"; // KTX 안뜨게 변경
 
-				} else if (train_inf[i].trainClass == "ITX-새마을") {
+				} else if (train_inf[i].trainClass.includes("ITX")) {
 
 					str3 += "<tr><td>" + train_inf[i].trainClass + "</td>"
-							+ "<td> " + train_inf[i].trainNo + "</td>";
+						+ "<td> " + train_inf[i].trainNo + "</td>";
 					str3 += "<td> " + train_inf[i].departureTime + "</td>";
 					str3 += "<td> " + train_inf[i].arrivalTime + "</td>";
 					str3 += "<td> " + train_inf[i].wasteTime + "</td>";
@@ -151,7 +170,7 @@ function searchTraininformationAJAX(start, end) {
 				} else {
 
 					str4 += "<tr><td>" + train_inf[i].trainClass + "</td>"
-							+ "<td> " + train_inf[i].trainNo + "</td>";
+						+ "<td> " + train_inf[i].trainNo + "</td>";
 					str4 += "<td> " + train_inf[i].departureTime + "</td>";
 					str4 += "<td> " + train_inf[i].arrivalTime + "</td>";
 					str4 += "<td> " + train_inf[i].wasteTime + "</td>";
@@ -171,9 +190,9 @@ function searchTraininformationAJAX(start, end) {
 			for (var i = 0; i < train_inf.length; i++) {
 				fare_inf = resultObj["result"]["station"][i]["generalFare"];
 
-				if (fare_inf.weekday == "undefined"
-						|| fare_inf.weekend == "undefined"
-						|| fare_inf.holiday == "undefined") {
+				if (fare_inf.weekday == undefined
+					|| fare_inf.weekend == undefined
+					|| fare_inf.holiday == undefined) {
 
 					fare_inf.weekday = " 없음 ";
 					fare_inf.weekend = " 없음 ";
@@ -181,22 +200,22 @@ function searchTraininformationAJAX(start, end) {
 				}
 
 				// 열차별로 뽑기 (ktx, 새마을, 무궁화) //undefined 나올시.. 그리고 누리로,통근열차 처리
-				if (train_inf[i].trainClass == ("KTX")) {
+				if (train_inf[i].trainClass.includes("KTX")) {
 					ktx_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
-							+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
-							+ "</td></tr>";
+						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
+						+ "</td></tr>";
 
-				} else if (train_inf[i].trainClass == ("ITX-새마을")) {
+				} else if (train_inf[i].trainClass.includes("ITX")) {
 
 					sae_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
-							+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
-							+ "</td></tr>";
+						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
+						+ "</td></tr>";
 
-				} else if (train_inf[i].trainClass == ("무궁화")
-						|| train_inf[i].trainClass == ("누리로")) {
+				} else if (train_inf[i].trainClass.includes("무궁화")
+					|| train_inf[i].trainClass.includes("누리로")) {
 					mu_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
-							+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
-							+ "</td></tr>";
+						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
+						+ "</td></tr>";
 
 				}
 
@@ -206,21 +225,21 @@ function searchTraininformationAJAX(start, end) {
 			console.log(sae_fare);
 			console.log(mu_fare);
 
-			fare += "<div class='fareTb'>";
+			fare += "<div class='fareTb box train'>";
 			fare += "<h3>기차 요금표</h3>";
-			fare += "<table>"
+			fare += "<table class='traintable'>"
 			fare += "<tr><th colspan='3'>KTX</th></tr>";
 			fare += "<tr><td>평일</td><td>주말</td><td>공휴일</td></tr>";
 			fare += ktx_fare;
 			fare += "</table>";
 
-			fare += "<table>"
-			fare += "<tr><th colspan='3'>ITX-새마을</th></tr>";
+			fare += "<table class='traintable'>"
+			fare += "<tr><th colspan='3'>ITX</th></tr>";
 			fare += "<tr><td>평일</td><td>주말</td><td>공휴일</td></tr>";
 			fare += sae_fare;
 			fare += "</table>";
 
-			fare += "<table>"
+			fare += "<table class='traintable'>"
 			fare += "<tr><th colspan='3'>무궁화</th></tr>";
 			fare += "<tr><td>평일</td><td>주말</td><td>공휴일</td></tr>";
 			fare += mu_fare;
@@ -232,12 +251,19 @@ function searchTraininformationAJAX(start, end) {
 
 			document.getElementById("fareDiv").innerHTML = fare;
 
+
 			document.getElementById("resultDiv3").innerHTML = str2;
-
+			if (cnt1 != 0) {
+				document.getElementById("resultDiv3").classList.add('box')
+			}
 			document.getElementById("resultDiv4").innerHTML = str3;
-
+			if (cnt2 != 0) {
+				document.getElementById("resultDiv4").classList.add('box')
+			}
 			document.getElementById("resultDiv5").innerHTML = str4;
-
+			if (cnt3 != 0) {
+				document.getElementById("resultDiv5").classList.add('box')
+			}
 		}
 
 	}

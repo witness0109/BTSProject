@@ -55,6 +55,6 @@
 
 		<!-- 결과창 -->
 	</div>
-
+<script src="./resources/searchtrain.js"></script>
 </body>
 </html>

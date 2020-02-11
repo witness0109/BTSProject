@@ -79,19 +79,19 @@
             height: 800px; */
         }
 
-        /* .divcontainer #map11 {
+         .divcontainer #map11 {
             float: left;
             width: 70%;
             height: 100%;
         }
- */
+
         .divcontainer #leftside {
            
             width: 30%;
             float: left;
              background-color : #23313f;
-            /*  overflow: scroll;
-             height: 100%;
+            overflow: scroll;
+            /*   height: 100%;
              */
            
         }
@@ -132,6 +132,16 @@
         height: 400px;
         overflow: scroll;
         
+        }
+        
+        table.traintable{
+        	text-align : center;
+        	border : 1px solid white;
+        	width: 100%
+        }
+        table.traintable td{
+        	width : 33.3%;
+        	border : 1px solid white;
         }
         
         .sidebar-toggle {
@@ -240,7 +250,7 @@
       <li class="sub-menu">
         <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>기차 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>
-          <li><a href="charts-chartjs.html">기차 시간표 조회</a>
+          <li><a  id="train_tm">기차 시간표 조회</a>
           </li>
         </ul>
       </li>
@@ -325,7 +335,7 @@ $("#leftside-navigation .sub-menu > a").click(function(e) {
   $("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
   e.stopPropagation()
   
-  $(".content").removeclass();
+
 
  
 })
@@ -336,5 +346,7 @@ $("#leftside-navigation .sub-menu > a").click(function(e) {
  
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
 <script src="./resources/pathcontrol1.js"></script>
+
+<script src="./resources/menumenu.js"></script>
 </body>
 </html>
