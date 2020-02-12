@@ -226,7 +226,7 @@
 			padding-bottom: 13px;
 			color: #aeb2b7;
 		}
-	</style>
+
 
 
         .divcontainer #leftside .box.train {
@@ -462,7 +462,7 @@ $("#leftside-navigation .sub-menu > a").click(function(e) {
 
 		});
 
-
+</script>
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
 <script src="./resources/main.js"></script> <!-- Resource jQuery -->
