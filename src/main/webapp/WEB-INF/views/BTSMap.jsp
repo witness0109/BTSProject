@@ -335,6 +335,7 @@
 			padding-bottom: 13px;
 			color: #aeb2b7;
 		}
+
 		
 		#etcinfo {
 		
@@ -343,7 +344,10 @@
 	</style>
 
 
+
+
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="./resources/reset.css">
 	<!-- CSS reset -->
 	<link rel="stylesheet" href="./resources/style.css">
@@ -357,10 +361,17 @@
 		var id = '<%=session.getAttribute("id")%>';
 	</script>
 
+	<link rel="stylesheet" href="./resources/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
+
+
+
 	<title>BTS</title>
 </head>
 
 <body>
+
 
 
 	<aside class="sidebar" >
@@ -434,8 +445,87 @@
 		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+<aside class="sidebar">
+  <div id="leftside-navigation" class="nano">
+    <ul class="nano-content">
+      <li>
+        <a><i class="fa fa-dashboard"></i><span>BTS</span></a>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>길 찾기</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 
-	<script>
+      </li>
+   
+
+      <li class="sub-menu">
+        <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>기차 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+        <ul>
+          <li><a  id="train_TM">기차 시간표 조회</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>버스 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+        <ul>
+          <li><a id = "busTM">시내 버스 노선 조회</a>
+          </li>
+          <li><a id = "intercityBusTM">시외 버스 시간표 조회</a>
+          </li>
+          <li><a id = "expressBusTM">고속 버스 시간표 조회</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>MyPage</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+        <ul>
+          <li><a href="pages-blank.html">즐겨 찾기 목록</a>
+          </li>
+          <li><a href="pages-login.html">경로 검색 목록</a>
+          </li>
+          <li><a href="pages-sign-up.html">회원 정보 수정</a>
+          </li>
+  </ul>
+    </ul>
+  </div>
+
+     <input type="button" id="logoutbtn" value="로그아웃">
+     <input type="button" id="boardbtn" value="고객의소리">
+</aside>
+
+<div class="divcontainer">
+  	
+        <div id="leftside" class="cd-main-content"><div><button class="findbtn" id="findpath">길찾기</button>
+            <button class="findbtn" id="findpath2">길찾기2</button>
+            <select id="searchOption" class= "content"><option>검색먼저</option></select><button id="applyopt" class= "content">조건 적용</button>
+        </div>
+            <div id="findresult" class= "content">
+
+
+            </div>
+     
+        </div>
+       
+    </div>
+
+	<!-- main content here -->
+	<div id="map11" class="cd-main-content"></div>
+
+	
+
+
+
+
+
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
+<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
+<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="./resources/main.js"></script> 
+<script src="./resources/pathcontrol1.js"></script>
+<script src="./resources/menumenu.js"></script>
+<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
+<script>
 
 
 		$(document).ready(function () {
@@ -455,11 +545,14 @@
 			$("#boardbtn").on('click', function () {
 				location.href = "./boardlist";
 			});
+		});
+
 
 
 			$("#leftside-navigation .sub-menu > a").click(function (e) {
 				$("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
 					e.stopPropagation();
+
 
 			});
 
@@ -475,5 +568,14 @@
 	<script src="./resources/pathcontrol1.js"></script>
 	<script src="./resources/menumenu.js"></script>
 </body>
+
+$("#leftside-navigation .sub-menu > a").click(function(e) {
+  $("#leftside-navigation ul ul").slideUp(),
+  $(this).next().is(":visible") || $(this).next().slideDown(),
+  e.stopPropagation()
+});
+
+</script>
+
 
 </html>
