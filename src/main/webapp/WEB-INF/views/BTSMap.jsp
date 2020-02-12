@@ -335,6 +335,11 @@
 			padding-bottom: 13px;
 			color: #aeb2b7;
 		}
+		
+		#etcinfo {
+		
+		display : none;
+		}
 	</style>
 
 
