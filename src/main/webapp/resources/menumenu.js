@@ -5,6 +5,7 @@ $('#train_TM').on('click',function (ev) {
         success : function (result) {
             var dom = result.split("<body>")[1].split("</body>")[0]
             $('#leftside').html(dom)
+            $('#map11').css( "display", "none" );
         },
         error : function (e) {
             alert(e);

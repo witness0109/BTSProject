@@ -28,15 +28,11 @@ function searchTrainStationAJAX() {
 			for (var i = 0; i < start.length; i++) {
 				_startid = start[i].stationID;
 				startcity = start[i].stationName;
-				if(i!=0 && startcity == '용산'){
+				if(_startid != '3300197' && startcity == '용산'){
 					startcity = 'ITX 용산'
-					str += "<p><label onclick ='trainDestinationAJAX(\""
-					+ start[i].stationName + "\")'>" + startcity + "</label></p>";
-				}else{
-					str += "<p><label onclick ='trainDestinationAJAX(\""
-					+ startcity + "\")'>" + startcity + "</label></p>";
+					
 				}
-				
+				str += '<p><label onclick ="trainDestinationAJAX(\''+start[i].stationName + '\',\''+_startid+'\')">'  + startcity + '</label></p>';
 				// output arrivestations
 				
 
@@ -51,12 +47,11 @@ function searchTrainStationAJAX() {
 }
 // 역코드 조회 끝
 
-function trainDestinationAJAX(startStation) {
-	cityname = document.getElementById("cityname").value;
+function trainDestinationAJAX(startStation,sid) {
 
 	xhr = new XMLHttpRequest();
 	url = "https://api.odsay.com/v1/api/trainTerminals?apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY&lang=0&terminalName="
-		+ cityname;
+		+ startStation;
 	xhr.open("GET", url, true);
 	xhr.send();
 	xhr.onreadystatechange = function () {
@@ -68,7 +63,7 @@ function trainDestinationAJAX(startStation) {
 			for (let i = 0; i < start.length; i++) {
 				const result = start[i];
 
-				if(result.stationID == _startid){
+				if(result.stationID == sid){
 					index = i;
 					break;
 				}

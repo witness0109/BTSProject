@@ -41,7 +41,7 @@ public class MemberInfoService implements MemberService {
 
 	@Override
 	public void membercheck(HttpSession session, String email, String name) {
-		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
+		if (session.getAttribute("id") == null) {// 로그인 안 된 상태
 
 			String id = email.split("@")[0];
 
@@ -58,7 +58,7 @@ public class MemberInfoService implements MemberService {
 				}
 			}
 
-			session.setAttribute("loginID", email); // 세션 생성
+			session.setAttribute("id", email); // 세션 생성
 			session.setAttribute("name", name);
 		}
 	}
