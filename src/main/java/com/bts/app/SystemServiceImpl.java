@@ -17,4 +17,11 @@ public class SystemServiceImpl implements SystemService {
 		return dao.getAllMember();
 	}
 
+
+	@Override
+	public void deleteMem(String id) {
+		dao.deleteMember(id);
+		
+	}
+
 }

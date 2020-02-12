@@ -43,9 +43,13 @@ position: relative;
 			}
 		}, 1000);
 		
-		document.getElementById('rapidgo').addEventListener("click")
+		var skip = document.getElementById('rapidgo');
+		
+		skip.onclick = function(){
+			location.href = "./BTSMap";
+		}
 	</script>
-
+		<input type= "button" id="rapidgo" value="스킵">
 
 	
 	
