@@ -13,7 +13,7 @@ if(id == s_id){
 	var node = document.createTextNode("list4");
 	list4.appendChild(node);
 	
-	parent.innerHTML+='<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-file"></i><span>회원 관리</span><i class="arrow fa fa-angle-right pull-right"></i></a></li>';
+	parent.innerHTML+='<li class="sub-menu" id="son"><a href="./manageMember"><i class="fa fa-file"></i><span>회원 관리</span><i class="arrow fa fa-angle-right pull-right"></i></a></li>';
 	
 /*	li class="sub-menu" id="son"><a href='javascript:void(0);'><i class='fa fa-file'></i><span>회원 관리</span>
 	   <i class='arrow fa fa-angle-right pull-right'></i></a></li>*/

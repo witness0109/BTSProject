@@ -41,9 +41,14 @@ public class MemberDAO {
 		session.invalidate();
 	}
 	
-	
 	public void updatemember(MemberVO vo) {
 		session.update("mem.updatemember", vo);
 	}
+	
+	//°ü¸®ÀÚ
+	public List<MemberVO> getAllMember(){
+		return session.selectList("mem.allmember");
+	}
+	
 
 }
