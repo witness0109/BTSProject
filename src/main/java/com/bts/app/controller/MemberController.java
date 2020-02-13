@@ -30,11 +30,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bts.app.MemberService;
 import com.bts.app.MemberVO;
 import com.bts.app.NaverLoginBO;
+import com.bts.app.SystemService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	MemberService service;
+	@Autowired
+	SystemService service2;
 	@Autowired
 	private JavaMailSender mailSender;
 
@@ -74,13 +77,13 @@ public class MemberController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam String id, String pw, HttpSession session) {
-		
+
 		ModelAndView mav = new ModelAndView();
 		String[] inf = new String[2];
 		inf[0] = id;
 		inf[1] = pw;
 		int result = service.login(inf);
-		
+
 		if (result == 1) { // 로그인 성공
 			// main.jsp로 이동
 			mav.setViewName("loginsuccess");
@@ -114,47 +117,72 @@ public class MemberController {
 	public void checkPwService() {
 
 	}
+
 	@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
 	public void lginsss() {
 	}
+
 	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-
+		List<MemberVO> DB_list = service2.getAllMem();
 		String[] list = new String[2];
-		System.out.println(list);
 		list[0] = id;
 		list[1] = name;
-		List<String> c_mail = service.checkMail(list);
-		List<String> c_pw = service.checkPw(list);
+		boolean check = false;
 
-		String email = c_mail.get(0);
-		String password = c_pw.get(0);
+		for (int i = 0; i < DB_list.size(); i++) {
 
-		mav.addObject("mail", c_mail);
-		mav.addObject("check", "no_id");
-
-		// 수신자 인코딩을 위한 설정
-		String charSet = "UTF-8";
-		String fromName = "BTS 운영자";
-		InternetAddress from = new InternetAddress();
-
-		try {
-			from = new InternetAddress(new String(fromName.getBytes(charSet), "8859_1") + "<witness0109@gmail.com>");
-			MimeMessage message = mailSender.createMimeMessage();
-			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-
-			messageHelper.setFrom(from); // 보내는사람 생략하거나 하면 정상작동을 안함
-			messageHelper.setTo(email); // 받는사람 이메일
-			messageHelper.setSubject("비밀번호 입니다"); // 메일제목은 생략이 가능하다
-			messageHelper.setText(password + " 입니다. "); // 메일 내용
-
-			mailSender.send(message);
-		} catch (Exception e) {
-			System.out.println(e);
+			if (list[0].equals(DB_list.get(i).getId())&&(list[1].equals(DB_list.get(i).getName()))) {
+				check = true;
+				break;
+			} else {
+				check = false;
+			}
 		}
 
-		mav.setViewName("login");
+		System.out.println(check);
+		if (!check) {
+			mav.addObject("result", "please check");
+			mav.setViewName("checkpw");
+		} else {
+
+			System.out.println("ok");
+
+			//
+			List<String> c_mail = service.checkMail(list);
+			List<String> c_pw = service.checkPw(list);
+
+			String email = c_mail.get(0);
+			String password = c_pw.get(0);
+
+			mav.addObject("mail", c_mail);
+			mav.addObject("check", "no_id");
+
+			// 수신자 인코딩을 위한 설정
+			String charSet = "UTF-8";
+			String fromName = "BTS 운영자";
+			InternetAddress from = new InternetAddress();
+
+			try {
+				from = new InternetAddress(
+						new String(fromName.getBytes(charSet), "8859_1") + "<witness0109@gmail.com>");
+				MimeMessage message = mailSender.createMimeMessage();
+				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+
+				messageHelper.setFrom(from); // 보내는사람 생략하거나 하면 정상작동을 안함
+				messageHelper.setTo(email); // 받는사람 이메일
+				messageHelper.setSubject("비밀번호 입니다"); // 메일제목은 생략이 가능하다
+				messageHelper.setText(password + " 입니다. "); // 메일 내용
+
+				mailSender.send(message);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+			mav.setViewName("login");
+
+		}
 		return mav;
 	}
 
@@ -174,25 +202,18 @@ public class MemberController {
 		return "redirect:/BTS/login";
 
 	}
-	
-	
-	
-	@RequestMapping(value="/Mypage", method=RequestMethod.GET)
-		public String updatemember() {
-			return "Mypage";
-		}
-		
-	
-		@RequestMapping(value="/Mypage", method=RequestMethod.POST)
-			public String updatemember(String id, MemberVO vo, HttpSession session) {
-				service.updatemember(vo);
-				session.setAttribute("id", id);
-				
-				return "redirect:/";
-			}
-		
 
-	
+	@RequestMapping(value = "/Mypage", method = RequestMethod.GET)
+	public String updatemember() {
+		return "Mypage";
+	}
 
+	@RequestMapping(value = "/Mypage", method = RequestMethod.POST)
+	public String updatemember(String id, MemberVO vo, HttpSession session) {
+		service.updatemember(vo);
+		session.setAttribute("id", id);
+
+		return "redirect:/";
+	}
 
 }
