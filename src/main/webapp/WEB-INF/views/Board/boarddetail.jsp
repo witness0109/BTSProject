@@ -67,7 +67,7 @@ $('#list').on('click',function(){
     <input type="hidden" id="lid" value="${sessionScope.id }">
 
 <!--                     추가                         -->
-<%@ include file="commentS.jsp" %>
+<%-- <%@ include file="commentS.jsp" %> --%>
 
 </body>
 </html>

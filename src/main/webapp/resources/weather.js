@@ -46,7 +46,7 @@ function getWeather(map) {
     	var hum = key.humidity;
     	
     	message +=  city + " " +county + " " +village + "<br>";
-    	message += "하늘상태 : " + sky + "<br> 현재기온 : " + nowtp +" 최고기온 : " + maxtp + " 최저기온 : " +mintp + "<br>습도 : " + hum;
+    	message += "하늘상태 : " + sky + "<br><br> 현재기온 : " + nowtp +" <br><br>최고기온 : " + maxtp + " <br><br>최저기온 : " +mintp + "<br><br>습도 : " + hum;
     	var resultDiv = document.getElementById('weather');
         resultDiv.innerHTML = message;
     	

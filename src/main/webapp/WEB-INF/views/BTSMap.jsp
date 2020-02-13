@@ -252,16 +252,12 @@
 		}
 
 
-		
-		
-
-		display : none;
-		}
-		
 		div#weather{
-		border : 1px double gold;
+			border : 1px double gold;
 			color : white;
+			
 		}
+		</style>
 
 
 
@@ -275,6 +271,7 @@
 	<link rel="stylesheet" href="./resources/style.css">
 	<!-- Resource style -->
 	<link rel="stylesheet" href="./resources/pathbox.css">
+	
 	<!-- Resource style -->
 	<script src="./resources/modernizr.js"></script>
 	<!-- Modernizr -->
@@ -371,12 +368,10 @@
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="./resources/main.js"></script> 
 <script src="./resources/pathcontrol1.js"></script>
 <script src="./resources/menumenu.js"></script>
 <script src="./resources/weather.js"></script>
-<script src="./resources/modernizr.js"></script> <!-- Modernizr -->
 <script type="text/javascript" src="./resources/whole_control.js"></script>	<!-- Resource jQuery -->
 
 <script>
@@ -418,6 +413,7 @@
 		</script>
 
 
+<<<<<<< HEAD
 	<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 	<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
 	<script type="text/javascript" src="./resources/whole_control.js"></script>
@@ -429,6 +425,8 @@
 
 	
 
+=======
+>>>>>>> 36662052f35df55633f7d81d79c021f2f4cd917d
 </body>
 
 </html>
