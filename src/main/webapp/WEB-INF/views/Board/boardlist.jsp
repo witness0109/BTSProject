@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
+    <%@ taglib prefix="layoutTag" tagdir="/WEB-INF/tags"%>
+<layoutTag:layout>
+
+<!DOCTYPE html"-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Insert title here</title>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
@@ -33,7 +38,6 @@ $(document).ready(function() {
 
 #boardcss_list_add_button_table .add_button { cursor: pointer; border: 1px solid #bebebe; position: absolute; right: 10px; top: 10px; width: 85px; padding: 6px 0 6px; text-align: center; font-weight: bold; }
 #boardcss_list_add_button_table .add_button a { color: #ffffff; }
- */
  #write {text-align: right; float: right; }
  
  
@@ -55,13 +59,15 @@ $(document).ready(function() {
 /* list_table 에서 사용되는 tbody */
 .list_table tbody td { text-align: center;  border-bottom: 1px solid #e5e5e5; padding: 5px 0; }
 
-#pagingDiv{margin: auto;}
-
+#pagingDiv {margin: auto; vertical-align: middle;}
 </style>
 
 <body>
-<div>
-<input type="button" value="메인화면" onclick="location.href='./BTSMap'">
+<div class = "container">
+	<div class"col-xs-12" style="margin:15px auto;">
+<label style="font-size:20px;"><span class="glyphicon glyphicon-list-alt"></span>게시글 목록</label>
+<input type="button" style="float:right;" value="메인화면" class="btn btn-primary btn-sm" onclick="location.href='./BTSMap'">
+&emsp;<input type="button" style="float:right;" class="btn btn-primary btn-sm" value="글쓰기" onclick="location.href='./boardwrite'" id=write>
 </div>
 
 
@@ -94,12 +100,9 @@ $(document).ready(function() {
 </tbody>
 </c:forEach>
 </table>
-
+</div>
 </div>
 
-<div>
-<input type="button" value="글쓰기" onclick="location.href='./boardwrite'" id=write>
-</div>
 
 <div id="pagingDiv">
 			<c:if test="${paging.prev}">
@@ -119,3 +122,5 @@ $(document).ready(function() {
 	</form>
 </body>
 </html>
+
+</layoutTag:layout>

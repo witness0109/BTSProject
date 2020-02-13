@@ -25,6 +25,19 @@
 </head>
 <body>
 
+<%
+
+String id = (String)session.getAttribute("id");
+
+if (id.contains("kakao_") ||id.contains("naver_")) {
+	
+%>
+<script type="text/javascript">
+alert("카카오회원, 네이버회원은 회원정보를 수정할 수 없습니다.");
+location.href = "./BTSMap";
+</script>
+<%}%>
+
 
 <div class="wrap">        
       <br><br>
@@ -37,7 +50,7 @@
                 <tr>
                     <td id="title" >아이디</td>
                     <td>
-                        <input type="text" name="id" id="id" maxlength="50" readonly="readonly" value='<%=session.getAttribute("loginID")%>'>
+                        <input type="text" name="id" id="id" maxlength="50" readonly="readonly" value='<%=session.getAttribute("id")%>'>
                      </td>
                 </tr>
                 

@@ -68,7 +68,7 @@
 				}
 			}
 	function destinationTerminalsAJAX(startTerminalID, statTerminalName) {
-
+		str ="";
 		
 		xhr = new XMLHttpRequest();
 		url = "https://api.odsay.com/v1/api/expressBusTerminals?"+apikey+"&lang=0&terminalName="
@@ -210,9 +210,10 @@ function searchExpressBusinformationAJAX(start, end) {
 		
 </script>
 
-	<div>
+	<div id ="busD">
+		<h3> 고속 버스 터미널 찾기</h3>
 		<input type="text" id="startCityTerminal">
-		<button onclick="searchExpressBusTerminalAJAX();">click</button>
+		<button onclick="searchExpressBusTerminalAJAX();">찾기</button>
 
 	</div>
 	<div id="resultDiv">
