@@ -50,5 +50,9 @@ public class MemberDAO {
 		return session.selectList("mem.allmember");
 	}
 	
+	//관리자 삭제
+	public void deleteMember(String id) {
+		session.delete("mem.kickmember", id);
+	}
 
 }

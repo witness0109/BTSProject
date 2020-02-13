@@ -288,7 +288,8 @@
 <aside class="sidebar" >
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
-				<li><a><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
+			<!-- BTS 클릭시 홈화면으로 이동 -->
+				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
 				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>길 찾기</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
@@ -324,8 +325,10 @@
 			
 			
 		</div>
-
-		<input type="button" id="logoutbtn" value="로그아웃"> <input type="button" id="boardbtn" value="고객의소리">
+		<div>
+		<input type="button" id="logoutbtn" value="로그아웃"> 
+		<input type="button" id="boardbtn" value="고객의소리">
+		</div>
 	</aside>
 
 <div class="divcontainer">
@@ -369,11 +372,11 @@
 
 
 		$(document).ready(function () {
+
+
 			$("#logoutbtn").on('click', function () {
 				alert("로그아웃 되었습니다.");
 				location.href = "./logout";
-			
-				
 				
 			});
 
@@ -388,23 +391,33 @@
 			$("#boardbtn").on('click', function () {
 				location.href = "./boardlist";
 			});
-		});
-
+	
+			});
 
 
 		$("#leftside-navigation .sub-menu > a").click(function (e) {
 				$("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
 					e.stopPropagation();
-			
-				
 
 		});
+		
+	
 
 
 	</script>
 
+	<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
+	<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+	<script type="text/javascript" src="./resources/whole_control.js"></script>
+	<script src="./resources/main.js"></script>
+	<!-- Resource jQuery -->
+	<script src="./resources/pathcontrol1.js"></script>
+	<script src="./resources/menumenu.js"></script>
+
+
+
+
+
 </body>
-
-
 
 </html>

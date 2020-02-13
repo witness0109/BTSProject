@@ -30,5 +30,13 @@ public class SystemContorller {
 		return mav;
 	}
 	
+	@RequestMapping("/kickMember")
+	public String kikcMember(String id) {
+		
+		service.deleteMem(id);
+		
+		return "redirect:/manageMember";
+	}
+	
 	
 }
