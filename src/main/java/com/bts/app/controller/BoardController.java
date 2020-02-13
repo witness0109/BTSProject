@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +15,8 @@ import com.bts.app.board.BoardService;
 import com.bts.app.board.BoardVO;
 import com.bts.app.board.PageMaker;
 import com.bts.app.board.PagingCriteria;
+import com.bts.app.board.ReplyService;
+import com.bts.app.board.ReplyVO;
 
 @Controller
 public class BoardController {
@@ -21,19 +24,6 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
-	//Modelattribute =  mav.addbject 
-	
-	/*@RequestMapping("/boardlist")
-	public ModelAndView getAllBoard() {
-		ModelAndView mav = new ModelAndView();
-		
-		List<BoardVO> list = service.getAlLBoard();
-		mav.addObject("boardlist", list);
-		mav.setViewName("Board/boardlist");
-		
-		return mav;
-		
-	}*/
 	
 	@RequestMapping("/boardlist")
 	public String getBoardList(PagingCriteria cri, Model model) {
@@ -81,11 +71,11 @@ public class BoardController {
 		
 		BoardVO vo = service.getBoardDetail(seq);
 		
+		
 		mav.addObject("detail", vo);
 		mav.setViewName("Board/boarddetail");
 		return mav;
 	}
-	
 	
 	@RequestMapping(value="/update" , method=RequestMethod.GET)
 	public ModelAndView updateview(int seq,BoardVO vo) {
@@ -117,8 +107,6 @@ public class BoardController {
 		return "redirect:/boardlist";
 	}
 	
-	
-
 	
 
 }

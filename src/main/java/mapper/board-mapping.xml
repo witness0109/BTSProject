@@ -48,6 +48,25 @@ order by seq desc
 select count(*) from board
 </select>
 
+<select id="commentCount" resultType="int">
+select count(*) from reply
+</select>
 
+<select id="commentList" resultType="com.bts.app.board.ReplyVO" parameterType="int">
+select * from reply where seq = #{seq}
+</select>
+
+<insert id="commentInsert" parameterType="com.bts.app.board.ReplyVO">
+insert into reply(seq, rno, contents, writer, time)
+values(#{seq}, NVL((select max(rno)+1 from reply where seq = #{seq}),1), #{contents}, #{writer}, sysdate)
+</insert>
+
+<update id="commentUpdate" parameterType="com.bts.app.board.ReplyVO">
+update reply set contents = #{contents} where rno = #{rno}
+</update>
+
+<delete id="commentDelete" parameterType="int">
+delete from reply where rno = #{rno}
+</delete>
   
   </mapper>

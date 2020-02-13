@@ -58,7 +58,7 @@ public class MemberInfoService implements MemberService {
 				}
 			}
 
-			session.setAttribute("id", email); // 技记 积己
+			session.setAttribute("id", id); // 技记 积己
 			session.setAttribute("name", name);
 		}
 	}

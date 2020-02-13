@@ -18,4 +18,7 @@ public interface ApiConnectService {
 
 	JSONObject getETCRealTimeBusInfo(String cityCode, String stationID);
 
+	String getSubwayStatioinCodeOpenApi(String stationName, int subcode);
+
+	JSONObject getSubwayTimeTableOpenApi(String stnCode, int dailyType, char updown);
 }
