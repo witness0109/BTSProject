@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,5 +46,26 @@ $('#list').on('click',function(){
 <input type="button" value="글수정" onclick="location.href='update?seq=${detail.seq}'">
 <input type="button" value="글삭제" onclick="location.href='deleteboard?seq=${detail.seq}'">
 <input type="button" value="글목록" id="list">
+
+ <div class="container">
+        <label for="content">comment</label>
+        <form name="commentInsertForm" id="commentInsertForm">
+            <div class="input-group">
+               <input type="hidden" name="seq" value="${detail.seq}"/>
+               <input type="text" class="form-control" id="contents" name="contents" placeholder="내용을 입력하세요.">
+               <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="commentInsertBtn" name="commentInsertBtn">등록</button>
+               </span>
+              </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <div class="commentList"></div>
+    </div>
+
+<!--                     추가                         -->
+<%@ include file="commentS.jsp" %>
+
 </body>
 </html>
