@@ -317,10 +317,10 @@
 	
 		</style>
 
+</style>
 
 
-
-
+</style>
 
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 
@@ -340,7 +340,6 @@
 	<link rel="stylesheet" href="./resources/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
-
 
 
 	<title>BTS</title>
@@ -381,7 +380,7 @@
 					<ul>
 						<li><a href="pages-blank.html">즐겨 찾기 목록</a></li>
 						<li><a href="pages-login.html">경로 검색 목록</a></li>
-						<li><a href="pages-sign-up.html">회원 정보 수정</a></li>
+						<li><a href="./Mypage">회원 정보 수정</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -445,14 +444,7 @@
 				
 			});
 
-
-			$("#mypagebtn").on('click', function () {
-
-				location.href = "./Mypage";
-			});
-
-
-
+			
 			$("#boardbtn").on('click', function () {
 				location.href = "./boardlist";
 			});
@@ -469,8 +461,23 @@
 	
 
 
-	</script>
+		</script>
 
+
+<<<<<<< HEAD
+	<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
+	<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+	<script type="text/javascript" src="./resources/whole_control.js"></script>
+	<script src="./resources/main.js"></script>
+	<!-- Resource jQuery -->
+	<script src="./resources/pathcontrol1.js"></script>
+	<script src="./resources/menumenu.js"></script>
+
+
+	
+
+=======
+>>>>>>> 36662052f35df55633f7d81d79c021f2f4cd917d
 </body>
 
 </html>

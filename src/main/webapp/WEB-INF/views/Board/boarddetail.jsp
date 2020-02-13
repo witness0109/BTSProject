@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="layoutTag" tagdir="/WEB-INF/tags"%>      <!-- 추가 -->
+<layoutTag:layout> 
+
 
 <!DOCTYPE html>
 <html>
@@ -19,33 +22,41 @@ $('#list').on('click',function(){
 </script>
 </head>
 <body>
-<table>
-<tr>
-<td>글번호</td>
-<td>${detail.seq}</td>
-</tr>
-<tr>
-<td>글제목</td>
-<td>${detail.title}</td>
-</tr>
-<tr>
-<td>내용</td>
-<td>${detail.contents}</td>
-</tr>
-<tr>
-<td>작성자</td>
-<td>${detail.writer}</td>
-</tr>
-<tr>
-<td>날짜</td>
-<td>${detail.time}</td>
-</tr>
+<h2>게시글 상세</h2>
 
+<div class="container">
+	<div class="form-group">
+		<label>글번호</label>
+		<p>${detail.seq}</p>
+	</div>	
+	
+	<div class="form-group">
+		<label>글제목</label>
+		<p>${detail.title}</p>
+	</div>
+	
+	<div class="form-group">
+		<label>내용</label>
+		<p>${detail.contents}</p>
+	</div>	
+	
+	<div class="form-group">
+		<label>작성자</label>
+		<p>${detail.writer}</p>
+	</div>		
+	
+	<div class="form-group">
+		<label>날짜</label>
+		<p>${detail.time}</p>
+	</div>	
+</div>
 
-</table>
-<input type="button" value="글수정" onclick="location.href='update?seq=${detail.seq}'">
-<input type="button" value="글삭제" onclick="location.href='deleteboard?seq=${detail.seq}'">
-<input type="button" value="글목록" id="list">
+<div class="btn-group btn-group-sm" role="group" style="float:right;">
+<input type="button" class="btn btn-default" value="글수정" onclick="location.href='update?seq=${detail.seq}'">
+<input type="button" class="btn btn-default" value="글삭제" onclick="location.href='deleteboard?seq=${detail.seq}'">
+<input type="button" class="btn btn-default" value="글목록" id="list">
+
+</div>
 
  <div class="container">
         <label for="content">comment</label>
@@ -71,3 +82,4 @@ $('#list').on('click',function(){
 
 </body>
 </html>
+</layoutTag:layout> 
