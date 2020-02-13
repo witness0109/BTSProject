@@ -67,14 +67,17 @@
 		}
 
 		button.findbtn {
-			border-radius: 50px;
-			width: 50px;
-			float: left;
-			color: white;
+			border-radius: 5px;			
+			border: 2px solid #293949;
+			width: auto;
+			padding-left: 5px;
+			color: #23313f;
 			z-index: 1;
-			background-color: red;
+			background-color: white;
 			font-size: 15px;
-			;
+			text-align: center;
+			letter-spacing: 0.1em;
+
 		}
 
 		.content {
@@ -83,11 +86,13 @@
 
 		.divcontainer {
 		left: 240px;
+		margin-right: -240px;
 		height: 100%;
 		width: 100%;
- 		position: relative;
+ 		position: absolute;
 		z-index: 1;	
   		background-color: #23313f;
+  		
 
 		}
 
@@ -98,17 +103,21 @@
 		
 
 		.divcontainer #leftside {
-
+		
+			padding-top: 5%;
+			padding-left:	1%;
+			padding-right: 1%;
 			width: 25%;
 			height: 100%;
 			float: left;
 			background-color: #23313f;
 			overflow: scroll;
+			
 
 		}
 
 		.divcontainer #leftside .box {
-			width: 50%;
+			width: 100%;
 			height: AUTO;
 			border: 2px solid white;
 			border-radius: 5px;
@@ -116,15 +125,18 @@
 			margin: 15px;
 			float: left;
 			color: #ffffff;
+			line-height: 2em;
 		}
 
 		.divcontainer #leftside .box.expbus {
 			/*  width: 85%; */
 			height: AUTO;
+			width: 100%;
 			border: 1px solid violet;
 			border-radius: 5px;
 			padding: 15px;
 			margin: 15px;
+			line-height: 2em;
 		}
 
 		.divcontainer #leftside .box.train {
@@ -134,6 +146,7 @@
 			border-radius: 5px;
 			padding: 15px;
 			margin: 15px;
+			line-height: 2em;
 		}
 
 	
@@ -231,6 +244,7 @@
 			border-radius: 5px;
 			padding: 15px;
 			margin: 15px;
+			line-height: 1.5em;
 		}
 
 		.divcontainer #leftside.cd-main-content {
@@ -253,10 +267,54 @@
 
 
 		div#weather{
-			border : 1px double gold;
+			/* border : 1px double gold; */
+			
+			padding: 20px 20px 20px 20px;
 			color : white;
+			text-align: justify;
+			font-size: 15px;
+			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+			letter-spacing: 0.1em;
+			line-height: 1.5em;
 			
 		}
+		h2{
+			text-align: center;
+			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;	
+			color : white;	
+		}
+	
+		#busD{
+			color: white;
+			font-size: xx-large;
+			letter-spacing: 0.1em;
+			line-height: 1.5em;
+		}
+		
+		#asidedivbtn{
+			text-align: center;
+			padding-bottom: 0;
+
+			
+		}
+		.asidebtn{
+			
+			background: none;
+			color: #aeb2b7;
+			border: none;
+			padding-left: 5px;
+		}
+		
+		#intercityB {
+		border: 2px solid white;
+		}
+		
+		th,tr,td {
+		border: 2px solid white;
+		
+		}
+		
+	
 		</style>
 
 
@@ -273,8 +331,7 @@
 	<link rel="stylesheet" href="./resources/pathbox.css">
 	
 	<!-- Resource style -->
-	<script src="./resources/modernizr.js"></script>
-	<!-- Modernizr -->
+
 
 	<script type="text/javascript">
 		var id = '<%=session.getAttribute("id")%>';
@@ -331,11 +388,13 @@
 			
 			
 		</div>
-		<div>
-		<input type="button" id="logoutbtn" value="로그아웃"> 
-		<input type="button" id="boardbtn" value="고객의소리">
-		</div>
 		<div id="weather"></div>
+		
+		<div id= "asidedivbtn">
+		<input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> 
+		<input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리">
+		</div>
+		
 	</aside>
 
 <div class="divcontainer">

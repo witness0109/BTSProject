@@ -35,6 +35,7 @@
 
 	
 	function searchIntercityBusTerminalAJAX() {
+		
 
 		cityname = document.getElementById("startCityTerminal").value;
 		xhr = new XMLHttpRequest();
@@ -58,7 +59,7 @@
 						console.log(startID[i]);
 						}
 						str += "</div>";
-						document.getElementById("resultDiv").innerHTML = str;
+						document.getElementById("resultDiv1").innerHTML = str;
 					
 
 					}
@@ -67,7 +68,7 @@
 			}
 	function destinationTerminalsAJAX(startTerminalID, statTerminalName) {
 
-		
+		str ="";
 		xhr = new XMLHttpRequest();
 		url = "https://api.odsay.com/v1/api/intercityBusTerminals?"+apikey+"&lang=0&terminalName="
 				+ statTerminalName;
@@ -92,7 +93,7 @@
 						str += "<p><label onclick ='searchIntercityBusinformationAJAX("+startTerminalID+","+destinationTerminal[i].stationID+");'>"+destinationTerminal[i].stationName+"</label></p>";								
 						}
 						str += "</div>";
-						document.getElementById("resultDiv").innerHTML = str;
+						document.getElementById("resultDiv2").innerHTML = str;
 
 					} 
 
@@ -139,7 +140,8 @@ function searchIntercityBusinformationAJAX(start, end) {
 							
 							str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";
 							str += "</div>";
-							document.getElementById("resultDiv").innerHTML = str;
+							document.getElementById("resultDiv1").innerHTML = str;
+							document.getElementById("resultDiv2").innerHTML = "";
 						
 						
 						
@@ -164,7 +166,8 @@ function searchIntercityBusinformationAJAX(start, end) {
 						str += "</div>";
 					}
 					
-					document.getElementById("resultDiv").innerHTML = str;
+					document.getElementById("resultDiv1").innerHTML = str;
+					document.getElementById("resultDiv2").innerHTML = "";
 				}
 			
 				
@@ -174,23 +177,18 @@ function searchIntercityBusinformationAJAX(start, end) {
 						for(var i =0;i<inf.length;i++){
 							
 							infd[i] = resultObj["result"]["station"][i];
-						str += "<div class='box'> <h1> 노선 정보</h1>";
-						str += "<h3> 시외 일반 버스 입니다.</h3>";
-						str += "<p> 출발 터미널:	" +infd[i].startTerminal+ "</p>";
-						str += "<p> 도착 터미널:	" + infd[i].destTerminal+ "</p>";
-						str += "<p>스케줄 : " + infd[i].schedule + "</p>";
-						str += "<p>소요시간 : " + (infd[i].wasteTime-infd[i].wasteTime%60)/60+":"+infd[i].wasteTime%60+ "</p>"; 
-						if(infd[i].normalFare>=10000){
-							str += "<p>금액 : " + (infd[i].normalFare-infd[i].normalFare%10000)/10000+"만	"+ infd[i].normalFare%10000+"원"+ "</p>";
-							}else{
-								"<p> 첫차:	" +infd[i].normalFare+"원"+ "</p>";
-							}
-						
-						str += "<p> 첫차:	" +infd[i].firstTime+"	막차 :	" + infd[i].lastTime+ "</p>";}
+							str += "<div class='box'> <h1> 노선 정보</h1>";
+							str += "<h3> 시외 일반 버스 입니다.</h3>";
+							str += "<table id='intercityB'> <tr><td>노선 정보</th><th>시외 일반 버스</th></tr>"+
+							"<tr><th>출발 터미널</th><th>"+infd[i].startTerminal+"</th><th>도착 터미널</th><th>"+ infd[i].destTerminal+"</th></tr>";
+							str += "<tr><td>스케줄</td><td>"+infd[i].schedule+"</td></tr>";
+							str += "<tr><td>소요 시간</td><td>"+infd[i].wasteTime+"원"
+								+"</td></tr><table>";}
 						str += "</div>";
 					}
 					
-					document.getElementById("resultDiv").innerHTML = str;
+					document.getElementById("resultDiv1").innerHTML = str;
+					document.getElementById("resultDiv2").innerHTML = "";
 					
 					}
 				}
@@ -199,15 +197,15 @@ function searchIntercityBusinformationAJAX(start, end) {
 		
 </script>
 
-	<div>
+	<div id ="busD">
+		<h3> 시외버스 터미널 검색하기
 		<input type="text" id="startCityTerminal">
-		<button onclick="searchIntercityBusTerminalAJAX();">click</button>
-
+		<button onclick="searchIntercityBusTerminalAJAX();">찾기</button>
+	</h3>
 	</div>
-	<div id="resultDiv">
+	<div id="resultDiv1"></div>
+	<div id="resultDiv2"></div>
 
-		<!-- 결과창 -->
-</div>
 
 </body>
 </html>
