@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@page import="java.util.Date" %>
+    <%@page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -143,6 +145,13 @@ table tr:hover td {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 $(document).ready(function () {
+	
+	$("#backbtn").click(function(){
+		
+		location.href = "./BTSMap";
+	});
+	
+	
 	$(".checkBtn").click(function(){
 
 	var str = ""
@@ -163,6 +172,7 @@ $(document).ready(function () {
 			var name = td.eq(2).text();
 			var email = td.eq(3).text();
 			var phone = td.eq(4).text();
+			var indate = td.eq(5).text();
 
 			// 반복문을 이용해서 배열에 값을 담아 사용
 			td.each(function(i){
@@ -175,7 +185,9 @@ $(document).ready(function () {
 			" 아이디 : <font color='red' name='id'>" + id + "</font><br>" +
 			" 비밀번호 : <font color='red'>" + pw + "</font><br>" +
 			" 이름 : <font color='red'>" + name + "</font><br>" +
-			" 이메일 : <font color='red'>" + email + "</font><br>";
+			" 이메일 : <font color='red'>" + email + "</font><br>"+ 
+			" 가입일 : <font color='red'>" + indate + "</font><br>";
+			
 
 			btn += "<input type='button' value='회원강퇴' class='kick'>";
 
@@ -204,6 +216,9 @@ $(document).ready(function () {
 </head>
 <body>
 	<div class="container">
+	${list}
+	${re_date}	
+	
 		<table>
 			<tr>
 				<th>ID</th>
@@ -211,7 +226,9 @@ $(document).ready(function () {
 				<th>이름</th>
 				<th>이메일</th>
 				<th>연락처</th>
+				<th>가입일</th>
 				<th>회원조회</th>
+				
 			</tr>
 			<c:forEach items="${list}" var="mem">
 				<tr>
@@ -220,13 +237,15 @@ $(document).ready(function () {
 					<td>${mem.name}</td>
 					<td>${mem.email}</td>
 					<td>${mem.phone}</td>
+					<td>${mem.indate}</td>
+				
 					<td><input type=button  class="checkBtn" value='조회'></td>
 				</tr>
 
 			</c:forEach>
 		</table>
 	<div class="member_log" id="result" ></div> 
-		
+		<input type = "button" value = "home" id="backbtn">
 	</div>
 </body>
 </html>
