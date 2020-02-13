@@ -252,18 +252,12 @@
 		}
 
 
-		
-		
-
-		display : none;
-		}
-		
 		div#weather{
 		border : 1px double gold;
 			color : white;
 		}
 
-
+</style>
 
 
 
@@ -286,7 +280,6 @@
 	<link rel="stylesheet" href="./resources/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="./resources/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="./resources/pathbox.css"> <!-- Resource style -->
-
 
 
 	<title>BTS</title>
@@ -327,7 +320,7 @@
 					<ul>
 						<li><a href="pages-blank.html">즐겨 찾기 목록</a></li>
 						<li><a href="pages-login.html">경로 검색 목록</a></li>
-						<li><a href="pages-sign-up.html">회원 정보 수정</a></li>
+						<li><a href="./Mypage">회원 정보 수정</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -391,14 +384,7 @@
 				
 			});
 
-
-			$("#mypagebtn").on('click', function () {
-
-				location.href = "./Mypage";
-			});
-
-
-
+			
 			$("#boardbtn").on('click', function () {
 				location.href = "./boardlist";
 			});

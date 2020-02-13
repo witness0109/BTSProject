@@ -95,7 +95,6 @@ public class MemberController {
 
 	@RequestMapping(value = "/insertmember", method = RequestMethod.POST)
 	public String joinMemberServiceresult(MemberVO vo) {
-
 		service.joinMember(vo);
 		System.out.println(vo);
 		return "login";

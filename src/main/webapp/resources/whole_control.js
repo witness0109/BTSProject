@@ -22,15 +22,7 @@ if(id == s_id){
 	
 	
 	
-} else {
-	
-	alert(id + "로 로그인 되었습니다.");
-	
-}
-
-
-
-console.log(out);
+} 
 
 
 
