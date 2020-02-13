@@ -56,6 +56,7 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 	private StringBuffer getOdsayConnection(String apiAddress, String option)
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
 		String apiKey = "bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";// api key;
+//		String apiKey = URLEncoder.encode("M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc", "UTF-8");
 		String apiURL = "https://api.odsay.com/v1/api/" + apiAddress + "?&lang=0&apiKey=" + apiKey + option;
 		return connectAPI(apiURL);
 	}
@@ -184,7 +185,7 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 	}
 
 	@Override
-	public JSONObject getBusanRealTimeBusInfo(String stdid) { // Gyenggi
+	public JSONObject getBusanRealTimeBusInfo(String stdid) { // busan..운행종료시 min1사라짐;;;
 		try {
 			String url = "http://61.43.246.153/openapi-data/service/busanBIMS2/stopArr?serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D&bstopid=";
 			StringBuffer res = getAPIResult(url, stdid);
@@ -313,7 +314,11 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 
 			JSONObject jsonObj = XML.toJSONObject(res.toString());
 			if (jsonObj.getJSONObject("response").getJSONObject("header").getString("resultCode").equals("00")) {// 호출성공
-				Object obj = jsonObj.getJSONObject("response").getJSONObject("body").get("items");
+				if (jsonObj.getJSONObject("response").getJSONObject("body").get("items") instanceof String) {
+					return "결과없음";
+				}
+
+				Object obj = jsonObj.getJSONObject("response").getJSONObject("body").getJSONObject("items").get("item");
 				if (obj instanceof JSONArray) {
 					JSONArray items = (JSONArray) obj;
 					for (int i = 0; i < items.length(); i++) {
@@ -327,7 +332,7 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 					}
 				} else if (obj instanceof JSONObject) {
 					JSONObject items = (JSONObject) obj;
-					return items.getJSONObject("item").getString("subwayStationId");
+					return items.getString("subwayStationId");
 				}
 
 			}

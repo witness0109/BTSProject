@@ -1,8 +1,10 @@
 package com.bts.app;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,24 +22,26 @@ public class FindServiceImpl implements FindService {
 		FindServiceImpl fs = new FindServiceImpl();
 
 //		System.out.println(fs.findpath(126.9051651846776, 37.51619692388867, 127.04956901223464, 37.485662474272765)); // 서울
-		System.out.println(fs.findpath(126.808630, 37.482729, 126.786858, 37.504203)); // 부천
-		// System.out.println(fs.findpath(129.060286, 35.140633, 129.123260,
-		// 35.099967)); // 부산
+//		System.out.println(fs.findpath(126.808630, 37.482729, 126.786858, 37.504203)); // 부천
 
 		// System.out.println(fs.findpath(127.349904, 36.360802, 127.378320,
 		// 36.351878));// dj
 		// System.out.println(fs.findpath(126.5600341, 33.2558425, 126.5722428,
 		// 33.2505057));// jeju
+		fs.apiService = new ApiConnectServiceImpl();
+
+		System.out.println(fs.findStationTimetable("온수", 1));
 	}
 
 	@Override
 	public JSONObject findpath(double sx, double sy, double ex, double ey) {
 		String option = "&SX=" + sx + "&SY=" + sy + "&EX=" + ex + "&EY=" + ey;
-		apiService = new ApiConnectServiceImpl();
-//		JSONObject map = apiService.GetApiResponseMap("searchPubTransPathR", option);
 		JSONObject map = apiService.GetOdsayApiResponseMap("searchPubTransPathR", option);
 
-		JSONArray pathArray = (JSONArray) ((JSONObject) map.get("result")).get("path");
+		if (map.has("error")) {
+			return map;
+		}
+		JSONArray pathArray = (JSONArray) (map.getJSONObject("result").get("path"));
 		for (int i = 0; i < pathArray.length(); i++) { // path 목록 조회
 			JSONObject path = pathArray.getJSONObject(i);
 			JSONArray subpathArr = (JSONArray) path.get("subPath");
@@ -72,8 +76,26 @@ public class FindServiceImpl implements FindService {
 						break;
 
 					}
+					long time = System.currentTimeMillis() + ((walktime + 2) * 60000);// 역에서 승강장까지 시간 2분을 감안함
+					int expectedTime = Integer.parseInt(new SimpleDateFormat("HHmmss").format(time));
+					int currentTime = Integer
+							.parseInt(new SimpleDateFormat("HHmmss").format(System.currentTimeMillis()));
 
 					JSONObject resultBody = apiService.getSubwayTimeTableOpenApi(stationCode, dailyType, direction);
+					JSONArray timetable = resultBody.getJSONObject("items").getJSONArray("item");
+					for (int p = 0; p < timetable.length(); p++) {
+						int arriveTime = timetable.getJSONObject(p).getInt("arrTime");
+
+						if (expectedTime <= arriveTime) {
+							int calcTime = ((arriveTime / 10000) * 3600 + ((arriveTime % 10000) / 100) * 60
+									+ ((arriveTime % 10000) % 100))
+									- ((currentTime / 10000) * 3600 + ((currentTime % 10000) / 100) * 60
+											+ ((currentTime % 10000) % 100));
+							spath.getJSONArray("lane").getJSONObject(0).put("arrmsg1", calcTime);
+							spath.getJSONArray("lane").getJSONObject(0).put("subwayarrtime", arriveTime);
+							break;
+						}
+					}
 					break;
 				}
 				if (spath.getInt("trafficType") == 2) {// bus
@@ -126,7 +148,6 @@ public class FindServiceImpl implements FindService {
 					break;
 				}
 			}
-
 		}
 
 		return map;
@@ -173,6 +194,10 @@ public class FindServiceImpl implements FindService {
 	}
 
 	private JSONArray processETCBus(int walktime, JSONArray busLanes, JSONObject etcInfo) {
+		if (etcInfo.getJSONObject("body").get("items") instanceof String) {
+			return new JSONArray();
+		}
+
 		JSONArray buslist = etcInfo.getJSONObject("body").getJSONObject("items").getJSONArray("item");
 
 		for (int p = 0; p < buslist.length(); p++) {
@@ -236,29 +261,33 @@ public class FindServiceImpl implements FindService {
 
 			for (int m = 0; m < busLanes.length(); m++) {
 				if (lineNo.equals(busLanes.getJSONObject(m).get("busNo"))) {
-					Object m1 = (buslist.getJSONObject(p)).get("min1");
-					Object m2 = (buslist.getJSONObject(p)).get("min2");
+					try {
+						Object m1 = (buslist.getJSONObject(p)).get("min1");
+						Object m2 = (buslist.getJSONObject(p)).get("min2");
 
-					int min1 = 0;
-					int min2 = 0;
-					if (!(m1 instanceof String)) {
-						min1 = (int) m1;
-					}
-					if (!(m2 instanceof String)) {
-						min2 = (int) m2;
-					}
-
-					if (min1 >= walktime) {
-						busLanes.getJSONObject(m).put("arrmsg1", min1 * 60);
-
-					} else {
-						if (min2 >= walktime) {
-							busLanes.getJSONObject(m).put("arrmsg1", min2 * 60);
-
-						} else {
-							busLanes.getJSONObject(m).put("arrmsg1", -1);
+						int min1 = 0;
+						int min2 = 0;
+						if (!(m1 instanceof String)) {
+							min1 = (int) m1;
+						}
+						if (!(m2 instanceof String)) {
+							min2 = (int) m2;
 						}
 
+						if (min1 >= walktime) {
+							busLanes.getJSONObject(m).put("arrmsg1", min1 * 60);
+
+						} else {
+							if (min2 >= walktime) {
+								busLanes.getJSONObject(m).put("arrmsg1", min2 * 60);
+
+							} else {
+								busLanes.getJSONObject(m).put("arrmsg1", -1);
+							}
+
+						}
+					} catch (JSONException e) {
+						busLanes.getJSONObject(m).put("arrmsg1", -1);
 					}
 
 				}
@@ -269,8 +298,14 @@ public class FindServiceImpl implements FindService {
 	}
 
 	private JSONArray processGGBus(int walktime, JSONArray busLanes, JSONObject gginfo) {
-		JSONArray buslist = (gginfo.getJSONObject("msgBody")).getJSONArray("busArrivalList"); // bus
-																								// list
+		Object obj = gginfo.getJSONObject("msgBody").get("busArrivalList");
+		JSONArray buslist = new JSONArray();
+		if (obj instanceof JSONArray) {
+			buslist = (gginfo.getJSONObject("msgBody")).getJSONArray("busArrivalList"); // bus
+																						// list
+		} else {
+			buslist.put(obj);
+		}
 		for (int p = 0; p < buslist.length(); p++) {
 			int routeID = buslist.getJSONObject(p).getInt("routeId");
 			JSONObject busdetail = apiService.getGGBusDetail(String.valueOf(routeID));
@@ -318,9 +353,69 @@ public class FindServiceImpl implements FindService {
 		// 실시간
 		// 호출
 		int header = (seoulinfo.getJSONObject("msgHeader")).getInt("headerCd");
-		JSONArray buslist = (seoulinfo.getJSONObject("msgBody")).getJSONArray("itemList"); // 정류장 버스 목록
-		for (int p = 0; p < buslist.length(); p++) {
-			Object rtnm = buslist.getJSONObject(p).get("rtNm");
+		Object obj = seoulinfo.getJSONObject("msgBody").get("itemList");
+		if (obj instanceof JSONArray) {
+			JSONArray buslist = (JSONArray) obj; // 정류장 버스 목록
+			for (int p = 0; p < buslist.length(); p++) {
+				Object rtnm = buslist.getJSONObject(p).get("rtNm");
+				String busNo;
+				if (rtnm instanceof String) {
+					busNo = (String) rtnm;
+				} else {
+					busNo = String.valueOf(rtnm);
+				}
+				for (int m = 0; m < busLanes.length(); m++) {
+
+					if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// 찾은 경로에서 타는 버스일때
+						String arrtime1 = (buslist.getJSONObject(p)).getString("arrmsg1");
+						String arrtime2 = (buslist.getJSONObject(p)).getString("arrmsg2");
+						if (arrtime1.equals("곧 도착")) {
+							if (arrtime2.equals("출발대기") || arrtime2.equals("곧 도착") || arrtime2.equals("운행종료")) {
+								continue;
+							}
+							int minute = Integer.parseInt(arrtime2.split("분")[0]);
+							int sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
+							if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
+								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
+							} else {
+								busLanes.getJSONObject(m).put("arrmsg1", -1);
+							}
+						} else if (arrtime1.equals("출발대기")) {
+							busLanes.getJSONObject(m).put("arrmsg1", -1);
+						} else if (arrtime1.equals("운행종료")) {
+							busLanes.getJSONObject(m).put("arrmsg1", -1);
+						} else {
+							int minute = Integer.parseInt(arrtime1.split("분")[0]);
+							String secpart = arrtime1.split("분")[1].split("후")[0];
+							int sec = 0;
+							if (secpart.contains("초")) {
+								sec = Integer.parseInt(secpart.split("초")[0]);
+							}
+
+							if (walktime * 60 <= minute * 60 + sec) {// 걸어서 도착 전에 다음 버스가 도착할때
+								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
+							} else {
+								if (arrtime2.equals("출발대기") || arrtime2.equals("곧 도착") || arrtime2.equals("운행종료")) {
+									continue;
+								}
+								minute = Integer.parseInt(arrtime2.split("분")[0]);
+								sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
+								if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
+									busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
+								} else {
+									busLanes.getJSONObject(m).put("arrmsg1", -1);
+								}
+							}
+						}
+
+					}
+				}
+
+			}
+			return buslist;
+		} else {
+			JSONObject buslist = (JSONObject) obj; // 정류장 버스 목록
+			Object rtnm = buslist.get("rtNm");
 			String busNo;
 			if (rtnm instanceof String) {
 				busNo = (String) rtnm;
@@ -330,9 +425,12 @@ public class FindServiceImpl implements FindService {
 			for (int m = 0; m < busLanes.length(); m++) {
 
 				if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// 찾은 경로에서 타는 버스일때
-					String arrtime1 = (buslist.getJSONObject(p)).getString("arrmsg1");
-					String arrtime2 = (buslist.getJSONObject(p)).getString("arrmsg2");
+					String arrtime1 = buslist.getString("arrmsg1");
+					String arrtime2 = buslist.getString("arrmsg2");
 					if (arrtime1.equals("곧 도착")) {
+						if (arrtime2.equals("출발대기") || arrtime2.equals("곧 도착") || arrtime2.equals("운행종료")) {
+							continue;
+						}
 						int minute = Integer.parseInt(arrtime2.split("분")[0]);
 						int sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
 						if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
@@ -340,15 +438,24 @@ public class FindServiceImpl implements FindService {
 						} else {
 							busLanes.getJSONObject(m).put("arrmsg1", -1);
 						}
+					} else if (arrtime1.equals("출발대기")) {
+						busLanes.getJSONObject(m).put("arrmsg1", -1);
 					} else if (arrtime1.equals("운행종료")) {
-						busLanes.getJSONObject(m).put("arrmsg1", arrtime1);
+						busLanes.getJSONObject(m).put("arrmsg1", -1);
 					} else {
 						int minute = Integer.parseInt(arrtime1.split("분")[0]);
-						int sec = Integer.parseInt(arrtime1.split("분")[1].split("초")[0]);
+						String secpart = arrtime1.split("분")[1].split("후")[0];
+						int sec = 0;
+						if (secpart.contains("초")) {
+							sec = Integer.parseInt(secpart.split("초")[0]);
+						}
 
 						if (walktime * 60 <= minute * 60 + sec) {// 걸어서 도착 전에 다음 버스가 도착할때
 							busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 						} else {
+							if (arrtime2.equals("출발대기") || arrtime2.equals("곧 도착") || arrtime2.equals("운행종료")) {
+								continue;
+							}
 							minute = Integer.parseInt(arrtime2.split("분")[0]);
 							sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
 							if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
@@ -361,9 +468,9 @@ public class FindServiceImpl implements FindService {
 
 				}
 			}
-
+			return new JSONArray().put(buslist);
 		}
-		return buslist;
+
 	}
 
 	@Override
@@ -371,6 +478,36 @@ public class FindServiceImpl implements FindService {
 		JSONObject citycode = new JSONLoader().loadJSONFile("buscitycode.json");
 		return citycode;
 
+	}
+
+	@Override
+	public JSONObject findStationTimetable(String stationName, int subcode) {
+		String stationCode = apiService.getSubwayStatioinCodeOpenApi(stationName, subcode);
+		if (stationCode.equals("결과없음")) {
+			JSONObject result = new JSONObject();
+			result.put("resultCode", "fail");
+			return result;
+		}
+
+		JSONObject weektableU = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'U');
+		JSONObject sattableU = apiService.getSubwayTimeTableOpenApi(stationCode, 2, 'U');
+		JSONObject suntableU = apiService.getSubwayTimeTableOpenApi(stationCode, 3, 'U');
+		JSONObject weektableD = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'D');
+		JSONObject sattableD = apiService.getSubwayTimeTableOpenApi(stationCode, 2, 'D');
+		JSONObject suntableD = apiService.getSubwayTimeTableOpenApi(stationCode, 3, 'D');
+		JSONObject uptable = new JSONObject();
+		uptable.put("weekday", weektableU);
+		uptable.put("saturday", sattableU);
+		uptable.put("sunday", suntableU);
+		JSONObject downtable = new JSONObject();
+		downtable.put("weekday", weektableD);
+		downtable.put("saturday", sattableD);
+		downtable.put("sunday", suntableD);
+		JSONObject result = new JSONObject();
+		result.put("resultCode", "success");
+		result.put("up", uptable);
+		result.put("down", downtable);
+		return result;
 	}
 
 }
