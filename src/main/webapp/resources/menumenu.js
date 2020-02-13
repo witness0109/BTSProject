@@ -5,13 +5,15 @@ $('#train_TM').on('click',function (ev) {
         success : function (result) {
             var dom = result.split("<body>")[1].split("</body>")[0]
             $('#leftside').html(dom)
-            $('#map11').css( "display", "none" );
+            
         },
         error : function (e) {
             alert(e);
         }
         
    });
+   $("#map11").css("display","none");
+   $("#leftside").css("width","100%");
 });
 
 $('#intercityBusTM').on('click',function (ev) {
@@ -27,6 +29,8 @@ $('#intercityBusTM').on('click',function (ev) {
          }
          
     });
+    $("#map11").css("display","none");
+    $("#leftside").css("width","100%");
  });
 
  $('#expressBusTM').on('click',function (ev) {
@@ -42,6 +46,9 @@ $('#intercityBusTM').on('click',function (ev) {
          }
          
     });
+    $("#map11").css("display","none");
+    $("#leftside").css("width","100%");
+    
  });
 
  $('#busTM').on('click',function (ev) {
@@ -57,4 +64,6 @@ $('#intercityBusTM').on('click',function (ev) {
          }
          
     });
+    $("#map11").css("display","none");
+    $("#leftside").css("width","100%");
  });
