@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -144,7 +145,7 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		return new JSONObject();
 	}
 
-	private StringBuffer getAPIResult(String apiurl, String stdid)
+	private StringBuffer getAPIResult(String apiurl, String stdid) // 시간 남으면 없애도록
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
 		String apiURL = apiurl + stdid;
 		return connectAPI(apiURL);
@@ -213,6 +214,151 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 			System.out.println(e.getMessage());
 		}
 		return new JSONObject();
+	}
+
+	@Override
+	public String getSubwayStatioinCodeOpenApi(String stationName, int subcode) {
+		try {
+			String url = "http://openapi.tago.go.kr/openapi/service/SubwayInfoService/getKwrdFndSubwaySttnList?"
+					+ "serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D"
+					+ "&subwayStationName=";
+			StringBuffer res = getAPIResult(url, URLEncoder.encode(stationName, "UTF-8"));
+			String linename = "";
+
+			switch (subcode) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+				linename = "서울 " + subcode + "호선";
+				break;
+			case 100:
+				linename = "분당선";
+				break;
+			case 101:
+				linename = "공항철도";
+				break;
+			case 104:
+				linename = "경의중앙선";
+				break;
+			case 107:
+				linename = "에버라인";
+				break;
+			case 108:
+				linename = "경춘선";
+				break;
+			case 109:
+				linename = "신분당선";
+				break;
+			case 110:
+				linename = "의정부경전철";
+				break;
+			case 111:
+				linename = "수인선";
+				break;
+			case 112:
+				linename = "경강선";
+				break;
+			case 113:
+				linename = "우이신설선";
+				break;
+			case 21:
+				linename = "인천 1호선";
+				break;
+			case 22:
+				linename = "인천 2호선";
+				break;
+			case 31:
+				linename = "대전 1호선";
+				break;
+			case 41:
+				linename = "대구 1호선";
+				break;
+			case 42:
+				linename = "대구 2호선";
+				break;
+			case 43:
+				linename = "대구 3호선";
+				break;
+			case 51:
+				linename = "광주 1호선";
+				break;
+			case 71:
+				linename = "부산 1호선";
+				break;
+			case 72:
+				linename = "부산 2호선";
+				break;
+			case 73:
+				linename = "부산 3호선";
+				break;
+			case 74:
+				linename = "부산 4호선";
+				break;
+			case 78:
+				linename = "동해선";
+				break;
+			case 79:
+				linename = "부산김해경전철";
+				break;
+
+			default:
+				break;
+			}
+
+			JSONObject jsonObj = XML.toJSONObject(res.toString());
+			if (jsonObj.getJSONObject("response").getJSONObject("header").getString("resultCode").equals("00")) {// 호출성공
+				Object obj = jsonObj.getJSONObject("response").getJSONObject("body").get("items");
+				if (obj instanceof JSONArray) {
+					JSONArray items = (JSONArray) obj;
+					for (int i = 0; i < items.length(); i++) {
+						String stnName = items.getJSONObject(i).getString("subwayStationName");
+						String subwayRouteName = items.getJSONObject(i).getString("subwayRouteName");
+						if (stnName.equals(stationName)) {
+							if (linename.equals(subwayRouteName)) {
+								return items.getJSONObject(i).getString("subwayStationId");
+							}
+						}
+					}
+				} else if (obj instanceof JSONObject) {
+					JSONObject items = (JSONObject) obj;
+					return items.getJSONObject("item").getString("subwayStationId");
+				}
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return "";
+	}
+
+	@Override
+	public JSONObject getSubwayTimeTableOpenApi(String stnCode, int dailyType, char updown) {
+		try {
+			String url = "http://openapi.tago.go.kr/openapi/service/SubwayInfoService/getSubwaySttnAcctoSchdulList?"
+					+ "serviceKey=lVBFII5EjomsSHjRIfMkfciLDo5uGCjFPdvcF6DqA0wiNin9PnMAfkCV3oAUabVi414OM9%2FzSBoJ3Eu2srOjyA%3D%3D"
+					+ "&numOfRows=300" + "&subwayStationId=" + stnCode + "&dailyTypeCode=0" + dailyType
+					+ "&upDownTypeCode="; // 500개 불러옴
+			StringBuffer res = getAPIResult(url, "" + updown);
+			JSONObject jsonObj = XML.toJSONObject(res.toString());
+			if (jsonObj.getJSONObject("response").getJSONObject("header").getString("resultCode").equals("00")) {// 호출성공
+				int total = jsonObj.getJSONObject("response").getJSONObject("body").getInt("totalCount");
+
+				return jsonObj.getJSONObject("response").getJSONObject("body");
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return new JSONObject();
+
 	}
 
 }

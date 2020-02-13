@@ -41,9 +41,18 @@ public class MemberDAO {
 		session.invalidate();
 	}
 	
-	
 	public void updatemember(MemberVO vo) {
 		session.update("mem.updatemember", vo);
+	}
+	
+	//包府磊
+	public List<MemberVO> getAllMember(){
+		return session.selectList("mem.allmember");
+	}
+	
+	//包府磊 昏力
+	public void deleteMember(String id) {
+		session.delete("mem.kickmember", id);
 	}
 
 }

@@ -55,7 +55,7 @@ public class MemberController {
 	// 로그인 첫 화면 요청 메소드
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model, HttpSession session) {
-		if (session.getAttribute("loginID") == null) {// 로그인 안 된 상태
+		if (session.getAttribute("id") == null) {// 로그인 안 된 상태
 
 			/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 			String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
@@ -67,7 +67,7 @@ public class MemberController {
 			return "login";
 		} else { // 세션에 있을시 못넘어가게
 
-			return "redirect:loginsuccess";
+			return "loginsuccess";
 		}
 
 	}
@@ -83,7 +83,7 @@ public class MemberController {
 		
 		if (result == 1) { // 로그인 성공
 			// main.jsp로 이동
-			mav.setViewName("redirect:loginsuccess");
+			mav.setViewName("loginsuccess");
 			session.setAttribute("id", id);
 		} else { // 로그인 실패
 			mav.setViewName("login");
@@ -189,6 +189,8 @@ public class MemberController {
 				
 				return "redirect:/";
 			}
+		
+
 	
 
 

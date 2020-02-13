@@ -45,9 +45,18 @@
 		where id = #{id}
 	</update>
 
+	<!-- 관리자용 -->
+	
+	<select id="allmember" resultType="mem">
+	select * from member where id not in('system')
+	</select>
+	
+	
 	<delete id="kickmember" parameterType="string">
 		delete member where id=#{id}
 	</delete>
+	
+	
 
 
 </mapper>
