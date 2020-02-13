@@ -122,6 +122,7 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 
 		String[] list = new String[2];
+		System.out.println(list);
 		list[0] = id;
 		list[1] = name;
 		List<String> c_mail = service.checkMail(list);
