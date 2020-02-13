@@ -17,8 +17,8 @@ public class ReplyInfoService implements ReplyService {
 	}
 
 	@Override
-	public List<ReplyVO> commentList() {
-		return dao.commentList();
+	public List<ReplyVO> commentList(int seq) {
+		return dao.commentList(seq);
 	}
 
 	@Override

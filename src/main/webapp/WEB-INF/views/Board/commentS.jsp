@@ -21,15 +21,17 @@ function commentList(){
         data : {'seq':seq},
         success : function(data){
             var a =''; 
-            $.each(data, function(key, value){ 
+           for(var i=0;i<data.length;i++){
                 a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-                a += '<div class="commentInfo'+value.rno+'">'+'댓글번호 : '+value.rno+' / 작성자 : '+value.writer;
-                a += '<a onclick="commentUpdate('+value.rno+',\''+value.contents+'\');"> 수정 </a>';
-                a += '<a onclick="commentDelete('+value.rno+');"> 삭제 </a> </div>';
-                a += '<div class="commentContent'+value.rno+'"> <p> 내용 : '+value.contents +'</p>';
-                a += '</div></div>';
-            });
+                a += '<div class="commentInfo'+data[i].rno+'">'+'댓글번호 : '+data[i].rno+' / 작성자 : '+data[i].writer;
+                if(data[i].writer == $('#lid').val()){
+                a += '<a onclick="commentUpdate('+data[i].rno+',\''+data[i].contents+'\');"> 수정 </a>';
+                a += '<a onclick="commentDelete('+data[i].rno+');"> 삭제 </a>';
+                }
+                a += '<div class="commentContent'+data[i].rno+'"> <p> 내용 : '+data[i].contents +'</p>';
+                a += '</div></div></div>';
             
+       		}
             $(".commentList").html(a);
         }
     });
@@ -55,7 +57,7 @@ function commentUpdate(rno, contents){
     var a ='';
     
     a += '<div class="input-group">';
-    a += '<input type="text" class="form-control" name="content_'+rno+'" value="'+contents+'"/>';
+    a += '<input type="text" class="form-control" id="content_'+rno+'" value="'+contents+'"/>';
     a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('+rno+');">수정</button> </span>';
     a += '</div>';
     
@@ -65,12 +67,12 @@ function commentUpdate(rno, contents){
  
 //댓글 수정
 function commentUpdateProc(rno){
-    var updateContent = $('#contents_'+rno+']').val();
+    var updateContent = $('#content_'+rno).val();
     
     $.ajax({
         url : './replyupdate',
         type : 'post',
-        data : {'contents' : updateContents, 'rno' : rno},
+        data : {'contents' : updateContent, 'rno' : rno},
         success : function(data){
             if(data == 1) commentList(seq); //댓글 수정후 목록 출력 
         }
@@ -80,8 +82,9 @@ function commentUpdateProc(rno){
 //댓글 삭제 
 function commentDelete(rno){
     $.ajax({
-        url : './replydelete/'+rno,
+        url : './replydelete/',
         type : 'post',
+        data : {'rno' : rno},
         success : function(data){
             if(data == 1) commentList(seq); //댓글 삭제후 목록 출력 
         }

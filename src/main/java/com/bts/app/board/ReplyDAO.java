@@ -17,9 +17,9 @@ public class ReplyDAO {
 	}
 	
 	
-	public List<ReplyVO> commentList(){
+	public List<ReplyVO> commentList(int seq){
 		
-	List<ReplyVO> list = session.selectList("board.commentList");
+	List<ReplyVO> list = session.selectList("board.commentList", seq);
 	return list;
 	}
 	
@@ -30,11 +30,11 @@ public class ReplyDAO {
 	}
 	
 	public int commentupdate(ReplyVO vo) {
-		return session.selectOne("board.commentUpdate", vo);
+		return session.update("board.commentUpdate", vo);
 	}
 	
 	public int commentDelete(int rno) {
-		return session.selectOne("board.commentDelete", rno);
+		return session.delete("board.commentDelete", rno);
 	}
 	
 	

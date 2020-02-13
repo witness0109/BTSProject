@@ -63,6 +63,8 @@ $('#list').on('click',function(){
     <div class="container">
         <div class="commentList"></div>
     </div>
+    
+    <input type="hidden" id="lid" value="${sessionScope.id }">
 
 <!--                     추가                         -->
 <%@ include file="commentS.jsp" %>

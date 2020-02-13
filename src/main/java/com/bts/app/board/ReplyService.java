@@ -8,7 +8,7 @@ public interface ReplyService {
 	public int commentCount();
 	
 	//¥Ò±€ ∏Ò∑œ
-	public List<ReplyVO> commentList();
+	public List<ReplyVO> commentList(int seq);
 	
 	//¥Ò±€ ¿€º∫
 	public int commentInsert(ReplyVO vo);

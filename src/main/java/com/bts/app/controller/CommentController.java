@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,11 +24,11 @@ public class CommentController {
 	
 	@RequestMapping("/replylist")
 	@ResponseBody
-	private List<ReplyVO> commentList(Model model) {
-		return service.commentList();
+	private List<ReplyVO> commentList(int seq) {
+		return service.commentList(seq);
 	}
 	
-	@RequestMapping("/replyinsert")
+	@RequestMapping(value="/replyinsert" , method=RequestMethod.POST)
 	@ResponseBody
 	private int commentInsert(@RequestParam int seq, @RequestParam String contents, HttpSession session) {
 		
@@ -41,7 +42,7 @@ public class CommentController {
 		
 	}
 	
-	@RequestMapping("/replyupdate")
+	@RequestMapping(value="/replyupdate", method=RequestMethod.POST)
 	@ResponseBody
 	private int commentUpdate(@RequestParam int rno, @RequestParam String contents) {
 		ReplyVO vo = new ReplyVO();
@@ -51,9 +52,9 @@ public class CommentController {
 		return service.commentUpdate(vo);
 	}
 	
-	@RequestMapping("/replydelete")
+	@RequestMapping(value="/replydelete", method=RequestMethod.POST)
 	@ResponseBody
-	private int commentDelete(@PathVariable int rno) {
+	private int commentDelete(@RequestParam int rno) {
 		return service.commentDelete(rno);
 	}
 }

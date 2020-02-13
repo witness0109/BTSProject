@@ -341,6 +341,11 @@
 		
 		display : none;
 		}
+		
+		div#weather{
+		border : 1px double gold;
+			color : white;
+		}
 	</style>
 
 
@@ -418,6 +423,7 @@
 		<input type="button" id="logoutbtn" value="로그아웃"> 
 		<input type="button" id="boardbtn" value="고객의소리">
 		</div>
+		<div id="weather"></div>
 	</aside>
 
 	<div class="divcontainer">
@@ -527,6 +533,7 @@
 <script src="./resources/main.js"></script> 
 <script src="./resources/pathcontrol1.js"></script>
 <script src="./resources/menumenu.js"></script>
+<script src="./resources/weather.js"></script>
 <script src="./resources/modernizr.js"></script> <!-- Modernizr -->
 <script>
 

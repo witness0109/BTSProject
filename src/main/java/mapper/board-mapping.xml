@@ -52,13 +52,13 @@ select count(*) from board
 select count(*) from reply
 </select>
 
-<select id="commentList" resultType="com.bts.app.board.ReplyVO">
-select * from reply
+<select id="commentList" resultType="com.bts.app.board.ReplyVO" parameterType="int">
+select * from reply where seq = #{seq}
 </select>
 
 <insert id="commentInsert" parameterType="com.bts.app.board.ReplyVO">
 insert into reply(seq, rno, contents, writer, time)
-values(#{seq}, NVL(select max(rno)+1 from reply where seq = #{seq},1), #{contents}, #{writer}, sysdate)
+values(#{seq}, NVL((select max(rno)+1 from reply where seq = #{seq}),1), #{contents}, #{writer}, sysdate)
 </insert>
 
 <update id="commentUpdate" parameterType="com.bts.app.board.ReplyVO">
