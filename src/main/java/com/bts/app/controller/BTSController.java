@@ -63,6 +63,12 @@ public class BTSController {
 		
 		return "Search/train_search";
 	}
+	
+	@RequestMapping(value = "/subway_search", method = RequestMethod.GET)
+	public String of14() {
+		
+		return "Search/subway_search";
+	}
 
 	@RequestMapping(value = "/expressBus", method = RequestMethod.GET)
 	public void of15() {

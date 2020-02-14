@@ -28,7 +28,6 @@ public class FindController {
 			@RequestParam double ey) {
 		String option = "&lang=0&SX=" + sx + "&SY=" + sy + "&EX=" + ex + "&EY=" + ey;
 		JSONObject map = fservice.findpath(sx, sy, ex, ey);
-		System.out.println("현재시간 : " + new SimpleDateFormat("HHmmss").format(System.currentTimeMillis()));
 		return map.toString();
 	}
 
@@ -36,6 +35,7 @@ public class FindController {
 	@ResponseBody
 	public String findStationTimetable(@RequestParam String stationName, @RequestParam int subwayCode) {
 		JSONObject map = fservice.findStationTimetable(stationName,subwayCode);
+		System.out.println(stationName + " " + subwayCode);
 		return map.toString();
 	}
 	
