@@ -516,6 +516,13 @@ public class FindServiceImpl implements FindService {
 		}
 
 		JSONObject weektableU = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'U');
+		if(weektableU.get("items") instanceof String) {
+			JSONObject result = new JSONObject();
+			result.put("resultCode", "fail");
+			return result;
+		}
+		
+		
 		JSONObject sattableU = apiService.getSubwayTimeTableOpenApi(stationCode, 2, 'U');
 		JSONObject suntableU = apiService.getSubwayTimeTableOpenApi(stationCode, 3, 'U');
 		JSONObject weektableD = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'D');

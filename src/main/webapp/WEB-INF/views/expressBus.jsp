@@ -122,48 +122,29 @@ function searchExpressBusinformationAJAX(start, end) {
 				
 				inf = resultObj["result"]["station"];
 				//console.log(inf);
-				str += "<div class='box'> <h1> 노선 정보</h1>";
+
 				if(inf.length==2){
 					for(var i =0;i<inf.length;i++){
 						
 						infd[i] = resultObj["result"]["station"][i];
 						console.log(inf.length);
 						
-						
-						
-			
-						
-						if(i==0){
-								str += "<h3> 프리미엄 버스입니다.</h3>";
-								str += "<p> 출발 터미널	:	"+infd[i].startTerminal+"</p>";
-								str += "<p> 도착 터미널:	"+infd[i].destTerminal+"</p>";
-								str += "<p> 스케줄:	"+infd[i].schedule+"</p>";
-								str += "<p> 소요시간 : " +infd[i].wasteTime+"</br>"+ "</p>";
-								if(infd[i].specialFare>=10000){
-									str += "<p>금액 : " + (infd[i].specialFare-infd[i].specialFare%10000)/10000+"만	"+ infd[i].specialFare%10000+"원"+ "</p>";
-									}else{
-										"<p> 금액:	" +infd[i].specialFare+"원"+ "</p>";
-									}
-								
-								
-								
+					if(i==0){
+							
+								str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>고속 프리미엄버스</td></tr>"+
+								"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
+								str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
+								str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
+									+"</td><th>금액</th><td>"+numberFormat(infd[i].specialFare)+"</td></tr></table>";
 						
 						}else if(i==1){
-							str += "<div class='box'> <h1> 노선 정보</h1>";
-								str += "<h3> 일반, 우등 버스 입니다.</h3>";
-								str += "<p> 출발 터미널	:	"+infd[i].startTerminal+"</p>";
-								str += "<p> 도착 터미널:	"+infd[i].destTerminal+"</p>";
-								str += "<p> 스케줄:	"+infd[i].schedule+"</p>";
-								str += "<p> 소요시간 : " +infd[i].wasteTime+ "</p>";
-								if(inf[i].specialFare>=10000){
-									str += "<p>금액 : " + (infd[i].specialFare-infd[i].specialFare%10000)/10000+"만	"+ infd[i].specialFare%10000+"원"+ "</p>";
-									}else{
-										"<p> 금액:	" +infd[i].specialFare+"원"+ "</p>";
-									}
-								
-								
-								}
-						str += "</div>";
+							str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>고속 일반버스/ 우등버스</td></tr>"+
+							"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
+							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
+							str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
+								+"</td><th>금액</th><td>"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
+																
+								}			
 						document.getElementById("resultDiv").innerHTML = str;	
 						}	
 					
@@ -175,20 +156,15 @@ function searchExpressBusinformationAJAX(start, end) {
 
 						
 						
-							str += "<h3> 일반, 우등 버스 입니다.</h3>";
-								str += "<p> 출발 터미널	:	"+infd[i].startTerminal+"</p>";
-								str += "<p> 도착 터미널:	"+infd[i].destTerminal+"</p>";
-								str += "<p> 스케줄:	"+infd[i].schedule+"</p>";
-								str += "<p> 소요시간 : " +infd[i].wasteTime+ "</p>";
-								if(inf[i].specialFare>=10000){
-									str += "<p>금액 : " + (infd[i].specialFare-infd[i].specialFare%10000)/10000+"만	"+ infd[i].specialFare%10000+"원"+ "</p>";
-									}else{
-										"<p> 금액:	" +infd[i].specialFare+"원"+ "</p>";
-									}
+						str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>고속 일반버스/ 우등버스</td></tr>"+
+						"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
+						str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
+						str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
+							+"</td><th>금액</th><td>"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 								
 								
 								}
-						str += "</div>";
+
 						document.getElementById("resultDiv").innerHTML = str;	
 						}	
 					
@@ -202,7 +178,12 @@ function searchExpressBusinformationAJAX(start, end) {
 					
 				}
 				
-				
+function numberFormat(inputNumber) {
+	   return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+function replaceAll(str, searchStr, replaceStr) {
+	  return str.split(searchStr).join(replaceStr);
+	}
 			
 		
 		

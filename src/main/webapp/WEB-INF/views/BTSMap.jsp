@@ -73,10 +73,11 @@
 			padding-left: 5px;
 			color: #23313f;
 			z-index: 1;
-			background-color: white;
+			background-color: #bebebe;
 			font-size: 15px;
 			text-align: center;
 			letter-spacing: 0.1em;
+			cursor: pointer;
 
 		}
 
@@ -92,7 +93,8 @@
  		position: absolute;
 		z-index: 1;	
   		background-color: #23313f;
-  		
+  		overflow-x: hidden;
+
 
 		}
 
@@ -110,9 +112,15 @@
 			width: 25%;
 			height: 100%;
 			float: left;
-			background-color: #23313f;
-			overflow: scroll;
-			
+			/* background-color: #23313f; */
+			overflow-y: scroll;
+			overflow-x: hidden; 
+  			-ms-overflow-style: none;
+
+		}
+		::-webkit-scrollbar {
+
+			display:none;
 
 		}
 
@@ -305,22 +313,37 @@
 			padding-left: 5px;
 		}
 		
-		#intercityB {
+		table.busT {
 		border: 2px solid white;
+		color: white;
+		letter-spacing: 0.1em;
+		line-height: 1.5em;
+		font-size: 20px;
+		padding: 5px 5px 5px 5px;
+		width: 80%;
+		border-collapse: collapse;
 		}
 		
-		th,tr,td {
+		table.busT td{
 		border: 2px solid white;
+		text-align: center;		
+		height: auto;
+		border-collapse: collapse;
+		width: 30%;
+
+		}
 		
+		table.busT th{
+		border: 2px solid white;
+		text-align: center;		
+		height: auto;
+		width: 120px;
+		border-collapse: collapse;
 		}
 		
 	
 		</style>
 
-</style>
-
-
-</style>
 
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 
@@ -378,7 +401,7 @@
 				<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-file"></i><span>MyPage</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
-						<li><a href="pages-blank.html">즐겨 찾기 목록</a></li>
+						<li><a href="./favorites">즐겨 찾기 목록</a></li>
 						<li><a href="pages-login.html">경로 검색 목록</a></li>
 						<li><a href="./Mypage">회원 정보 수정</a></li>
 					</ul>
@@ -397,21 +420,17 @@
 	</aside>
 
 <div class="divcontainer">
-		<!-- class="cd-main-content" -->
 		<div id="leftside" >
 			<div>
-				<button class="findbtn" id="findpath">길찾기</button>
-				<button class="findbtn" id="findpath2">길찾기2</button>
+				<button class="findbtn" id="findpath">시내 길찾기</button>
+				<button class="findbtn" id="findpath2">시외 길찾기</button>
 				<select id="searchOption" class="content">
 					<option>검색먼저</option>
 				</select>
 				<button id="applyopt" class="content">조건 적용</button>
 			</div>
 			<div id="findresult" class="content">
-				<!-- class=content 수정해야돼  css 바꿔야돼 -->
-
 			</div>
-
 		</div>
 <div id="map11" ></div>
 	</div>
@@ -429,7 +448,7 @@
 <script src="./resources/main.js"></script> 
 <script src="./resources/pathcontrol1.js"></script>
 <script src="./resources/menumenu.js"></script>
-<script src="./resources/weather.js"></script>
+<!-- <script src="./resources/weather.js"></script> -->
 <script type="text/javascript" src="./resources/whole_control.js"></script>	<!-- Resource jQuery -->
 
 <script>

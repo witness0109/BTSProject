@@ -38,6 +38,14 @@ public class BoardController {
 	}
 	
 
+	@RequestMapping(value="/favorites", method=RequestMethod.GET)
+	public ModelAndView favorites() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("Board/favorites");
+		return mav;
+		
+	}
 	@RequestMapping(value="/boardwrite", method=RequestMethod.GET)
 	public ModelAndView BoardWrite() {
 		ModelAndView mav = new ModelAndView();
