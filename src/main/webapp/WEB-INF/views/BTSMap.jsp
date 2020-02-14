@@ -464,20 +464,7 @@
 		</script>
 
 
-<<<<<<< HEAD
-	<script type="text/javascript" src="./resources/mapcontrol1.js"></script>
-	<script type="text/javascript" src="./resources/mapcontrol2.js"></script>
-	<script type="text/javascript" src="./resources/whole_control.js"></script>
-	<script src="./resources/main.js"></script>
-	<!-- Resource jQuery -->
-	<script src="./resources/pathcontrol1.js"></script>
-	<script src="./resources/menumenu.js"></script>
 
-
-	
-
-=======
->>>>>>> 36662052f35df55633f7d81d79c021f2f4cd917d
 </body>
 
 </html>
