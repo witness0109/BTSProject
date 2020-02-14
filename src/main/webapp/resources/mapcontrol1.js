@@ -21,13 +21,13 @@
             map = new kakao.maps.Map(container, options);  //지도생성
 
             // ////////////////////
-            getWeather(map);
+        getWeather(map);
           // 지도 중심 좌표 변경시 얻어오기
             kakao.maps.event.addListener(map, 'dragend', function() {
             	getWeather(map);
 
             });
-            
+           
             //////////////////////
         
             // // 지도를 클릭한 위치에 표출할 마커입니다

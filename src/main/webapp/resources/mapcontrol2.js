@@ -99,7 +99,7 @@ for(var j=0 ; j <polyarr.length; j++){
 				polyline = new kakao.maps.Polyline({
 				    map: map,
 				    path: lineArray,
-				    strokeWeight: 15,
+				    strokeWeight: 10,
 				    strokeColor:  '#5F00FF',
 				    strokeStyle:	'dashed',
 				    strokeStyle:	'solid',

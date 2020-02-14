@@ -31,6 +31,7 @@ $('#intercityBusTM').on('click',function (ev) {
     });
     $("#map11").css("display","none");
     $("#leftside").css("width","100%");
+    $("#leftside").css("background-color","none");
  });
 
  $('#expressBusTM').on('click',function (ev) {
