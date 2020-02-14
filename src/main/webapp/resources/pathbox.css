@@ -1,26 +1,32 @@
-#subpath1{
+#openbg{
+    background: #293949;
+    color : #f5f2c4
+}
+
+.subpath1{
     border: solid 1px gold;
     display:none
 }
 
-#subpath2{
+.subpath2{
     border: solid 1px black;
     display:none
 
 }
 
-#passStopList{
+.passStopList{
     border: solid 1px palevioletred;
     display:none
-
 }
 .folding{
     cursor: pointer;
     background-color: #cccccc;
+    color : #293949;
+
 }
-#subpath1 .folding{
+.subpath1 .folding{
     background-color: #ddaaee;
 }
-#subpath2 .folding{
+.subpath2 .folding{
     background-color: #aaeedd;
 }
