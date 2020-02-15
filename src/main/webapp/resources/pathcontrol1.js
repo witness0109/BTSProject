@@ -101,140 +101,56 @@ function findPathCityOut(result) {
     var outBuspath = result.result.outBusRequest;
 
 
-
-
-
     str = "<div class='box'><p>출발 도시 : " + result.result.startCityName + "</p>" + "<p>도착 도시 : " + result.result.endCityName + "</p>" 
     + "<p>총 결과 : " + result.result.totalCount + "개</p>" +
         "<p>기차 이용 : " + trainpath.count + "개</p>" + "<p>고속버스, 시외버스 이용 : " + (expBuspath.count + outBuspath.count) + "개</p></div>";
 
-    let tarinobj = trainpath.OBJ;
+    let trainobj = trainpath.OBJ;
     trainResult = '';
     expbusResult = '';
 
+    // 기차 계산
     for (let i = 0; i < trainpath.count; i++) {
-
-        let time = Math.floor(tarinobj[i].time / 60) + "시간 " + tarinobj[i].time % 60 + "분"
-        trainResult += '<div class="box train">';
-        
-//
-trainResult += opendivdom+'<div class="subpath1">';
             let trainst = result.innerpath.ts;
-            let stpath;
-            for (let p = 0, x  = trainst.length; p < x; p++) {
-                const stname = trainst[p].name;
-                if(stname == tarinobj[i].startSTN){
-                    stpath =  trainst[p].path.result.path[0];
-                    trainResult += addsubpath(stpath.subPath,stpath);
-                    break;
-                }
-                
-            }
-
-trainResult += "</div>"
-//
-        trainResult += "<p>요금 : " + Number(tarinobj[i].payment).toLocaleString('en')+"원</p>"
-        + "<p>기차 종류 : " + tarinobj[i].trainType + "</p>"
-        + "<p>출발터미널 : " + tarinobj[i].startSTN + "</p>"
-        + "<p>도착터미널 : " + tarinobj[i].endSTN + "</p>"
-        + "<p>총 소요시간 : " + time + "</p>";
-//
-        trainResult += opendivdom+'<div class="subpath1">';
             let trainend = result.innerpath.te;
-            let endpath;
-            for (let p = 0, x  = trainend.length; p < x; p++) {
-                const endname = trainend[p].name;
-                if(endname == tarinobj[i].endSTN){
-                    endpath =  result.innerpath.te[p].path.result.path[0];
-                    trainResult += addsubpath(endpath.subPath,endpath);
-                    break;
-                }
-                
-            }
-//
-           trainResult += '</div>'
+            let time = Math.floor(trainobj[i].time / 60) + "시간 " + trainobj[i].time % 60 + "분"
+            let midstring = "<p>요금 : " + Number(trainobj[i].payment).toLocaleString('en')+"원</p>"
+                    + "<p>기차 종류 : " + trainobj[i].trainType + "</p>"
+                    + "<p>출발터미널 : " + trainobj[i].startSTN + "</p>"
+                    + "<p>도착터미널 : " + trainobj[i].endSTN + "</p>"
+                    + "<p>총 소요시간 : " + time + "</p>";
+            trainResult += makePathBox(trainst, trainend, trainobj[i], midstring, 'train')
+
     }
+    // 고속버스 계산
     let expbusobj = expBuspath.OBJ;
     for (let i = 0; i < expBuspath.count; i++) {
+
+        let expbusst = result.innerpath.ts;
+        let expbusend = result.innerpath.te;
         let time = Math.floor(expbusobj[i].time / 60) + "시간 " + expbusobj[i].time % 60 + "분"
-        expbusResult += '<div class="box expbus">';
-       
-        expbusResult += opendivdom+'<div class="subpath1">';
-        let exst = result.innerpath.es;
-        let stpath;
-        for (let p = 0, x  = exst.length; p < x; p++) {
-            const stname = exst[p].name;
-            if(stname == expbusobj[i].startSTN){
-                stpath =  exst[p].path.result.path[0];
-                expbusResult += addsubpath(stpath.subPath,stpath);
-                break;
-            }
-            
-        }
-        expbusResult += '</div>'
-
-        expbusResult += "<p>요금 : " + Number(expbusobj[i].payment).toLocaleString('en')+"원</p>"
-        + "<p>버스 종류 : 시외버스</p>"
+        let midstring = "<p>요금 : " + Number(expbusobj[i].payment).toLocaleString('en')+"원</p>"
+        + "<p>버스 종류 : 고속버스</p>"
         + "<p>출발터미널 : " + expbusobj[i].startSTN + "</p>"
-        + "<p>도착터미널 : " + expbusobj[i].endSTN + "</p>"
-        + "<p>총 소요시간 : " + time + "</p>"
-//
-        expbusResult += opendivdom+'<div class="subpath1">';
-        let trainend = result.innerpath.ee;
-        let endpath;
-        for (let p = 0, x  = trainend.length; p < x; p++) {
-            const endname = trainend[p].name;
-            if(endname == expbusobj[i].endSTN){
-                endpath =  result.innerpath.ee[p].path.result.path[0];
-                expbusResult += addsubpath(endpath.subPath,endpath);
-                break;
-            }
-            
-        }
-//     
-        expbusResult += '</div>'
-    }
+                + "<p>도착터미널 : " + expbusobj[i].endSTN + "</p>"
+                + "<p>총 소요시간 : " + time + "</p>";
+                expbusResult += makePathBox(expbusst, expbusend, expbusobj[i], midstring, 'expbus')
 
+    }
+    // 시외버스 계산
     let outBusobj = outBuspath.OBJ;
     for (let i = 0; i < outBusobj.length; i++) {
+
+        let outbusst = result.innerpath.ts;
+        let outbusend = result.innerpath.te;
         let time = Math.floor(outBusobj[i].time / 60) + "시간 " + outBusobj[i].time % 60 + "분"
-        expbusResult += '<div class="box expbus">';
-        
-        expbusResult += opendivdom+'<div class="subpath1">';
-        let outst = result.innerpath.os;
-        let startpath;
-        for (let p = 0, x  = outst.length; p < x; p++) {
-            const stname = outst[p].name;
-            if(stname == outBusobj[i].startSTN){
-                startpath =  outst[p].path.result.path[0];
-                expbusResult += addsubpath(startpath.subPath,startpath);
-                break;
-            }
-            
-        }
-        expbusResult += '</div>'
-  
-
-
-        expbusResult += "<p>요금 : " + Number(outBusobj[i].payment).toLocaleString('en')+"원</p>"
+        let midstring = "<p>요금 : " + Number(outBusobj[i].payment).toLocaleString('en')+"원</p>"
             + "<p>버스 종류 : 시외버스</p>"
             + "<p>출발터미널 : " + outBusobj[i].startSTN + "</p>"
             + "<p>도착터미널 : " + outBusobj[i].endSTN + "</p>"
             + "<p>총 소요시간 : " + time + "</p>";
+        expbusResult += makePathBox(outbusst, outbusend, outBusobj[i], midstring, 'expbus')
 
-            expbusResult += opendivdom+'<div class="subpath1">';
-            let outend = result.innerpath.oe;
-            let endpath;
-            for (let p = 0, x  = outend.length; p < x; p++) {
-                const endname = outend[p].name;
-                if(endname == outBusobj[i].endSTN){
-                    endpath =  result.innerpath.oe[p].path.result.path[0];
-                    expbusResult += addsubpath(endpath.subPath,endpath);
-                    break;
-                }
-                
-            }
-            expbusResult += '</div>'
     }
 
     let option ='전체<input type="radio" name="opt" checked value="7"> 기차<input type="radio" name="opt" value="4"> 고속, 시외버스<input type="radio" name="opt" value="5">'
@@ -328,46 +244,6 @@ function findPathCityIn(result) {
     addRadioEvent()
     return str + bustrain + busonly + subwayonly;
 }
-
-function findPathCityInandOut(result) {
-    if (result.error !== undefined) {
-        shoeErrMsg(result.error.code, result.error.msg)
-    }
-    if (result.result.searchType == 1) {
-        $('#findresult').html('결과 없음')
-        return;
-    }
-
-    busonly = '';
-    subwayonly = '';
-    bustrain = '';
-    str = "";
-    pathArr = result.result.path;
-    for (let i = 0; i < pathArr.length; i++) {
-
-        let subpathList = pathArr[i].subPath;
-        let isreal = false;
-
-
-        let distance = pathArr[i].info.totalDistance / 1000 + "km"
-        
-        if(i==0){
-            str +=  "<div class='subpath1'>";
-        }else{
-            str += foldingdivdom + "<div class='subpath1'>";
-        }
-
-        tmpStr = addsubpath(subpathList,pathArr[i])
-        switch (pathArr[i].pathType) {
-            case 1: subwayonly += tmpStr; break;
-            case 2: busonly += tmpStr; break;
-            case 3: bustrain += tmpStr; break;
-        }
-    }
-
-    return str + bustrain + busonly + subwayonly;
-}
-
 
 function foldDiv(ev) {
     ev.innerText = (ev.innerText == '경로 펼치기') ? '접기' : '경로 펼치기'
@@ -478,8 +354,7 @@ function addsubpath(subpathList,path) {
 
                 }
                 if (recommendbus.length + alternatebus.length == 0) {
-                    cango = false;
-                    break;
+                        return '';
                 }
                 subt += recommendbus;
                 if (alternatebus != '') {
@@ -522,9 +397,7 @@ function addsubpath(subpathList,path) {
         subt += '</div>'
         subresult += subt;
     }
-    if (!cango) {
-        return '';
-    }
+    
     let time = Math.floor(path.info.totalTime / 60) + "시간 " + path.info.totalTime % 60 + "분"
     var tmpStr = '<div class="box">'
         + "<p>총 요금 : " + Number(path.info.payment).toLocaleString('en') + "원</p>";
@@ -535,18 +408,18 @@ function addsubpath(subpathList,path) {
         tmpStr += "<p>지하철 환승 횟수 : " + path.info.subwayTransitCount + "</p>"
     }
     if(path.info.trafficDistance>1000){
-        path.info.trafficDistance = path.info.trafficDistance/1000+"km";
+        path.info.trafficDistance = path.info.trafficDistance/1000+" k";
     }else{
-        path.info.trafficDistance +="m";
+        path.info.trafficDistance = path.info.trafficDistance;
     }
     tmpStr += "<p>출발점 : " + path.info.firstStartStation + "</p>"
         + "<p>도착점 : " + path.info.lastEndStation + "</p>"
-        + "<p>총 이동 거리 : " + path.info.trafficDistance + "</p>"
-        + "<p>총 소요시간 : " + time + "분</p>"
+        + "<p>총 이동 거리 : " + path.info.trafficDistance + "m</p>"
+        + "<p>총 소요시간 : " + time + "</p>"
         + foldingdivdom + '<div class="subpath1">' + subresult;
 
 
-    tmpStr += '</div></div></div>';
+    tmpStr += '</div></div>';
 
     return tmpStr
 }

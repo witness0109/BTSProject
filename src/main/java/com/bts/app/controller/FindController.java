@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bts.app.FindService;
+import com.bts.app.FindServiceImpl;
 import com.bts.app.find.ApiConnectService;
 
 @Controller
@@ -25,9 +26,10 @@ public class FindController {
 	public String findPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
 
-		JSONObject map = fservice.findpath(sx, sy, ex, ey); System.out.println(map);
+		JSONObject map = fservice.findpath(sx, sy, ex, ey);
+		System.out.println(map);
 		return map.toString();
-
+//		return ((FindServiceImpl) fservice).readOutCityJSON("부천에서구로").toString();
 
 	}
 
@@ -35,11 +37,11 @@ public class FindController {
 	@ResponseBody
 	public String findOutPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
-		
-		  JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
-		  System.out.println(map);
-		  return map.toString();
-		 
+
+//		  JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
+//		  System.out.println(map);
+//		  return map.toString();
+		return ((FindServiceImpl) fservice).readOutCityJSON("충남대병원에서전주시청").toString();
 
 	}
 

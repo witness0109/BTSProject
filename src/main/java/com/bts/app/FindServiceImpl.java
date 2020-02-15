@@ -56,6 +56,7 @@ public class FindServiceImpl implements FindService {
 			JSONObject path = pathArray.getJSONObject(i);
 			JSONArray subpathArr = (JSONArray) path.get("subPath");
 			int walktime = 0;
+			int pay = path.getJSONObject("info").getInt("payment");
 
 			for (int k = 0; k < subpathArr.length(); k++) {
 				JSONObject spath = subpathArr.getJSONObject(k);
@@ -143,7 +144,9 @@ public class FindServiceImpl implements FindService {
 
 						} else {
 							String citycode = getCityCode(city, dow);
-
+							if (pay == 0) {
+								path.getJSONObject("info").put("payment", getPayment(city, dow));
+							}
 							JSONObject etcInfo = apiService.getETCRealTimeBusInfo(citycode, stationID)
 									.getJSONObject("response");
 							int header = (etcInfo.getJSONObject("header")).getInt("resultCode");
@@ -161,6 +164,36 @@ public class FindServiceImpl implements FindService {
 		}
 
 		return map;
+	}
+
+	private int getPayment(String city, String dow) {
+		JSONObject paymentTable = readOutCityJSON("버스요금");
+		if (dow.equals("세종특별시")) {
+			return 1200;
+		}
+
+		JSONArray extendStatePayment = paymentTable.getJSONArray(dow);
+		JSONObject etcpayment = null;
+		boolean isFind = false;
+
+		if (dow.equals("충청남도")) {
+			if (city.contains("시")) {
+				return extendStatePayment.getJSONObject(0).getInt("bus");
+			}
+			if (city.contains("군")) {
+				return extendStatePayment.getJSONObject(1).getInt("bus");
+			}
+		}
+		for (int i = 0; i < extendStatePayment.length(); i++) {
+			if (extendStatePayment.getJSONObject(i).getString("city").equals(city)) {// 도시이름으로 검색..
+				return extendStatePayment.getJSONObject(i).getInt("bus");
+			}
+			if (extendStatePayment.getJSONObject(i).getString("city").equals("나머지")) {
+				etcpayment = extendStatePayment.getJSONObject(i);
+			}
+		}
+
+		return etcpayment.getInt("bus");
 	}
 
 	private String getCityCode(String city, String dow) {
@@ -516,13 +549,12 @@ public class FindServiceImpl implements FindService {
 		}
 
 		JSONObject weektableU = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'U');
-		if(weektableU.get("items") instanceof String) {
+		if (weektableU.get("items") instanceof String) {
 			JSONObject result = new JSONObject();
 			result.put("resultCode", "fail");
 			return result;
 		}
-		
-		
+
 		JSONObject sattableU = apiService.getSubwayTimeTableOpenApi(stationCode, 2, 'U');
 		JSONObject suntableU = apiService.getSubwayTimeTableOpenApi(stationCode, 3, 'U');
 		JSONObject weektableD = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'D');
@@ -702,6 +734,12 @@ public class FindServiceImpl implements FindService {
 		map.put("innerpath", inner);
 
 		return map;
+	}
+
+	public JSONObject readOutCityJSON(String filename) {
+		JSONObject citycode = new JSONLoader().loadJSONFile(filename + ".json");
+		return citycode;
+
 	}
 
 }

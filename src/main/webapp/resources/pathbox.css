@@ -16,17 +16,22 @@
 
 .passStopList{
     border: solid 1px palevioletred;
+    text-align: center;
     display:none
 }
 .folding{
     cursor: pointer;
     background-color: #cccccc;
     color : #293949;
-
 }
 .subpath1 .folding{
     background-color: #ddaaee;
+
 }
 .subpath2 .folding{
     background-color: #aaeedd;
+}
+.pathborder{
+    border: 1px double gold;
+    margin: 5px auto;
 }
