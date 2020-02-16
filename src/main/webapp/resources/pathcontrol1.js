@@ -1,7 +1,7 @@
 var pathArr;
 const findpath_apiurl = 'https://api.odsay.com/v1/api/searchPubTransPathR';
-const findpath_realtime = 'http://localhost:8082/app/findapi/findpath';// need to change addr
-const findoutpath = 'http://localhost:8082/app/findapi/findoutpath';// need to change addr
+const findpath_realtime = './findapi/findpath';// need to change addr
+const findoutpath = './findapi/findoutpath';// need to change addr
 const foldingdivdom = '<div  class="folding" onClick="foldDiv(this)">경로 펼치기</div>'
 const opendivdom = '<div  class="folding" onClick="openPathWindow(this)">상세경로</div>'
 
@@ -12,21 +12,6 @@ function setData() {
         sy: startingMarker.getPosition().Ha,
         ex: destMarker.getPosition().Ga,
         ey: destMarker.getPosition().Ha
-    };
-}
-
-// api data setting
-function setOdData(searchType) {
-    return {
-        //apiKey: 'bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY',
-        apiKey: "M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc",
-        lang: 0,
-        SX: startingMarker.getPosition().Ga,
-        SY: startingMarker.getPosition().Ha,
-        EX: destMarker.getPosition().Ga,
-        EY: destMarker.getPosition().Ha,
-        OPT: 0, // 0: 최단거리, 1 타입별정렬
-        SearchType: searchType
     };
 }
 
@@ -399,7 +384,7 @@ function addsubpath(subpathList,path) {
     }
     
     let time = Math.floor(path.info.totalTime / 60) + "시간 " + path.info.totalTime % 60 + "분"
-    var tmpStr = '<div class="box">'
+    var tmpStr = '<div class="box" onclick="callMapObjApiAJAX(\''+path.info.mapObj+'\');">'
         + "<p>총 요금 : " + Number(path.info.payment).toLocaleString('en') + "원</p>";
     if (path.info.busTransitCount != 0) {
         tmpStr += "<p>버스 환승 횟수 : " + path.info.busTransitCount + "</p>"
