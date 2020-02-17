@@ -88,7 +88,7 @@ function makePolyLine(data, i, polyline, lineArray) {
         */
 		if (data.result.lane[i].type == 1) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#0068b7'
@@ -96,7 +96,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 2) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#0068b7'
@@ -104,7 +104,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 3) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#53b332'
@@ -112,7 +112,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 4) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#e60012'
@@ -120,7 +120,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 5) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#00a0e9'
@@ -128,7 +128,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 6) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#e60012'
@@ -136,7 +136,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 10) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#fe5b10'
@@ -144,7 +144,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 11) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#ffc600'
@@ -152,7 +152,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 12) { //jisun
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#53b332'
@@ -160,7 +160,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 13) { //circular
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#f2b70a'
@@ -168,7 +168,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 14) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#37b42d'
@@ -176,7 +176,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 15) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#006896'
@@ -184,7 +184,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 20) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#6600cc'
@@ -192,7 +192,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 21) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#ffc600'
@@ -200,7 +200,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 22) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#a800ff'
@@ -208,7 +208,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 26) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#e60012'
@@ -218,7 +218,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 	else {
 		if (data.result.lane[i].type == 1) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#003499'
@@ -227,7 +227,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 2) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#37b42d'
@@ -235,7 +235,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 3) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#EF7C1C'
@@ -243,7 +243,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 4) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#00A5DE'
@@ -251,7 +251,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 5) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#996CAC'
@@ -259,7 +259,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 6) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#CD7C2F'
@@ -267,7 +267,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 7) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#747F00'
@@ -275,7 +275,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 8) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#EA545D'
@@ -283,7 +283,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 9) {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#BDB092'
@@ -291,7 +291,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 100 || data.result.lane[i].type == 111) { //bundang line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#F5A200'
@@ -299,7 +299,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 101) { //airline
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#0090D2'
@@ -307,7 +307,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 104) { //gyeongui-center line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#77C4A3'
@@ -315,7 +315,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 108) { //chun line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#0C8E72'
@@ -323,7 +323,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 109) { //new bundang line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#D4003B'
@@ -331,7 +331,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 112 || data.result.lane[i].type == 79) { //gyeonggang line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#003DA5'
@@ -339,7 +339,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 113) { //ui line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#B0CE18'
@@ -347,7 +347,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 114) { //west sea line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#81A914'
@@ -355,7 +355,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 115) { //gimpo line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#A17800'
@@ -363,7 +363,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 21) { //incheon 1 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#7CA8D5'
@@ -371,7 +371,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 22) { //incheon 2 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#ED8B00'
@@ -379,7 +379,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 31) { //dj 1 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#007448'
@@ -387,7 +387,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 41) { //dg 1 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#D93F5C'
@@ -395,7 +395,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 42) { //dg 2 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#00AA80'
@@ -403,7 +403,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 43) { //dg 3 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#FFB100'
@@ -411,7 +411,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 51) { //gj 1 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#009088'
@@ -419,7 +419,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 71) { //bs 1 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#F06A00'
@@ -427,7 +427,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 72) { //bs 2 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#81BF48'
@@ -435,7 +435,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 73) { //bs 3 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#BB8C00'
@@ -443,7 +443,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 74) { //bs 4 line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#217DCB'
@@ -451,7 +451,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else if (data.result.lane[i].type == 78) { //east sea line
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#003DA5'
@@ -459,7 +459,7 @@ function makePolyLine(data, i, polyline, lineArray) {
 		}
 		else {
 			polyline = new kakao.maps.Polyline({
-				map: map,
+				map: map,strokeOpacity: 1,
 				path: lineArray,
 				strokeWeight: 15,
 				strokeColor: '#1D2A56',
