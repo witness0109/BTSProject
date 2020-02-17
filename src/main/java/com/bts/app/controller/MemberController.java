@@ -203,7 +203,8 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/Mypage", method = RequestMethod.GET)
-	public String updatemember() {
+	public String updatemember(String id, HttpSession session) {
+		session.setAttribute("name", service.findname((String) session.getAttribute("id")));
 		return "Mypage";
 	}
 
@@ -211,6 +212,7 @@ public class MemberController {
 	public String updatemember(String id, MemberVO vo, HttpSession session) {
 		service.updatemember(vo);
 		session.setAttribute("id", id);
+		
 
 		return "redirect:/";
 	}

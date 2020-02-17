@@ -48,6 +48,7 @@ public class MemberInfoService implements MemberService {
 			if (checkID(id) == 0) { // 가입이 안된 상태
 				MemberVO vo = new MemberVO();
 				vo.setId(id);
+				
 
 				// response에서 email, name 파싱
 				vo.setEmail(email.split("_")[1]);
@@ -59,7 +60,7 @@ public class MemberInfoService implements MemberService {
 			}
 
 			session.setAttribute("id", id); // 세션 생성
-			session.setAttribute("name", name);
+			
 		}
 	}
 
@@ -88,6 +89,13 @@ public class MemberInfoService implements MemberService {
 	@Override
 	public void updatemember(MemberVO vo) {
 		dao.updatemember(vo);
+	}
+
+
+
+	@Override
+	public String findname(String id) {
+		return dao.findname(id);
 	}
 
 

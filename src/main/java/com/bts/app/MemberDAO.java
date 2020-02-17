@@ -55,4 +55,8 @@ public class MemberDAO {
 		session.delete("mem.kickmember", id);
 	}
 
+	public String findname(String id) {
+		return session.selectOne("mem.name",id);
+	}
+
 }
