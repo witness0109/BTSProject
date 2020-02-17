@@ -27,11 +27,11 @@ public class NoticeDAO {
 	}
 
 	public void noticeupdate(NoticeVO vo) {
-		session.selectOne("notice.noticeupdate", vo);
+		session.update("notice.noticeupdate", vo);
 	}
 	
 	public void noticedelete(int seq) {
-		session.selectOne("notice.noticedelete", seq);
+		session.delete("notice.noticedelete", seq);
 	}
 	
 	public int namecheck(NoticeVO vo) {
