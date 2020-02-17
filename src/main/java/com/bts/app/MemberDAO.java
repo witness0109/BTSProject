@@ -45,12 +45,12 @@ public class MemberDAO {
 		session.update("mem.updatemember", vo);
 	}
 	
-	//包府磊
+	//甏�毽瀽 氇摐
 	public List<MemberVO> getAllMember(){
 		return session.selectList("mem.allmember");
 	}
 	
-	//包府磊 昏力
+	//甏�毽瀽 氇摐
 	public void deleteMember(String id) {
 		session.delete("mem.kickmember", id);
 	}
