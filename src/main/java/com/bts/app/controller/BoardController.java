@@ -60,6 +60,7 @@ public class BoardController {
 	public ModelAndView BoardWrite(BoardVO vo) throws IOException {
 		ModelAndView mav = new ModelAndView();
 		int result = service.namecheck(vo);
+		System.out.println(vo);
 		if(result != 0) {
 			int a = service.insertBoard(vo);
 			if(a == 1) {

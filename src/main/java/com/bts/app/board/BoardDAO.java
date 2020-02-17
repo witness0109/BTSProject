@@ -18,7 +18,7 @@ public class BoardDAO {
 	}
 	
 	public int insertBoard(BoardVO vo) {
-		System.out.println(vo);
+
 		return session.insert("board.insertboard", vo);
 	}
 	
