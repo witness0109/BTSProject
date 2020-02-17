@@ -1,11 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+ 
 <%@page import="java.util.*"%>
-<%
- 
-    request.setCharacterEncoding("UTF-8");
- 
-%>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +32,7 @@
 		//on
 		on.click = function(){
 			
-			
+			location.href = "./checkpw";
 		}
 		
 </script>
@@ -50,8 +46,8 @@
 				<h1>비밀번호 찾기</h1>
 				<br>
 				<div class="check_pw">
-					<form action="./checkpw" method="post" >
->
+					<form action="./checkpw" method="post" accept-charset="utf-8" >
+
 						<input type="text" name="id" id="id1" placeholder="Your Id"
 							class="inpt"><br> <input type="text" name="name"
 							id="name" placeholder="Your Name" class="inpt"><br>
