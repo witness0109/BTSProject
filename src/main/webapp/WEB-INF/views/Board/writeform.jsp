@@ -37,7 +37,7 @@ $(document).ready(function() {
 		<div class="form-group">
 		<label for="contents">내용</label>
 		<textarea class="form-control" id="contents" name="contents" rows="3"></textarea>
-
+		</div>
 		
 		<div class="form-group">
 		<label for="writer">작성자</label>
