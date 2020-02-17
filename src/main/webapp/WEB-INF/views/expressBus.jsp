@@ -94,7 +94,7 @@
 						str += "<p><label onclick ='searchExpressBusinformationAJAX("+startTerminalID+","+destinationTerminal[i].stationID+");'>"+destinationTerminal[i].stationName+"</label></p>";								
 						}
 						str += "</div>";
-						document.getElementById("resultDiv").innerHTML = str;
+						document.getElementById("resultDiv2").innerHTML = str;
 
 					} 
 
@@ -166,6 +166,7 @@ function searchExpressBusinformationAJAX(start, end) {
 								}
 
 						document.getElementById("resultDiv").innerHTML = str;	
+						document.getElementById("resultDiv2").innerHTML = "";	
 						}	
 					
 					
@@ -192,12 +193,13 @@ function replaceAll(str, searchStr, replaceStr) {
 </script>
 
 	<div id ="busD">
-		<h3> 고속 버스 터미널 찾기</h3>
+		<h3> 고속 버스 터미널 찾기
 		<input type="text" id="startCityTerminal">
 		<button onclick="searchExpressBusTerminalAJAX();">찾기</button>
-
+		</h3>
 	</div>
-	<div id="resultDiv">
+	<div id="resultDiv"></div>
+	<div id="resultDiv2">
 
 		<!-- 결과창 -->
 </div>

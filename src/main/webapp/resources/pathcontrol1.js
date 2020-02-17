@@ -1,7 +1,7 @@
 var pathArr;
 const findpath_apiurl = 'https://api.odsay.com/v1/api/searchPubTransPathR';
-const findpath_realtime = './findapi/findpath';// need to change addr
-const findoutpath = './findapi/findoutpath';// need to change addr
+const findpath_realtime = 'https://localhost/BTSProject/findapi/findpath';// need to change addr
+const findoutpath = 'https://localhost/BTSProject/findapi/findoutpath';// need to change addr
 const foldingdivdom = '<div  class="folding" onClick="foldDiv(this)">경로 펼치기</div>'
 const opendivdom = '<div  class="folding" onClick="openPathWindow(this)">상세경로</div>'
 
@@ -111,8 +111,8 @@ function findPathCityOut(result) {
     let expbusobj = expBuspath.OBJ;
     for (let i = 0; i < expBuspath.count; i++) {
 
-        let expbusst = result.innerpath.ts;
-        let expbusend = result.innerpath.te;
+        let expbusst = result.innerpath.es;
+        let expbusend = result.innerpath.ee;
         let time = Math.floor(expbusobj[i].time / 60) + "시간 " + expbusobj[i].time % 60 + "분"
         let midstring = "<p>요금 : " + Number(expbusobj[i].payment).toLocaleString('en')+"원</p>"
         + "<p>버스 종류 : 고속버스</p>"
@@ -126,8 +126,8 @@ function findPathCityOut(result) {
     let outBusobj = outBuspath.OBJ;
     for (let i = 0; i < outBusobj.length; i++) {
 
-        let outbusst = result.innerpath.ts;
-        let outbusend = result.innerpath.te;
+        let outbusst = result.innerpath.os;
+        let outbusend = result.innerpath.oe;
         let time = Math.floor(outBusobj[i].time / 60) + "시간 " + outBusobj[i].time % 60 + "분"
         let midstring = "<p>요금 : " + Number(outBusobj[i].payment).toLocaleString('en')+"원</p>"
             + "<p>버스 종류 : 시외버스</p>"
