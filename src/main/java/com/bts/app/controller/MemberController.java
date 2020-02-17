@@ -55,20 +55,20 @@ public class MemberController {
 	 * ModelAndView joinMemberService(MemberVO vo) { ModelAndView mav = new
 	 * ModelAndView(); return mav; }
 	 */
-	// ·Î±×ÀÎ Ã¹ È­¸é ¿äÃ» ¸Ş¼Òµå
+	// ë¡œê·¸ì¸ ì²« í™”ë©´ ìš”ì²­ ë©”ì†Œë“œ
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model, HttpSession session) {
-		if (session.getAttribute("id") == null) {// ·Î±×ÀÎ ¾È µÈ »óÅÂ
+		if (session.getAttribute("id") == null) {// ë¡œê·¸ì¸ ì•ˆ ëœ ìƒíƒœ
 
-			/* ³×ÀÌ¹ö¾ÆÀÌµğ·Î ÀÎÁõ URLÀ» »ı¼ºÇÏ±â À§ÇÏ¿© naverLoginBOÅ¬·¡½ºÀÇ getAuthorizationUrl¸Ş¼Òµå È£Ãâ */
+			/* ë„¤ì´ë²„ì•„ì´ë””ë¡œ ì¸ì¦ URLì„ ìƒì„±í•˜ê¸° ìœ„í•˜ì—¬ naverLoginBOí´ë˜ìŠ¤ì˜ getAuthorizationUrlë©”ì†Œë“œ í˜¸ì¶œ */
 			String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
 			// https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
 			// redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
-			System.out.println("³×ÀÌ¹ö:" + naverAuthUrl);
-			// ³×ÀÌ¹ö
+			System.out.println("ë„¤ì´ë²„:" + naverAuthUrl);
+			// ë„¤ì´ë²„
 			model.addAttribute("url", naverAuthUrl);
 			return "login";
-		} else { // ¼¼¼Ç¿¡ ÀÖÀ»½Ã ¸ø³Ñ¾î°¡°Ô
+		} else { // ì„¸ì…˜ì— ìˆì„ì‹œ ëª»ë„˜ì–´ê°€ê²Œ
 
 			return "loginsuccess";
 		}
@@ -84,16 +84,26 @@ public class MemberController {
 		inf[1] = pw;
 		int result = service.login(inf);
 
-		if (result == 1) { // ·Î±×ÀÎ ¼º°ø
-			// main.jsp·Î ÀÌµ¿
+		if (result == 1) { // ë¡œê·¸ì¸ ì„±ê³µ
+			// main.jspë¡œ ì´ë™
 			mav.setViewName("loginsuccess");
 			session.setAttribute("id", id);
-		} else { // ·Î±×ÀÎ ½ÇÆĞ
-			mav.setViewName("login");
+		} else { // ë¡œê·¸ì¸ ì‹¤íŒ¨
+
+			mav.setViewName("loginfail");
 
 		}
 		return mav;
 
+	}
+	
+	
+	@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
+	public void lginsss() {
+	}
+	
+	@RequestMapping(value = "/loginfail", method = RequestMethod.GET)
+	public void lginf() {
 	}
 
 	@RequestMapping(value = "/insertmember", method = RequestMethod.POST)
@@ -103,7 +113,7 @@ public class MemberController {
 		return "login";
 	}
 
-	// È¸¿ø°¡ÀÔÃ¢ ¾ÆÀÌµğ Áßº¹Ã¼Å©
+	// íšŒì›ê°€ì…ì°½ ì•„ì´ë”” ì¤‘ë³µì²´í¬
 	@RequestMapping(value = "/checkmember", method = RequestMethod.POST)
 	@ResponseBody
 	public String checkIdService(String id) {
@@ -111,16 +121,12 @@ public class MemberController {
 		return "" + service.checkID(id);
 	}
 
-	// ºñ¹Ğ¹øÈ£ Ã£±â
+	// ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
 	@RequestMapping(value = "/checkpw", method = RequestMethod.GET)
 	public void checkPwService() {
-
 	}
 
-	@RequestMapping(value = "/loginsuccess", method = RequestMethod.GET)
-	public void lginsss() {
-	}
-
+	//ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ë©”ì¼
 	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
 	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
@@ -140,15 +146,12 @@ public class MemberController {
 			}
 		}
 
-		System.out.println(check);
 		if (!check) {
-			mav.addObject("result", "please check");
+			//ì—†ëŠ” ì •ë³´ì¼ë•Œ
+			mav.addObject("result", "Please Check Information");
 			mav.setViewName("checkpw");
 		} else {
-
-			System.out.println("ok");
-
-			//
+			//ë§ëŠ” ì •ë³´ì¼ë•Œ
 			List<String> c_mail = service.checkMail(list);
 			List<String> c_pw = service.checkPw(list);
 
@@ -158,9 +161,9 @@ public class MemberController {
 			mav.addObject("mail", c_mail);
 			mav.addObject("check", "no_id");
 
-			// ¼ö½ÅÀÚ ÀÎÄÚµùÀ» À§ÇÑ ¼³Á¤
+			// ìˆ˜ì‹ ì ì¸ì½”ë”©ì„ ìœ„í•œ ì„¤ì •
 			String charSet = "UTF-8";
-			String fromName = "BTS ¿î¿µÀÚ";
+			String fromName = "BTS ìš´ì˜ì";
 			InternetAddress from = new InternetAddress();
 
 			try {
@@ -169,10 +172,10 @@ public class MemberController {
 				MimeMessage message = mailSender.createMimeMessage();
 				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-				messageHelper.setFrom(from); // º¸³»´Â»ç¶÷ »ı·«ÇÏ°Å³ª ÇÏ¸é Á¤»óÀÛµ¿À» ¾ÈÇÔ
-				messageHelper.setTo(email); // ¹Ş´Â»ç¶÷ ÀÌ¸ŞÀÏ
-				messageHelper.setSubject("ºñ¹Ğ¹øÈ£ ÀÔ´Ï´Ù"); // ¸ŞÀÏÁ¦¸ñÀº »ı·«ÀÌ °¡´ÉÇÏ´Ù
-				messageHelper.setText(password + " ÀÔ´Ï´Ù. "); // ¸ŞÀÏ ³»¿ë
+				messageHelper.setFrom(from); // ë³´ë‚´ëŠ”ì‚¬ëŒ ìƒëµí•˜ê±°ë‚˜ í•˜ë©´ ì •ìƒì‘ë™ì„ ì•ˆí•¨
+				messageHelper.setTo(email); // ë°›ëŠ”ì‚¬ëŒ ì´ë©”ì¼
+				messageHelper.setSubject("ë¹„ë°€ë²ˆí˜¸ ì…ë‹ˆë‹¤"); // ë©”ì¼ì œëª©ì€ ìƒëµì´ ê°€ëŠ¥í•˜ë‹¤
+				messageHelper.setText(password + " ì…ë‹ˆë‹¤. "); // ë©”ì¼ ë‚´ìš©
 
 				mailSender.send(message);
 			} catch (Exception e) {
@@ -185,14 +188,6 @@ public class MemberController {
 		return mav;
 	}
 
-	/*
-	 * @RequestMapping(value="/checkpw" ,method = RequestMethod.POST) public
-	 * ModelAndView checkPwServiceSuccess(String id) { ModelAndView mav = new
-	 * ModelAndView(); String c_pw = service.checkPw(id);
-	 * 
-	 * mav.addObject("password",c_pw); mav.addObject("check", "no_id");
-	 * mav.setViewName("checkpw"); return mav; }
-	 */
 
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
@@ -211,7 +206,6 @@ public class MemberController {
 	public String updatemember(String id, MemberVO vo, HttpSession session) {
 		service.updatemember(vo);
 		session.setAttribute("id", id);
-
 		return "redirect:/";
 	}
 

@@ -14,7 +14,7 @@
 
 		// 사용할 앱의 JavaScript 키를 설정해 주세요.
 		Kakao.init('50ae0ab7622b2063e98c76cd2db14d2e');
-		//Kakao.Auth.setAccessToken(accessTokenFromServer);
+
 		// 카카오 로그인 버튼을 생성합니다.
 		Kakao.Auth.createLoginButton({
 			container : '#kakao-login-btn',
@@ -24,17 +24,6 @@
 					url : '/v1/user/me',
 					success : function(res) {
 
-				/* 		alert(res.properties.nickname + '님 환영합니다.'
-								+ JSON.stringify(res.kaccount_email)); 
-						var inf = JSON.stringify(res);
-				 		var loginemail = document.getElementById("kakao");
-						loginemail.innerHTML = JSON
-								.stringify(res.kaccount_email) */;
-
-						/*   console.log(JSON.stringify(res.kaccount_email));
-						 console.log(JSON.stringify(res.id));
-						 console.log(JSON.stringify(res.properties.profile_image));
-						 console.log(JSON.stringify(res.properties.nickname)); */
 						var email = res.kaccount_email;
 						var name = res.properties.nickname;
 
@@ -66,12 +55,11 @@
 			<div class="content">
 				<div class="signin-cont cont">
 					<form action="/BTS/login" method="post">
+
 						<input type="text" name="id" id="id1" class="inpt" required="required" placeholder="Your Id"> 
-							<label for="email">Your ID</label> 
+							<label for="id">Your ID</label> 
 							<input type="password" name="pw" id="password" class="inpt" required="required"	placeholder="Your password">
 							<label for="password">Your password</label> 
-							<input type="checkbox" id="remember" class="checkbox" checked>
-							<label for="remember">Remember me</label>
 						<!-- 카카오 , 네이버 로그인-->
 
 						<div id="naver_id_login" style="text-align: center" class="inpt" > 
@@ -180,6 +168,7 @@
 									})
 
 						});
+
 
 
 	</script>

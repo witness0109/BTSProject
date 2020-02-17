@@ -374,8 +374,7 @@
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
 			<!-- BTS 클릭시 홈화면으로 이동 -->
-				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
-				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>길 찾기</span><i
+					<li class="sub-menu"><a href="./BTSMap"><i class="fa fa-cogs"></i><span>길 찾기</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
 
@@ -424,10 +423,8 @@
 			<div>
 				<button class="findbtn" id="findpath">시내 길찾기</button>
 				<button class="findbtn" id="findpath2">시외 길찾기</button>
-				<select id="searchOption" class="content">
-					<option>검색먼저</option>
-				</select>
-				<button id="applyopt" class="content">조건 적용</button>
+				<div id="searchOption" class="content">
+				</div>
 			</div>
 			<div id="findresult" class="content">
 			</div>
