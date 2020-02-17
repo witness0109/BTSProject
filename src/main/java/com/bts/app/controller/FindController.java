@@ -26,10 +26,10 @@ public class FindController {
 	public String findPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
 
-//		JSONObject map = fservice.findpath(sx, sy, ex, ey);
-//		System.out.println(map);
-//		return map.toString();
-		return ((FindServiceImpl) fservice).readOutCityJSON("부천에서구로").toString();
+		JSONObject map = fservice.findpath(sx, sy, ex, ey);
+		System.out.println(map);
+		return map.toString();
+		// return ((FindServiceImpl) fservice).readOutCityJSON("부천에서구로").toString();
 
 	}
 
@@ -38,10 +38,11 @@ public class FindController {
 	public String findOutPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
 
-//		  JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
-//		  System.out.println(map);
-//		  return map.toString();
-		return ((FindServiceImpl) fservice).readOutCityJSON("충남대병원에서전주시청").toString();
+				//		JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
+//		System.out.println(map);
+//		return map.toString();
+		return ((FindServiceImpl) fservice).readOutCityJSON("ddg").toString();
+
 
 	}
 

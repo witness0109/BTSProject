@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface SystemService {
 
-	//¸ðµç member 
+	//ì¡°íšŒ member 
 	public List<MemberVO> getAllMem();
 	
-	//°­Åð±â´É
+	//ê°•í‡´
 	public void deleteMem(String id);
 	
 }

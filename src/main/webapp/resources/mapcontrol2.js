@@ -3,7 +3,7 @@ var sx, sy, ex, ey;
 var currentMapobj;
 var odApiKey = encodeURI('bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY');
 // var odApiKey = encodeURIComponent('M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc')
-;
+
 
 //길찾기 API 호출
 

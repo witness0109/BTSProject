@@ -216,9 +216,6 @@ $(document).ready(function () {
 </head>
 <body>
 	<div class="container">
-	${list}
-	${re_date}	
-	
 		<table>
 			<tr>
 				<th>ID</th>
