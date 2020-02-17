@@ -9,8 +9,8 @@
 
 
 	<style>
-		@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-		@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+		@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
 		
 		html, body {
             margin: 0;
@@ -384,15 +384,10 @@
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
 
-			<!-- 길찾기 클릭시 홈화면으로 이동 -->
-					<li class="sub-menu"><a href="./BTSMap"><i class="fa fa-cogs"></i><span>길 찾기</span><i
-							class="arrow fa fa-angle-right pull-right"></i></a>
-					<ul>
+			
 
 
-
-			<!-- 길찾기클릭시 홈화면으로 이동 -->
-				<li><a ><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
+			
 				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>길 찾기</span></a></li>							
 
 
