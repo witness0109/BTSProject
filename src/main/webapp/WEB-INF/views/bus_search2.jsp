@@ -51,7 +51,7 @@ function searchBusLaneAJAX() {
 					+ resultArr[i].busEndPoint + "</p>";
 				str += "<p>버스노선 ID : " + resultArr[i].busID + "</p>";
 				busID = resultArr[i].busID;			
-				str += "<label onclick ='searchdetailBusLaneAJAX("+busID+");'> 노선 자세히 보기1</label></div>";											
+				str += "<label onclick ='searchdetailBusLaneAJAX("+busID+");'> 노선 자세히 보기</label></div>";											
 				}				
 			}
 		
@@ -91,10 +91,11 @@ function totalAJAX(){
 
 </script>
 
-<div>
+<div id ="busD">
+<h3> 시내버스 노선 조회
 <input type="text" id="busNo">
-<button onclick="totalAJAX();">click</button>
-
+<button onclick="totalAJAX();">찾기</button>
+</h3>
 </div>
 <div id="resultDiv">
 

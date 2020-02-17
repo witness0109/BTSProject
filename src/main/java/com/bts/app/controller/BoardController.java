@@ -31,10 +31,10 @@ public class BoardController {
 		List<BoardVO> list = service.getBoardList(cri);
 		int total = service.totalCnt();
 		
-		// Model Á¤º¸ ÀúÀå
+		// Model ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		model.addAttribute("boardlist",list);
 		model.addAttribute("paging",new PageMaker(cri,total));
-		return "Board/boardlist"; // View ÀÌ¸§ ¸®ÅÏ
+		return "Board/boardlist"; // View ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 	}
 	
@@ -64,7 +64,7 @@ public class BoardController {
 		if(result != 0) {
 			int a = service.insertBoard(vo);
 			if(a == 1) {
-				mav.addObject("result", "°Ô½Ã¹° ÀÛ¼º ¿Ï·á");
+				mav.addObject("result", "ê²Œì‹œê¸€ ìž‘ì„±ì™„ë£Œ");
 				mav.setViewName("Board/boardwritesuccess");
 			}
 		} else {
