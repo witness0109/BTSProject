@@ -1,5 +1,6 @@
 package com.bts.app.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -82,6 +83,7 @@ public class MemberController {
 		String[] inf = new String[2];
 		inf[0] = id;
 		inf[1] = pw;
+		
 		int result = service.login(inf);
 
 		if (result == 1) { // 로그인 성공
@@ -128,12 +130,15 @@ public class MemberController {
 
 	//비밀번호 찾기 메일
 	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
-	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request) {
+	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request){
+		
+		
 		ModelAndView mav = new ModelAndView();
 		List<MemberVO> DB_list = service2.getAllMem();
 		String[] list = new String[2];
 		list[0] = id;
 		list[1] = name;
+		System.out.println(id + name);
 		boolean check = false;
 
 		for (int i = 0; i < DB_list.size(); i++) {
@@ -149,7 +154,7 @@ public class MemberController {
 		if (!check) {
 			//없는 정보일때
 			mav.addObject("result", "Please Check Information");
-			mav.setViewName("checkpw");
+			mav.setViewName("findfail");
 		} else {
 			//맞는 정보일때
 			List<String> c_mail = service.checkMail(list);
@@ -182,7 +187,7 @@ public class MemberController {
 				System.out.println(e);
 			}
 
-			mav.setViewName("login");
+			mav.setViewName("findsuccess");
 
 		}
 		return mav;
