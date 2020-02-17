@@ -384,15 +384,8 @@
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
 
-			<!-- 길찾기 클릭시 홈화면으로 이동 -->
-					<li class="sub-menu"><a href="./BTSMap"><i class="fa fa-cogs"></i><span>길 찾기</span><i
-							class="arrow fa fa-angle-right pull-right"></i></a>
-					<ul>
-
-
-
 			<!-- 길찾기클릭시 홈화면으로 이동 -->
-				<li><a ><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
+
 				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>길 찾기</span></a></li>							
 
 
