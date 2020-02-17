@@ -10,7 +10,6 @@
 
 	<style>
 		@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-
 		@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
 		
 		html, body {
@@ -374,7 +373,7 @@
 <aside class="sidebar" >
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
-			<!-- BTS 클릭시 홈화면으로 이동 -->
+			<!-- 길찾기 클릭시 홈화면으로 이동 -->
 					<li class="sub-menu"><a href="./BTSMap"><i class="fa fa-cogs"></i><span>길 찾기</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
