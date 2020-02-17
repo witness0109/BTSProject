@@ -1,10 +1,10 @@
 
 var sx,sy,ex,ey;
 var currentMapobj;
-// var apiKey = 'bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY';
-// var odApiKey = encodeURI('M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc')
-var odApiKey = encodeURI('Q4LoTkCdnmFcw8Be47GcMw')
-;
+ var odApiKey = encodeURI('bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY');
+ //var odApiKey = encodeURI('M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc')
+
+
 
 
 // function searchPubTransPathAJAX() {

@@ -23,8 +23,8 @@ public class FindServiceImpl implements FindService {
 	public static void main(String[] args) {
 		FindServiceImpl fs = new FindServiceImpl();
 
-//		System.out.println(fs.findpath(126.9051651846776, 37.51619692388867, 127.04956901223464, 37.485662474272765)); // º≠øÔ
-//		System.out.println(fs.findpath(126.808630, 37.482729, 126.786858, 37.504203)); // ∫Œ√µ
+//		System.out.println(fs.findpath(126.9051651846776, 37.51619692388867, 127.04956901223464, 37.485662474272765)); // ÏÑúÏö∏
+//		System.out.println(fs.findpath(126.808630, 37.482729, 126.786858, 37.504203)); // Î∂ÄÏ≤ú
 
 		// System.out.println(fs.findpath(127.349904, 36.360802, 127.378320,
 		// 36.351878));// dj
@@ -34,9 +34,9 @@ public class FindServiceImpl implements FindService {
 
 		System.out.println(
 				fs.findOutpath(126.89793002823849, 37.488232695178674, 127.34262657500408, 36.366392876840045));// jeju
-//		System.out.println(fs.findpath(126.87949687399517, 35.16042131688744, 126.8110942045558, 35.1373943689147));// ¿ØΩ∫ƒ˘æÓ->±§¡÷∞¯«◊
+//		System.out.println(fs.findpath(126.87949687399517, 35.16042131688744, 126.8110942045558, 35.1373943689147));// Ïú†Ïä§ÌÄòÏñ¥->Í¥ëÏ£ºÍ≥µÌï≠
 
-		// System.out.println(fs.findStationTimetable("ø¬ºˆ", 1));
+		// System.out.println(fs.findStationTimetable("Ïò®Ïàò", 1));
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class FindServiceImpl implements FindService {
 			return map;
 		}
 		JSONArray pathArray = (JSONArray) (map.getJSONObject("result").get("path"));
-		for (int i = 0; i < pathArray.length(); i++) { // path ∏Ò∑œ ¡∂»∏
+		for (int i = 0; i < pathArray.length(); i++) { // path Î™©Î°ù Ï°∞Ìöå
 			JSONObject path = pathArray.getJSONObject(i);
 			JSONArray subpathArr = (JSONArray) path.get("subPath");
 			int walktime = 0;
@@ -60,18 +60,18 @@ public class FindServiceImpl implements FindService {
 
 			for (int k = 0; k < subpathArr.length(); k++) {
 				JSONObject spath = subpathArr.getJSONObject(k);
-				if (spath.getInt("trafficType") == 3) { // √π ∏Ò¿˚¡ˆ±Ó¡ˆ ∞»¥¬Ω√∞£
+				if (spath.getInt("trafficType") == 3) { // Ï≤´ Î™©Ï†ÅÏßÄÍπåÏßÄ Í±∑ÎäîÏãúÍ∞Ñ
 					walktime = spath.getInt("sectionTime");
 					continue;
 				}
 
-				// Ω≈∫–¥Á : 1077 1~9 : 1001~1009 ∞¯√∂ : 1065 ∞Ê¿« : 1063 ∞Ê√· : 1067 øÏ¿ÃΩ≈º≥ : 1092
-				// ∫–¥Á : 1075 ºˆ¿Œ : 1071
+				// Ïã†Î∂ÑÎãπ : 1077 1~9 : 1001~1009 Í≥µÏ≤† : 1065 Í≤ΩÏùò : 1063 Í≤ΩÏ∂ò : 1067 Ïö∞Ïù¥Ïã†ÏÑ§ : 1092
+				// Î∂ÑÎãπ : 1075 ÏàòÏù∏ : 1071
 
 				if (spath.getInt("trafficType") == 1) {// subway
 					String startName = spath.getString("startName");
 					int subcode = spath.getJSONArray("lane").getJSONObject(0).getInt("subwayCode");
-					char direction = spath.getInt("wayCode") == 1 ? 'U' : 'D';// 1 = ªÛ«‡
+					char direction = spath.getInt("wayCode") == 1 ? 'U' : 'D';// 1 = ÏÉÅÌñâ
 					String stationCode = apiService.getSubwayStatioinCodeOpenApi(startName, subcode);
 					int dailyType = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
@@ -87,7 +87,7 @@ public class FindServiceImpl implements FindService {
 						break;
 
 					}
-					long time = System.currentTimeMillis() + ((walktime + 2) * 60000);// ø™ø°º≠ Ω¬∞≠¿Â±Ó¡ˆ Ω√∞£ 2∫–¿ª ∞®æ»«‘
+					long time = System.currentTimeMillis() + ((walktime + 2) * 60000);// Ïó≠ÏóêÏÑú ÏäπÍ∞ïÏû•ÍπåÏßÄ ÏãúÍ∞Ñ 2Î∂ÑÏùÑ Í∞êÏïàÌï®
 					int expectedTime = Integer.parseInt(new SimpleDateFormat("HHmmss").format(time));
 					int currentTime = Integer
 							.parseInt(new SimpleDateFormat("HHmmss").format(System.currentTimeMillis()));
@@ -122,13 +122,13 @@ public class FindServiceImpl implements FindService {
 					String stationID;
 					String city = stationInfo.getString("gu");
 					String dow = stationInfo.getString("do");
-					if (stationCityCode == 1000) { // º≠øÔΩ√ ¡§∑˘¿Â
+					if (stationCityCode == 1000) { // ÏÑúÏö∏Ïãú Ï†ïÎ•òÏû•
 						JSONArray buslist = processSeoulBus(walktime, busLanes, stationInfo);
 						System.out.println(buslist.length());
-					} else {// º≠øÔ ø‹
+					} else {// ÏÑúÏö∏ Ïô∏
 						stationID = stationInfo.getString("localStationID");
 
-						if (stationCityCode < 2000 && stationCityCode > 1000) {// ∞Ê±‚µµ
+						if (stationCityCode < 2000 && stationCityCode > 1000) {// Í≤ΩÍ∏∞ÎèÑ
 							JSONObject gginfo = apiService.getGGRealTimeBusInfo(stationID).getJSONObject("response");
 							int header = (gginfo.getJSONObject("comMsgHeader")).getInt("returnCode");
 							if (gginfo.getJSONObject("msgHeader").getInt("resultCode") != 0) {
@@ -136,7 +136,7 @@ public class FindServiceImpl implements FindService {
 							}
 							JSONArray buslist = processGGBus(walktime, busLanes, gginfo);
 
-						} else if (stationCityCode == 7000) {// ∫◊ªÍ
+						} else if (stationCityCode == 7000) {// Î∂ìÏÇ∞
 							JSONObject busaninfo = apiService.getBusanRealTimeBusInfo(stationID)
 									.getJSONObject("response");
 							int resultCode = (busaninfo.getJSONObject("header")).getInt("resultCode");
@@ -167,8 +167,8 @@ public class FindServiceImpl implements FindService {
 	}
 
 	private int getPayment(String city, String dow) {
-		JSONObject paymentTable = readOutCityJSON("πˆΩ∫ø‰±›");
-		if (dow.equals("ºº¡æ∆Ø∫∞Ω√")) {
+		JSONObject paymentTable = readOutCityJSON("Î≤ÑÏä§ÏöîÍ∏à");
+		if (dow.equals("ÏÑ∏Ï¢ÖÌäπÎ≥ÑÏãú")) {
 			return 1200;
 		}
 
@@ -176,19 +176,19 @@ public class FindServiceImpl implements FindService {
 		JSONObject etcpayment = null;
 		boolean isFind = false;
 
-		if (dow.equals("√Ê√ª≥≤µµ")) {
-			if (city.contains("Ω√")) {
+		if (dow.equals("Ï∂©Ï≤≠ÎÇ®ÎèÑ")) {
+			if (city.contains("Ïãú")) {
 				return extendStatePayment.getJSONObject(0).getInt("bus");
 			}
-			if (city.contains("±∫")) {
+			if (city.contains("Íµ∞")) {
 				return extendStatePayment.getJSONObject(1).getInt("bus");
 			}
 		}
 		for (int i = 0; i < extendStatePayment.length(); i++) {
-			if (extendStatePayment.getJSONObject(i).getString("city").equals(city)) {// µµΩ√¿Ã∏ß¿∏∑Œ ∞Àªˆ..
+			if (extendStatePayment.getJSONObject(i).getString("city").equals(city)) {// ÎèÑÏãúÏù¥Î¶ÑÏúºÎ°ú Í≤ÄÏÉâ..
 				return extendStatePayment.getJSONObject(i).getInt("bus");
 			}
-			if (extendStatePayment.getJSONObject(i).getString("city").equals("≥™∏”¡ˆ")) {
+			if (extendStatePayment.getJSONObject(i).getString("city").equals("ÎÇòÎ®∏ÏßÄ")) {
 				etcpayment = extendStatePayment.getJSONObject(i);
 			}
 		}
@@ -199,19 +199,19 @@ public class FindServiceImpl implements FindService {
 	private String getCityCode(String city, String dow) {
 		String citycode = "0";
 		JSONArray cclist = readCitycode().getJSONArray("records");
-		if (dow.contains("±§ø™Ω√") || dow.contains("∆Ø∫∞")) {
-			if (dow.contains("¡¶¡÷")) {
+		if (dow.contains("Í¥ëÏó≠Ïãú") || dow.contains("ÌäπÎ≥Ñ")) {
+			if (dow.contains("Ï†úÏ£º")) {
 
 				for (int p = 0; p < cclist.length(); p++) {
-					if (cclist.getJSONObject(p).getString("cityname").equals("¡¶¡÷µµ")) {
+					if (cclist.getJSONObject(p).getString("cityname").equals("Ï†úÏ£ºÎèÑ")) {
 						citycode = cclist.getJSONObject(p).getString("citycode");
 						break;
 					}
 				}
 
-			} else if (dow.contains("ºº¡æ")) {
+			} else if (dow.contains("ÏÑ∏Ï¢Ö")) {
 				for (int p = 0; p < cclist.length(); p++) {
-					if (cclist.getJSONObject(p).getString("cityname").equals("ºº¡æ∆Ø∫∞Ω√")) {
+					if (cclist.getJSONObject(p).getString("cityname").equals("ÏÑ∏Ï¢ÖÌäπÎ≥ÑÏãú")) {
 						citycode = cclist.getJSONObject(p).getString("citycode");
 						break;
 					}
@@ -400,13 +400,13 @@ public class FindServiceImpl implements FindService {
 	private JSONArray processSeoulBus(int walktime, JSONArray busLanes, JSONObject stationInfo) {
 		String stationID;
 		stationID = stationInfo.getString("arsID").replace("-", "");
-		JSONObject seoulinfo = apiService.getSeoulRealTimeBusInfo(stationID).getJSONObject("ServiceResult"); // º≠øÔΩ√
-		// Ω«Ω√∞£
-		// »£√‚
+		JSONObject seoulinfo = apiService.getSeoulRealTimeBusInfo(stationID).getJSONObject("ServiceResult"); // ÏÑúÏö∏Ïãú
+		// Ïã§ÏãúÍ∞Ñ
+		// Ìò∏Ï∂ú
 		int header = (seoulinfo.getJSONObject("msgHeader")).getInt("headerCd");
 		Object obj = seoulinfo.getJSONObject("msgBody").get("itemList");
 		if (obj instanceof JSONArray) {
-			JSONArray buslist = (JSONArray) obj; // ¡§∑˘¿Â πˆΩ∫ ∏Ò∑œ
+			JSONArray buslist = (JSONArray) obj; // Ï†ïÎ•òÏû• Î≤ÑÏä§ Î™©Î°ù
 			for (int p = 0; p < buslist.length(); p++) {
 				Object rtnm = buslist.getJSONObject(p).get("rtNm");
 				String busNo;
@@ -417,49 +417,49 @@ public class FindServiceImpl implements FindService {
 				}
 				for (int m = 0; m < busLanes.length(); m++) {
 
-					if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// √£¿∫ ∞Ê∑Œø°º≠ ≈∏¥¬ πˆΩ∫¿œ∂ß
+					if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// Ï∞æÏùÄ Í≤ΩÎ°úÏóêÏÑú ÌÉÄÎäî Î≤ÑÏä§ÏùºÎïå
 						String arrtime1 = (buslist.getJSONObject(p)).getString("arrmsg1");
 						String arrtime2 = (buslist.getJSONObject(p)).getString("arrmsg2");
-						if (arrtime1.equals("∞ µµ¬¯")) {
-							if (arrtime2.equals("√‚πﬂ¥Î±‚") || arrtime2.equals("∞ µµ¬¯") || arrtime2.equals("øÓ«‡¡æ∑·")) {
+						if (arrtime1.equals("Í≥ß ÎèÑÏ∞©")) {
+							if (arrtime2.equals("Ï∂úÎ∞úÎåÄÍ∏∞") || arrtime2.equals("Í≥ß ÎèÑÏ∞©") || arrtime2.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 								continue;
 							}
-							int minute = Integer.parseInt(arrtime2.split("∫–")[0]);
-							String secpart = arrtime2.split("∫–")[1].split("»ƒ")[0];
+							int minute = Integer.parseInt(arrtime2.split("Î∂Ñ")[0]);
+							String secpart = arrtime2.split("Î∂Ñ")[1].split("ÌõÑ")[0];
 							int sec = 0;
-							if (secpart.contains("√ ")) {
-								sec = Integer.parseInt(secpart.split("√ ")[0]);
+							if (secpart.contains("Ï¥à")) {
+								sec = Integer.parseInt(secpart.split("Ï¥à")[0]);
 							}
-							if (walktime * 60 <= minute * 60 + sec) {// ±◊ ¥Ÿ¿Ω πˆΩ∫ µµ¬¯Ω√∞£∞ËªÍ
+							if (walktime * 60 <= minute * 60 + sec) {// Í∑∏ Îã§Ïùå Î≤ÑÏä§ ÎèÑÏ∞©ÏãúÍ∞ÑÍ≥ÑÏÇ∞
 								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 							} else {
 								busLanes.getJSONObject(m).put("arrmsg1", -1);
 							}
-						} else if (arrtime1.equals("√‚πﬂ¥Î±‚")) {
+						} else if (arrtime1.equals("Ï∂úÎ∞úÎåÄÍ∏∞")) {
 							busLanes.getJSONObject(m).put("arrmsg1", -1);
-						} else if (arrtime1.equals("øÓ«‡¡æ∑·")) {
+						} else if (arrtime1.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 							busLanes.getJSONObject(m).put("arrmsg1", -1);
 						} else {
-							int minute = Integer.parseInt(arrtime1.split("∫–")[0]);
-							String secpart = arrtime1.split("∫–")[1].split("»ƒ")[0];
+							int minute = Integer.parseInt(arrtime1.split("Î∂Ñ")[0]);
+							String secpart = arrtime1.split("Î∂Ñ")[1].split("ÌõÑ")[0];
 							int sec = 0;
-							if (secpart.contains("√ ")) {
-								sec = Integer.parseInt(secpart.split("√ ")[0]);
+							if (secpart.contains("Ï¥à")) {
+								sec = Integer.parseInt(secpart.split("Ï¥à")[0]);
 							}
 
-							if (walktime * 60 <= minute * 60 + sec) {// ∞…æÓº≠ µµ¬¯ ¿¸ø° ¥Ÿ¿Ω πˆΩ∫∞° µµ¬¯«“∂ß
+							if (walktime * 60 <= minute * 60 + sec) {// Í±∏Ïñ¥ÏÑú ÎèÑÏ∞© Ï†ÑÏóê Îã§Ïùå Î≤ÑÏä§Í∞Ä ÎèÑÏ∞©Ìï†Îïå
 								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 							} else {
-								if (arrtime2.equals("√‚πﬂ¥Î±‚") || arrtime2.equals("∞ µµ¬¯") || arrtime2.equals("øÓ«‡¡æ∑·")) {
+								if (arrtime2.equals("Ï∂úÎ∞úÎåÄÍ∏∞") || arrtime2.equals("Í≥ß ÎèÑÏ∞©") || arrtime2.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 									continue;
 								}
-								minute = Integer.parseInt(arrtime2.split("∫–")[0]);
-								secpart = arrtime2.split("∫–")[1].split("»ƒ")[0];
+								minute = Integer.parseInt(arrtime2.split("Î∂Ñ")[0]);
+								secpart = arrtime2.split("Î∂Ñ")[1].split("ÌõÑ")[0];
 								sec = 0;
-								if (secpart.contains("√ ")) {
-									sec = Integer.parseInt(secpart.split("√ ")[0]);
+								if (secpart.contains("Ï¥à")) {
+									sec = Integer.parseInt(secpart.split("Ï¥à")[0]);
 								}
-								if (walktime * 60 <= minute * 60 + sec) {// ±◊ ¥Ÿ¿Ω πˆΩ∫ µµ¬¯Ω√∞£∞ËªÍ
+								if (walktime * 60 <= minute * 60 + sec) {// Í∑∏ Îã§Ïùå Î≤ÑÏä§ ÎèÑÏ∞©ÏãúÍ∞ÑÍ≥ÑÏÇ∞
 									busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 								} else {
 									busLanes.getJSONObject(m).put("arrmsg1", -1);
@@ -473,7 +473,7 @@ public class FindServiceImpl implements FindService {
 			}
 			return buslist;
 		} else {
-			JSONObject buslist = (JSONObject) obj; // ¡§∑˘¿Â πˆΩ∫ ∏Ò∑œ
+			JSONObject buslist = (JSONObject) obj; // Ï†ïÎ•òÏû• Î≤ÑÏä§ Î™©Î°ù
 			Object rtnm = buslist.get("rtNm");
 			String busNo;
 			if (rtnm instanceof String) {
@@ -483,41 +483,41 @@ public class FindServiceImpl implements FindService {
 			}
 			for (int m = 0; m < busLanes.length(); m++) {
 
-				if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// √£¿∫ ∞Ê∑Œø°º≠ ≈∏¥¬ πˆΩ∫¿œ∂ß
+				if (busNo.equals((busLanes.getJSONObject(m)).getString("busNo"))) {// Ï∞æÏùÄ Í≤ΩÎ°úÏóêÏÑú ÌÉÄÎäî Î≤ÑÏä§ÏùºÎïå
 					String arrtime1 = buslist.getString("arrmsg1");
 					String arrtime2 = buslist.getString("arrmsg2");
-					if (arrtime1.equals("∞ µµ¬¯")) {
-						if (arrtime2.equals("√‚πﬂ¥Î±‚") || arrtime2.equals("∞ µµ¬¯") || arrtime2.equals("øÓ«‡¡æ∑·")) {
+					if (arrtime1.equals("Í≥ß ÎèÑÏ∞©")) {
+						if (arrtime2.equals("Ï∂úÎ∞úÎåÄÍ∏∞") || arrtime2.equals("Í≥ß ÎèÑÏ∞©") || arrtime2.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 							continue;
 						}
-						int minute = Integer.parseInt(arrtime2.split("∫–")[0]);
-						int sec = Integer.parseInt(arrtime2.split("∫–")[1].split("√ ")[0]);
-						if (walktime * 60 <= minute * 60 + sec) {// ±◊ ¥Ÿ¿Ω πˆΩ∫ µµ¬¯Ω√∞£∞ËªÍ
+						int minute = Integer.parseInt(arrtime2.split("Î∂Ñ")[0]);
+						int sec = Integer.parseInt(arrtime2.split("Î∂Ñ")[1].split("Ï¥à")[0]);
+						if (walktime * 60 <= minute * 60 + sec) {// Í∑∏ Îã§Ïùå Î≤ÑÏä§ ÎèÑÏ∞©ÏãúÍ∞ÑÍ≥ÑÏÇ∞
 							busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 						} else {
 							busLanes.getJSONObject(m).put("arrmsg1", -1);
 						}
-					} else if (arrtime1.equals("√‚πﬂ¥Î±‚")) {
+					} else if (arrtime1.equals("Ï∂úÎ∞úÎåÄÍ∏∞")) {
 						busLanes.getJSONObject(m).put("arrmsg1", -1);
-					} else if (arrtime1.equals("øÓ«‡¡æ∑·")) {
+					} else if (arrtime1.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 						busLanes.getJSONObject(m).put("arrmsg1", -1);
 					} else {
-						int minute = Integer.parseInt(arrtime1.split("∫–")[0]);
-						String secpart = arrtime1.split("∫–")[1].split("»ƒ")[0];
+						int minute = Integer.parseInt(arrtime1.split("Î∂Ñ")[0]);
+						String secpart = arrtime1.split("Î∂Ñ")[1].split("ÌõÑ")[0];
 						int sec = 0;
-						if (secpart.contains("√ ")) {
-							sec = Integer.parseInt(secpart.split("√ ")[0]);
+						if (secpart.contains("Ï¥à")) {
+							sec = Integer.parseInt(secpart.split("Ï¥à")[0]);
 						}
 
-						if (walktime * 60 <= minute * 60 + sec) {// ∞…æÓº≠ µµ¬¯ ¿¸ø° ¥Ÿ¿Ω πˆΩ∫∞° µµ¬¯«“∂ß
+						if (walktime * 60 <= minute * 60 + sec) {// Í±∏Ïñ¥ÏÑú ÎèÑÏ∞© Ï†ÑÏóê Îã§Ïùå Î≤ÑÏä§Í∞Ä ÎèÑÏ∞©Ìï†Îïå
 							busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 						} else {
-							if (arrtime2.equals("√‚πﬂ¥Î±‚") || arrtime2.equals("∞ µµ¬¯") || arrtime2.equals("øÓ«‡¡æ∑·")) {
+							if (arrtime2.equals("Ï∂úÎ∞úÎåÄÍ∏∞") || arrtime2.equals("Í≥ß ÎèÑÏ∞©") || arrtime2.equals("Ïö¥ÌñâÏ¢ÖÎ£å")) {
 								continue;
 							}
-							minute = Integer.parseInt(arrtime2.split("∫–")[0]);
-							sec = Integer.parseInt(arrtime2.split("∫–")[1].split("√ ")[0]);
-							if (walktime * 60 <= minute * 60 + sec) {// ±◊ ¥Ÿ¿Ω πˆΩ∫ µµ¬¯Ω√∞£∞ËªÍ
+							minute = Integer.parseInt(arrtime2.split("Î∂Ñ")[0]);
+							sec = Integer.parseInt(arrtime2.split("Î∂Ñ")[1].split("Ï¥à")[0]);
+							if (walktime * 60 <= minute * 60 + sec) {// Í∑∏ Îã§Ïùå Î≤ÑÏä§ ÎèÑÏ∞©ÏãúÍ∞ÑÍ≥ÑÏÇ∞
 								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 							} else {
 								busLanes.getJSONObject(m).put("arrmsg1", -1);
@@ -542,7 +542,7 @@ public class FindServiceImpl implements FindService {
 	@Override
 	public JSONObject findStationTimetable(String stationName, int subcode) {
 		String stationCode = apiService.getSubwayStatioinCodeOpenApi(stationName, subcode);
-		if (stationCode.equals("∞·∞˙æ¯¿Ω")) {
+		if (stationCode.equals("Í≤∞Í≥ºÏóÜÏùå")) {
 			JSONObject result = new JSONObject();
 			result.put("resultCode", "fail");
 			return result;
@@ -654,7 +654,7 @@ public class FindServiceImpl implements FindService {
 		JSONArray oute = new JSONArray();
 
 		for (Point point : trainStart) {
-			System.out.println("tsΩ√¿€");
+			System.out.println("tsÏãúÏûë");
 
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
@@ -666,7 +666,7 @@ public class FindServiceImpl implements FindService {
 			trains.put(tmp);
 		}
 		for (Point point : trainEnd) {
-			System.out.println("teΩ√¿€");
+			System.out.println("teÏãúÏûë");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {
@@ -678,7 +678,7 @@ public class FindServiceImpl implements FindService {
 			traine.put(tmp);
 		}
 		for (Point point : exStart) {
-			System.out.println("exsΩ√¿€");
+			System.out.println("exsÏãúÏûë");
 
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
@@ -690,7 +690,7 @@ public class FindServiceImpl implements FindService {
 			exs.put(tmp);
 		}
 		for (Point point : exEnd) {
-			System.out.println("exeΩ√¿€");
+			System.out.println("exeÏãúÏûë");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {
@@ -702,7 +702,7 @@ public class FindServiceImpl implements FindService {
 			exe.put(tmp);
 		}
 		for (Point point : outStart) {
-			System.out.println("outsΩ√¿€");
+			System.out.println("outsÏãúÏûë");
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
 				continue;
@@ -713,7 +713,7 @@ public class FindServiceImpl implements FindService {
 			outs.put(tmp);
 		}
 		for (Point point : outEnd) {
-			System.out.println("outeΩ√¿€");
+			System.out.println("outeÏãúÏûë");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {
