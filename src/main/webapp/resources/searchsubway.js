@@ -10,7 +10,7 @@
 		console.log("역결과 : " + stationName);
 
 		$.ajax({
-			url : "findapi/subway?stationName=" + stationName + "&subwayCode="
+			url : "./findapi/subway?stationName=" + stationName + "&subwayCode="
 					+ subCode,
 			type : "post",
 			data : "application/json",
@@ -51,19 +51,20 @@
 			console.log(r.up);
 			console.log(r.down);
 			//평일, 주말, 공휴일 저장 (api)// 상행
-			if (r.search(r.up)) {
+			if (r.up!=undefined) {
 				week_u_list = r.up.weekday.items.item;
 				sat_u_list = r.up.saturday.items.item;
 				sun_u_list = r.up.sunday.items.item;
 			}
 
 			//평일,주말,공휴일 저장 (api)// 하행
+			if (r.down!=undefined) {
 			week_d_list = r.down.weekday.items.item;
 			sat_d_list = r.down.saturday.items.item;
 			sun_d_list = r.down.sunday.items.item;
-
+			}
 			str += "<h1> 지하철조회</h1>";
-			str += "<div class='box'>평일 상행선<table>";
+			str += "<table><tr><td><div class='box'><table><caption>평일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//평일 상행
@@ -79,8 +80,8 @@
 
 			}
 
-			str += "</table></div><br>";
-			str += "<div class='box'>토요일 상행선<table>";
+			str += "</table></div></td>";
+			str += "<td><div class='box'><table><caption>토요일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//토요 상행
@@ -96,9 +97,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>일요일 상행선<table>";
+			str += "<td><div class='box'><table><caption>일요일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//일요 상행
@@ -114,9 +115,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td></tr>";
 
-			str += "<div class='box'>평일 하행선<table>";
+			str += "<tr><td><div class='box'><table><caption>평일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//평일 상행
@@ -132,9 +133,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>토요일 하행선<table>";
+			str += "<td><div class='box'><table><caption>토요일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//토요일 하행
@@ -150,9 +151,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>일요일 하행선<table>";
+			str += "<td><div class='box'><table><caption>일요일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//일요일 하행
@@ -168,7 +169,7 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td></tr></table>";
 
 			$('#resultDiv').html(str);
 

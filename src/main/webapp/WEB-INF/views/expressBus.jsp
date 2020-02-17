@@ -166,10 +166,10 @@ function searchExpressBusinformationAJAX(start, end) {
 								}
 
 						document.getElementById("resultDiv").innerHTML = str;	
-						document.getElementById("resultDiv2").innerHTML = "";	
+						
 						}	
 					
-					
+				document.getElementById("resultDiv2").innerHTML = "";	
 					
 					
 				}

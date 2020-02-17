@@ -15,6 +15,21 @@
 	margin: 15px;
 	overflow-y: scroll;
 }
+		.box table{
+			width: 100%;
+			height: AUTO;
+			margin: auto;
+		}
+		.box table td,tr{
+			width: 50%;
+			text-align : center;
+			border : 1px solid gray;
+		}
+		.box table h3{
+			width: 100%;
+			text-align : center;
+			margin: auto;	
+		}
 </style>
 </head>
 
@@ -63,10 +78,10 @@
 		<!--  <button onclick="window.open('https://192.168.0.17/BTS/login','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">검색</button>  -->
 		<!-- 결과창 -->
 	</div>
+<script src="./resources/searchsubway.js"></script>
 
 </body>
 
-<script src="./resources/searchsubway.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </html>
