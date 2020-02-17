@@ -65,7 +65,7 @@ $(document).ready(function() {
 <body>
 <div class = "container">
 	<div class"col-xs-12" style="margin:15px auto;">
-<label style="font-size:20px;"><span class="glyphicon glyphicon-list-alt"></span>게시글 목록</label>
+<label style="font-size:20px;"><span class="glyphicon glyphicon-list-alt"></span>공지사항 목록</label>
 <!-- <input type="button" style="float:right;" value="메인화면" class="btn btn-primary btn-sm" onclick="location.href='./BTSMap'"> -->
 &emsp;<input type="button" style="float:right;" class="btn btn-primary btn-sm" value="글쓰기" onclick="location.href='./boardwrite'" id=write>
 </div>

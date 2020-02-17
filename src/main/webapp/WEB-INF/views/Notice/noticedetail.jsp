@@ -58,27 +58,8 @@ $('#list').on('click',function(){
 
 </div>
 
- <div class="container">
-        <label for="content">comment</label>
-        <form name="commentInsertForm" id="commentInsertForm">
-            <div class="input-group">
-               <input type="hidden" name="seq" value="${detail.seq}"/>
-               <input type="text" class="form-control" id="contents" name="contents" placeholder="내용을 입력하세요.">
-               <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" id="commentInsertBtn" name="commentInsertBtn">등록</button>
-               </span>
-              </div>
-        </form>
-    </div>
-    
-    <div class="container">
-        <div class="commentList"></div>
-    </div>
-    
-    <input type="hidden" id="lid" value="${sessionScope.id }">
 
-<!--                     추가                         -->
- <%@ include file="commentS.jsp" %>
+
 
 </body>
 </html>

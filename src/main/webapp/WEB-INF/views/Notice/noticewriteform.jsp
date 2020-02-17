@@ -27,7 +27,7 @@ $(document).ready(function() {
     </div>
 
 <div class="col-xs-12">
-	<form action="./boardwrite" method="post" >
+	<form action="./noticewrite" method="post" >
 		<div class="form-group">
 		<label for="title">제목</label>
 		<input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요.">
