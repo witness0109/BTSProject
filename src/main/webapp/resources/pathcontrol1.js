@@ -384,7 +384,7 @@ function addsubpath(subpathList,path) {
     }
     
     let time = Math.floor(path.info.totalTime / 60) + "시간 " + path.info.totalTime % 60 + "분"
-    var tmpStr = '<div class="box" onclick="callMapObjApiAJAX(\''+path.info.mapObj+'\');">'
+    var tmpStr = '<div class="box" onclick="callMapInCity(\''+path.info.mapObj+'\',\'event\');">'
         + "<p>총 요금 : " + Number(path.info.payment).toLocaleString('en') + "원</p>";
     if (path.info.busTransitCount != 0) {
         tmpStr += "<p>버스 환승 횟수 : " + path.info.busTransitCount + "</p>"

@@ -1,8 +1,9 @@
 
 
 
-function callMapOutCity(mabObj, sx, sy, ex, ey, mabObj2) {
+function callMapOutCity(mabObj, sx, sy, ex, ey, mabObj2, event) {
 	// mabObj => obejct. key s= 시작점 e= 도착점 c = 출발 도착의 좌표 집합 객체
+	event.stopPropagation();
 	if (currentMapobj != undefined && sx == currentMapobj.sx && sy == currentMapobj.sy && ex == currentMapobj.ex && ey == currentMapobj.ey) {
 		return;
 	}

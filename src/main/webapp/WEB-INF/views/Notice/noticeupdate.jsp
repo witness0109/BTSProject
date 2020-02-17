@@ -26,7 +26,7 @@ $(document).ready(function() {
     </div>
 
 <div class="col-xs-12">
-<form action="./update" method="post" >
+<form action="./noticeupdate" method="post" >
 
 
 		  <input type="hidden" name="seq" value=${vo.seq }>
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 
 <button type="submit" id="updatebtn" class="btn btn-primary btn-sm" style="float:right;">수정</button>
-<button type="submit" class="btn btn-primary btn-sm" style="float:right;" onclick="location.href='./boardlist'">취소</button>
+<button type="submit" class="btn btn-primary btn-sm" style="float:right;" onclick="location.href='./noticelist'">취소</button>
 </form>
 </div>
 </div>
