@@ -52,11 +52,17 @@ $('#list').on('click',function(){
 </div>
 
 <div class="btn-group btn-group-sm" role="group" style="float:right;">
+<c:if test="${sessionScope.id == detail.writer }">
 <input type="button" class="btn btn-default" value="글수정" onclick="location.href='update?seq=${detail.seq}'">
+</c:if>
+<c:if test="${sessionScope.id == detail.writer }">
 <input type="button" class="btn btn-default" value="글삭제" onclick="location.href='deleteboard?seq=${detail.seq}'">
+</c:if>
 <input type="button" class="btn btn-default" value="글목록" id="list">
 
 </div>
+<div><p><br></br></p></div>
+
 
  <div class="container">
         <label for="content">comment</label>

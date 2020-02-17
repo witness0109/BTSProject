@@ -11,7 +11,7 @@ select * from notice order by seq desc
 
 <insert id="insertnotice" parameterType="notice">
 insert into notice(seq, title , contents, writer, pw, time) 
-values((select max(seq)+1 from board), #{title}, #{contents}, #{writer}, #{pw}, sysdate )
+values((select max(seq)+1 from notice), #{title}, #{contents}, #{writer}, #{pw}, sysdate )
 </insert>
 
 <select id="noticedetail" resultType="notice" parameterType="int">
