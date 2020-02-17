@@ -17,6 +17,6 @@ $(document).ready(function() {
 </head>
 <body>
 ${result }<br>
-<input type="button" value="글목록" onclick="location.href='./boardlist'">
+<input type="button" value="공지사항목록" onclick="location.href='./noticelist'">
 </body>
 </html>

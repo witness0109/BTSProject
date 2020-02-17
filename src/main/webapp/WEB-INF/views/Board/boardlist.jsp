@@ -104,8 +104,8 @@ $(document).ready(function() {
 </div>
 </div>
 
-
-<div id="pagingDiv">
+<div><br></div>
+<div id="pagingDiv" style="display: block; text-align: center;" >
 			<c:if test="${paging.prev}">
 				<a href="${paging.startPage - 1 }">ְְּü</a>
 			</c:if>

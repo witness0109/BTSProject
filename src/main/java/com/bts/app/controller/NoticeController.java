@@ -33,10 +33,10 @@ public class NoticeController {
 		List<NoticeVO> list = service.getnoticelist(cri2);
 		int total = service.totalCnt();
 		
-		// Model Á¤º¸ ÀúÀå
+		// Model ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		model.addAttribute("boardlist",list);
 		model.addAttribute("paging",new PageMaker2(cri2,total));
-		return "Notice/noticelist"; // View ÀÌ¸§ ¸®ÅÏ
+		return "Notice/noticelist"; // View ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 	}
 	
@@ -56,7 +56,7 @@ public class NoticeController {
 		if(result != 0) {
 			int a = service.insertnotice(vo);
 			if(a == 1) {
-				mav.addObject("result", "°Ô½Ã¹° ÀÛ¼º ¿Ï·á");
+				mav.addObject("result", "ê¸€ìž‘ì„±ì™„ë£Œ");
 				mav.setViewName("Notice/noticewritesuccess");
 			}
 		} else {

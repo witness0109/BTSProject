@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 <div class="container">
     <div class="col-xs-12" style="margin:15px auto;">
-        <label style="font-size:20px;"><span class="glyphicon glyphicon-edit"></span>게시글 작성</label>
+        <label style="font-size:20px;"><span class="glyphicon glyphicon-edit"></span>공지사항 작성</label>
     </div>
 
 <div class="col-xs-12">
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		</div>
 		
 <input type="submit" value="작성완료" class="btn btn-primary btn-sm" style="float:right;">
-<input type="button" value="취소" class="btn btn-primary btn-sm"  style="float:right;" onclick="location.href='./boardlist'">
+<input type="button" value="취소" class="btn btn-primary btn-sm"  style="float:right;" onclick="location.href='./noticelist'">
 </form>
 </div>
 </div>

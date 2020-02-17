@@ -136,7 +136,6 @@ table tr:hover td {
 
 .member_log{
 
-	background:#f2f2f2;
 	width:400px;
 	padding: 18px;
 	height: 150px;
@@ -145,9 +144,9 @@ table tr:hover td {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 $(document).ready(function () {
-	
+
 	$("#backbtn").click(function(){
-		
+	
 		location.href = "./BTSMap";
 	});
 	
@@ -158,9 +157,6 @@ $(document).ready(function () {
 	var tdArr = new Array(); // 배열 선언
 	var btn = "";
 	var checkBtn = $(this);
-
-	// checkBtn.parent() : checkBtn의 부모는 <td>이다.
-		// checkBtn.parent().parent() : <td>의 부모이므로 <tr>이다.
 	
 			var tr = checkBtn.parent().parent();
 			var td = tr.children();
@@ -187,9 +183,9 @@ $(document).ready(function () {
 			" 이름 : <font color='red'>" + name + "</font><br>" +
 			" 이메일 : <font color='red'>" + email + "</font><br>"+ 
 			" 가입일 : <font color='red'>" + indate + "</font><br>";
-			
 
-			btn += "<input type='button' value='회원강퇴' class='kick'>";
+			btn += "<input type = 'button' value = '메인화면' id='backbtn'>"+ "&nbsp;" +
+			"<input type='button' value='회원강퇴' class='kick'>";
 
 
 			$("#result").html(str + "<br>" + btn);
@@ -207,9 +203,15 @@ $(document).ready(function () {
 
 
 			});
-
+			
+			$("#backbtn").click(function(){
+				
+				location.href = "./BTSMap";
 			});
-
+		
+			
+			});
+	
 			});
 	
 </script>
@@ -241,8 +243,9 @@ $(document).ready(function () {
 
 			</c:forEach>
 		</table>
-	<div class="member_log" id="result" ></div> 
-		<input type = "button" value = "home" id="backbtn">
+	
+	<div class="member_log" id="result" > &nbsp; <input type = "button" value = "home" id="backbtn"></div> 	
+	
 	</div>
 </body>
 </html>
