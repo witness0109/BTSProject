@@ -125,7 +125,7 @@
 		}
 
 		.divcontainer #leftside .box {
-			width: 100%;
+			width: 400px;
 			height: AUTO;
 			border: 2px solid white;
 			border-radius: 5px;
@@ -145,6 +145,16 @@
 			padding: 15px;
 			margin: 15px;
 			line-height: 2em;
+		}
+		
+		.box {
+			width: 400px;
+			height: AUTO;
+			border: 1px solid green;	
+			border-radius: 5px;
+			padding: 15px;
+			margin: 15px;
+			overflow-y: scroll;
 		}
 
 		.divcontainer #leftside .box.train {
@@ -373,16 +383,9 @@
 <aside class="sidebar" >
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content" id="parent">
-			<!-- BTS 클릭시 홈화면으로 이동 -->
-				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
-				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>길 찾기</span><i
-							class="arrow fa fa-angle-right pull-right"></i></a>
-					<ul>
-
-
-					</ul>
-				</li>
-
+			<!-- 길찾기클릭시 홈화면으로 이동 -->
+				<li><a ><i class="fa fa-dashboard"></i><span>BTS</span></a></li>
+				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>길 찾기</span></a></li>							
 
 				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>기차 정보</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>

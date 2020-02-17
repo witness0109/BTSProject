@@ -129,7 +129,7 @@ function searchIntercityBusinformationAJAX(start, end) {
 							
 							str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>시외 우등버스</td></tr>"+
 							"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
-							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","/","")+"</td></tr>";
+							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
 							str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
 								+"</td><th>금액</th><td>"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 							document.getElementById("resultDiv1").innerHTML = str;
@@ -139,7 +139,7 @@ function searchIntercityBusinformationAJAX(start, end) {
 						
 						str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>시외 일반버스</td></tr>"+
 						"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
-						str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","/","")+"</td></tr>";
+						str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
 						str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
 							+"</td><th>금액</th><td>"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 					}
@@ -159,7 +159,7 @@ function searchIntercityBusinformationAJAX(start, end) {
 							str = "";
 							str += "<table class='busT'> <tr><th>노선 정보</th><td colspan='3'>시외 일반버스</td></tr>"+
 							"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
-							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","/","")+"</td></tr>";
+							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
 							str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
 								+"</td><th>금액</th><td>"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 								}
@@ -176,8 +176,8 @@ function searchIntercityBusinformationAJAX(start, end) {
 function numberFormat(inputNumber) {
 	   return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
-function replaceAll(str, searchStr1,searchStr2, replaceStr) {
-	  return str.split(searchStr1,searchStr2).join(replaceStr);
+function replaceAll(str, searchStr1, replaceStr) {
+	  return str.split(searchStr1).join(replaceStr);
 	}
 		
 </script>
