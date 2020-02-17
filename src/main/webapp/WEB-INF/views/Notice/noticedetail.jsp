@@ -53,8 +53,8 @@ $('#list').on('click',function(){
 
 <div class="btn-group btn-group-sm" role="group" style="float:right;">
 <c:if test="${sessionScope.id == 'system'}">
-<input type="button" class="btn btn-default" value="글수정" onclick="location.href='update?seq=${detail.seq}'">
-<input type="button" class="btn btn-default" value="글삭제" onclick="location.href='deleteboard?seq=${detail.seq}'">
+<input type="button" class="btn btn-default" value="글수정" onclick="location.href='noticeupdate?seq=${detail.seq}'">
+<input type="button" class="btn btn-default" value="글삭제" onclick="location.href='noticedelete?seq=${detail.seq}'">
 </c:if>
 <input type="button" class="btn btn-default" value="글목록" id="list">
 
