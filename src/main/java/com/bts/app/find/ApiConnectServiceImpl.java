@@ -79,7 +79,6 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 		String inputLine;
 		StringBuffer sb = new StringBuffer();
 		while ((inputLine = br.readLine()) != null) {
-			System.out.println(inputLine);
 			sb.append(inputLine);
 		}
 		br.close();

@@ -64,7 +64,7 @@
 			sun_d_list = r.down.sunday.items.item;
 			}
 			str += "<h1> 지하철조회</h1>";
-			str += "<div class='box'>평일 상행선<table>";
+			str += "<table><tr><td><div class='box'><table><caption>평일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//평일 상행
@@ -80,8 +80,8 @@
 
 			}
 
-			str += "</table></div><br>";
-			str += "<div class='box'>토요일 상행선<table>";
+			str += "</table></div></td>";
+			str += "<td><div class='box'><table><caption>토요일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//토요 상행
@@ -97,9 +97,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>일요일 상행선<table>";
+			str += "<td><div class='box'><table><caption>일요일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//일요 상행
@@ -115,9 +115,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td></tr>";
 
-			str += "<div class='box'>평일 하행선<table>";
+			str += "<tr><td><div class='box'><table><caption>평일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//평일 상행
@@ -133,9 +133,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>토요일 하행선<table>";
+			str += "<td><div class='box'><table><caption>토요일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//토요일 하행
@@ -151,9 +151,9 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td>";
 
-			str += "<div class='box'>일요일 하행선<table>";
+			str += "<td><div class='box'><table><caption>일요일 하행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//일요일 하행
@@ -169,7 +169,7 @@
 
 			}
 
-			str += "</table></div><br>";
+			str += "</table></div></td></tr></table>";
 
 			$('#resultDiv').html(str);
 
