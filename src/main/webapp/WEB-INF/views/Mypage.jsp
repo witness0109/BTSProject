@@ -59,12 +59,12 @@
           </div>
           
            <div class="form-group">
-            <label for="id">이름</label>
+            <label for="name">이름</label>
             <input type="text" class="form-control" id="name" name="name" readonly="readonly" value='${sessionScope.name}'>
           </div>
        
        <div class="form-group">
-            <label for="cellphone">핸드폰번호</label>
+            <label for="phone">핸드폰번호</label>
             <input type="text" class="form-control" id="phone" name="phone" >
           </div>
                 

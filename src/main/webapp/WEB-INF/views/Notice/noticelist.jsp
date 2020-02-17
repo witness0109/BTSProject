@@ -65,7 +65,7 @@ $(document).ready(function() {
 <body>
 <div class = "container">
 	<div class"col-xs-12" style="margin:15px auto;">
-<label style="font-size:20px;"><span class="glyphicon glyphicon-list-alt"></span>게시글 목록</label>
+<label style="font-size:20px;"><span class="glyphicon glyphicon-list-alt"></span>공지사항</label>
 <!-- <input type="button" style="float:right;" value="메인화면" class="btn btn-primary btn-sm" onclick="location.href='./BTSMap'"> -->
 
 <c:if test="${sessionScope.id eq 'system' }">
@@ -96,7 +96,7 @@ $(document).ready(function() {
 <tbody>
 <tr>
 <td>${list.seq }</td>
-<td><a href="./boarddetail?seq=${list.seq}"> ${list.title }</a></td>
+<td><a href="./noticedetail?seq=${list.seq}"> ${list.title }</a></td>
 <td>${list.writer }</td>
 <td>${list.time }</td>
 </tr>
@@ -107,7 +107,7 @@ $(document).ready(function() {
 </div>
 
 
-<div id="pagingDiv">
+<div id="pagingDiv" style="display: block; text-align: center;" >
 			<c:if test="${paging.prev}">
 				<a href="${paging.startPage - 1 }">이전</a>
 			</c:if>

@@ -35,6 +35,8 @@ public interface MemberService {
 	
 	
 	public void updatemember(MemberVO vo);
+	
+	public String findname(String id);
 
 
 	
