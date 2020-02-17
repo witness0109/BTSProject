@@ -6,7 +6,10 @@ var odApiKey = encodeURI('bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY');
 ;
 
 //길찾기 API 호출
-
+function callMapInCity(mapObj,ev){
+	ev.stopPropagation();
+	callMapObjApiAJAX(mapObj)
+}
 
 function callMapObjApiAJAX(mabObj) {
 	if (mabObj == currentMapobj) {
@@ -60,8 +63,7 @@ function drawkakaoPolyLine(data) {
 			for (var k = 0; k < data.result.lane[i].section[j].graphPos.length; k++) {
 				lineArray.push(new kakao.maps.LatLng(data.result.lane[i].section[j].graphPos[k].y, data.result.lane[i].section[j].graphPos[k].x));
 			}
-				// lineArray.push(new kakao.maps.LatLng(35.879655, 128.628464));
-				// lineArray.push(new kakao.maps.LatLng(35.879655, 128.732923));
+
 			
 
 

@@ -10,7 +10,7 @@
 		console.log("역결과 : " + stationName);
 
 		$.ajax({
-			url : "findapi/subway?stationName=" + stationName + "&subwayCode="
+			url : "./findapi/subway?stationName=" + stationName + "&subwayCode="
 					+ subCode,
 			type : "post",
 			data : "application/json",
@@ -51,17 +51,18 @@
 			console.log(r.up);
 			console.log(r.down);
 			//평일, 주말, 공휴일 저장 (api)// 상행
-			if (r.search(r.up)) {
+			if (r.up!=undefined) {
 				week_u_list = r.up.weekday.items.item;
 				sat_u_list = r.up.saturday.items.item;
 				sun_u_list = r.up.sunday.items.item;
 			}
 
 			//평일,주말,공휴일 저장 (api)// 하행
+			if (r.down!=undefined) {
 			week_d_list = r.down.weekday.items.item;
 			sat_d_list = r.down.saturday.items.item;
 			sun_d_list = r.down.sunday.items.item;
-
+			}
 			str += "<h1> 지하철조회</h1>";
 			str += "<div class='box'>평일 상행선<table>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
