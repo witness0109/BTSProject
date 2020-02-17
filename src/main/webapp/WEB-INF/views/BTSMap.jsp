@@ -424,13 +424,16 @@
 			<div>
 				<button class="findbtn" id="findpath">시내 길찾기</button>
 				<button class="findbtn" id="findpath2">시외 길찾기</button>
-				<select id="searchOption" class="content">
-					<option>검색먼저</option>
-				</select>
-				<button id="applyopt" class="content">조건 적용</button>
+				<div id="searchOption" class="content">
+				</div>
+			</div>
+			<div id="findbox" class="content">
+				
 			</div>
 			<div id="findresult" class="content">
+			
 			</div>
+
 		</div>
 <div id="map11" ></div>
 	</div>
@@ -441,6 +444,7 @@
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
+<script type="text/javascript" src="./resources/mapcontrol3.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./resources/main.js"></script> 
 <script src="./resources/pathcontrol1.js"></script>
