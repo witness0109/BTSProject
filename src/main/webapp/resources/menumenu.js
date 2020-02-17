@@ -68,3 +68,19 @@ $('#intercityBusTM').on('click',function (ev) {
     $("#map11").css("display","none");
     $("#leftside").css("width","100%");
  });
+ $('#subw_TM').on('click',function (ev) {
+	    $.ajax({
+	         url : "./subway_search",
+	         contentType : 'text/html;charset=UTF-8',
+	         success : function (result) {
+	             var dom = result.split("<body>")[1].split("</body>")[0]
+	             $('#leftside').html(dom)
+	         },
+	         error : function (e) {
+	             alert(e);
+	         }
+	         
+	    });
+	    $("#map11").css("display","none");
+	    $("#leftside").css("width","100%");
+	 });
