@@ -1,7 +1,7 @@
 var pathArr;
 const findpath_apiurl = 'https://api.odsay.com/v1/api/searchPubTransPathR';
-const findpath_realtime = 'https://localhost/BTSProject/findapi/findpath';// need to change addr
-const findoutpath = 'https://localhost/BTSProject/findapi/findoutpath';// need to change addr
+const findpath_realtime = 'https://192.168.0.17/BTS/findapi/findpath';// need to change addr
+const findoutpath = 'https://192.168.0.17/BTS/findapi/findoutpath';// need to change addr
 const foldingdivdom = '<div  class="folding" onClick="foldDiv(this)">경로 펼치기</div>'
 const opendivdom = '<div  class="folding" onClick="openPathWindow(this)">상세경로</div>'
 
@@ -384,7 +384,7 @@ function addsubpath(subpathList,path) {
     }
     
     let time = Math.floor(path.info.totalTime / 60) + "시간 " + path.info.totalTime % 60 + "분"
-    var tmpStr = '<div class="box" onclick="callMapInCity(\''+path.info.mapObj+'\',\'event\');">'
+    var tmpStr = '<div class="box" onclick="callMapInCity(\''+path.info.mapObj+'\',event);">'
         + "<p>총 요금 : " + Number(path.info.payment).toLocaleString('en') + "원</p>";
     if (path.info.busTransitCount != 0) {
         tmpStr += "<p>버스 환승 횟수 : " + path.info.busTransitCount + "</p>"

@@ -21,10 +21,10 @@
             map = new kakao.maps.Map(container, options);  //지도생성
 
             // ////////////////////
-            // getWeather(map);
-          // 지도 중심 좌표 변경시 얻어오기
+             getWeather(map);
+           // 지도 중심 좌표 변경시 얻어오기
             kakao.maps.event.addListener(map, 'dragend', function() {
-            	// getWeather(map);
+            	 getWeather(map);
 
             });
             
