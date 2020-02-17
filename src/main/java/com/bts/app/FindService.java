@@ -9,4 +9,6 @@ public interface FindService {
 	JSONObject readCitycode();
 
 	JSONObject findStationTimetable(String stationName, int subcode);
+
+	JSONObject findOutpath(double sx, double sy, double ex, double ey);
 }

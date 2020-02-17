@@ -1,0 +1,2551 @@
+{
+	"result": {
+		"path": [
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 334,
+						"trafficType": 3
+					},
+					{
+						"door": "10-4",
+						"distance": 3900,
+						"wayCode": 1,
+						"trafficType": 1,
+						"way": "온수",
+						"sectionTime": 11,
+						"endY": 37.492377,
+						"endX": 126.82379,
+						"endID": 145,
+						"startExitNo": "3",
+						"stationCount": 3,
+						"endName": "온수",
+						"startID": 148,
+						"startExitY": 37.484412753362555,
+						"startExitX": 126.78227407222174,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782803",
+									"index": 0,
+									"y": "37.484085",
+									"stationName": "부천",
+									"stationID": 148
+								},
+								{
+									"x": "126.795904",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "소사",
+									"stationID": 147
+								},
+								{
+									"x": "126.811539",
+									"index": 2,
+									"y": "37.485138",
+									"stationName": "역곡",
+									"stationID": 146
+								},
+								{
+									"x": "126.823801",
+									"index": 3,
+									"y": "37.492385",
+									"stationName": "온수",
+									"stationID": 145
+								}
+							]
+						},
+						"startY": 37.484078,
+						"startX": 126.782796,
+						"lane": [
+							{
+								"subwayCode": 1,
+								"subwayarrtime": 132000,
+								"name": "수도권 1호선",
+								"subwayCityCode": 1000,
+								"arrmsg1": 592
+							}
+						],
+						"startName": "부천"
+					},
+					{
+						"sectionTime": 0,
+						"distance": 0,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 6700,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.48750975342953,
+						"way": "남구로",
+						"sectionTime": 18,
+						"endY": 37.486089,
+						"endX": 126.887277,
+						"endExitX": 126.88865607223296,
+						"endID": 745,
+						"stationCount": 5,
+						"endName": "남구로",
+						"startID": 750,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.823853",
+									"index": 0,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 1,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 2,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 3,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 4,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 5,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								}
+							]
+						},
+						"startY": 37.491954,
+						"startX": 126.823853,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "온수"
+					},
+					{
+						"sectionTime": 12,
+						"distance": 780,
+						"trafficType": 3
+					}
+				],
+				"pathType": 1,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 2,
+					"busStationCount": 0,
+					"trafficDistance": 10600,
+					"firstStartStation": "부천",
+					"mapObj": "11:2:148:145@7:2:750:745",
+					"totalStationCount": 8,
+					"totalWalk": 1114,
+					"payment": 1350,
+					"subwayStationCount": 8,
+					"totalDistance": 11714,
+					"busTransitCount": 0,
+					"lastEndStation": "남구로"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 334,
+						"trafficType": 3
+					},
+					{
+						"door": "5-1",
+						"distance": 10600,
+						"wayCode": 1,
+						"trafficType": 1,
+						"way": "신도림",
+						"sectionTime": 22,
+						"endY": 37.508998,
+						"endX": 126.891598,
+						"endID": 140,
+						"startExitNo": "3",
+						"stationCount": 8,
+						"endName": "신도림",
+						"startID": 148,
+						"startExitY": 37.484412753362555,
+						"startExitX": 126.78227407222174,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782803",
+									"index": 0,
+									"y": "37.484085",
+									"stationName": "부천",
+									"stationID": 148
+								},
+								{
+									"x": "126.795904",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "소사",
+									"stationID": 147
+								},
+								{
+									"x": "126.811539",
+									"index": 2,
+									"y": "37.485138",
+									"stationName": "역곡",
+									"stationID": 146
+								},
+								{
+									"x": "126.823801",
+									"index": 3,
+									"y": "37.492385",
+									"stationName": "온수",
+									"stationID": 145
+								},
+								{
+									"x": "126.844567",
+									"index": 4,
+									"y": "37.494411",
+									"stationName": "오류동",
+									"stationID": 144
+								},
+								{
+									"x": "126.85852",
+									"index": 5,
+									"y": "37.494709",
+									"stationName": "개봉",
+									"stationID": 143
+								},
+								{
+									"x": "126.869615",
+									"index": 6,
+									"y": "37.496283",
+									"stationName": "구일",
+									"stationID": 142
+								},
+								{
+									"x": "126.882278",
+									"index": 7,
+									"y": "37.502916",
+									"stationName": "구로",
+									"stationID": 141
+								},
+								{
+									"x": "126.8916",
+									"index": 8,
+									"y": "37.509006",
+									"stationName": "신도림",
+									"stationID": 140
+								}
+							]
+						},
+						"startY": 37.484078,
+						"startX": 126.782796,
+						"lane": [
+							{
+								"subwayCode": 1,
+								"subwayarrtime": 132000,
+								"name": "수도권 1호선",
+								"subwayCityCode": 1000,
+								"arrmsg1": 591
+							}
+						],
+						"startName": "부천"
+					},
+					{
+						"sectionTime": 0,
+						"distance": 0,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "3",
+						"distance": 2900,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.48522625343882,
+						"way": "구로디지털단지",
+						"sectionTime": 10,
+						"endY": 37.485258,
+						"endX": 126.90148,
+						"endExitX": 126.90049507222018,
+						"endID": 232,
+						"stationCount": 2,
+						"endName": "구로디지털단지",
+						"startID": 234,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.891353",
+									"index": 0,
+									"y": "37.508572",
+									"stationName": "신도림",
+									"stationID": 234
+								},
+								{
+									"x": "126.894922",
+									"index": 1,
+									"y": "37.493376",
+									"stationName": "대림",
+									"stationID": 233
+								},
+								{
+									"x": "126.901487",
+									"index": 2,
+									"y": "37.48526",
+									"stationName": "구로디지털단지",
+									"stationID": 232
+								}
+							]
+						},
+						"startY": 37.508563,
+						"startX": 126.891344,
+						"lane": [
+							{
+								"subwayCode": 2,
+								"name": "수도권 2호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "신도림"
+					},
+					{
+						"sectionTime": 9,
+						"distance": 584,
+						"trafficType": 3
+					}
+				],
+				"pathType": 1,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 2,
+					"busStationCount": 0,
+					"trafficDistance": 13500,
+					"firstStartStation": "부천",
+					"mapObj": "11:2:148:140@2:2:234:232",
+					"totalStationCount": 10,
+					"totalWalk": 918,
+					"payment": 1350,
+					"subwayStationCount": 10,
+					"totalDistance": 14418,
+					"busTransitCount": 0,
+					"lastEndStation": "구로디지털단지"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2326,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.504377,
+						"endX": 126.787082,
+						"endID": 100464,
+						"stationCount": 6,
+						"endName": "춘의역7번출구",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "부천상상거리",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "부천역북부.농협",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "대성병원",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "부천북초등학교.원미동우체국",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "부천동행정복지센터.원미어울마당",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "춘의테크노파크단지앞",
+									"stationID": 112098
+								},
+								{
+									"x": "126.787082",
+									"index": 6,
+									"y": "37.504377",
+									"stationName": "춘의역7번출구",
+									"stationID": 100464
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 7093,
+								"busNo": "50",
+								"type": 1,
+								"arrmsg1": 360
+							}
+						],
+						"startName": "부천상상거리"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 73,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "대림",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"stationCount": 9,
+						"endName": "대림",
+						"startID": 753,
+						"startExitY": 37.504267053373304,
+						"startExitX": 126.7871180722773,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "춘의",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "부천종합운동장",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "까치울",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "대림",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "춘의"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 47,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14426,
+					"firstStartStation": "부천상상거리",
+					"mapObj": "7093:1:55:61@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 756,
+					"payment": 1550,
+					"subwayStationCount": 9,
+					"totalDistance": 15182,
+					"busTransitCount": 1,
+					"lastEndStation": "대림"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2428,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.503996,
+						"endX": 126.789463,
+						"endID": 112097,
+						"stationCount": 6,
+						"endName": "춘의가구거리",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "부천상상거리",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "부천역북부.농협",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "대성병원",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "부천북초등학교.원미동우체국",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "부천동행정복지센터.원미어울마당",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "춘의테크노파크단지앞",
+									"stationID": 112098
+								},
+								{
+									"x": "126.789463",
+									"index": 6,
+									"y": "37.503996",
+									"stationName": "춘의가구거리",
+									"stationID": 112097
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 840
+							},
+							{
+								"busID": 7045,
+								"busNo": "8",
+								"type": 1,
+								"arrmsg1": 480
+							}
+						],
+						"startName": "부천상상거리"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 212,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "대림",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "8",
+						"stationCount": 9,
+						"endName": "대림",
+						"startID": 753,
+						"startExitY": 37.504075053374535,
+						"startExitX": 126.78779607228016,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "춘의",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "부천종합운동장",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "까치울",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "대림",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "춘의"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14528,
+					"firstStartStation": "부천상상거리",
+					"mapObj": "7055:1:158:164@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 895,
+					"payment": 1550,
+					"subwayStationCount": 9,
+					"totalDistance": 15423,
+					"busTransitCount": 1,
+					"lastEndStation": "대림"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 3,
+						"distance": 233,
+						"trafficType": 3
+					},
+					{
+						"distance": 1741,
+						"trafficType": 2,
+						"sectionTime": 10,
+						"endY": 37.501137,
+						"endX": 126.776944,
+						"endID": 100367,
+						"stationCount": 5,
+						"endName": "신중동역2번출구.원미경찰서.롯데백화점",
+						"startID": 113764,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.776754",
+									"index": 0,
+									"y": "37.485755",
+									"stationName": "KT부천지사사거리",
+									"stationID": 113764
+								},
+								{
+									"x": "126.777388",
+									"index": 1,
+									"y": "37.488482",
+									"stationName": "부천대학교",
+									"stationID": 127183
+								},
+								{
+									"x": "126.777999",
+									"index": 2,
+									"y": "37.49121",
+									"stationName": "부천소방서.부천대학사거리",
+									"stationID": 126977
+								},
+								{
+									"x": "126.778182",
+									"index": 3,
+									"y": "37.496654",
+									"stationName": "위브더스테이트9단지",
+									"stationID": 88756
+								},
+								{
+									"x": "126.777666",
+									"index": 4,
+									"y": "37.498514",
+									"stationName": "위브더스테이트5단지",
+									"stationID": 165730
+								},
+								{
+									"x": "126.776944",
+									"index": 5,
+									"y": "37.501137",
+									"stationName": "신중동역2번출구.원미경찰서.롯데백화점",
+									"stationID": 100367
+								}
+							]
+						},
+						"startY": 37.485755,
+						"startX": 126.776754,
+						"lane": [
+							{
+								"busID": 7058,
+								"busNo": "23-2",
+								"type": 1,
+								"arrmsg1": 780
+							},
+							{
+								"busID": 6521,
+								"busNo": "61",
+								"type": 1,
+								"arrmsg1": 900
+							},
+							{
+								"busID": 7025,
+								"busNo": "60-1",
+								"type": 1,
+								"arrmsg1": 840
+							}
+						],
+						"startName": "KT부천지사사거리"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 230,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 13100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "대림",
+						"sectionTime": 26,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "2",
+						"stationCount": 10,
+						"endName": "대림",
+						"startID": 754,
+						"startExitY": 37.502430053367675,
+						"startExitX": 126.7766290722787,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.775977",
+									"index": 0,
+									"y": "37.503064",
+									"stationName": "신중동",
+									"stationID": 754
+								},
+								{
+									"x": "126.787095",
+									"index": 1,
+									"y": "37.503722",
+									"stationName": "춘의",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 2,
+									"y": "37.505463",
+									"stationName": "부천종합운동장",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 3,
+									"y": "37.506248",
+									"stationName": "까치울",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 4,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 5,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 6,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 7,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 8,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 9,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 10,
+									"y": "37.492811",
+									"stationName": "대림",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.503055,
+						"startX": 126.775974,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "신중동"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 50,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 5,
+					"trafficDistance": 14841,
+					"firstStartStation": "KT부천지사사거리",
+					"mapObj": "7058:1:24:29@7:2:754:744",
+					"totalStationCount": 15,
+					"totalWalk": 1011,
+					"payment": 1550,
+					"subwayStationCount": 10,
+					"totalDistance": 15852,
+					"busTransitCount": 1,
+					"lastEndStation": "대림"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2326,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.504377,
+						"endX": 126.787082,
+						"endID": 100464,
+						"stationCount": 6,
+						"endName": "춘의역7번출구",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "부천상상거리",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "부천역북부.농협",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "대성병원",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "부천북초등학교.원미동우체국",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "부천동행정복지센터.원미어울마당",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "춘의테크노파크단지앞",
+									"stationID": 112098
+								},
+								{
+									"x": "126.787082",
+									"index": 6,
+									"y": "37.504377",
+									"stationName": "춘의역7번출구",
+									"stationID": 100464
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 1451,
+								"busNo": "661",
+								"type": 11,
+								"arrmsg1": 540
+							}
+						],
+						"startName": "부천상상거리"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 73,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "대림",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"stationCount": 9,
+						"endName": "대림",
+						"startID": 753,
+						"startExitY": 37.504267053373304,
+						"startExitX": 126.7871180722773,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "춘의",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "부천종합운동장",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "까치울",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "대림",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "춘의"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 47,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14426,
+					"firstStartStation": "부천상상거리",
+					"mapObj": "1451:1:12:18@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 756,
+					"payment": 1350,
+					"subwayStationCount": 9,
+					"totalDistance": 15182,
+					"busTransitCount": 1,
+					"lastEndStation": "대림"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 3,
+						"distance": 170,
+						"trafficType": 3
+					},
+					{
+						"distance": 1758,
+						"trafficType": 2,
+						"sectionTime": 11,
+						"endY": 37.501137,
+						"endX": 126.776944,
+						"endID": 100367,
+						"stationCount": 5,
+						"endName": "신중동역2번출구.원미경찰서.롯데백화점",
+						"startID": 180134,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.778617",
+									"index": 0,
+									"y": "37.486612",
+									"stationName": "부천대입구",
+									"stationID": 180134
+								},
+								{
+									"x": "126.777388",
+									"index": 1,
+									"y": "37.488482",
+									"stationName": "부천대학교",
+									"stationID": 127183
+								},
+								{
+									"x": "126.777999",
+									"index": 2,
+									"y": "37.49121",
+									"stationName": "부천소방서.부천대학사거리",
+									"stationID": 126977
+								},
+								{
+									"x": "126.778182",
+									"index": 3,
+									"y": "37.496654",
+									"stationName": "위브더스테이트9단지",
+									"stationID": 88756
+								},
+								{
+									"x": "126.777666",
+									"index": 4,
+									"y": "37.498514",
+									"stationName": "위브더스테이트5단지",
+									"stationID": 165730
+								},
+								{
+									"x": "126.776944",
+									"index": 5,
+									"y": "37.501137",
+									"stationName": "신중동역2번출구.원미경찰서.롯데백화점",
+									"stationID": 100367
+								}
+							]
+						},
+						"startY": 37.486612,
+						"startX": 126.778617,
+						"lane": [
+							{
+								"busID": 7027,
+								"busNo": "66",
+								"type": 1,
+								"arrmsg1": 360
+							},
+							{
+								"busID": 7043,
+								"busNo": "5-3",
+								"type": 1,
+								"arrmsg1": 720
+							}
+						],
+						"startName": "부천대입구"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 230,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 13100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "대림",
+						"sectionTime": 26,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "2",
+						"stationCount": 10,
+						"endName": "대림",
+						"startID": 754,
+						"startExitY": 37.502430053367675,
+						"startExitX": 126.7766290722787,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.775977",
+									"index": 0,
+									"y": "37.503064",
+									"stationName": "신중동",
+									"stationID": 754
+								},
+								{
+									"x": "126.787095",
+									"index": 1,
+									"y": "37.503722",
+									"stationName": "춘의",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 2,
+									"y": "37.505463",
+									"stationName": "부천종합운동장",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 3,
+									"y": "37.506248",
+									"stationName": "까치울",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 4,
+									"y": "37.491954",
+									"stationName": "온수",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 5,
+									"y": "37.486756",
+									"stationName": "천왕",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 6,
+									"y": "37.479424",
+									"stationName": "광명사거리",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 7,
+									"y": "37.476203",
+									"stationName": "철산",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 8,
+									"y": "37.48036",
+									"stationName": "가산디지털단지",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 9,
+									"y": "37.486098",
+									"stationName": "남구로",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 10,
+									"y": "37.492811",
+									"stationName": "대림",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.503055,
+						"startX": 126.775974,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "수도권 7호선",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "신중동"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 51,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 5,
+					"trafficDistance": 14858,
+					"firstStartStation": "부천대입구",
+					"mapObj": "7027:1:69:74@7:2:754:744",
+					"totalStationCount": 15,
+					"totalWalk": 948,
+					"payment": 1550,
+					"subwayStationCount": 10,
+					"totalDistance": 15806,
+					"busTransitCount": 1,
+					"lastEndStation": "대림"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 323,
+						"trafficType": 3
+					},
+					{
+						"distance": 9845,
+						"trafficType": 2,
+						"sectionTime": 34,
+						"endY": 37.50546,
+						"endX": 126.883235,
+						"endID": 117247,
+						"stationCount": 19,
+						"endName": "신도림동.구로역",
+						"startID": 112976,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.781728",
+									"index": 0,
+									"y": "37.483004",
+									"stationName": "부천역남부광장",
+									"stationID": 112976
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "부천역전우체국",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "성지아파트.산성교회입구",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793637",
+									"index": 3,
+									"y": "37.482135",
+									"stationName": "소사역",
+									"stationID": 185046
+								},
+								{
+									"x": "126.799734",
+									"index": 4,
+									"y": "37.481971",
+									"stationName": "소사어울마당삼거리.MJ컨벤션",
+									"stationID": 185044
+								},
+								{
+									"x": "126.805254",
+									"index": 5,
+									"y": "37.481847",
+									"stationName": "괴안동입구.성심고가",
+									"stationID": 185042
+								},
+								{
+									"x": "126.809113",
+									"index": 6,
+									"y": "37.483012",
+									"stationName": "현대정형외과",
+									"stationID": 86271
+								},
+								{
+									"x": "126.811988",
+									"index": 7,
+									"y": "37.48424",
+									"stationName": "역곡역.역곡남부시장",
+									"stationID": 112777
+								},
+								{
+									"x": "126.816526",
+									"index": 8,
+									"y": "37.486177",
+									"stationName": "역곡고가입구",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 9,
+									"y": "37.487673",
+									"stationName": "유한대학교",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 10,
+									"y": "37.489407",
+									"stationName": "성공회대학교유한공고앞",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 11,
+									"y": "37.491171",
+									"stationName": "서울가든빌라앞",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 12,
+									"y": "37.494499",
+									"stationName": "씨티월드",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 13,
+									"y": "37.495651",
+									"stationName": "오류동역",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 14,
+									"y": "37.496931",
+									"stationName": "오류1동주민센터.오류문화센터",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855073",
+									"index": 15,
+									"y": "37.497279",
+									"stationName": "경인중학교.개봉사거리",
+									"stationID": 117255
+								},
+								{
+									"x": "126.862355",
+									"index": 16,
+									"y": "37.496592",
+									"stationName": "개봉역.한마을아파트",
+									"stationID": 117252
+								},
+								{
+									"x": "126.866938",
+									"index": 17,
+									"y": "37.499421",
+									"stationName": "동양미래대학.구로성심병원",
+									"stationID": 117250
+								},
+								{
+									"x": "126.874309",
+									"index": 18,
+									"y": "37.499581",
+									"stationName": "구일역.제일제당.롯데마트",
+									"stationID": 117249
+								},
+								{
+									"x": "126.883235",
+									"index": 19,
+									"y": "37.50546",
+									"stationName": "신도림동.구로역",
+									"stationID": 117247
+								}
+							]
+						},
+						"startY": 37.483004,
+						"startX": 126.781728,
+						"lane": [
+							{
+								"busID": 7050,
+								"busNo": "83",
+								"type": 1,
+								"arrmsg1": 480
+							},
+							{
+								"busID": 7047,
+								"busNo": "88",
+								"type": 1,
+								"arrmsg1": 480
+							}
+						],
+						"startName": "부천역남부광장"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 92,
+						"trafficType": 3
+					},
+					{
+						"distance": 4759,
+						"trafficType": 2,
+						"sectionTime": 24,
+						"endY": 37.485221,
+						"endX": 126.893645,
+						"endID": 125661,
+						"stationCount": 19,
+						"endName": "에이스테크노타워",
+						"startID": 195895,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.883223",
+									"index": 0,
+									"y": "37.506288",
+									"stationName": "대림6차태영프라자",
+									"stationID": 195895
+								},
+								{
+									"x": "126.881508",
+									"index": 1,
+									"y": "37.50748",
+									"stationName": "대림5차아파트.신도림주민센터",
+									"stationID": 195897
+								},
+								{
+									"x": "126.879628",
+									"index": 2,
+									"y": "37.50766",
+									"stationName": "대림5차아파트702동",
+									"stationID": 195899
+								},
+								{
+									"x": "126.878553",
+									"index": 3,
+									"y": "37.50692",
+									"stationName": "대림3차아파트",
+									"stationID": 125646
+								},
+								{
+									"x": "126.876509",
+									"index": 4,
+									"y": "37.506",
+									"stationName": "미성아파트",
+									"stationID": 196193
+								},
+								{
+									"x": "126.876732",
+									"index": 5,
+									"y": "37.505407",
+									"stationName": "월드아파트",
+									"stationID": 195902
+								},
+								{
+									"x": "126.878977",
+									"index": 6,
+									"y": "37.503527",
+									"stationName": "구로역.구로기계공구상가",
+									"stationID": 101761
+								},
+								{
+									"x": "126.882954",
+									"index": 7,
+									"y": "37.500024",
+									"stationName": "구로역.AK플라자",
+									"stationID": 166993
+								},
+								{
+									"x": "126.886501",
+									"index": 8,
+									"y": "37.49876",
+									"stationName": "항아리",
+									"stationID": 101924
+								},
+								{
+									"x": "126.889138",
+									"index": 9,
+									"y": "37.500208",
+									"stationName": "구로보건소",
+									"stationID": 102005
+								},
+								{
+									"x": "126.890802",
+									"index": 10,
+									"y": "37.498557",
+									"stationName": "구로고.구로도서관",
+									"stationID": 102044
+								},
+								{
+									"x": "126.891747",
+									"index": 11,
+									"y": "37.497385",
+									"stationName": "영림중학교",
+									"stationID": 102074
+								},
+								{
+									"x": "126.890619",
+									"index": 12,
+									"y": "37.496365",
+									"stationName": "구로구민회관",
+									"stationID": 195906
+								},
+								{
+									"x": "126.889083",
+									"index": 13,
+									"y": "37.494693",
+									"stationName": "구로구청",
+									"stationID": 195907
+								},
+								{
+									"x": "126.890374",
+									"index": 14,
+									"y": "37.493092",
+									"stationName": "구로중학교",
+									"stationID": 102049
+								},
+								{
+									"x": "126.892087",
+									"index": 15,
+									"y": "37.491189",
+									"stationName": "동구로새마을금고",
+									"stationID": 102083
+								},
+								{
+									"x": "126.890983",
+									"index": 16,
+									"y": "37.489386",
+									"stationName": "구로시장.남구로시장",
+									"stationID": 125659
+								},
+								{
+									"x": "126.8904",
+									"index": 17,
+									"y": "37.487506",
+									"stationName": "구로3동주민센터.삼성래미안아파트",
+									"stationID": 125660
+								},
+								{
+									"x": "126.891641",
+									"index": 18,
+									"y": "37.486157",
+									"stationName": "해피랜드",
+									"stationID": 102085
+								},
+								{
+									"x": "126.893645",
+									"index": 19,
+									"y": "37.485221",
+									"stationName": "에이스테크노타워",
+									"stationID": 125661
+								}
+							]
+						},
+						"startY": 37.506288,
+						"startX": 126.883223,
+						"lane": [
+							{
+								"busID": 1670,
+								"busNo": "구로09",
+								"type": 3
+							}
+						],
+						"startName": "대림6차태영프라자"
+					},
+					{
+						"sectionTime": 5,
+						"distance": 356,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 69,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 38,
+					"trafficDistance": 14604,
+					"firstStartStation": "부천역남부광장",
+					"mapObj": "7050:1:32:51@1670:1:5:24",
+					"totalStationCount": 38,
+					"totalWalk": 771,
+					"payment": 1550,
+					"subwayStationCount": 0,
+					"totalDistance": 15375,
+					"busTransitCount": 2,
+					"lastEndStation": "에이스테크노타워"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 7,
+						"distance": 440,
+						"trafficType": 3
+					},
+					{
+						"distance": 12613,
+						"trafficType": 2,
+						"sectionTime": 45,
+						"endY": 37.476984,
+						"endX": 126.88298,
+						"endID": 80328,
+						"stationCount": 30,
+						"endName": "산업단지백양사",
+						"startID": 185418,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782108",
+									"index": 0,
+									"y": "37.481908",
+									"stationName": "부천역남부.부천남초교",
+									"stationID": 185418
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "부천역전우체국",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "성지아파트.산성교회입구",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793477",
+									"index": 3,
+									"y": "37.481565",
+									"stationName": "소사3거리.세종병원",
+									"stationID": 185415
+								},
+								{
+									"x": "126.795383",
+									"index": 4,
+									"y": "37.477638",
+									"stationName": "소사종합시장",
+									"stationID": 185413
+								},
+								{
+									"x": "126.795384",
+									"index": 5,
+									"y": "37.476124",
+									"stationName": "소사초교앞사거리",
+									"stationID": 112968
+								},
+								{
+									"x": "126.79644",
+									"index": 6,
+									"y": "37.475162",
+									"stationName": "소사초등학교정문",
+									"stationID": 185411
+								},
+								{
+									"x": "126.799436",
+									"index": 7,
+									"y": "37.475156",
+									"stationName": "한신아파트.KCC스위첸아파트",
+									"stationID": 185409
+								},
+								{
+									"x": "126.801729",
+									"index": 8,
+									"y": "37.476721",
+									"stationName": "삼익세라믹아파트.SKVIEW아파트",
+									"stationID": 185407
+								},
+								{
+									"x": "126.803899",
+									"index": 9,
+									"y": "37.478851",
+									"stationName": "조공아파트",
+									"stationID": 185405
+								},
+								{
+									"x": "126.807705",
+									"index": 10,
+									"y": "37.479106",
+									"stationName": "괴안사거리.삼오유치원",
+									"stationID": 112699
+								},
+								{
+									"x": "126.810113",
+									"index": 11,
+									"y": "37.478427",
+									"stationName": "신일해피트리아파트",
+									"stationID": 112700
+								},
+								{
+									"x": "126.812797",
+									"index": 12,
+									"y": "37.478887",
+									"stationName": "부안초교.동원주택",
+									"stationID": 185399
+								},
+								{
+									"x": "126.814325",
+									"index": 13,
+									"y": "37.481641",
+									"stationName": "한양슈퍼",
+									"stationID": 185397
+								},
+								{
+									"x": "126.813145",
+									"index": 14,
+									"y": "37.484729",
+									"stationName": "역곡역남부",
+									"stationID": 185202
+								},
+								{
+									"x": "126.816526",
+									"index": 15,
+									"y": "37.486177",
+									"stationName": "역곡고가입구",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 16,
+									"y": "37.487673",
+									"stationName": "유한대학교",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 17,
+									"y": "37.489407",
+									"stationName": "성공회대학교유한공고앞",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 18,
+									"y": "37.491171",
+									"stationName": "서울가든빌라앞",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 19,
+									"y": "37.494499",
+									"stationName": "씨티월드",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 20,
+									"y": "37.495651",
+									"stationName": "오류동역",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 21,
+									"y": "37.496931",
+									"stationName": "오류1동주민센터.오류문화센터",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855795",
+									"index": 22,
+									"y": "37.493682",
+									"stationName": "개봉고가",
+									"stationID": 88588
+								},
+								{
+									"x": "126.857539",
+									"index": 23,
+									"y": "37.493528",
+									"stationName": "개봉역",
+									"stationID": 101390
+								},
+								{
+									"x": "126.867744",
+									"index": 24,
+									"y": "37.492445",
+									"stationName": "철산리버빌아파트",
+									"stationID": 101562
+								},
+								{
+									"x": "126.875797",
+									"index": 25,
+									"y": "37.489296",
+									"stationName": "구일우성아파트",
+									"stationID": 101713
+								},
+								{
+									"x": "126.87673",
+									"index": 26,
+									"y": "37.486656",
+									"stationName": "디지털단지입구",
+									"stationID": 166950
+								},
+								{
+									"x": "126.876758",
+									"index": 27,
+									"y": "37.484818",
+									"stationName": "디지털3단지.롯데정보통신",
+									"stationID": 166951
+								},
+								{
+									"x": "126.878908",
+									"index": 28,
+									"y": "37.483208",
+									"stationName": "디지털3단지.영창실업",
+									"stationID": 101748
+								},
+								{
+									"x": "126.881027",
+									"index": 29,
+									"y": "37.481381",
+									"stationName": "가산디지털단지역",
+									"stationID": 101810
+								},
+								{
+									"x": "126.88298",
+									"index": 30,
+									"y": "37.476984",
+									"stationName": "산업단지백양사",
+									"stationID": 80328
+								}
+							]
+						},
+						"startY": 37.481908,
+						"startX": 126.782108,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 660
+							}
+						],
+						"startName": "부천역남부.부천남초교"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 186,
+						"trafficType": 3
+					},
+					{
+						"distance": 1548,
+						"trafficType": 2,
+						"sectionTime": 10,
+						"endY": 37.483909,
+						"endX": 126.895043,
+						"endID": 102173,
+						"stationCount": 4,
+						"endName": "디지털산업1단지",
+						"startID": 101825,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.881414",
+									"index": 0,
+									"y": "37.475861",
+									"stationName": "디지털3단지사거리",
+									"stationID": 101825
+								},
+								{
+									"x": "126.887842",
+									"index": 1,
+									"y": "37.477697",
+									"stationName": "금천패션아울렛사거리.W몰",
+									"stationID": 101965
+								},
+								{
+									"x": "126.89086",
+									"index": 2,
+									"y": "37.480059",
+									"stationName": "디지털단지오거리",
+									"stationID": 102054
+								},
+								{
+									"x": "126.892705",
+									"index": 3,
+									"y": "37.481473",
+									"stationName": "만민중앙교회",
+									"stationID": 102113
+								},
+								{
+									"x": "126.895043",
+									"index": 4,
+									"y": "37.483909",
+									"stationName": "디지털산업1단지",
+									"stationID": 102173
+								}
+							]
+						},
+						"startY": 37.475861,
+						"startX": 126.881414,
+						"lane": [
+							{
+								"busID": 1128,
+								"busNo": "5536",
+								"type": 12
+							}
+						],
+						"startName": "디지털3단지사거리"
+					},
+					{
+						"sectionTime": 7,
+						"distance": 452,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 72,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 34,
+					"trafficDistance": 14161,
+					"firstStartStation": "부천역남부.부천남초교",
+					"mapObj": "7055:1:40:70@1128:1:10:14",
+					"totalStationCount": 34,
+					"totalWalk": 1078,
+					"payment": 1550,
+					"subwayStationCount": 0,
+					"totalDistance": 15239,
+					"busTransitCount": 2,
+					"lastEndStation": "디지털산업1단지"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 7,
+						"distance": 440,
+						"trafficType": 3
+					},
+					{
+						"distance": 12613,
+						"trafficType": 2,
+						"sectionTime": 45,
+						"endY": 37.476984,
+						"endX": 126.88298,
+						"endID": 80328,
+						"stationCount": 30,
+						"endName": "산업단지백양사",
+						"startID": 185418,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782108",
+									"index": 0,
+									"y": "37.481908",
+									"stationName": "부천역남부.부천남초교",
+									"stationID": 185418
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "부천역전우체국",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "성지아파트.산성교회입구",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793477",
+									"index": 3,
+									"y": "37.481565",
+									"stationName": "소사3거리.세종병원",
+									"stationID": 185415
+								},
+								{
+									"x": "126.795383",
+									"index": 4,
+									"y": "37.477638",
+									"stationName": "소사종합시장",
+									"stationID": 185413
+								},
+								{
+									"x": "126.795384",
+									"index": 5,
+									"y": "37.476124",
+									"stationName": "소사초교앞사거리",
+									"stationID": 112968
+								},
+								{
+									"x": "126.79644",
+									"index": 6,
+									"y": "37.475162",
+									"stationName": "소사초등학교정문",
+									"stationID": 185411
+								},
+								{
+									"x": "126.799436",
+									"index": 7,
+									"y": "37.475156",
+									"stationName": "한신아파트.KCC스위첸아파트",
+									"stationID": 185409
+								},
+								{
+									"x": "126.801729",
+									"index": 8,
+									"y": "37.476721",
+									"stationName": "삼익세라믹아파트.SKVIEW아파트",
+									"stationID": 185407
+								},
+								{
+									"x": "126.803899",
+									"index": 9,
+									"y": "37.478851",
+									"stationName": "조공아파트",
+									"stationID": 185405
+								},
+								{
+									"x": "126.807705",
+									"index": 10,
+									"y": "37.479106",
+									"stationName": "괴안사거리.삼오유치원",
+									"stationID": 112699
+								},
+								{
+									"x": "126.810113",
+									"index": 11,
+									"y": "37.478427",
+									"stationName": "신일해피트리아파트",
+									"stationID": 112700
+								},
+								{
+									"x": "126.812797",
+									"index": 12,
+									"y": "37.478887",
+									"stationName": "부안초교.동원주택",
+									"stationID": 185399
+								},
+								{
+									"x": "126.814325",
+									"index": 13,
+									"y": "37.481641",
+									"stationName": "한양슈퍼",
+									"stationID": 185397
+								},
+								{
+									"x": "126.813145",
+									"index": 14,
+									"y": "37.484729",
+									"stationName": "역곡역남부",
+									"stationID": 185202
+								},
+								{
+									"x": "126.816526",
+									"index": 15,
+									"y": "37.486177",
+									"stationName": "역곡고가입구",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 16,
+									"y": "37.487673",
+									"stationName": "유한대학교",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 17,
+									"y": "37.489407",
+									"stationName": "성공회대학교유한공고앞",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 18,
+									"y": "37.491171",
+									"stationName": "서울가든빌라앞",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 19,
+									"y": "37.494499",
+									"stationName": "씨티월드",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 20,
+									"y": "37.495651",
+									"stationName": "오류동역",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 21,
+									"y": "37.496931",
+									"stationName": "오류1동주민센터.오류문화센터",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855795",
+									"index": 22,
+									"y": "37.493682",
+									"stationName": "개봉고가",
+									"stationID": 88588
+								},
+								{
+									"x": "126.857539",
+									"index": 23,
+									"y": "37.493528",
+									"stationName": "개봉역",
+									"stationID": 101390
+								},
+								{
+									"x": "126.867744",
+									"index": 24,
+									"y": "37.492445",
+									"stationName": "철산리버빌아파트",
+									"stationID": 101562
+								},
+								{
+									"x": "126.875797",
+									"index": 25,
+									"y": "37.489296",
+									"stationName": "구일우성아파트",
+									"stationID": 101713
+								},
+								{
+									"x": "126.87673",
+									"index": 26,
+									"y": "37.486656",
+									"stationName": "디지털단지입구",
+									"stationID": 166950
+								},
+								{
+									"x": "126.876758",
+									"index": 27,
+									"y": "37.484818",
+									"stationName": "디지털3단지.롯데정보통신",
+									"stationID": 166951
+								},
+								{
+									"x": "126.878908",
+									"index": 28,
+									"y": "37.483208",
+									"stationName": "디지털3단지.영창실업",
+									"stationID": 101748
+								},
+								{
+									"x": "126.881027",
+									"index": 29,
+									"y": "37.481381",
+									"stationName": "가산디지털단지역",
+									"stationID": 101810
+								},
+								{
+									"x": "126.88298",
+									"index": 30,
+									"y": "37.476984",
+									"stationName": "산업단지백양사",
+									"stationID": 80328
+								}
+							]
+						},
+						"startY": 37.481908,
+						"startX": 126.782108,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 660
+							}
+						],
+						"startName": "부천역남부.부천남초교"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 207,
+						"trafficType": 3
+					},
+					{
+						"distance": 2572,
+						"trafficType": 2,
+						"sectionTime": 14,
+						"endY": 37.483192,
+						"endX": 126.898299,
+						"endID": 93079,
+						"stationCount": 9,
+						"endName": "구로디지털단지우체국",
+						"startID": 122181,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.884451",
+									"index": 0,
+									"y": "37.47844",
+									"stationName": "마리오아울렛",
+									"stationID": 122181
+								},
+								{
+									"x": "126.883999",
+									"index": 1,
+									"y": "37.48067",
+									"stationName": "국민연금관리공단앞",
+									"stationID": 126894
+								},
+								{
+									"x": "126.886225",
+									"index": 2,
+									"y": "37.480024",
+									"stationName": "한신IT타워",
+									"stationID": 193903
+								},
+								{
+									"x": "126.888622",
+									"index": 3,
+									"y": "37.477001",
+									"stationName": "LG전자.W몰",
+									"stationID": 193905
+								},
+								{
+									"x": "126.890852",
+									"index": 4,
+									"y": "37.476806",
+									"stationName": "가산동주민센터",
+									"stationID": 93076
+								},
+								{
+									"x": "126.891034",
+									"index": 5,
+									"y": "37.478231",
+									"stationName": "디지털단지오거리",
+									"stationID": 102060
+								},
+								{
+									"x": "126.89086",
+									"index": 6,
+									"y": "37.480059",
+									"stationName": "디지털단지오거리",
+									"stationID": 102054
+								},
+								{
+									"x": "126.893452",
+									"index": 7,
+									"y": "37.48066",
+									"stationName": "한화비즈메트로",
+									"stationID": 93077
+								},
+								{
+									"x": "126.897315",
+									"index": 8,
+									"y": "37.481669",
+									"stationName": "한국산업기술시험원.디지털탑프라자",
+									"stationID": 93078
+								},
+								{
+									"x": "126.898299",
+									"index": 9,
+									"y": "37.483192",
+									"stationName": "구로디지털단지우체국",
+									"stationID": 93079
+								}
+							]
+						},
+						"startY": 37.47844,
+						"startX": 126.884451,
+						"lane": [
+							{
+								"busID": 509,
+								"busNo": "금천07",
+								"type": 3
+							}
+						],
+						"startName": "마리오아울렛"
+					},
+					{
+						"sectionTime": 9,
+						"distance": 571,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 78,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 39,
+					"trafficDistance": 15185,
+					"firstStartStation": "부천역남부.부천남초교",
+					"mapObj": "7055:1:40:70@509:1:13:22",
+					"totalStationCount": 39,
+					"totalWalk": 1218,
+					"payment": 1650,
+					"subwayStationCount": 0,
+					"totalDistance": 16403,
+					"busTransitCount": 2,
+					"lastEndStation": "구로디지털단지우체국"
+				}
+			}
+		],
+		"busCount": 3,
+		"searchType": 0,
+		"subwayCount": 2,
+		"subwayBusCount": 5,
+		"pointDistance": 10308,
+		"outTrafficCheck": 1,
+		"startRadius": 700,
+		"endRadius": 700
+	}
+}

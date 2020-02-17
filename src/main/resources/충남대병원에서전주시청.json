@@ -1,0 +1,1223 @@
+{
+    "result": {
+        "startCID": 3000,
+        "endCityName": "전주",
+        "trainRequest": {
+            "OBJ": [
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.403693,
+                    "trainType": "ITX",
+                    "SY": 36.322573,
+                    "trainCode": "6",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300127,
+                    "startSTN": "서대전역",
+                    "payment": 10400,
+                    "time": 73
+                },
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.403693,
+                    "trainType": "KTX",
+                    "SY": 36.322573,
+                    "trainCode": "1",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300127,
+                    "startSTN": "서대전역",
+                    "payment": 11200,
+                    "time": 74
+                },
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.403693,
+                    "trainType": "무궁화",
+                    "SY": 36.322573,
+                    "trainCode": "3",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300127,
+                    "startSTN": "서대전역",
+                    "payment": 7000,
+                    "time": 79
+                },
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.403693,
+                    "trainType": "누리로",
+                    "SY": 36.322573,
+                    "trainCode": "",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300127,
+                    "startSTN": "서대전역",
+                    "payment": 7000,
+                    "time": 87
+                },
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.427956,
+                    "trainType": "무궁화",
+                    "SY": 36.450011,
+                    "trainCode": "3",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300156,
+                    "startSTN": "신탄진역",
+                    "payment": 8000,
+                    "time": 95
+                },
+                {
+                    "endSTN": "전주역",
+                    "SX": 127.427956,
+                    "trainType": "누리로",
+                    "SY": 36.450011,
+                    "trainCode": "",
+                    "mapOBJ": "",
+                    "EX": 127.161817,
+                    "endID": 3300225,
+                    "EY": 35.849839,
+                    "startID": 3300156,
+                    "startSTN": "신탄진역",
+                    "payment": 8000,
+                    "time": 102
+                }
+            ],
+            "count": 6
+        },
+        "searchType": 1,
+        "endCID": 9000,
+        "pointDistance": 59814,
+        "airRequest": {
+            "OBJ": [],
+            "count": 0
+        },
+        "outBusRequest": {
+            "OBJ": [
+                {
+                    "mapOBJ": "",
+                    "EX": 127.132569,
+                    "endSTN": "전주시외버스공용터미널",
+                    "endID": 3600844,
+                    "EY": 35.834454,
+                    "SX": 127.388098,
+                    "startID": 3601077,
+                    "SY": 36.312987,
+                    "startSTN": "대전서남부터미널",
+                    "payment": 6100,
+                    "time": 115
+                },
+                {
+                    "mapOBJ": "",
+                    "EX": 127.132569,
+                    "endSTN": "전주시외버스공용터미널",
+                    "endID": 3600844,
+                    "EY": 35.834454,
+                    "SX": 127.335966,
+                    "startID": 3600750,
+                    "SY": 36.355609,
+                    "startSTN": "유성시외버스정류소",
+                    "payment": 6400,
+                    "time": 60
+                }
+            ],
+            "count": 2
+        },
+        "totalCount": 12,
+        "exBusRequest": {
+            "OBJ": [
+                {
+                    "mapOBJ": "",
+                    "EX": 127.129114,
+                    "endSTN": "전주고속버스터미널",
+                    "endID": 3400101,
+                    "EY": 35.834618,
+                    "SX": 127.437036,
+                    "startID": 4000030,
+                    "SY": 36.350908,
+                    "startSTN": "대전복합터미널",
+                    "payment": 7800,
+                    "time": 80
+                },
+                {
+                    "mapOBJ": "",
+                    "EX": 127.129114,
+                    "endSTN": "전주고속버스터미널",
+                    "endID": 3400101,
+                    "EY": 35.834618,
+                    "SX": 127.390505,
+                    "startID": 3400031,
+                    "SY": 36.361468,
+                    "startSTN": "대전청사고속버스둔산정류장",
+                    "payment": 7000,
+                    "time": 80
+                },
+                {
+                    "mapOBJ": "",
+                    "EX": 127.070171,
+                    "endSTN": "호남제일문정류소",
+                    "endID": 3400147,
+                    "EY": 35.870076,
+                    "SX": 127.437036,
+                    "startID": 4000030,
+                    "SY": 36.350908,
+                    "startSTN": "대전복합터미널",
+                    "payment": 6800,
+                    "time": 70
+                },
+                {
+                    "mapOBJ": "",
+                    "EX": 127.070171,
+                    "endSTN": "호남제일문정류소",
+                    "endID": 3400147,
+                    "EY": 35.870076,
+                    "SX": 127.390505,
+                    "startID": 3400031,
+                    "SY": 36.361468,
+                    "startSTN": "대전청사고속버스둔산정류장",
+                    "payment": 6000,
+                    "time": 60
+                }
+            ],
+            "count": 4
+        },
+        "startCityName": "대전",
+        "localSearch": 0
+    },
+    "innerpath": {
+        "ee": [
+            {
+                "path": {
+                    "result": {
+                        "path": [
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1856,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.825874,
+                                        "endX": 127.146486,
+                                        "endID": 900240,
+                                        "stationCount": 4,
+                                        "endName": "대우빌딩",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.13772",
+                                                    "index": 1,
+                                                    "y": "35.83304",
+                                                    "stationName": "기린대로금암광장",
+                                                    "stationID": 900121
+                                                },
+                                                {
+                                                    "x": "127.139283",
+                                                    "index": 2,
+                                                    "y": "35.831798",
+                                                    "stationName": "진북전자상가",
+                                                    "stationID": 900124
+                                                },
+                                                {
+                                                    "x": "127.142755",
+                                                    "index": 3,
+                                                    "y": "35.829047",
+                                                    "stationName": "기린대로현대병원",
+                                                    "stationID": 901173
+                                                },
+                                                {
+                                                    "x": "127.146486",
+                                                    "index": 4,
+                                                    "y": "35.825874",
+                                                    "stationName": "대우빌딩",
+                                                    "stationID": 900240
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190041,
+                                                "busNo": "101(평화동종점.대성동종점)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 3,
+                                        "distance": 221,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 19,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 4,
+                                    "trafficDistance": 1856,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190041:1:60:64",
+                                    "totalStationCount": 4,
+                                    "totalWalk": 651,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2507,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "대우빌딩"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 5,
+                                        "distance": 324,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 2104,
+                                        "trafficType": 2,
+                                        "sectionTime": 11,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 5,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900755,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.130406",
+                                                    "index": 0,
+                                                    "y": "35.831897",
+                                                    "stationName": "숲정이성당",
+                                                    "stationID": 900755
+                                                },
+                                                {
+                                                    "x": "127.132671",
+                                                    "index": 1,
+                                                    "y": "35.832255",
+                                                    "stationName": "진북우성아파트후문",
+                                                    "stationID": 901359
+                                                },
+                                                {
+                                                    "x": "127.135694",
+                                                    "index": 2,
+                                                    "y": "35.831096",
+                                                    "stationName": "진북우성아파트.전주고용복지센터",
+                                                    "stationID": 901357
+                                                },
+                                                {
+                                                    "x": "127.136547",
+                                                    "index": 3,
+                                                    "y": "35.826939",
+                                                    "stationName": "진북동양아파트",
+                                                    "stationID": 901356
+                                                },
+                                                {
+                                                    "x": "127.140242",
+                                                    "index": 4,
+                                                    "y": "35.826019",
+                                                    "stationName": "한국방송통신대",
+                                                    "stationID": 901266
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 5,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.831897,
+                                        "startX": 127.130406,
+                                        "lane": [
+                                            {
+                                                "busID": 2190143,
+                                                "busNo": "61(전주대.비전대)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "숲정이성당"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 20,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 5,
+                                    "trafficDistance": 2104,
+                                    "firstStartStation": "숲정이성당",
+                                    "mapObj": "2190143:1:22:27",
+                                    "totalStationCount": 5,
+                                    "totalWalk": 606,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2710,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1985,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 3,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.136429",
+                                                    "index": 1,
+                                                    "y": "35.833743",
+                                                    "stationName": "금암광장.청담한방병원",
+                                                    "stationID": 900120
+                                                },
+                                                {
+                                                    "x": "127.139144",
+                                                    "index": 2,
+                                                    "y": "35.830391",
+                                                    "stationName": "한국은행.청소년상담센터",
+                                                    "stationID": 901229
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 3,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190169,
+                                                "busNo": "165(동물원.국립식량과학원)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 20,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 3,
+                                    "trafficDistance": 1985,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190169:1:8:11",
+                                    "totalStationCount": 3,
+                                    "totalWalk": 712,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2697,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 2,
+                                        "distance": 142,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1910,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 4,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900183,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.13045",
+                                                    "index": 0,
+                                                    "y": "35.833952",
+                                                    "stationName": "고속버스터미널.불교회관",
+                                                    "stationID": 900183
+                                                },
+                                                {
+                                                    "x": "127.133624",
+                                                    "index": 1,
+                                                    "y": "35.834146",
+                                                    "stationName": "시외버스터미널",
+                                                    "stationID": 900762
+                                                },
+                                                {
+                                                    "x": "127.136429",
+                                                    "index": 2,
+                                                    "y": "35.833743",
+                                                    "stationName": "금암광장.청담한방병원",
+                                                    "stationID": 900120
+                                                },
+                                                {
+                                                    "x": "127.139144",
+                                                    "index": 3,
+                                                    "y": "35.830391",
+                                                    "stationName": "한국은행.청소년상담센터",
+                                                    "stationID": 901229
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 4,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.833952,
+                                        "startX": 127.13045,
+                                        "lane": [
+                                            {
+                                                "busID": 2190043,
+                                                "busNo": "102(송천동종점.양묘장)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "고속버스터미널.불교회관"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 16,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 4,
+                                    "trafficDistance": 1910,
+                                    "firstStartStation": "고속버스터미널.불교회관",
+                                    "mapObj": "2190043:1:33:37",
+                                    "totalStationCount": 4,
+                                    "totalWalk": 424,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2334,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1856,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.825874,
+                                        "endX": 127.146486,
+                                        "endID": 900240,
+                                        "stationCount": 4,
+                                        "endName": "대우빌딩",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.13772",
+                                                    "index": 1,
+                                                    "y": "35.83304",
+                                                    "stationName": "기린대로금암광장",
+                                                    "stationID": 900121
+                                                },
+                                                {
+                                                    "x": "127.139283",
+                                                    "index": 2,
+                                                    "y": "35.831798",
+                                                    "stationName": "진북전자상가",
+                                                    "stationID": 900124
+                                                },
+                                                {
+                                                    "x": "127.142755",
+                                                    "index": 3,
+                                                    "y": "35.829047",
+                                                    "stationName": "기린대로현대병원",
+                                                    "stationID": 901173
+                                                },
+                                                {
+                                                    "x": "127.146486",
+                                                    "index": 4,
+                                                    "y": "35.825874",
+                                                    "stationName": "대우빌딩",
+                                                    "stationID": 900240
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190449,
+                                                "busNo": "190(전주비전대.평화동종점)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 3,
+                                        "distance": 221,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 19,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 4,
+                                    "trafficDistance": 1856,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190449:1:22:26",
+                                    "totalStationCount": 4,
+                                    "totalWalk": 651,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2507,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "대우빌딩"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1856,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.825874,
+                                        "endX": 127.146486,
+                                        "endID": 900240,
+                                        "stationCount": 4,
+                                        "endName": "대우빌딩",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.13772",
+                                                    "index": 1,
+                                                    "y": "35.83304",
+                                                    "stationName": "기린대로금암광장",
+                                                    "stationID": 900121
+                                                },
+                                                {
+                                                    "x": "127.139283",
+                                                    "index": 2,
+                                                    "y": "35.831798",
+                                                    "stationName": "진북전자상가",
+                                                    "stationID": 900124
+                                                },
+                                                {
+                                                    "x": "127.142755",
+                                                    "index": 3,
+                                                    "y": "35.829047",
+                                                    "stationName": "기린대로현대병원",
+                                                    "stationID": 901173
+                                                },
+                                                {
+                                                    "x": "127.146486",
+                                                    "index": 4,
+                                                    "y": "35.825874",
+                                                    "stationName": "대우빌딩",
+                                                    "stationID": 900240
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190243,
+                                                "busNo": "752(송천동종점.관촌터미널)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 3,
+                                        "distance": 221,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 19,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 4,
+                                    "trafficDistance": 1856,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190243:1:13:17",
+                                    "totalStationCount": 4,
+                                    "totalWalk": 651,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2507,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "대우빌딩"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1856,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.825874,
+                                        "endX": 127.146486,
+                                        "endID": 900240,
+                                        "stationCount": 4,
+                                        "endName": "대우빌딩",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.13772",
+                                                    "index": 1,
+                                                    "y": "35.83304",
+                                                    "stationName": "기린대로금암광장",
+                                                    "stationID": 900121
+                                                },
+                                                {
+                                                    "x": "127.139283",
+                                                    "index": 2,
+                                                    "y": "35.831798",
+                                                    "stationName": "진북전자상가",
+                                                    "stationID": 900124
+                                                },
+                                                {
+                                                    "x": "127.142755",
+                                                    "index": 3,
+                                                    "y": "35.829047",
+                                                    "stationName": "기린대로현대병원",
+                                                    "stationID": 901173
+                                                },
+                                                {
+                                                    "x": "127.146486",
+                                                    "index": 4,
+                                                    "y": "35.825874",
+                                                    "stationName": "대우빌딩",
+                                                    "stationID": 900240
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190050,
+                                                "busNo": "7-1(삼천동종점.삼천동종점)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 3,
+                                        "distance": 221,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 19,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 4,
+                                    "trafficDistance": 1856,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190050:1:36:40",
+                                    "totalStationCount": 4,
+                                    "totalWalk": 651,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2507,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "대우빌딩"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1985,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 3,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.136429",
+                                                    "index": 1,
+                                                    "y": "35.833743",
+                                                    "stationName": "금암광장.청담한방병원",
+                                                    "stationID": 900120
+                                                },
+                                                {
+                                                    "x": "127.139144",
+                                                    "index": 2,
+                                                    "y": "35.830391",
+                                                    "stationName": "한국은행.청소년상담센터",
+                                                    "stationID": 901229
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 3,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190321,
+                                                "busNo": "385(우석대.전주대)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 20,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 3,
+                                    "trafficDistance": 1985,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190321:1:22:25",
+                                    "totalStationCount": 3,
+                                    "totalWalk": 712,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2697,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1985,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 3,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.136429",
+                                                    "index": 1,
+                                                    "y": "35.833743",
+                                                    "stationName": "금암광장.청담한방병원",
+                                                    "stationID": 900120
+                                                },
+                                                {
+                                                    "x": "127.139144",
+                                                    "index": 2,
+                                                    "y": "35.830391",
+                                                    "stationName": "한국은행.청소년상담센터",
+                                                    "stationID": 901229
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 3,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190323,
+                                                "busNo": "383(우석대.농협공판장)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 20,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 3,
+                                    "trafficDistance": 1985,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190323:1:22:25",
+                                    "totalStationCount": 3,
+                                    "totalWalk": 712,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2697,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            },
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 6,
+                                        "distance": 430,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 1985,
+                                        "trafficType": 2,
+                                        "sectionTime": 10,
+                                        "endY": 35.823986,
+                                        "endX": 127.144647,
+                                        "endID": 901332,
+                                        "stationCount": 3,
+                                        "endName": "중앙시장중앙성당방송대",
+                                        "startID": 900427,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.131335",
+                                                    "index": 0,
+                                                    "y": "35.838041",
+                                                    "stationName": "국민은행금암지점",
+                                                    "stationID": 900427
+                                                },
+                                                {
+                                                    "x": "127.136429",
+                                                    "index": 1,
+                                                    "y": "35.833743",
+                                                    "stationName": "금암광장.청담한방병원",
+                                                    "stationID": 900120
+                                                },
+                                                {
+                                                    "x": "127.139144",
+                                                    "index": 2,
+                                                    "y": "35.830391",
+                                                    "stationName": "한국은행.청소년상담센터",
+                                                    "stationID": 901229
+                                                },
+                                                {
+                                                    "x": "127.144647",
+                                                    "index": 3,
+                                                    "y": "35.823986",
+                                                    "stationName": "중앙시장중앙성당방송대",
+                                                    "stationID": 901332
+                                                }
+                                            ]
+                                        },
+                                        "startY": 35.838041,
+                                        "startX": 127.131335,
+                                        "lane": [
+                                            {
+                                                "busID": 2190325,
+                                                "busNo": "381(우석대.농협공판장)",
+                                                "type": 1
+                                            }
+                                        ],
+                                        "startName": "국민은행금암지점"
+                                    },
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 282,
+                                        "trafficType": 3
+                                    }
+                                ],
+                                "pathType": 2,
+                                "info": {
+                                    "totalTime": 20,
+                                    "totalWalkTime": -1,
+                                    "subwayTransitCount": 0,
+                                    "busStationCount": 3,
+                                    "trafficDistance": 1985,
+                                    "firstStartStation": "국민은행금암지점",
+                                    "mapObj": "2190325:1:22:25",
+                                    "totalStationCount": 3,
+                                    "totalWalk": 712,
+                                    "payment": 0,
+                                    "subwayStationCount": 0,
+                                    "totalDistance": 2697,
+                                    "busTransitCount": 1,
+                                    "lastEndStation": "중앙시장중앙성당방송대"
+                                }
+                            }
+                        ],
+                        "busCount": 10,
+                        "searchType": 0,
+                        "subwayCount": 0,
+                        "subwayBusCount": 0,
+                        "pointDistance": 2044,
+                        "outTrafficCheck": 0,
+                        "startRadius": 700,
+                        "endRadius": 700
+                    }
+                },
+                "name": "전주고속버스터미널"
+            },
+            {
+                "path": {
+                    "result": {
+                        "path": [
+                            {
+                                "subPath": [
+                                    {
+                                        "sectionTime": 4,
+                                        "distance": 272,
+                                        "trafficType": 3
+                                    },
+                                    {
+                                        "distance": 8761,
+                                        "trafficType": 2,
+                                        "sectionTime": 31,
+                                        "endY": 35.825874,
+                                        "endX": 127.146486,
+                                        "endID": 900240,
+                                        "stationCount": 18,
+                                        "endName": "대우빌딩",
+                                        "startID": 900296,
+                                        "passStopList": {
+                                            "stations": [
+                                                {
+                                                    "x": "127.073087",
+                                                    "index": 0,
+                                                    "y": "35.870694",
+                                                    "stationName": "새전주요양병원",
+                                                    "stationID": 900296
+                                                },
+                                                {
+                                                    "x": "127.075902",
+                                                    "index": 1,
+                                                    "y": "35.872428",
+                                                    "stationName": "여의동우체국",
+                                                    "stationID": 900298
+                                                },
+                                                {
+                                                    "x": "127.077844",
+                                                    "index": 2,
+                                                    "y": "35.868198",
+                                                    "stationName": "조촌초교",
+                                                    "stationID": 901306
+                                                },
+                                                {
+                                                    "x": "127.080571",
+                                                    "index": 3,
+                                                    "y": "35.865082",
+                                                    "stationName": "전주공고",
+                                                    "stationID": 901244
+                                                },
+                                                {
+                                                    "x": "127.085277",
+                                                    "index": 4,
+                                                    "y": "35.863126",
+                                                    "stationName": "도시첨단산업단지",
+                                                    "stationID": 900042
+                                                },
+                                                {
+                                                    "x": "127.092388",
+                                                    "index": 5,
+                                                    "y": "35.85998",
+                                                    "stationName": "기린대로경제통상진흥원",
+                                                    "stationID": 901329
+                                                },
+                                                {
+                                                    "x": "127.096429",
+                                                    "index": 6,
+                                                    "y": "35.858055",
+                                                    "stationName": "휴비스전주공장",
+                                                    "stationID": 901601
+                                                },
+                                                {
+                                                    "x": "127.100672",
+                                                    "index": 7,
+                                                    "y": "35.855905",
+                                                    "stationName": "팔복예술공장",
+                                                    "stationID": 901428
+                                                },
+                                                {
+                                                    "x": "127.105273",
+                                                    "index": 8,
+                                                    "y": "35.853335",
+                                                    "stationName": "팔복근린상가",
+                                                    "stationID": 901423
+                                                },
+                                                {
+                                                    "x": "127.10967",
+                                                    "index": 9,
+                                                    "y": "35.851213",
+                                                    "stationName": "추천대교",
+                                                    "stationID": 901396
+                                                },
+                                                {
+                                                    "x": "127.113955",
+                                                    "index": 10,
+                                                    "y": "35.849154",
+                                                    "stationName": "덕일초중",
+                                                    "stationID": 900265
+                                                },
+                                                {
+                                                    "x": "127.116303",
+                                                    "index": 11,
+                                                    "y": "35.848036",
+                                                    "stationName": "기린대로.원대한방병원",
+                                                    "stationID": 901068
+                                                },
+                                                {
+                                                    "x": "127.119732",
+                                                    "index": 12,
+                                                    "y": "35.846285",
+                                                    "stationName": "기린대로덕진공원",
+                                                    "stationID": 900267
+                                                },
+                                                {
+                                                    "x": "127.125165",
+                   

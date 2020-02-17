@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bts.app.board.BoardService;
@@ -38,6 +39,14 @@ public class BoardController {
 	}
 	
 
+	@RequestMapping(value="/favorites", method=RequestMethod.GET)
+	public ModelAndView favorites() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("Board/favorites");
+		return mav;
+		
+	}
 	@RequestMapping(value="/boardwrite", method=RequestMethod.GET)
 	public ModelAndView BoardWrite() {
 		ModelAndView mav = new ModelAndView();

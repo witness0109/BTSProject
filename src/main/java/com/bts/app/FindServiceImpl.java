@@ -2,6 +2,7 @@ package com.bts.app;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashSet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.bts.app.find.ApiConnectService;
 import com.bts.app.find.ApiConnectServiceImpl;
 import com.bts.app.find.JSONLoader;
+import com.bts.app.find.Point;
 
 @Service
 public class FindServiceImpl implements FindService {
@@ -30,7 +32,11 @@ public class FindServiceImpl implements FindService {
 		// 33.2505057));// jeju
 		fs.apiService = new ApiConnectServiceImpl();
 
-		System.out.println(fs.findStationTimetable("온수", 1));
+		System.out.println(
+				fs.findOutpath(126.89793002823849, 37.488232695178674, 127.34262657500408, 36.366392876840045));// jeju
+//		System.out.println(fs.findpath(126.87949687399517, 35.16042131688744, 126.8110942045558, 35.1373943689147));// 유스퀘어->광주공항
+
+		// System.out.println(fs.findStationTimetable("온수", 1));
 	}
 
 	@Override
@@ -41,11 +47,16 @@ public class FindServiceImpl implements FindService {
 		if (map.has("error")) {
 			return map;
 		}
+		if (map.getJSONObject("result").getInt("searchType") == 1) {
+			map.put("error", "out city");
+			return map;
+		}
 		JSONArray pathArray = (JSONArray) (map.getJSONObject("result").get("path"));
 		for (int i = 0; i < pathArray.length(); i++) { // path 목록 조회
 			JSONObject path = pathArray.getJSONObject(i);
 			JSONArray subpathArr = (JSONArray) path.get("subPath");
 			int walktime = 0;
+			int pay = path.getJSONObject("info").getInt("payment");
 
 			for (int k = 0; k < subpathArr.length(); k++) {
 				JSONObject spath = subpathArr.getJSONObject(k);
@@ -133,7 +144,9 @@ public class FindServiceImpl implements FindService {
 
 						} else {
 							String citycode = getCityCode(city, dow);
-
+							if (pay == 0) {
+								path.getJSONObject("info").put("payment", getPayment(city, dow));
+							}
 							JSONObject etcInfo = apiService.getETCRealTimeBusInfo(citycode, stationID)
 									.getJSONObject("response");
 							int header = (etcInfo.getJSONObject("header")).getInt("resultCode");
@@ -142,7 +155,7 @@ public class FindServiceImpl implements FindService {
 							}
 
 							JSONArray buslist = processETCBus(walktime, busLanes, etcInfo);
-
+							System.out.println(buslist);
 						}
 					}
 					break;
@@ -151,6 +164,36 @@ public class FindServiceImpl implements FindService {
 		}
 
 		return map;
+	}
+
+	private int getPayment(String city, String dow) {
+		JSONObject paymentTable = readOutCityJSON("버스요금");
+		if (dow.equals("세종특별시")) {
+			return 1200;
+		}
+
+		JSONArray extendStatePayment = paymentTable.getJSONArray(dow);
+		JSONObject etcpayment = null;
+		boolean isFind = false;
+
+		if (dow.equals("충청남도")) {
+			if (city.contains("시")) {
+				return extendStatePayment.getJSONObject(0).getInt("bus");
+			}
+			if (city.contains("군")) {
+				return extendStatePayment.getJSONObject(1).getInt("bus");
+			}
+		}
+		for (int i = 0; i < extendStatePayment.length(); i++) {
+			if (extendStatePayment.getJSONObject(i).getString("city").equals(city)) {// 도시이름으로 검색..
+				return extendStatePayment.getJSONObject(i).getInt("bus");
+			}
+			if (extendStatePayment.getJSONObject(i).getString("city").equals("나머지")) {
+				etcpayment = extendStatePayment.getJSONObject(i);
+			}
+		}
+
+		return etcpayment.getInt("bus");
 	}
 
 	private String getCityCode(String city, String dow) {
@@ -197,8 +240,14 @@ public class FindServiceImpl implements FindService {
 		if (etcInfo.getJSONObject("body").get("items") instanceof String) {
 			return new JSONArray();
 		}
-
-		JSONArray buslist = etcInfo.getJSONObject("body").getJSONObject("items").getJSONArray("item");
+		JSONObject items = etcInfo.getJSONObject("body").getJSONObject("items");
+		JSONArray buslist;
+		if (items.get("item") instanceof JSONArray) {
+			buslist = etcInfo.getJSONObject("body").getJSONObject("items").getJSONArray("item");
+		} else {
+			buslist = new JSONArray();
+			buslist.put(items.get("item"));
+		}
 
 		for (int p = 0; p < buslist.length(); p++) {
 			String routeno;
@@ -215,6 +264,8 @@ public class FindServiceImpl implements FindService {
 				if (busn instanceof String) {
 					if (((String) busn).contains("(")) {
 						busbus = ((String) busn).split("\\(")[0];
+					} else {
+						busbus = (String) busn;
 					}
 				} else {
 					busbus = String.valueOf(busn);
@@ -249,7 +300,7 @@ public class FindServiceImpl implements FindService {
 			}
 
 		}
-		return buslist;
+		return busLanes;
 	}
 
 	private void processBusanBus(int walktime, JSONArray busLanes, JSONObject busaninfo) {
@@ -374,7 +425,11 @@ public class FindServiceImpl implements FindService {
 								continue;
 							}
 							int minute = Integer.parseInt(arrtime2.split("분")[0]);
-							int sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
+							String secpart = arrtime2.split("분")[1].split("후")[0];
+							int sec = 0;
+							if (secpart.contains("초")) {
+								sec = Integer.parseInt(secpart.split("초")[0]);
+							}
 							if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
 								busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 							} else {
@@ -399,7 +454,11 @@ public class FindServiceImpl implements FindService {
 									continue;
 								}
 								minute = Integer.parseInt(arrtime2.split("분")[0]);
-								sec = Integer.parseInt(arrtime2.split("분")[1].split("초")[0]);
+								secpart = arrtime2.split("분")[1].split("후")[0];
+								sec = 0;
+								if (secpart.contains("초")) {
+									sec = Integer.parseInt(secpart.split("초")[0]);
+								}
 								if (walktime * 60 <= minute * 60 + sec) {// 그 다음 버스 도착시간계산
 									busLanes.getJSONObject(m).put("arrmsg1", minute * 60 + sec);
 								} else {
@@ -490,6 +549,12 @@ public class FindServiceImpl implements FindService {
 		}
 
 		JSONObject weektableU = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'U');
+		if (weektableU.get("items") instanceof String) {
+			JSONObject result = new JSONObject();
+			result.put("resultCode", "fail");
+			return result;
+		}
+
 		JSONObject sattableU = apiService.getSubwayTimeTableOpenApi(stationCode, 2, 'U');
 		JSONObject suntableU = apiService.getSubwayTimeTableOpenApi(stationCode, 3, 'U');
 		JSONObject weektableD = apiService.getSubwayTimeTableOpenApi(stationCode, 1, 'D');
@@ -508,6 +573,173 @@ public class FindServiceImpl implements FindService {
 		result.put("up", uptable);
 		result.put("down", downtable);
 		return result;
+	}
+
+	@Override
+	public JSONObject findOutpath(double sx, double sy, double ex, double ey) {
+		String option = "&lang=0&SX=" + sx + "&SY=" + sy + "&EX=" + ex + "&EY=" + ey;
+		String subOption = "&SearchType=" + 1;
+		JSONObject map = apiService.GetOdsayApiResponseMap("searchPubTransPathR", option + subOption);
+
+		if (map.has("error")) {
+			return map;
+		}
+		Object traino = map.getJSONObject("result").getJSONObject("trainRequest").get("OBJ");
+		Object expbuso = map.getJSONObject("result").getJSONObject("exBusRequest").get("OBJ");
+		Object outbuso = map.getJSONObject("result").getJSONObject("outBusRequest").get("OBJ");
+
+		JSONArray trainarr;
+		JSONArray expbusarr;
+		JSONArray outbusarr;
+		if (traino instanceof JSONObject) {
+			trainarr = new JSONArray();
+			trainarr.put(traino);
+		} else {
+			trainarr = (JSONArray) traino;
+		}
+		if (expbuso instanceof JSONObject) {
+			expbusarr = new JSONArray();
+			expbusarr.put(expbuso);
+		} else {
+			expbusarr = (JSONArray) expbuso;
+		}
+		if (outbuso instanceof JSONObject) {
+			outbusarr = new JSONArray();
+			outbusarr.put(outbuso);
+		} else {
+			outbusarr = (JSONArray) outbuso;
+		}
+
+		HashSet<Point> trainStart = new HashSet<>();
+		HashSet<Point> trainEnd = new HashSet<>();
+		HashSet<Point> exStart = new HashSet<>();
+		HashSet<Point> exEnd = new HashSet<>();
+		HashSet<Point> outStart = new HashSet<>();
+		HashSet<Point> outEnd = new HashSet<>();
+
+		for (Object train : trainarr) {
+			JSONObject station = (JSONObject) train;
+			if (!station.has("startSTN")) {
+				continue;
+			}
+			trainStart.add(new Point(station.getString("startSTN"), station.getDouble("SX"), station.getDouble("SY")));
+			trainEnd.add(new Point(station.getString("endSTN"), station.getDouble("EX"), station.getDouble("EY")));
+		}
+
+		for (Object exb : expbusarr) {
+			JSONObject station = (JSONObject) exb;
+			if (!station.has("startSTN")) {
+				continue;
+			}
+			exStart.add(new Point(station.getString("startSTN"), station.getDouble("SX"), station.getDouble("SY")));
+			exEnd.add(new Point(station.getString("endSTN"), station.getDouble("EX"), station.getDouble("EY")));
+		}
+
+		for (Object outb : outbusarr) {
+			JSONObject station = (JSONObject) outb;
+			if (!station.has("startSTN")) {
+				continue;
+			}
+			outStart.add(new Point(station.getString("startSTN"), station.getDouble("SX"), station.getDouble("SY")));
+			outEnd.add(new Point(station.getString("endSTN"), station.getDouble("EX"), station.getDouble("EY")));
+		}
+
+		// inner city find start
+		subOption = "&SearchType=" + 0;
+		JSONArray trains = new JSONArray();
+		JSONArray traine = new JSONArray();
+		JSONArray exs = new JSONArray();
+		JSONArray exe = new JSONArray();
+		JSONArray outs = new JSONArray();
+		JSONArray oute = new JSONArray();
+
+		for (Point point : trainStart) {
+			System.out.println("ts시작");
+
+			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			trains.put(tmp);
+		}
+		for (Point point : trainEnd) {
+			System.out.println("te시작");
+
+			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			traine.put(tmp);
+		}
+		for (Point point : exStart) {
+			System.out.println("exs시작");
+
+			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			exs.put(tmp);
+		}
+		for (Point point : exEnd) {
+			System.out.println("exe시작");
+
+			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			exe.put(tmp);
+		}
+		for (Point point : outStart) {
+			System.out.println("outs시작");
+			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			outs.put(tmp);
+		}
+		for (Point point : outEnd) {
+			System.out.println("oute시작");
+
+			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
+			if (tsmap.has("error")) {
+				continue;
+			}
+			JSONObject tmp = new JSONObject();
+			tmp.put("path", tsmap);
+			tmp.put("name", point.getName());
+			oute.put(tmp);
+		}
+		JSONObject inner = new JSONObject();
+		inner.put("ts", trains);
+		inner.put("te", traine);
+		inner.put("es", exs);
+		inner.put("ee", exe);
+		inner.put("os", outs);
+		inner.put("oe", oute);
+		map.put("innerpath", inner);
+
+		return map;
+	}
+
+	public JSONObject readOutCityJSON(String filename) {
+		JSONObject citycode = new JSONLoader().loadJSONFile(filename + ".json");
+		return citycode;
+
 	}
 
 }
