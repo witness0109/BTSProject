@@ -27,15 +27,15 @@ $(document).ready(function() {
     </div>
 
 <div class="col-xs-12">
-	<form action="./boardwrite" method="post" enctype="multipart/form-data">
+	<form action="./boardwrite" method="post">
 		<div class="form-group">
 		<label for="subject">제목</label>
-		<input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
+		<input type="text" class="form-control" id="subject" name="title" placeholder="제목을 입력하세요.">
 		</div>
 		
 		<div class="form-group">
 		<label for="content">내용</label>
-		<textarea class="form-control" id="content" name="content" rows="3"></textarea>
+		<textarea class="form-control" id="content" name="contents" rows="3"></textarea>
 		</div>
 		
 		<div class="form-group">

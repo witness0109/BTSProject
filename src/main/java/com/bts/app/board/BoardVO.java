@@ -5,6 +5,11 @@ public class BoardVO {
 	String pw, title, contents, writer, time;
 	
 	
+	@Override
+	public String toString() {
+		return "BoardVO [seq=" + seq + ", pw=" + pw + ", title=" + title + ", contents=" + contents + ", writer="
+				+ writer + ", time=" + time + "]";
+	}
 	public int getSeq() {
 		return seq;
 	}

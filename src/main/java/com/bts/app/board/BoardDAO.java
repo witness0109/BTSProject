@@ -18,6 +18,7 @@ public class BoardDAO {
 	}
 	
 	public int insertBoard(BoardVO vo) {
+		System.out.println(vo);
 		return session.insert("board.insertboard", vo);
 	}
 	
@@ -35,6 +36,8 @@ public class BoardDAO {
 	}
 	
 	public int namecheck(BoardVO vo) {
+		System.out.println(vo.toString());
+
 		return session.selectOne("board.namecheck", vo);
 	}
 	
