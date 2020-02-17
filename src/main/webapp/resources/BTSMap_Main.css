@@ -142,7 +142,6 @@
 		.divcontainer #leftside .box.expbus {
 			/*  width: 85%; */
 			height: AUTO;
-			width: 100%;
 			border: 1px solid violet;
 			border-radius: 5px;
 			padding: 15px;
