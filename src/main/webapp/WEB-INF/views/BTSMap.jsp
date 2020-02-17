@@ -301,7 +301,9 @@
 		
 		#asidedivbtn{
 			text-align: center;
+			bottom : 1%;
 			padding-bottom: 0;
+			position : fixed;
 
 			
 		}
@@ -352,7 +354,6 @@
 	<link rel="stylesheet" href="./resources/style.css">
 	<!-- Resource style -->
 	<link rel="stylesheet" href="./resources/pathbox.css">
-	
 	<!-- Resource style -->
 
 
@@ -410,12 +411,16 @@
 			
 		</div>
 		<div id="weather"></div>
-		
 		<div id= "asidedivbtn">
-		<input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> 
-		<input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리">
-		</div>
+		<div id="leftside-navigation" class="nano">
+		<ul class="nano-content" id="parent">
 		
+		
+		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리"> </i> </a></li>
+		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> </i> </a></li>
+		</ul>
+		</div>
+		</div>
 	</aside>
 
 <div class="divcontainer">
@@ -443,7 +448,6 @@
 <script src="./resources/pathcontrol1.js"></script>
 <script src="./resources/pathfunction.js"></script>
 <script src="./resources/menumenu.js"></script>
-<!-- <script src="./resources/weather.js"></script> -->
 <script type="text/javascript" src="./resources/whole_control.js"></script>	<!-- Resource jQuery -->
 
 <script>

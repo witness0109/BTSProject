@@ -21,6 +21,37 @@ position: relative;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
 }
+body input {
+  font-size: 12px;
+  margin:auto;
+  text-align:center;
+  line-height: 42px;
+  display: block;
+  width: 25%;
+  height: 42px;
+  cursor: pointer;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #263238;
+  border: 1px solid #263238;
+  background: transparent;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  
+}
+body input:hover {
+  background-color: #263238;
+  color: #ffffff;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+body input:focus {
+  outline: none;
+}
 </style>
 
 </head>
@@ -30,10 +61,11 @@ position: relative;
 		<video id="gz" autoplay>
 		<source src="./resources/gazua.mp4" type="video/mp4">
 	</video>
-	<button id="rapidgo">SKIP</button>
+	<br><br><br>
+			<input type= "button" id="rapidgo" value="스킵">
 	</section>
 	<script>
-		document.getElementById('gz').play()
+ 		document.getElementById('gz').play()
 		var i = 5;
 		setInterval(function() {
 			if (i == 0) {
@@ -41,7 +73,7 @@ position: relative;
 			} else {
 				i--;
 			}
-		}, 1000);
+		}, 1000); 
 		
 		var skip = document.getElementById('rapidgo');
 		
@@ -49,7 +81,7 @@ position: relative;
 			location.href = "./BTSMap";
 		}
 	</script>
-		<input type= "button" id="rapidgo" value="스킵">
+
 
 	
 	

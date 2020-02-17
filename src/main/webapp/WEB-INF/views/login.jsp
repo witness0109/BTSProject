@@ -40,6 +40,7 @@
 			}
 		});
 
+
 	}
 </script>
 </head>
@@ -109,6 +110,7 @@
 									alert("회원가입성공");
 								}
 							</script>
+		
 						</div>
 					</form>
 				</div>
