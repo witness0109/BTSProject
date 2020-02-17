@@ -1,7 +1,5 @@
 package com.bts.app.controller;
 
-import java.text.SimpleDateFormat;
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bts.app.FindService;
+import com.bts.app.FindServiceImpl;
 import com.bts.app.find.ApiConnectService;
 
 @Controller
@@ -26,19 +25,35 @@ public class FindController {
 	@ResponseBody
 	public String findPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
-		String option = "&lang=0&SX=" + sx + "&SY=" + sy + "&EX=" + ex + "&EY=" + ey;
-		JSONObject map = fservice.findpath(sx, sy, ex, ey);
-		return map.toString();
+
+//		JSONObject map = fservice.findpath(sx, sy, ex, ey);
+//		System.out.println(map);
+//		return map.toString();
+		return ((FindServiceImpl) fservice).readOutCityJSON("부천에서구로").toString();
+
+	}
+
+	@RequestMapping(value = "/findapi/findoutpath", produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String findOutPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
+			@RequestParam double ey) {
+
+//		  JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
+//		  System.out.println(map);
+//		  return map.toString();
+		return ((FindServiceImpl) fservice).readOutCityJSON("충남대병원에서전주시청").toString();
+
 	}
 
 	@RequestMapping(value = "/findapi/subway", produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String findStationTimetable(@RequestParam String stationName, @RequestParam int subwayCode) {
-		JSONObject map = fservice.findStationTimetable(stationName,subwayCode);
-		System.out.println(stationName + " " + subwayCode);
+		JSONObject map = fservice.findStationTimetable(stationName, subwayCode);
+
 		return map.toString();
+
 	}
-	
+
 	@RequestMapping(value = "/findapi/citycode", produces = "text/plain;charset=UTF-8")
 	@ResponseBody
 	public String readCityCode(HttpServletResponse res) {

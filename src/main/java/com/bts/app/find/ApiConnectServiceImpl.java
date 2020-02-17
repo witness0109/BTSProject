@@ -55,8 +55,8 @@ public class ApiConnectServiceImpl implements ApiConnectService {
 
 	private StringBuffer getOdsayConnection(String apiAddress, String option)
 			throws MalformedURLException, IOException, ProtocolException, UnsupportedEncodingException {
-		String apiKey = "bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";// api key;
-//		String apiKey = URLEncoder.encode("M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc", "UTF-8");
+//		String apiKey = "bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";// api key;
+		String apiKey = URLEncoder.encode("M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc", "UTF-8");
 		String apiURL = "https://api.odsay.com/v1/api/" + apiAddress + "?&lang=0&apiKey=" + apiKey + option;
 		return connectAPI(apiURL);
 	}

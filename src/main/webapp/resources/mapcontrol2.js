@@ -1,36 +1,43 @@
 
 var sx,sy,ex,ey;
-    
+var currentMapobj;
+// var apiKey = 'bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY';
+// var odApiKey = encodeURI('M8SKA0YgQxm9grGE6XQQutSOF6AI5wkAOpA+NNZlhCc')
+var odApiKey = encodeURI('Q4LoTkCdnmFcw8Be47GcMw')
+;
 
 
-
-
-function searchPubTransPathAJAX() {
-	var xhr = new XMLHttpRequest();
+// function searchPubTransPathAJAX() {
+// 	var xhr = new XMLHttpRequest();
 	
-	//ODsay apiKey 입력
-	var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX="+sx+"&SY="+sy+"&EX="+ex+"&EY="+ey+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";	
+// 	//ODsay apiKey 입력
+// 	var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX="+sx+"&SY="+sy+"&EX="+ex+"&EY="+ey+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";	
 	
-	//var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.705715&SY=37.490134&EX=126.723525&EY=37.489521&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
-	xhr.open("GET", url, true);
-	xhr.send();
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-		console.log( JSON.parse(xhr.responseText) ); // <- xhr.responseText 로 결과를 가져올 수 있음
-		//노선그래픽 데이터 호출
-		callMapObjApiAJAX((JSON.parse(xhr.responseText))["result"]["path"][0].info.mapObj);
-		}
-	}
+// 	//var url = "https://api.odsay.com/v1/api/searchPubTransPath?SX=126.705715&SY=37.490134&EX=126.723525&EY=37.489521&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
+// 	xhr.open("GET", url, true);
+// 	xhr.send();
+// 	xhr.onreadystatechange = function() {
+// 		if (xhr.readyState == 4 && xhr.status == 200) {
+// 		console.log( JSON.parse(xhr.responseText) ); // <- xhr.responseText 로 결과를 가져올 수 있음
+// 		//노선그래픽 데이터 호출
+// 		callMapObjApiAJAX((JSON.parse(xhr.responseText))["result"]["path"][0].info.mapObj);
+// 		}
+// 	}
 	
-}
+// }
 
 //길찾기 API 호출
 
 
 function callMapObjApiAJAX(mabObj){
+	if(mabObj == currentMapobj){
+		return;
+	}
+
+	currentMapobj = mabObj;
 	var xhr = new XMLHttpRequest();
 	//ODsay apiKey 입력
-	var url = "https://api.odsay.com/v1/api/loadLane?mapObject=0:0@"+mabObj+"&apiKey=bKv5QtEW7wrE81s/i5iJMRiIwxTasu5T5p2/vsfkZAY";
+	var url = "https://api.odsay.com/v1/api/loadLane?mapObject=0:0@"+mabObj+"&apiKey="+odApiKey;
 	xhr.open("GET", url, true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
