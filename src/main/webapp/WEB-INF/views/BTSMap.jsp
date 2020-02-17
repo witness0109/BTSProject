@@ -35,7 +35,7 @@
 			<!-- 길찾기클릭시 홈화면으로 이동 -->
 
 
-				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>길 찾기</span></a></li>							
+				<li><a href="./BTSMap"><i class="fa fa-map"></i><span>길 찾기</span></a></li>							
 
 
 				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-train"></i><span>열차 정보</span><i
@@ -53,7 +53,7 @@
 						<li><a id="expressBusTM">고속 버스 시간표 조회</a></li>
 					</ul>
 				</li>
-				<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-file"></i><span>MyPage</span><i
+				<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-user-circle"></i><span>MyPage</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
 						<li><a href="./favorites">즐겨 찾기 목록</a></li>
@@ -71,8 +71,8 @@
 		<ul class="nano-content" id="parent">
 		
 		
-		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리"> </i> </a></li>
-		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> </i> </a></li>
+		<li class="sub-menu"><a><i><input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리"> </i> </a></li>
+		<li class="sub-menu"><a><i><input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> </i> </a></li>
 		</ul>
 		</div>
 		</div>
@@ -99,7 +99,7 @@
 
 	<!-- main content here -->
 	
-
+<script src="https://use.fontawesome.com/9d2aba8fba.js"></script><!--aside 이모티콘-->
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
