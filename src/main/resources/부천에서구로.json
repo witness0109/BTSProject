@@ -1,1 +1,2551 @@
-{"result":{"path":[{"subPath":[{"sectionTime":5,"distance":334,"trafficType":3},{"door":"10-4","distance":3900,"wayCode":1,"trafficType":1,"way":"ì˜¨ìˆ˜","sectionTime":11,"endY":37.492377,"endX":126.82379,"endID":145,"startExitNo":"3","stationCount":3,"endName":"ì˜¨ìˆ˜","startID":148,"startExitY":37.484412753362555,"startExitX":126.78227407222174,"passStopList":{"stations":[{"x":"126.782803","index":0,"y":"37.484085","stationName":"ë¶€ì²œ","stationID":148},{"x":"126.795904","index":1,"y":"37.482773","stationName":"ì†Œì‚¬","stationID":147},{"x":"126.811539","index":2,"y":"37.485138","stationName":"ì—­ê³¡","stationID":146},{"x":"126.823801","index":3,"y":"37.492385","stationName":"ì˜¨ìˆ˜","stationID":145}]},"startY":37.484078,"startX":126.782796,"lane":[{"subwayCode":1,"subwayarrtime":132000,"name":"ìˆ˜ë„ê¶Œ 1í˜¸ì„ ","subwayCityCode":1000,"arrmsg1":592}],"startName":"ë¶€ì²œ"},{"sectionTime":0,"distance":0,"trafficType":3},{"door":"null","endExitNo":"1","distance":6700,"wayCode":1,"trafficType":1,"endExitY":37.48750975342953,"way":"ë‚¨êµ¬ë¡œ","sectionTime":18,"endY":37.486089,"endX":126.887277,"endExitX":126.88865607223296,"endID":745,"stationCount":5,"endName":"ë‚¨êµ¬ë¡œ","startID":750,"passStopList":{"stations":[{"x":"126.823853","index":0,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":1,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":2,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":3,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":4,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":5,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745}]},"startY":37.491954,"startX":126.823853,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì˜¨ìˆ˜"},{"sectionTime":12,"distance":780,"trafficType":3}],"pathType":1,"info":{"totalTime":49,"totalWalkTime":-1,"subwayTransitCount":2,"busStationCount":0,"trafficDistance":10600,"firstStartStation":"ë¶€ì²œ","mapObj":"11:2:148:145@7:2:750:745","totalStationCount":8,"totalWalk":1114,"payment":1350,"subwayStationCount":8,"totalDistance":11714,"busTransitCount":0,"lastEndStation":"ë‚¨êµ¬ë¡œ"}},{"subPath":[{"sectionTime":5,"distance":334,"trafficType":3},{"door":"5-1","distance":10600,"wayCode":1,"trafficType":1,"way":"ì‹ ë„ë¦¼","sectionTime":22,"endY":37.508998,"endX":126.891598,"endID":140,"startExitNo":"3","stationCount":8,"endName":"ì‹ ë„ë¦¼","startID":148,"startExitY":37.484412753362555,"startExitX":126.78227407222174,"passStopList":{"stations":[{"x":"126.782803","index":0,"y":"37.484085","stationName":"ë¶€ì²œ","stationID":148},{"x":"126.795904","index":1,"y":"37.482773","stationName":"ì†Œì‚¬","stationID":147},{"x":"126.811539","index":2,"y":"37.485138","stationName":"ì—­ê³¡","stationID":146},{"x":"126.823801","index":3,"y":"37.492385","stationName":"ì˜¨ìˆ˜","stationID":145},{"x":"126.844567","index":4,"y":"37.494411","stationName":"ì˜¤ë¥˜ë™","stationID":144},{"x":"126.85852","index":5,"y":"37.494709","stationName":"ê°œë´‰","stationID":143},{"x":"126.869615","index":6,"y":"37.496283","stationName":"êµ¬ì¼","stationID":142},{"x":"126.882278","index":7,"y":"37.502916","stationName":"êµ¬ë¡œ","stationID":141},{"x":"126.8916","index":8,"y":"37.509006","stationName":"ì‹ ë„ë¦¼","stationID":140}]},"startY":37.484078,"startX":126.782796,"lane":[{"subwayCode":1,"subwayarrtime":132000,"name":"ìˆ˜ë„ê¶Œ 1í˜¸ì„ ","subwayCityCode":1000,"arrmsg1":591}],"startName":"ë¶€ì²œ"},{"sectionTime":0,"distance":0,"trafficType":3},{"door":"null","endExitNo":"3","distance":2900,"wayCode":1,"trafficType":1,"endExitY":37.48522625343882,"way":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€","sectionTime":10,"endY":37.485258,"endX":126.90148,"endExitX":126.90049507222018,"endID":232,"stationCount":2,"endName":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€","startID":234,"passStopList":{"stations":[{"x":"126.891353","index":0,"y":"37.508572","stationName":"ì‹ ë„ë¦¼","stationID":234},{"x":"126.894922","index":1,"y":"37.493376","stationName":"ëŒ€ë¦¼","stationID":233},{"x":"126.901487","index":2,"y":"37.48526","stationName":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€","stationID":232}]},"startY":37.508563,"startX":126.891344,"lane":[{"subwayCode":2,"name":"ìˆ˜ë„ê¶Œ 2í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì‹ ë„ë¦¼"},{"sectionTime":9,"distance":584,"trafficType":3}],"pathType":1,"info":{"totalTime":49,"totalWalkTime":-1,"subwayTransitCount":2,"busStationCount":0,"trafficDistance":13500,"firstStartStation":"ë¶€ì²œ","mapObj":"11:2:148:140@2:2:234:232","totalStationCount":10,"totalWalk":918,"payment":1350,"subwayStationCount":10,"totalDistance":14418,"busTransitCount":0,"lastEndStation":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€"}},{"subPath":[{"sectionTime":2,"distance":135,"trafficType":3},{"distance":2326,"trafficType":2,"sectionTime":12,"endY":37.504377,"endX":126.787082,"endID":100464,"stationCount":6,"endName":"ì¶˜ì˜ì—­7ë²ˆì¶œêµ¬","startID":84300,"passStopList":{"stations":[{"x":"126.780173","index":0,"y":"37.486168","stationName":"ë¶€ì²œìƒìƒê±°ë¦¬","stationID":84300},{"x":"126.783453","index":1,"y":"37.486815","stationName":"ë¶€ì²œì—­ë¶ë¶€.ë†í˜‘","stationID":100423},{"x":"126.784519","index":2,"y":"37.491493","stationName":"ëŒ€ì„±ë³‘ì›","stationID":100429},{"x":"126.785207","index":3,"y":"37.494456","stationName":"ë¶€ì²œë¶ì´ˆë“±í•™êµ.ì›ë¯¸ë™ìš°ì²´êµ­","stationID":112632},{"x":"126.785871","index":4,"y":"37.4974","stationName":"ë¶€ì²œë™í–‰ì •ë³µì§€ì„¼í„°.ì›ë¯¸ì–´ìš¸ë§ˆë‹¹","stationID":100450},{"x":"126.786389","index":5,"y":"37.499667","stationName":"ì¶˜ì˜í…Œí¬ë…¸íŒŒí¬ë‹¨ì§€ì•","stationID":112098},{"x":"126.787082","index":6,"y":"37.504377","stationName":"ì¶˜ì˜ì—­7ë²ˆì¶œêµ¬","stationID":100464}]},"startY":37.486168,"startX":126.780173,"lane":[{"busID":7093,"busNo":"50","type":1,"arrmsg1":360}],"startName":"ë¶€ì²œìƒìƒê±°ë¦¬"},{"sectionTime":1,"distance":73,"trafficType":3},{"door":"null","endExitNo":"1","distance":12100,"wayCode":1,"trafficType":1,"endExitY":37.49235925343581,"way":"ëŒ€ë¦¼","sectionTime":24,"endY":37.492809,"endX":126.896677,"endExitX":126.89487007224417,"endID":744,"stationCount":9,"endName":"ëŒ€ë¦¼","startID":753,"startExitY":37.504267053373304,"startExitX":126.7871180722773,"passStopList":{"stations":[{"x":"126.787095","index":0,"y":"37.503722","stationName":"ì¶˜ì˜","stationID":753},{"x":"126.797514","index":1,"y":"37.505463","stationName":"ë¶€ì²œì¢…í•©ìš´ë™ì¥","stationID":752},{"x":"126.810966","index":2,"y":"37.506248","stationName":"ê¹Œì¹˜ìš¸","stationID":751},{"x":"126.823853","index":3,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":4,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":5,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":6,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":7,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":8,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745},{"x":"126.896683","index":9,"y":"37.492811","stationName":"ëŒ€ë¦¼","stationID":744}]},"startY":37.50372,"startX":126.787092,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì¶˜ì˜"},{"sectionTime":8,"distance":548,"trafficType":3}],"pathType":3,"info":{"totalTime":47,"totalWalkTime":-1,"subwayTransitCount":1,"busStationCount":6,"trafficDistance":14426,"firstStartStation":"ë¶€ì²œìƒìƒê±°ë¦¬","mapObj":"7093:1:55:61@7:2:753:744","totalStationCount":15,"totalWalk":756,"payment":1550,"subwayStationCount":9,"totalDistance":15182,"busTransitCount":1,"lastEndStation":"ëŒ€ë¦¼"}},{"subPath":[{"sectionTime":2,"distance":135,"trafficType":3},{"distance":2428,"trafficType":2,"sectionTime":12,"endY":37.503996,"endX":126.789463,"endID":112097,"stationCount":6,"endName":"ì¶˜ì˜ê°€êµ¬ê±°ë¦¬","startID":84300,"passStopList":{"stations":[{"x":"126.780173","index":0,"y":"37.486168","stationName":"ë¶€ì²œìƒìƒê±°ë¦¬","stationID":84300},{"x":"126.783453","index":1,"y":"37.486815","stationName":"ë¶€ì²œì—­ë¶ë¶€.ë†í˜‘","stationID":100423},{"x":"126.784519","index":2,"y":"37.491493","stationName":"ëŒ€ì„±ë³‘ì›","stationID":100429},{"x":"126.785207","index":3,"y":"37.494456","stationName":"ë¶€ì²œë¶ì´ˆë“±í•™êµ.ì›ë¯¸ë™ìš°ì²´êµ­","stationID":112632},{"x":"126.785871","index":4,"y":"37.4974","stationName":"ë¶€ì²œë™í–‰ì •ë³µì§€ì„¼í„°.ì›ë¯¸ì–´ìš¸ë§ˆë‹¹","stationID":100450},{"x":"126.786389","index":5,"y":"37.499667","stationName":"ì¶˜ì˜í…Œí¬ë…¸íŒŒí¬ë‹¨ì§€ì•","stationID":112098},{"x":"126.789463","index":6,"y":"37.503996","stationName":"ì¶˜ì˜ê°€êµ¬ê±°ë¦¬","stationID":112097}]},"startY":37.486168,"startX":126.780173,"lane":[{"busID":7055,"busNo":"75","type":1,"arrmsg1":840},{"busID":7045,"busNo":"8","type":1,"arrmsg1":480}],"startName":"ë¶€ì²œìƒìƒê±°ë¦¬"},{"sectionTime":3,"distance":212,"trafficType":3},{"door":"null","endExitNo":"1","distance":12100,"wayCode":1,"trafficType":1,"endExitY":37.49235925343581,"way":"ëŒ€ë¦¼","sectionTime":24,"endY":37.492809,"endX":126.896677,"endExitX":126.89487007224417,"endID":744,"startExitNo":"8","stationCount":9,"endName":"ëŒ€ë¦¼","startID":753,"startExitY":37.504075053374535,"startExitX":126.78779607228016,"passStopList":{"stations":[{"x":"126.787095","index":0,"y":"37.503722","stationName":"ì¶˜ì˜","stationID":753},{"x":"126.797514","index":1,"y":"37.505463","stationName":"ë¶€ì²œì¢…í•©ìš´ë™ì¥","stationID":752},{"x":"126.810966","index":2,"y":"37.506248","stationName":"ê¹Œì¹˜ìš¸","stationID":751},{"x":"126.823853","index":3,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":4,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":5,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":6,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":7,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":8,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745},{"x":"126.896683","index":9,"y":"37.492811","stationName":"ëŒ€ë¦¼","stationID":744}]},"startY":37.50372,"startX":126.787092,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì¶˜ì˜"},{"sectionTime":8,"distance":548,"trafficType":3}],"pathType":3,"info":{"totalTime":49,"totalWalkTime":-1,"subwayTransitCount":1,"busStationCount":6,"trafficDistance":14528,"firstStartStation":"ë¶€ì²œìƒìƒê±°ë¦¬","mapObj":"7055:1:158:164@7:2:753:744","totalStationCount":15,"totalWalk":895,"payment":1550,"subwayStationCount":9,"totalDistance":15423,"busTransitCount":1,"lastEndStation":"ëŒ€ë¦¼"}},{"subPath":[{"sectionTime":3,"distance":233,"trafficType":3},{"distance":1741,"trafficType":2,"sectionTime":10,"endY":37.501137,"endX":126.776944,"endID":100367,"stationCount":5,"endName":"ì‹ ì¤‘ë™ì—­2ë²ˆì¶œêµ¬.ì›ë¯¸ê²½ì°°ì„œ.ë¡¯ë°ë°±í™”ì ","startID":113764,"passStopList":{"stations":[{"x":"126.776754","index":0,"y":"37.485755","stationName":"KTë¶€ì²œì§€ì‚¬ì‚¬ê±°ë¦¬","stationID":113764},{"x":"126.777388","index":1,"y":"37.488482","stationName":"ë¶€ì²œëŒ€í•™êµ","stationID":127183},{"x":"126.777999","index":2,"y":"37.49121","stationName":"ë¶€ì²œì†Œë°©ì„œ.ë¶€ì²œëŒ€í•™ì‚¬ê±°ë¦¬","stationID":126977},{"x":"126.778182","index":3,"y":"37.496654","stationName":"ìœ„ë¸Œë”ìŠ¤í…Œì´íŠ¸9ë‹¨ì§€","stationID":88756},{"x":"126.777666","index":4,"y":"37.498514","stationName":"ìœ„ë¸Œë”ìŠ¤í…Œì´íŠ¸5ë‹¨ì§€","stationID":165730},{"x":"126.776944","index":5,"y":"37.501137","stationName":"ì‹ ì¤‘ë™ì—­2ë²ˆì¶œêµ¬.ì›ë¯¸ê²½ì°°ì„œ.ë¡¯ë°ë°±í™”ì ","stationID":100367}]},"startY":37.485755,"startX":126.776754,"lane":[{"busID":7058,"busNo":"23-2","type":1,"arrmsg1":780},{"busID":6521,"busNo":"61","type":1,"arrmsg1":900},{"busID":7025,"busNo":"60-1","type":1,"arrmsg1":840}],"startName":"KTë¶€ì²œì§€ì‚¬ì‚¬ê±°ë¦¬"},{"sectionTime":3,"distance":230,"trafficType":3},{"door":"null","endExitNo":"1","distance":13100,"wayCode":1,"trafficType":1,"endExitY":37.49235925343581,"way":"ëŒ€ë¦¼","sectionTime":26,"endY":37.492809,"endX":126.896677,"endExitX":126.89487007224417,"endID":744,"startExitNo":"2","stationCount":10,"endName":"ëŒ€ë¦¼","startID":754,"startExitY":37.502430053367675,"startExitX":126.7766290722787,"passStopList":{"stations":[{"x":"126.775977","index":0,"y":"37.503064","stationName":"ì‹ ì¤‘ë™","stationID":754},{"x":"126.787095","index":1,"y":"37.503722","stationName":"ì¶˜ì˜","stationID":753},{"x":"126.797514","index":2,"y":"37.505463","stationName":"ë¶€ì²œì¢…í•©ìš´ë™ì¥","stationID":752},{"x":"126.810966","index":3,"y":"37.506248","stationName":"ê¹Œì¹˜ìš¸","stationID":751},{"x":"126.823853","index":4,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":5,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":6,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":7,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":8,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":9,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745},{"x":"126.896683","index":10,"y":"37.492811","stationName":"ëŒ€ë¦¼","stationID":744}]},"startY":37.503055,"startX":126.775974,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì‹ ì¤‘ë™"},{"sectionTime":8,"distance":548,"trafficType":3}],"pathType":3,"info":{"totalTime":50,"totalWalkTime":-1,"subwayTransitCount":1,"busStationCount":5,"trafficDistance":14841,"firstStartStation":"KTë¶€ì²œì§€ì‚¬ì‚¬ê±°ë¦¬","mapObj":"7058:1:24:29@7:2:754:744","totalStationCount":15,"totalWalk":1011,"payment":1550,"subwayStationCount":10,"totalDistance":15852,"busTransitCount":1,"lastEndStation":"ëŒ€ë¦¼"}},{"subPath":[{"sectionTime":2,"distance":135,"trafficType":3},{"distance":2326,"trafficType":2,"sectionTime":12,"endY":37.504377,"endX":126.787082,"endID":100464,"stationCount":6,"endName":"ì¶˜ì˜ì—­7ë²ˆì¶œêµ¬","startID":84300,"passStopList":{"stations":[{"x":"126.780173","index":0,"y":"37.486168","stationName":"ë¶€ì²œìƒìƒê±°ë¦¬","stationID":84300},{"x":"126.783453","index":1,"y":"37.486815","stationName":"ë¶€ì²œì—­ë¶ë¶€.ë†í˜‘","stationID":100423},{"x":"126.784519","index":2,"y":"37.491493","stationName":"ëŒ€ì„±ë³‘ì›","stationID":100429},{"x":"126.785207","index":3,"y":"37.494456","stationName":"ë¶€ì²œë¶ì´ˆë“±í•™êµ.ì›ë¯¸ë™ìš°ì²´êµ­","stationID":112632},{"x":"126.785871","index":4,"y":"37.4974","stationName":"ë¶€ì²œë™í–‰ì •ë³µì§€ì„¼í„°.ì›ë¯¸ì–´ìš¸ë§ˆë‹¹","stationID":100450},{"x":"126.786389","index":5,"y":"37.499667","stationName":"ì¶˜ì˜í…Œí¬ë…¸íŒŒí¬ë‹¨ì§€ì•","stationID":112098},{"x":"126.787082","index":6,"y":"37.504377","stationName":"ì¶˜ì˜ì—­7ë²ˆì¶œêµ¬","stationID":100464}]},"startY":37.486168,"startX":126.780173,"lane":[{"busID":1451,"busNo":"661","type":11,"arrmsg1":540}],"startName":"ë¶€ì²œìƒìƒê±°ë¦¬"},{"sectionTime":1,"distance":73,"trafficType":3},{"door":"null","endExitNo":"1","distance":12100,"wayCode":1,"trafficType":1,"endExitY":37.49235925343581,"way":"ëŒ€ë¦¼","sectionTime":24,"endY":37.492809,"endX":126.896677,"endExitX":126.89487007224417,"endID":744,"stationCount":9,"endName":"ëŒ€ë¦¼","startID":753,"startExitY":37.504267053373304,"startExitX":126.7871180722773,"passStopList":{"stations":[{"x":"126.787095","index":0,"y":"37.503722","stationName":"ì¶˜ì˜","stationID":753},{"x":"126.797514","index":1,"y":"37.505463","stationName":"ë¶€ì²œì¢…í•©ìš´ë™ì¥","stationID":752},{"x":"126.810966","index":2,"y":"37.506248","stationName":"ê¹Œì¹˜ìš¸","stationID":751},{"x":"126.823853","index":3,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":4,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":5,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":6,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":7,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":8,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745},{"x":"126.896683","index":9,"y":"37.492811","stationName":"ëŒ€ë¦¼","stationID":744}]},"startY":37.50372,"startX":126.787092,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì¶˜ì˜"},{"sectionTime":8,"distance":548,"trafficType":3}],"pathType":3,"info":{"totalTime":47,"totalWalkTime":-1,"subwayTransitCount":1,"busStationCount":6,"trafficDistance":14426,"firstStartStation":"ë¶€ì²œìƒìƒê±°ë¦¬","mapObj":"1451:1:12:18@7:2:753:744","totalStationCount":15,"totalWalk":756,"payment":1350,"subwayStationCount":9,"totalDistance":15182,"busTransitCount":1,"lastEndStation":"ëŒ€ë¦¼"}},{"subPath":[{"sectionTime":3,"distance":170,"trafficType":3},{"distance":1758,"trafficType":2,"sectionTime":11,"endY":37.501137,"endX":126.776944,"endID":100367,"stationCount":5,"endName":"ì‹ ì¤‘ë™ì—­2ë²ˆì¶œêµ¬.ì›ë¯¸ê²½ì°°ì„œ.ë¡¯ë°ë°±í™”ì ","startID":180134,"passStopList":{"stations":[{"x":"126.778617","index":0,"y":"37.486612","stationName":"ë¶€ì²œëŒ€ì…êµ¬","stationID":180134},{"x":"126.777388","index":1,"y":"37.488482","stationName":"ë¶€ì²œëŒ€í•™êµ","stationID":127183},{"x":"126.777999","index":2,"y":"37.49121","stationName":"ë¶€ì²œì†Œë°©ì„œ.ë¶€ì²œëŒ€í•™ì‚¬ê±°ë¦¬","stationID":126977},{"x":"126.778182","index":3,"y":"37.496654","stationName":"ìœ„ë¸Œë”ìŠ¤í…Œì´íŠ¸9ë‹¨ì§€","stationID":88756},{"x":"126.777666","index":4,"y":"37.498514","stationName":"ìœ„ë¸Œë”ìŠ¤í…Œì´íŠ¸5ë‹¨ì§€","stationID":165730},{"x":"126.776944","index":5,"y":"37.501137","stationName":"ì‹ ì¤‘ë™ì—­2ë²ˆì¶œêµ¬.ì›ë¯¸ê²½ì°°ì„œ.ë¡¯ë°ë°±í™”ì ","stationID":100367}]},"startY":37.486612,"startX":126.778617,"lane":[{"busID":7027,"busNo":"66","type":1,"arrmsg1":360},{"busID":7043,"busNo":"5-3","type":1,"arrmsg1":720}],"startName":"ë¶€ì²œëŒ€ì…êµ¬"},{"sectionTime":3,"distance":230,"trafficType":3},{"door":"null","endExitNo":"1","distance":13100,"wayCode":1,"trafficType":1,"endExitY":37.49235925343581,"way":"ëŒ€ë¦¼","sectionTime":26,"endY":37.492809,"endX":126.896677,"endExitX":126.89487007224417,"endID":744,"startExitNo":"2","stationCount":10,"endName":"ëŒ€ë¦¼","startID":754,"startExitY":37.502430053367675,"startExitX":126.7766290722787,"passStopList":{"stations":[{"x":"126.775977","index":0,"y":"37.503064","stationName":"ì‹ ì¤‘ë™","stationID":754},{"x":"126.787095","index":1,"y":"37.503722","stationName":"ì¶˜ì˜","stationID":753},{"x":"126.797514","index":2,"y":"37.505463","stationName":"ë¶€ì²œì¢…í•©ìš´ë™ì¥","stationID":752},{"x":"126.810966","index":3,"y":"37.506248","stationName":"ê¹Œì¹˜ìš¸","stationID":751},{"x":"126.823853","index":4,"y":"37.491954","stationName":"ì˜¨ìˆ˜","stationID":750},{"x":"126.838726","index":5,"y":"37.486756","stationName":"ì²œì™•","stationID":749},{"x":"126.854401","index":6,"y":"37.479424","stationName":"ê´‘ëª…ì‚¬ê±°ë¦¬","stationID":748},{"x":"126.868277","index":7,"y":"37.476203","stationName":"ì² ì‚°","stationID":747},{"x":"126.882526","index":8,"y":"37.48036","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€","stationID":746},{"x":"126.887288","index":9,"y":"37.486098","stationName":"ë‚¨êµ¬ë¡œ","stationID":745},{"x":"126.896683","index":10,"y":"37.492811","stationName":"ëŒ€ë¦¼","stationID":744}]},"startY":37.503055,"startX":126.775974,"lane":[{"subwayCode":7,"name":"ìˆ˜ë„ê¶Œ 7í˜¸ì„ ","subwayCityCode":1000}],"startName":"ì‹ ì¤‘ë™"},{"sectionTime":8,"distance":548,"trafficType":3}],"pathType":3,"info":{"totalTime":51,"totalWalkTime":-1,"subwayTransitCount":1,"busStationCount":5,"trafficDistance":14858,"firstStartStation":"ë¶€ì²œëŒ€ì…êµ¬","mapObj":"7027:1:69:74@7:2:754:744","totalStationCount":15,"totalWalk":948,"payment":1550,"subwayStationCount":10,"totalDistance":15806,"busTransitCount":1,"lastEndStation":"ëŒ€ë¦¼"}},{"subPath":[{"sectionTime":5,"distance":323,"trafficType":3},{"distance":9845,"trafficType":2,"sectionTime":34,"endY":37.50546,"endX":126.883235,"endID":117247,"stationCount":19,"endName":"ì‹ ë„ë¦¼ë™.êµ¬ë¡œì—­","startID":112976,"passStopList":{"stations":[{"x":"126.781728","index":0,"y":"37.483004","stationName":"ë¶€ì²œì—­ë‚¨ë¶€ê´‘ì¥","stationID":112976},{"x":"126.78561","index":1,"y":"37.482773","stationName":"ë¶€ì²œì—­ì „ìš°ì²´êµ­","stationID":112975},{"x":"126.78964","index":2,"y":"37.48249","stationName":"ì„±ì§€ì•„íŒŒíŠ¸.ì‚°ì„±êµíšŒì…êµ¬","stationID":91631},{"x":"126.793637","index":3,"y":"37.482135","stationName":"ì†Œì‚¬ì—­","stationID":185046},{"x":"126.799734","index":4,"y":"37.481971","stationName":"ì†Œì‚¬ì–´ìš¸ë§ˆë‹¹ì‚¼ê±°ë¦¬.MJì»¨ë²¤ì…˜","stationID":185044},{"x":"126.805254","index":5,"y":"37.481847","stationName":"ê´´ì•ˆë™ì…êµ¬.ì„±ì‹¬ê³ ê°€","stationID":185042},{"x":"126.809113","index":6,"y":"37.483012","stationName":"í˜„ëŒ€ì •í˜•ì™¸ê³¼","stationID":86271},{"x":"126.811988","index":7,"y":"37.48424","stationName":"ì—­ê³¡ì—­.ì—­ê³¡ë‚¨ë¶€ì‹œì¥","stationID":112777},{"x":"126.816526","index":8,"y":"37.486177","stationName":"ì—­ê³¡ê³ ê°€ì…êµ¬","stationID":112778},{"x":"126.820098","index":9,"y":"37.487673","stationName":"ìœ í•œëŒ€í•™êµ","stationID":185199},{"x":"126.825069","index":10,"y":"37.489407","stationName":"ì„±ê³µíšŒëŒ€í•™êµìœ í•œê³µê³ ì•","stationID":100785},{"x":"126.831238","index":11,"y":"37.491171","stationName":"ì„œìš¸ê°€ë“ ë¹Œë¼ì•","stationID":162411},{"x":"126.840674","index":12,"y":"37.494499","stationName":"ì”¨í‹°ì›”ë“œ","stationID":101030},{"x":"126.843348","index":13,"y":"37.495651","stationName":"ì˜¤ë¥˜ë™ì—­","stationID":101082},{"x":"126.846189","index":14,"y":"37.496931","stationName":"ì˜¤ë¥˜1ë™ì£¼ë¯¼ì„¼í„°.ì˜¤ë¥˜ë¬¸í™”ì„¼í„°","stationID":101149},{"x":"126.855073","index":15,"y":"37.497279","stationName":"ê²½ì¸ì¤‘í•™êµ.ê°œë´‰ì‚¬ê±°ë¦¬","stationID":117255},{"x":"126.862355","index":16,"y":"37.496592","stationName":"ê°œë´‰ì—­.í•œë§ˆì„ì•„íŒŒíŠ¸","stationID":117252},{"x":"126.866938","index":17,"y":"37.499421","stationName":"ë™ì–‘ë¯¸ë˜ëŒ€í•™.êµ¬ë¡œì„±ì‹¬ë³‘ì›","stationID":117250},{"x":"126.874309","index":18,"y":"37.499581","stationName":"êµ¬ì¼ì—­.ì œì¼ì œë‹¹.ë¡¯ë°ë§ˆíŠ¸","stationID":117249},{"x":"126.883235","index":19,"y":"37.50546","stationName":"ì‹ ë„ë¦¼ë™.êµ¬ë¡œì—­","stationID":117247}]},"startY":37.483004,"startX":126.781728,"lane":[{"busID":7050,"busNo":"83","type":1,"arrmsg1":480},{"busID":7047,"busNo":"88","type":1,"arrmsg1":480}],"startName":"ë¶€ì²œì—­ë‚¨ë¶€ê´‘ì¥"},{"sectionTime":1,"distance":92,"trafficType":3},{"distance":4759,"trafficType":2,"sectionTime":24,"endY":37.485221,"endX":126.893645,"endID":125661,"stationCount":19,"endName":"ì—ì´ìŠ¤í…Œí¬ë…¸íƒ€ì›Œ","startID":195895,"passStopList":{"stations":[{"x":"126.883223","index":0,"y":"37.506288","stationName":"ëŒ€ë¦¼6ì°¨íƒœì˜í”„ë¼ì","stationID":195895},{"x":"126.881508","index":1,"y":"37.50748","stationName":"ëŒ€ë¦¼5ì°¨ì•„íŒŒíŠ¸.ì‹ ë„ë¦¼ì£¼ë¯¼ì„¼í„°","stationID":195897},{"x":"126.879628","index":2,"y":"37.50766","stationName":"ëŒ€ë¦¼5ì°¨ì•„íŒŒíŠ¸702ë™","stationID":195899},{"x":"126.878553","index":3,"y":"37.50692","stationName":"ëŒ€ë¦¼3ì°¨ì•„íŒŒíŠ¸","stationID":125646},{"x":"126.876509","index":4,"y":"37.506","stationName":"ë¯¸ì„±ì•„íŒŒíŠ¸","stationID":196193},{"x":"126.876732","index":5,"y":"37.505407","stationName":"ì›”ë“œì•„íŒŒíŠ¸","stationID":195902},{"x":"126.878977","index":6,"y":"37.503527","stationName":"êµ¬ë¡œì—­.êµ¬ë¡œê¸°ê³„ê³µêµ¬ìƒê°€","stationID":101761},{"x":"126.882954","index":7,"y":"37.500024","stationName":"êµ¬ë¡œì—­.AKí”Œë¼ì","stationID":166993},{"x":"126.886501","index":8,"y":"37.49876","stationName":"í•­ì•„ë¦¬","stationID":101924},{"x":"126.889138","index":9,"y":"37.500208","stationName":"êµ¬ë¡œë³´ê±´ì†Œ","stationID":102005},{"x":"126.890802","index":10,"y":"37.498557","stationName":"êµ¬ë¡œê³ .êµ¬ë¡œë„ì„œê´€","stationID":102044},{"x":"126.891747","index":11,"y":"37.497385","stationName":"ì˜ë¦¼ì¤‘í•™êµ","stationID":102074},{"x":"126.890619","index":12,"y":"37.496365","stationName":"êµ¬ë¡œêµ¬ë¯¼íšŒê´€","stationID":195906},{"x":"126.889083","index":13,"y":"37.494693","stationName":"êµ¬ë¡œêµ¬ì²­","stationID":195907},{"x":"126.890374","index":14,"y":"37.493092","stationName":"êµ¬ë¡œì¤‘í•™êµ","stationID":102049},{"x":"126.892087","index":15,"y":"37.491189","stationName":"ë™êµ¬ë¡œìƒˆë§ˆì„ê¸ˆê³ ","stationID":102083},{"x":"126.890983","index":16,"y":"37.489386","stationName":"êµ¬ë¡œì‹œì¥.ë‚¨êµ¬ë¡œì‹œì¥","stationID":125659},{"x":"126.8904","index":17,"y":"37.487506","stationName":"êµ¬ë¡œ3ë™ì£¼ë¯¼ì„¼í„°.ì‚¼ì„±ë˜ë¯¸ì•ˆì•„íŒŒíŠ¸","stationID":125660},{"x":"126.891641","index":18,"y":"37.486157","stationName":"í•´í”¼ëœë“œ","stationID":102085},{"x":"126.893645","index":19,"y":"37.485221","stationName":"ì—ì´ìŠ¤í…Œí¬ë…¸íƒ€ì›Œ","stationID":125661}]},"startY":37.506288,"startX":126.883223,"lane":[{"busID":1670,"busNo":"êµ¬ë¡œ09","type":3}],"startName":"ëŒ€ë¦¼6ì°¨íƒœì˜í”„ë¼ì"},{"sectionTime":5,"distance":356,"trafficType":3}],"pathType":2,"info":{"totalTime":69,"totalWalkTime":-1,"subwayTransitCount":0,"busStationCount":38,"trafficDistance":14604,"firstStartStation":"ë¶€ì²œì—­ë‚¨ë¶€ê´‘ì¥","mapObj":"7050:1:32:51@1670:1:5:24","totalStationCount":38,"totalWalk":771,"payment":1550,"subwayStationCount":0,"totalDistance":15375,"busTransitCount":2,"lastEndStation":"ì—ì´ìŠ¤í…Œí¬ë…¸íƒ€ì›Œ"}},{"subPath":[{"sectionTime":7,"distance":440,"trafficType":3},{"distance":12613,"trafficType":2,"sectionTime":45,"endY":37.476984,"endX":126.88298,"endID":80328,"stationCount":30,"endName":"ì‚°ì—…ë‹¨ì§€ë°±ì–‘ì‚¬","startID":185418,"passStopList":{"stations":[{"x":"126.782108","index":0,"y":"37.481908","stationName":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ","stationID":185418},{"x":"126.78561","index":1,"y":"37.482773","stationName":"ë¶€ì²œì—­ì „ìš°ì²´êµ­","stationID":112975},{"x":"126.78964","index":2,"y":"37.48249","stationName":"ì„±ì§€ì•„íŒŒíŠ¸.ì‚°ì„±êµíšŒì…êµ¬","stationID":91631},{"x":"126.793477","index":3,"y":"37.481565","stationName":"ì†Œì‚¬3ê±°ë¦¬.ì„¸ì¢…ë³‘ì›","stationID":185415},{"x":"126.795383","index":4,"y":"37.477638","stationName":"ì†Œì‚¬ì¢…í•©ì‹œì¥","stationID":185413},{"x":"126.795384","index":5,"y":"37.476124","stationName":"ì†Œì‚¬ì´ˆêµì•ì‚¬ê±°ë¦¬","stationID":112968},{"x":"126.79644","index":6,"y":"37.475162","stationName":"ì†Œì‚¬ì´ˆë“±í•™êµì •ë¬¸","stationID":185411},{"x":"126.799436","index":7,"y":"37.475156","stationName":"í•œì‹ ì•„íŒŒíŠ¸.KCCìŠ¤ìœ„ì²¸ì•„íŒŒíŠ¸","stationID":185409},{"x":"126.801729","index":8,"y":"37.476721","stationName":"ì‚¼ìµì„¸ë¼ë¯¹ì•„íŒŒíŠ¸.SKVIEWì•„íŒŒíŠ¸","stationID":185407},{"x":"126.803899","index":9,"y":"37.478851","stationName":"ì¡°ê³µì•„íŒŒíŠ¸","stationID":185405},{"x":"126.807705","index":10,"y":"37.479106","stationName":"ê´´ì•ˆì‚¬ê±°ë¦¬.ì‚¼ì˜¤ìœ ì¹˜ì›","stationID":112699},{"x":"126.810113","index":11,"y":"37.478427","stationName":"ì‹ ì¼í•´í”¼íŠ¸ë¦¬ì•„íŒŒíŠ¸","stationID":112700},{"x":"126.812797","index":12,"y":"37.478887","stationName":"ë¶€ì•ˆì´ˆêµ.ë™ì›ì£¼íƒ","stationID":185399},{"x":"126.814325","index":13,"y":"37.481641","stationName":"í•œì–‘ìŠˆí¼","stationID":185397},{"x":"126.813145","index":14,"y":"37.484729","stationName":"ì—­ê³¡ì—­ë‚¨ë¶€","stationID":185202},{"x":"126.816526","index":15,"y":"37.486177","stationName":"ì—­ê³¡ê³ ê°€ì…êµ¬","stationID":112778},{"x":"126.820098","index":16,"y":"37.487673","stationName":"ìœ í•œëŒ€í•™êµ","stationID":185199},{"x":"126.825069","index":17,"y":"37.489407","stationName":"ì„±ê³µíšŒëŒ€í•™êµìœ í•œê³µê³ ì•","stationID":100785},{"x":"126.831238","index":18,"y":"37.491171","stationName":"ì„œìš¸ê°€ë“ ë¹Œë¼ì•","stationID":162411},{"x":"126.840674","index":19,"y":"37.494499","stationName":"ì”¨í‹°ì›”ë“œ","stationID":101030},{"x":"126.843348","index":20,"y":"37.495651","stationName":"ì˜¤ë¥˜ë™ì—­","stationID":101082},{"x":"126.846189","index":21,"y":"37.496931","stationName":"ì˜¤ë¥˜1ë™ì£¼ë¯¼ì„¼í„°.ì˜¤ë¥˜ë¬¸í™”ì„¼í„°","stationID":101149},{"x":"126.855795","index":22,"y":"37.493682","stationName":"ê°œë´‰ê³ ê°€","stationID":88588},{"x":"126.857539","index":23,"y":"37.493528","stationName":"ê°œë´‰ì—­","stationID":101390},{"x":"126.867744","index":24,"y":"37.492445","stationName":"ì² ì‚°ë¦¬ë²„ë¹Œì•„íŒŒíŠ¸","stationID":101562},{"x":"126.875797","index":25,"y":"37.489296","stationName":"êµ¬ì¼ìš°ì„±ì•„íŒŒíŠ¸","stationID":101713},{"x":"126.87673","index":26,"y":"37.486656","stationName":"ë””ì§€í„¸ë‹¨ì§€ì…êµ¬","stationID":166950},{"x":"126.876758","index":27,"y":"37.484818","stationName":"ë””ì§€í„¸3ë‹¨ì§€.ë¡¯ë°ì •ë³´í†µì‹ ","stationID":166951},{"x":"126.878908","index":28,"y":"37.483208","stationName":"ë””ì§€í„¸3ë‹¨ì§€.ì˜ì°½ì‹¤ì—…","stationID":101748},{"x":"126.881027","index":29,"y":"37.481381","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€ì—­","stationID":101810},{"x":"126.88298","index":30,"y":"37.476984","stationName":"ì‚°ì—…ë‹¨ì§€ë°±ì–‘ì‚¬","stationID":80328}]},"startY":37.481908,"startX":126.782108,"lane":[{"busID":7055,"busNo":"75","type":1,"arrmsg1":660}],"startName":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ"},{"sectionTime":3,"distance":186,"trafficType":3},{"distance":1548,"trafficType":2,"sectionTime":10,"endY":37.483909,"endX":126.895043,"endID":102173,"stationCount":4,"endName":"ë””ì§€í„¸ì‚°ì—…1ë‹¨ì§€","startID":101825,"passStopList":{"stations":[{"x":"126.881414","index":0,"y":"37.475861","stationName":"ë””ì§€í„¸3ë‹¨ì§€ì‚¬ê±°ë¦¬","stationID":101825},{"x":"126.887842","index":1,"y":"37.477697","stationName":"ê¸ˆì²œíŒ¨ì…˜ì•„ìš¸ë ›ì‚¬ê±°ë¦¬.Wëª°","stationID":101965},{"x":"126.89086","index":2,"y":"37.480059","stationName":"ë””ì§€í„¸ë‹¨ì§€ì˜¤ê±°ë¦¬","stationID":102054},{"x":"126.892705","index":3,"y":"37.481473","stationName":"ë§Œë¯¼ì¤‘ì•™êµíšŒ","stationID":102113},{"x":"126.895043","index":4,"y":"37.483909","stationName":"ë””ì§€í„¸ì‚°ì—…1ë‹¨ì§€","stationID":102173}]},"startY":37.475861,"startX":126.881414,"lane":[{"busID":1128,"busNo":"5536","type":12}],"startName":"ë””ì§€í„¸3ë‹¨ì§€ì‚¬ê±°ë¦¬"},{"sectionTime":7,"distance":452,"trafficType":3}],"pathType":2,"info":{"totalTime":72,"totalWalkTime":-1,"subwayTransitCount":0,"busStationCount":34,"trafficDistance":14161,"firstStartStation":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ","mapObj":"7055:1:40:70@1128:1:10:14","totalStationCount":34,"totalWalk":1078,"payment":1550,"subwayStationCount":0,"totalDistance":15239,"busTransitCount":2,"lastEndStation":"ë””ì§€í„¸ì‚°ì—…1ë‹¨ì§€"}},{"subPath":[{"sectionTime":7,"distance":440,"trafficType":3},{"distance":12613,"trafficType":2,"sectionTime":45,"endY":37.476984,"endX":126.88298,"endID":80328,"stationCount":30,"endName":"ì‚°ì—…ë‹¨ì§€ë°±ì–‘ì‚¬","startID":185418,"passStopList":{"stations":[{"x":"126.782108","index":0,"y":"37.481908","stationName":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ","stationID":185418},{"x":"126.78561","index":1,"y":"37.482773","stationName":"ë¶€ì²œì—­ì „ìš°ì²´êµ­","stationID":112975},{"x":"126.78964","index":2,"y":"37.48249","stationName":"ì„±ì§€ì•„íŒŒíŠ¸.ì‚°ì„±êµíšŒì…êµ¬","stationID":91631},{"x":"126.793477","index":3,"y":"37.481565","stationName":"ì†Œì‚¬3ê±°ë¦¬.ì„¸ì¢…ë³‘ì›","stationID":185415},{"x":"126.795383","index":4,"y":"37.477638","stationName":"ì†Œì‚¬ì¢…í•©ì‹œì¥","stationID":185413},{"x":"126.795384","index":5,"y":"37.476124","stationName":"ì†Œì‚¬ì´ˆêµì•ì‚¬ê±°ë¦¬","stationID":112968},{"x":"126.79644","index":6,"y":"37.475162","stationName":"ì†Œì‚¬ì´ˆë“±í•™êµì •ë¬¸","stationID":185411},{"x":"126.799436","index":7,"y":"37.475156","stationName":"í•œì‹ ì•„íŒŒíŠ¸.KCCìŠ¤ìœ„ì²¸ì•„íŒŒíŠ¸","stationID":185409},{"x":"126.801729","index":8,"y":"37.476721","stationName":"ì‚¼ìµì„¸ë¼ë¯¹ì•„íŒŒíŠ¸.SKVIEWì•„íŒŒíŠ¸","stationID":185407},{"x":"126.803899","index":9,"y":"37.478851","stationName":"ì¡°ê³µì•„íŒŒíŠ¸","stationID":185405},{"x":"126.807705","index":10,"y":"37.479106","stationName":"ê´´ì•ˆì‚¬ê±°ë¦¬.ì‚¼ì˜¤ìœ ì¹˜ì›","stationID":112699},{"x":"126.810113","index":11,"y":"37.478427","stationName":"ì‹ ì¼í•´í”¼íŠ¸ë¦¬ì•„íŒŒíŠ¸","stationID":112700},{"x":"126.812797","index":12,"y":"37.478887","stationName":"ë¶€ì•ˆì´ˆêµ.ë™ì›ì£¼íƒ","stationID":185399},{"x":"126.814325","index":13,"y":"37.481641","stationName":"í•œì–‘ìŠˆí¼","stationID":185397},{"x":"126.813145","index":14,"y":"37.484729","stationName":"ì—­ê³¡ì—­ë‚¨ë¶€","stationID":185202},{"x":"126.816526","index":15,"y":"37.486177","stationName":"ì—­ê³¡ê³ ê°€ì…êµ¬","stationID":112778},{"x":"126.820098","index":16,"y":"37.487673","stationName":"ìœ í•œëŒ€í•™êµ","stationID":185199},{"x":"126.825069","index":17,"y":"37.489407","stationName":"ì„±ê³µíšŒëŒ€í•™êµìœ í•œê³µê³ ì•","stationID":100785},{"x":"126.831238","index":18,"y":"37.491171","stationName":"ì„œìš¸ê°€ë“ ë¹Œë¼ì•","stationID":162411},{"x":"126.840674","index":19,"y":"37.494499","stationName":"ì”¨í‹°ì›”ë“œ","stationID":101030},{"x":"126.843348","index":20,"y":"37.495651","stationName":"ì˜¤ë¥˜ë™ì—­","stationID":101082},{"x":"126.846189","index":21,"y":"37.496931","stationName":"ì˜¤ë¥˜1ë™ì£¼ë¯¼ì„¼í„°.ì˜¤ë¥˜ë¬¸í™”ì„¼í„°","stationID":101149},{"x":"126.855795","index":22,"y":"37.493682","stationName":"ê°œë´‰ê³ ê°€","stationID":88588},{"x":"126.857539","index":23,"y":"37.493528","stationName":"ê°œë´‰ì—­","stationID":101390},{"x":"126.867744","index":24,"y":"37.492445","stationName":"ì² ì‚°ë¦¬ë²„ë¹Œì•„íŒŒíŠ¸","stationID":101562},{"x":"126.875797","index":25,"y":"37.489296","stationName":"êµ¬ì¼ìš°ì„±ì•„íŒŒíŠ¸","stationID":101713},{"x":"126.87673","index":26,"y":"37.486656","stationName":"ë””ì§€í„¸ë‹¨ì§€ì…êµ¬","stationID":166950},{"x":"126.876758","index":27,"y":"37.484818","stationName":"ë””ì§€í„¸3ë‹¨ì§€.ë¡¯ë°ì •ë³´í†µì‹ ","stationID":166951},{"x":"126.878908","index":28,"y":"37.483208","stationName":"ë””ì§€í„¸3ë‹¨ì§€.ì˜ì°½ì‹¤ì—…","stationID":101748},{"x":"126.881027","index":29,"y":"37.481381","stationName":"ê°€ì‚°ë””ì§€í„¸ë‹¨ì§€ì—­","stationID":101810},{"x":"126.88298","index":30,"y":"37.476984","stationName":"ì‚°ì—…ë‹¨ì§€ë°±ì–‘ì‚¬","stationID":80328}]},"startY":37.481908,"startX":126.782108,"lane":[{"busID":7055,"busNo":"75","type":1,"arrmsg1":660}],"startName":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ"},{"sectionTime":3,"distance":207,"trafficType":3},{"distance":2572,"trafficType":2,"sectionTime":14,"endY":37.483192,"endX":126.898299,"endID":93079,"stationCount":9,"endName":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€ìš°ì²´êµ­","startID":122181,"passStopList":{"stations":[{"x":"126.884451","index":0,"y":"37.47844","stationName":"ë§ˆë¦¬ì˜¤ì•„ìš¸ë ›","stationID":122181},{"x":"126.883999","index":1,"y":"37.48067","stationName":"êµ­ë¯¼ì—°ê¸ˆê´€ë¦¬ê³µë‹¨ì•","stationID":126894},{"x":"126.886225","index":2,"y":"37.480024","stationName":"í•œì‹ ITíƒ€ì›Œ","stationID":193903},{"x":"126.888622","index":3,"y":"37.477001","stationName":"LGì „ì.Wëª°","stationID":193905},{"x":"126.890852","index":4,"y":"37.476806","stationName":"ê°€ì‚°ë™ì£¼ë¯¼ì„¼í„°","stationID":93076},{"x":"126.891034","index":5,"y":"37.478231","stationName":"ë””ì§€í„¸ë‹¨ì§€ì˜¤ê±°ë¦¬","stationID":102060},{"x":"126.89086","index":6,"y":"37.480059","stationName":"ë””ì§€í„¸ë‹¨ì§€ì˜¤ê±°ë¦¬","stationID":102054},{"x":"126.893452","index":7,"y":"37.48066","stationName":"í•œí™”ë¹„ì¦ˆë©”íŠ¸ë¡œ","stationID":93077},{"x":"126.897315","index":8,"y":"37.481669","stationName":"í•œêµ­ì‚°ì—…ê¸°ìˆ ì‹œí—˜ì›.ë””ì§€í„¸íƒ‘í”„ë¼ì","stationID":93078},{"x":"126.898299","index":9,"y":"37.483192","stationName":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€ìš°ì²´êµ­","stationID":93079}]},"startY":37.47844,"startX":126.884451,"lane":[{"busID":509,"busNo":"ê¸ˆì²œ07","type":3}],"startName":"ë§ˆë¦¬ì˜¤ì•„ìš¸ë ›"},{"sectionTime":9,"distance":571,"trafficType":3}],"pathType":2,"info":{"totalTime":78,"totalWalkTime":-1,"subwayTransitCount":0,"busStationCount":39,"trafficDistance":15185,"firstStartStation":"ë¶€ì²œì—­ë‚¨ë¶€.ë¶€ì²œë‚¨ì´ˆêµ","mapObj":"7055:1:40:70@509:1:13:22","totalStationCount":39,"totalWalk":1218,"payment":1650,"subwayStationCount":0,"totalDistance":16403,"busTransitCount":2,"lastEndStation":"êµ¬ë¡œë””ì§€í„¸ë‹¨ì§€ìš°ì²´êµ­"}}],"busCount":3,"searchType":0,"subwayCount":2,"subwayBusCount":5,"pointDistance":10308,"outTrafficCheck":1,"startRadius":700,"endRadius":700}}
+{
+	"result": {
+		"path": [
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 334,
+						"trafficType": 3
+					},
+					{
+						"door": "10-4",
+						"distance": 3900,
+						"wayCode": 1,
+						"trafficType": 1,
+						"way": "¿Â¼ö",
+						"sectionTime": 11,
+						"endY": 37.492377,
+						"endX": 126.82379,
+						"endID": 145,
+						"startExitNo": "3",
+						"stationCount": 3,
+						"endName": "¿Â¼ö",
+						"startID": 148,
+						"startExitY": 37.484412753362555,
+						"startExitX": 126.78227407222174,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782803",
+									"index": 0,
+									"y": "37.484085",
+									"stationName": "ºÎÃµ",
+									"stationID": 148
+								},
+								{
+									"x": "126.795904",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "¼Ò»ç",
+									"stationID": 147
+								},
+								{
+									"x": "126.811539",
+									"index": 2,
+									"y": "37.485138",
+									"stationName": "¿ª°î",
+									"stationID": 146
+								},
+								{
+									"x": "126.823801",
+									"index": 3,
+									"y": "37.492385",
+									"stationName": "¿Â¼ö",
+									"stationID": 145
+								}
+							]
+						},
+						"startY": 37.484078,
+						"startX": 126.782796,
+						"lane": [
+							{
+								"subwayCode": 1,
+								"subwayarrtime": 132000,
+								"name": "¼öµµ±Ç 1È£¼±",
+								"subwayCityCode": 1000,
+								"arrmsg1": 592
+							}
+						],
+						"startName": "ºÎÃµ"
+					},
+					{
+						"sectionTime": 0,
+						"distance": 0,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 6700,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.48750975342953,
+						"way": "³²±¸·Î",
+						"sectionTime": 18,
+						"endY": 37.486089,
+						"endX": 126.887277,
+						"endExitX": 126.88865607223296,
+						"endID": 745,
+						"stationCount": 5,
+						"endName": "³²±¸·Î",
+						"startID": 750,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.823853",
+									"index": 0,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 1,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 2,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 3,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 4,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 5,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								}
+							]
+						},
+						"startY": 37.491954,
+						"startX": 126.823853,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "¿Â¼ö"
+					},
+					{
+						"sectionTime": 12,
+						"distance": 780,
+						"trafficType": 3
+					}
+				],
+				"pathType": 1,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 2,
+					"busStationCount": 0,
+					"trafficDistance": 10600,
+					"firstStartStation": "ºÎÃµ",
+					"mapObj": "11:2:148:145@7:2:750:745",
+					"totalStationCount": 8,
+					"totalWalk": 1114,
+					"payment": 1350,
+					"subwayStationCount": 8,
+					"totalDistance": 11714,
+					"busTransitCount": 0,
+					"lastEndStation": "³²±¸·Î"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 334,
+						"trafficType": 3
+					},
+					{
+						"door": "5-1",
+						"distance": 10600,
+						"wayCode": 1,
+						"trafficType": 1,
+						"way": "½Åµµ¸²",
+						"sectionTime": 22,
+						"endY": 37.508998,
+						"endX": 126.891598,
+						"endID": 140,
+						"startExitNo": "3",
+						"stationCount": 8,
+						"endName": "½Åµµ¸²",
+						"startID": 148,
+						"startExitY": 37.484412753362555,
+						"startExitX": 126.78227407222174,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782803",
+									"index": 0,
+									"y": "37.484085",
+									"stationName": "ºÎÃµ",
+									"stationID": 148
+								},
+								{
+									"x": "126.795904",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "¼Ò»ç",
+									"stationID": 147
+								},
+								{
+									"x": "126.811539",
+									"index": 2,
+									"y": "37.485138",
+									"stationName": "¿ª°î",
+									"stationID": 146
+								},
+								{
+									"x": "126.823801",
+									"index": 3,
+									"y": "37.492385",
+									"stationName": "¿Â¼ö",
+									"stationID": 145
+								},
+								{
+									"x": "126.844567",
+									"index": 4,
+									"y": "37.494411",
+									"stationName": "¿À·ùµ¿",
+									"stationID": 144
+								},
+								{
+									"x": "126.85852",
+									"index": 5,
+									"y": "37.494709",
+									"stationName": "°³ºÀ",
+									"stationID": 143
+								},
+								{
+									"x": "126.869615",
+									"index": 6,
+									"y": "37.496283",
+									"stationName": "±¸ÀÏ",
+									"stationID": 142
+								},
+								{
+									"x": "126.882278",
+									"index": 7,
+									"y": "37.502916",
+									"stationName": "±¸·Î",
+									"stationID": 141
+								},
+								{
+									"x": "126.8916",
+									"index": 8,
+									"y": "37.509006",
+									"stationName": "½Åµµ¸²",
+									"stationID": 140
+								}
+							]
+						},
+						"startY": 37.484078,
+						"startX": 126.782796,
+						"lane": [
+							{
+								"subwayCode": 1,
+								"subwayarrtime": 132000,
+								"name": "¼öµµ±Ç 1È£¼±",
+								"subwayCityCode": 1000,
+								"arrmsg1": 591
+							}
+						],
+						"startName": "ºÎÃµ"
+					},
+					{
+						"sectionTime": 0,
+						"distance": 0,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "3",
+						"distance": 2900,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.48522625343882,
+						"way": "±¸·ÎµğÁöÅĞ´ÜÁö",
+						"sectionTime": 10,
+						"endY": 37.485258,
+						"endX": 126.90148,
+						"endExitX": 126.90049507222018,
+						"endID": 232,
+						"stationCount": 2,
+						"endName": "±¸·ÎµğÁöÅĞ´ÜÁö",
+						"startID": 234,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.891353",
+									"index": 0,
+									"y": "37.508572",
+									"stationName": "½Åµµ¸²",
+									"stationID": 234
+								},
+								{
+									"x": "126.894922",
+									"index": 1,
+									"y": "37.493376",
+									"stationName": "´ë¸²",
+									"stationID": 233
+								},
+								{
+									"x": "126.901487",
+									"index": 2,
+									"y": "37.48526",
+									"stationName": "±¸·ÎµğÁöÅĞ´ÜÁö",
+									"stationID": 232
+								}
+							]
+						},
+						"startY": 37.508563,
+						"startX": 126.891344,
+						"lane": [
+							{
+								"subwayCode": 2,
+								"name": "¼öµµ±Ç 2È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "½Åµµ¸²"
+					},
+					{
+						"sectionTime": 9,
+						"distance": 584,
+						"trafficType": 3
+					}
+				],
+				"pathType": 1,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 2,
+					"busStationCount": 0,
+					"trafficDistance": 13500,
+					"firstStartStation": "ºÎÃµ",
+					"mapObj": "11:2:148:140@2:2:234:232",
+					"totalStationCount": 10,
+					"totalWalk": 918,
+					"payment": 1350,
+					"subwayStationCount": 10,
+					"totalDistance": 14418,
+					"busTransitCount": 0,
+					"lastEndStation": "±¸·ÎµğÁöÅĞ´ÜÁö"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2326,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.504377,
+						"endX": 126.787082,
+						"endID": 100464,
+						"stationCount": 6,
+						"endName": "ÃáÀÇ¿ª7¹øÃâ±¸",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "ºÎÃµ»ó»ó°Å¸®",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "ºÎÃµ¿ªºÏºÎ.³óÇù",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "´ë¼ºº´¿ø",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "ºÎÃµºÏÃÊµîÇĞ±³.¿ø¹Ìµ¿¿ìÃ¼±¹",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "ºÎÃµµ¿ÇàÁ¤º¹Áö¼¾ÅÍ.¿ø¹Ì¾î¿ï¸¶´ç",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "ÃáÀÇÅ×Å©³ëÆÄÅ©´ÜÁö¾Õ",
+									"stationID": 112098
+								},
+								{
+									"x": "126.787082",
+									"index": 6,
+									"y": "37.504377",
+									"stationName": "ÃáÀÇ¿ª7¹øÃâ±¸",
+									"stationID": 100464
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 7093,
+								"busNo": "50",
+								"type": 1,
+								"arrmsg1": 360
+							}
+						],
+						"startName": "ºÎÃµ»ó»ó°Å¸®"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 73,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "´ë¸²",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"stationCount": 9,
+						"endName": "´ë¸²",
+						"startID": 753,
+						"startExitY": 37.504267053373304,
+						"startExitX": 126.7871180722773,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "ÃáÀÇ",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "ºÎÃµÁ¾ÇÕ¿îµ¿Àå",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "±îÄ¡¿ï",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "´ë¸²",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "ÃáÀÇ"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 47,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14426,
+					"firstStartStation": "ºÎÃµ»ó»ó°Å¸®",
+					"mapObj": "7093:1:55:61@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 756,
+					"payment": 1550,
+					"subwayStationCount": 9,
+					"totalDistance": 15182,
+					"busTransitCount": 1,
+					"lastEndStation": "´ë¸²"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2428,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.503996,
+						"endX": 126.789463,
+						"endID": 112097,
+						"stationCount": 6,
+						"endName": "ÃáÀÇ°¡±¸°Å¸®",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "ºÎÃµ»ó»ó°Å¸®",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "ºÎÃµ¿ªºÏºÎ.³óÇù",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "´ë¼ºº´¿ø",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "ºÎÃµºÏÃÊµîÇĞ±³.¿ø¹Ìµ¿¿ìÃ¼±¹",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "ºÎÃµµ¿ÇàÁ¤º¹Áö¼¾ÅÍ.¿ø¹Ì¾î¿ï¸¶´ç",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "ÃáÀÇÅ×Å©³ëÆÄÅ©´ÜÁö¾Õ",
+									"stationID": 112098
+								},
+								{
+									"x": "126.789463",
+									"index": 6,
+									"y": "37.503996",
+									"stationName": "ÃáÀÇ°¡±¸°Å¸®",
+									"stationID": 112097
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 840
+							},
+							{
+								"busID": 7045,
+								"busNo": "8",
+								"type": 1,
+								"arrmsg1": 480
+							}
+						],
+						"startName": "ºÎÃµ»ó»ó°Å¸®"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 212,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "´ë¸²",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "8",
+						"stationCount": 9,
+						"endName": "´ë¸²",
+						"startID": 753,
+						"startExitY": 37.504075053374535,
+						"startExitX": 126.78779607228016,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "ÃáÀÇ",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "ºÎÃµÁ¾ÇÕ¿îµ¿Àå",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "±îÄ¡¿ï",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "´ë¸²",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "ÃáÀÇ"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 49,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14528,
+					"firstStartStation": "ºÎÃµ»ó»ó°Å¸®",
+					"mapObj": "7055:1:158:164@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 895,
+					"payment": 1550,
+					"subwayStationCount": 9,
+					"totalDistance": 15423,
+					"busTransitCount": 1,
+					"lastEndStation": "´ë¸²"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 3,
+						"distance": 233,
+						"trafficType": 3
+					},
+					{
+						"distance": 1741,
+						"trafficType": 2,
+						"sectionTime": 10,
+						"endY": 37.501137,
+						"endX": 126.776944,
+						"endID": 100367,
+						"stationCount": 5,
+						"endName": "½ÅÁßµ¿¿ª2¹øÃâ±¸.¿ø¹Ì°æÂû¼­.·Ôµ¥¹éÈ­Á¡",
+						"startID": 113764,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.776754",
+									"index": 0,
+									"y": "37.485755",
+									"stationName": "KTºÎÃµÁö»ç»ç°Å¸®",
+									"stationID": 113764
+								},
+								{
+									"x": "126.777388",
+									"index": 1,
+									"y": "37.488482",
+									"stationName": "ºÎÃµ´ëÇĞ±³",
+									"stationID": 127183
+								},
+								{
+									"x": "126.777999",
+									"index": 2,
+									"y": "37.49121",
+									"stationName": "ºÎÃµ¼Ò¹æ¼­.ºÎÃµ´ëÇĞ»ç°Å¸®",
+									"stationID": 126977
+								},
+								{
+									"x": "126.778182",
+									"index": 3,
+									"y": "37.496654",
+									"stationName": "À§ºê´õ½ºÅ×ÀÌÆ®9´ÜÁö",
+									"stationID": 88756
+								},
+								{
+									"x": "126.777666",
+									"index": 4,
+									"y": "37.498514",
+									"stationName": "À§ºê´õ½ºÅ×ÀÌÆ®5´ÜÁö",
+									"stationID": 165730
+								},
+								{
+									"x": "126.776944",
+									"index": 5,
+									"y": "37.501137",
+									"stationName": "½ÅÁßµ¿¿ª2¹øÃâ±¸.¿ø¹Ì°æÂû¼­.·Ôµ¥¹éÈ­Á¡",
+									"stationID": 100367
+								}
+							]
+						},
+						"startY": 37.485755,
+						"startX": 126.776754,
+						"lane": [
+							{
+								"busID": 7058,
+								"busNo": "23-2",
+								"type": 1,
+								"arrmsg1": 780
+							},
+							{
+								"busID": 6521,
+								"busNo": "61",
+								"type": 1,
+								"arrmsg1": 900
+							},
+							{
+								"busID": 7025,
+								"busNo": "60-1",
+								"type": 1,
+								"arrmsg1": 840
+							}
+						],
+						"startName": "KTºÎÃµÁö»ç»ç°Å¸®"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 230,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 13100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "´ë¸²",
+						"sectionTime": 26,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "2",
+						"stationCount": 10,
+						"endName": "´ë¸²",
+						"startID": 754,
+						"startExitY": 37.502430053367675,
+						"startExitX": 126.7766290722787,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.775977",
+									"index": 0,
+									"y": "37.503064",
+									"stationName": "½ÅÁßµ¿",
+									"stationID": 754
+								},
+								{
+									"x": "126.787095",
+									"index": 1,
+									"y": "37.503722",
+									"stationName": "ÃáÀÇ",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 2,
+									"y": "37.505463",
+									"stationName": "ºÎÃµÁ¾ÇÕ¿îµ¿Àå",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 3,
+									"y": "37.506248",
+									"stationName": "±îÄ¡¿ï",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 4,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 5,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 6,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 7,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 8,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 9,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 10,
+									"y": "37.492811",
+									"stationName": "´ë¸²",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.503055,
+						"startX": 126.775974,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "½ÅÁßµ¿"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 50,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 5,
+					"trafficDistance": 14841,
+					"firstStartStation": "KTºÎÃµÁö»ç»ç°Å¸®",
+					"mapObj": "7058:1:24:29@7:2:754:744",
+					"totalStationCount": 15,
+					"totalWalk": 1011,
+					"payment": 1550,
+					"subwayStationCount": 10,
+					"totalDistance": 15852,
+					"busTransitCount": 1,
+					"lastEndStation": "´ë¸²"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 2,
+						"distance": 135,
+						"trafficType": 3
+					},
+					{
+						"distance": 2326,
+						"trafficType": 2,
+						"sectionTime": 12,
+						"endY": 37.504377,
+						"endX": 126.787082,
+						"endID": 100464,
+						"stationCount": 6,
+						"endName": "ÃáÀÇ¿ª7¹øÃâ±¸",
+						"startID": 84300,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.780173",
+									"index": 0,
+									"y": "37.486168",
+									"stationName": "ºÎÃµ»ó»ó°Å¸®",
+									"stationID": 84300
+								},
+								{
+									"x": "126.783453",
+									"index": 1,
+									"y": "37.486815",
+									"stationName": "ºÎÃµ¿ªºÏºÎ.³óÇù",
+									"stationID": 100423
+								},
+								{
+									"x": "126.784519",
+									"index": 2,
+									"y": "37.491493",
+									"stationName": "´ë¼ºº´¿ø",
+									"stationID": 100429
+								},
+								{
+									"x": "126.785207",
+									"index": 3,
+									"y": "37.494456",
+									"stationName": "ºÎÃµºÏÃÊµîÇĞ±³.¿ø¹Ìµ¿¿ìÃ¼±¹",
+									"stationID": 112632
+								},
+								{
+									"x": "126.785871",
+									"index": 4,
+									"y": "37.4974",
+									"stationName": "ºÎÃµµ¿ÇàÁ¤º¹Áö¼¾ÅÍ.¿ø¹Ì¾î¿ï¸¶´ç",
+									"stationID": 100450
+								},
+								{
+									"x": "126.786389",
+									"index": 5,
+									"y": "37.499667",
+									"stationName": "ÃáÀÇÅ×Å©³ëÆÄÅ©´ÜÁö¾Õ",
+									"stationID": 112098
+								},
+								{
+									"x": "126.787082",
+									"index": 6,
+									"y": "37.504377",
+									"stationName": "ÃáÀÇ¿ª7¹øÃâ±¸",
+									"stationID": 100464
+								}
+							]
+						},
+						"startY": 37.486168,
+						"startX": 126.780173,
+						"lane": [
+							{
+								"busID": 1451,
+								"busNo": "661",
+								"type": 11,
+								"arrmsg1": 540
+							}
+						],
+						"startName": "ºÎÃµ»ó»ó°Å¸®"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 73,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 12100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "´ë¸²",
+						"sectionTime": 24,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"stationCount": 9,
+						"endName": "´ë¸²",
+						"startID": 753,
+						"startExitY": 37.504267053373304,
+						"startExitX": 126.7871180722773,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.787095",
+									"index": 0,
+									"y": "37.503722",
+									"stationName": "ÃáÀÇ",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 1,
+									"y": "37.505463",
+									"stationName": "ºÎÃµÁ¾ÇÕ¿îµ¿Àå",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 2,
+									"y": "37.506248",
+									"stationName": "±îÄ¡¿ï",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 3,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 4,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 5,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 6,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 7,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 8,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 9,
+									"y": "37.492811",
+									"stationName": "´ë¸²",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.50372,
+						"startX": 126.787092,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "ÃáÀÇ"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 47,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 6,
+					"trafficDistance": 14426,
+					"firstStartStation": "ºÎÃµ»ó»ó°Å¸®",
+					"mapObj": "1451:1:12:18@7:2:753:744",
+					"totalStationCount": 15,
+					"totalWalk": 756,
+					"payment": 1350,
+					"subwayStationCount": 9,
+					"totalDistance": 15182,
+					"busTransitCount": 1,
+					"lastEndStation": "´ë¸²"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 3,
+						"distance": 170,
+						"trafficType": 3
+					},
+					{
+						"distance": 1758,
+						"trafficType": 2,
+						"sectionTime": 11,
+						"endY": 37.501137,
+						"endX": 126.776944,
+						"endID": 100367,
+						"stationCount": 5,
+						"endName": "½ÅÁßµ¿¿ª2¹øÃâ±¸.¿ø¹Ì°æÂû¼­.·Ôµ¥¹éÈ­Á¡",
+						"startID": 180134,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.778617",
+									"index": 0,
+									"y": "37.486612",
+									"stationName": "ºÎÃµ´ëÀÔ±¸",
+									"stationID": 180134
+								},
+								{
+									"x": "126.777388",
+									"index": 1,
+									"y": "37.488482",
+									"stationName": "ºÎÃµ´ëÇĞ±³",
+									"stationID": 127183
+								},
+								{
+									"x": "126.777999",
+									"index": 2,
+									"y": "37.49121",
+									"stationName": "ºÎÃµ¼Ò¹æ¼­.ºÎÃµ´ëÇĞ»ç°Å¸®",
+									"stationID": 126977
+								},
+								{
+									"x": "126.778182",
+									"index": 3,
+									"y": "37.496654",
+									"stationName": "À§ºê´õ½ºÅ×ÀÌÆ®9´ÜÁö",
+									"stationID": 88756
+								},
+								{
+									"x": "126.777666",
+									"index": 4,
+									"y": "37.498514",
+									"stationName": "À§ºê´õ½ºÅ×ÀÌÆ®5´ÜÁö",
+									"stationID": 165730
+								},
+								{
+									"x": "126.776944",
+									"index": 5,
+									"y": "37.501137",
+									"stationName": "½ÅÁßµ¿¿ª2¹øÃâ±¸.¿ø¹Ì°æÂû¼­.·Ôµ¥¹éÈ­Á¡",
+									"stationID": 100367
+								}
+							]
+						},
+						"startY": 37.486612,
+						"startX": 126.778617,
+						"lane": [
+							{
+								"busID": 7027,
+								"busNo": "66",
+								"type": 1,
+								"arrmsg1": 360
+							},
+							{
+								"busID": 7043,
+								"busNo": "5-3",
+								"type": 1,
+								"arrmsg1": 720
+							}
+						],
+						"startName": "ºÎÃµ´ëÀÔ±¸"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 230,
+						"trafficType": 3
+					},
+					{
+						"door": "null",
+						"endExitNo": "1",
+						"distance": 13100,
+						"wayCode": 1,
+						"trafficType": 1,
+						"endExitY": 37.49235925343581,
+						"way": "´ë¸²",
+						"sectionTime": 26,
+						"endY": 37.492809,
+						"endX": 126.896677,
+						"endExitX": 126.89487007224417,
+						"endID": 744,
+						"startExitNo": "2",
+						"stationCount": 10,
+						"endName": "´ë¸²",
+						"startID": 754,
+						"startExitY": 37.502430053367675,
+						"startExitX": 126.7766290722787,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.775977",
+									"index": 0,
+									"y": "37.503064",
+									"stationName": "½ÅÁßµ¿",
+									"stationID": 754
+								},
+								{
+									"x": "126.787095",
+									"index": 1,
+									"y": "37.503722",
+									"stationName": "ÃáÀÇ",
+									"stationID": 753
+								},
+								{
+									"x": "126.797514",
+									"index": 2,
+									"y": "37.505463",
+									"stationName": "ºÎÃµÁ¾ÇÕ¿îµ¿Àå",
+									"stationID": 752
+								},
+								{
+									"x": "126.810966",
+									"index": 3,
+									"y": "37.506248",
+									"stationName": "±îÄ¡¿ï",
+									"stationID": 751
+								},
+								{
+									"x": "126.823853",
+									"index": 4,
+									"y": "37.491954",
+									"stationName": "¿Â¼ö",
+									"stationID": 750
+								},
+								{
+									"x": "126.838726",
+									"index": 5,
+									"y": "37.486756",
+									"stationName": "Ãµ¿Õ",
+									"stationID": 749
+								},
+								{
+									"x": "126.854401",
+									"index": 6,
+									"y": "37.479424",
+									"stationName": "±¤¸í»ç°Å¸®",
+									"stationID": 748
+								},
+								{
+									"x": "126.868277",
+									"index": 7,
+									"y": "37.476203",
+									"stationName": "Ã¶»ê",
+									"stationID": 747
+								},
+								{
+									"x": "126.882526",
+									"index": 8,
+									"y": "37.48036",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö",
+									"stationID": 746
+								},
+								{
+									"x": "126.887288",
+									"index": 9,
+									"y": "37.486098",
+									"stationName": "³²±¸·Î",
+									"stationID": 745
+								},
+								{
+									"x": "126.896683",
+									"index": 10,
+									"y": "37.492811",
+									"stationName": "´ë¸²",
+									"stationID": 744
+								}
+							]
+						},
+						"startY": 37.503055,
+						"startX": 126.775974,
+						"lane": [
+							{
+								"subwayCode": 7,
+								"name": "¼öµµ±Ç 7È£¼±",
+								"subwayCityCode": 1000
+							}
+						],
+						"startName": "½ÅÁßµ¿"
+					},
+					{
+						"sectionTime": 8,
+						"distance": 548,
+						"trafficType": 3
+					}
+				],
+				"pathType": 3,
+				"info": {
+					"totalTime": 51,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 1,
+					"busStationCount": 5,
+					"trafficDistance": 14858,
+					"firstStartStation": "ºÎÃµ´ëÀÔ±¸",
+					"mapObj": "7027:1:69:74@7:2:754:744",
+					"totalStationCount": 15,
+					"totalWalk": 948,
+					"payment": 1550,
+					"subwayStationCount": 10,
+					"totalDistance": 15806,
+					"busTransitCount": 1,
+					"lastEndStation": "´ë¸²"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 5,
+						"distance": 323,
+						"trafficType": 3
+					},
+					{
+						"distance": 9845,
+						"trafficType": 2,
+						"sectionTime": 34,
+						"endY": 37.50546,
+						"endX": 126.883235,
+						"endID": 117247,
+						"stationCount": 19,
+						"endName": "½Åµµ¸²µ¿.±¸·Î¿ª",
+						"startID": 112976,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.781728",
+									"index": 0,
+									"y": "37.483004",
+									"stationName": "ºÎÃµ¿ª³²ºÎ±¤Àå",
+									"stationID": 112976
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "ºÎÃµ¿ªÀü¿ìÃ¼±¹",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "¼ºÁö¾ÆÆÄÆ®.»ê¼º±³È¸ÀÔ±¸",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793637",
+									"index": 3,
+									"y": "37.482135",
+									"stationName": "¼Ò»ç¿ª",
+									"stationID": 185046
+								},
+								{
+									"x": "126.799734",
+									"index": 4,
+									"y": "37.481971",
+									"stationName": "¼Ò»ç¾î¿ï¸¶´ç»ï°Å¸®.MJÄÁº¥¼Ç",
+									"stationID": 185044
+								},
+								{
+									"x": "126.805254",
+									"index": 5,
+									"y": "37.481847",
+									"stationName": "±«¾Èµ¿ÀÔ±¸.¼º½É°í°¡",
+									"stationID": 185042
+								},
+								{
+									"x": "126.809113",
+									"index": 6,
+									"y": "37.483012",
+									"stationName": "Çö´ëÁ¤Çü¿Ü°ú",
+									"stationID": 86271
+								},
+								{
+									"x": "126.811988",
+									"index": 7,
+									"y": "37.48424",
+									"stationName": "¿ª°î¿ª.¿ª°î³²ºÎ½ÃÀå",
+									"stationID": 112777
+								},
+								{
+									"x": "126.816526",
+									"index": 8,
+									"y": "37.486177",
+									"stationName": "¿ª°î°í°¡ÀÔ±¸",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 9,
+									"y": "37.487673",
+									"stationName": "À¯ÇÑ´ëÇĞ±³",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 10,
+									"y": "37.489407",
+									"stationName": "¼º°øÈ¸´ëÇĞ±³À¯ÇÑ°ø°í¾Õ",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 11,
+									"y": "37.491171",
+									"stationName": "¼­¿ï°¡µçºô¶ó¾Õ",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 12,
+									"y": "37.494499",
+									"stationName": "¾¾Æ¼¿ùµå",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 13,
+									"y": "37.495651",
+									"stationName": "¿À·ùµ¿¿ª",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 14,
+									"y": "37.496931",
+									"stationName": "¿À·ù1µ¿ÁÖ¹Î¼¾ÅÍ.¿À·ù¹®È­¼¾ÅÍ",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855073",
+									"index": 15,
+									"y": "37.497279",
+									"stationName": "°æÀÎÁßÇĞ±³.°³ºÀ»ç°Å¸®",
+									"stationID": 117255
+								},
+								{
+									"x": "126.862355",
+									"index": 16,
+									"y": "37.496592",
+									"stationName": "°³ºÀ¿ª.ÇÑ¸¶À»¾ÆÆÄÆ®",
+									"stationID": 117252
+								},
+								{
+									"x": "126.866938",
+									"index": 17,
+									"y": "37.499421",
+									"stationName": "µ¿¾ç¹Ì·¡´ëÇĞ.±¸·Î¼º½Éº´¿ø",
+									"stationID": 117250
+								},
+								{
+									"x": "126.874309",
+									"index": 18,
+									"y": "37.499581",
+									"stationName": "±¸ÀÏ¿ª.Á¦ÀÏÁ¦´ç.·Ôµ¥¸¶Æ®",
+									"stationID": 117249
+								},
+								{
+									"x": "126.883235",
+									"index": 19,
+									"y": "37.50546",
+									"stationName": "½Åµµ¸²µ¿.±¸·Î¿ª",
+									"stationID": 117247
+								}
+							]
+						},
+						"startY": 37.483004,
+						"startX": 126.781728,
+						"lane": [
+							{
+								"busID": 7050,
+								"busNo": "83",
+								"type": 1,
+								"arrmsg1": 480
+							},
+							{
+								"busID": 7047,
+								"busNo": "88",
+								"type": 1,
+								"arrmsg1": 480
+							}
+						],
+						"startName": "ºÎÃµ¿ª³²ºÎ±¤Àå"
+					},
+					{
+						"sectionTime": 1,
+						"distance": 92,
+						"trafficType": 3
+					},
+					{
+						"distance": 4759,
+						"trafficType": 2,
+						"sectionTime": 24,
+						"endY": 37.485221,
+						"endX": 126.893645,
+						"endID": 125661,
+						"stationCount": 19,
+						"endName": "¿¡ÀÌ½ºÅ×Å©³ëÅ¸¿ö",
+						"startID": 195895,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.883223",
+									"index": 0,
+									"y": "37.506288",
+									"stationName": "´ë¸²6Â÷ÅÂ¿µÇÁ¶óÀÚ",
+									"stationID": 195895
+								},
+								{
+									"x": "126.881508",
+									"index": 1,
+									"y": "37.50748",
+									"stationName": "´ë¸²5Â÷¾ÆÆÄÆ®.½Åµµ¸²ÁÖ¹Î¼¾ÅÍ",
+									"stationID": 195897
+								},
+								{
+									"x": "126.879628",
+									"index": 2,
+									"y": "37.50766",
+									"stationName": "´ë¸²5Â÷¾ÆÆÄÆ®702µ¿",
+									"stationID": 195899
+								},
+								{
+									"x": "126.878553",
+									"index": 3,
+									"y": "37.50692",
+									"stationName": "´ë¸²3Â÷¾ÆÆÄÆ®",
+									"stationID": 125646
+								},
+								{
+									"x": "126.876509",
+									"index": 4,
+									"y": "37.506",
+									"stationName": "¹Ì¼º¾ÆÆÄÆ®",
+									"stationID": 196193
+								},
+								{
+									"x": "126.876732",
+									"index": 5,
+									"y": "37.505407",
+									"stationName": "¿ùµå¾ÆÆÄÆ®",
+									"stationID": 195902
+								},
+								{
+									"x": "126.878977",
+									"index": 6,
+									"y": "37.503527",
+									"stationName": "±¸·Î¿ª.±¸·Î±â°è°ø±¸»ó°¡",
+									"stationID": 101761
+								},
+								{
+									"x": "126.882954",
+									"index": 7,
+									"y": "37.500024",
+									"stationName": "±¸·Î¿ª.AKÇÃ¶óÀÚ",
+									"stationID": 166993
+								},
+								{
+									"x": "126.886501",
+									"index": 8,
+									"y": "37.49876",
+									"stationName": "Ç×¾Æ¸®",
+									"stationID": 101924
+								},
+								{
+									"x": "126.889138",
+									"index": 9,
+									"y": "37.500208",
+									"stationName": "±¸·Îº¸°Ç¼Ò",
+									"stationID": 102005
+								},
+								{
+									"x": "126.890802",
+									"index": 10,
+									"y": "37.498557",
+									"stationName": "±¸·Î°í.±¸·Îµµ¼­°ü",
+									"stationID": 102044
+								},
+								{
+									"x": "126.891747",
+									"index": 11,
+									"y": "37.497385",
+									"stationName": "¿µ¸²ÁßÇĞ±³",
+									"stationID": 102074
+								},
+								{
+									"x": "126.890619",
+									"index": 12,
+									"y": "37.496365",
+									"stationName": "±¸·Î±¸¹ÎÈ¸°ü",
+									"stationID": 195906
+								},
+								{
+									"x": "126.889083",
+									"index": 13,
+									"y": "37.494693",
+									"stationName": "±¸·Î±¸Ã»",
+									"stationID": 195907
+								},
+								{
+									"x": "126.890374",
+									"index": 14,
+									"y": "37.493092",
+									"stationName": "±¸·ÎÁßÇĞ±³",
+									"stationID": 102049
+								},
+								{
+									"x": "126.892087",
+									"index": 15,
+									"y": "37.491189",
+									"stationName": "µ¿±¸·Î»õ¸¶À»±İ°í",
+									"stationID": 102083
+								},
+								{
+									"x": "126.890983",
+									"index": 16,
+									"y": "37.489386",
+									"stationName": "±¸·Î½ÃÀå.³²±¸·Î½ÃÀå",
+									"stationID": 125659
+								},
+								{
+									"x": "126.8904",
+									"index": 17,
+									"y": "37.487506",
+									"stationName": "±¸·Î3µ¿ÁÖ¹Î¼¾ÅÍ.»ï¼º·¡¹Ì¾È¾ÆÆÄÆ®",
+									"stationID": 125660
+								},
+								{
+									"x": "126.891641",
+									"index": 18,
+									"y": "37.486157",
+									"stationName": "ÇØÇÇ·£µå",
+									"stationID": 102085
+								},
+								{
+									"x": "126.893645",
+									"index": 19,
+									"y": "37.485221",
+									"stationName": "¿¡ÀÌ½ºÅ×Å©³ëÅ¸¿ö",
+									"stationID": 125661
+								}
+							]
+						},
+						"startY": 37.506288,
+						"startX": 126.883223,
+						"lane": [
+							{
+								"busID": 1670,
+								"busNo": "±¸·Î09",
+								"type": 3
+							}
+						],
+						"startName": "´ë¸²6Â÷ÅÂ¿µÇÁ¶óÀÚ"
+					},
+					{
+						"sectionTime": 5,
+						"distance": 356,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 69,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 38,
+					"trafficDistance": 14604,
+					"firstStartStation": "ºÎÃµ¿ª³²ºÎ±¤Àå",
+					"mapObj": "7050:1:32:51@1670:1:5:24",
+					"totalStationCount": 38,
+					"totalWalk": 771,
+					"payment": 1550,
+					"subwayStationCount": 0,
+					"totalDistance": 15375,
+					"busTransitCount": 2,
+					"lastEndStation": "¿¡ÀÌ½ºÅ×Å©³ëÅ¸¿ö"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 7,
+						"distance": 440,
+						"trafficType": 3
+					},
+					{
+						"distance": 12613,
+						"trafficType": 2,
+						"sectionTime": 45,
+						"endY": 37.476984,
+						"endX": 126.88298,
+						"endID": 80328,
+						"stationCount": 30,
+						"endName": "»ê¾÷´ÜÁö¹é¾ç»ç",
+						"startID": 185418,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782108",
+									"index": 0,
+									"y": "37.481908",
+									"stationName": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³",
+									"stationID": 185418
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "ºÎÃµ¿ªÀü¿ìÃ¼±¹",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "¼ºÁö¾ÆÆÄÆ®.»ê¼º±³È¸ÀÔ±¸",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793477",
+									"index": 3,
+									"y": "37.481565",
+									"stationName": "¼Ò»ç3°Å¸®.¼¼Á¾º´¿ø",
+									"stationID": 185415
+								},
+								{
+									"x": "126.795383",
+									"index": 4,
+									"y": "37.477638",
+									"stationName": "¼Ò»çÁ¾ÇÕ½ÃÀå",
+									"stationID": 185413
+								},
+								{
+									"x": "126.795384",
+									"index": 5,
+									"y": "37.476124",
+									"stationName": "¼Ò»çÃÊ±³¾Õ»ç°Å¸®",
+									"stationID": 112968
+								},
+								{
+									"x": "126.79644",
+									"index": 6,
+									"y": "37.475162",
+									"stationName": "¼Ò»çÃÊµîÇĞ±³Á¤¹®",
+									"stationID": 185411
+								},
+								{
+									"x": "126.799436",
+									"index": 7,
+									"y": "37.475156",
+									"stationName": "ÇÑ½Å¾ÆÆÄÆ®.KCC½ºÀ§Ã¾¾ÆÆÄÆ®",
+									"stationID": 185409
+								},
+								{
+									"x": "126.801729",
+									"index": 8,
+									"y": "37.476721",
+									"stationName": "»ïÀÍ¼¼¶ó¹Í¾ÆÆÄÆ®.SKVIEW¾ÆÆÄÆ®",
+									"stationID": 185407
+								},
+								{
+									"x": "126.803899",
+									"index": 9,
+									"y": "37.478851",
+									"stationName": "Á¶°ø¾ÆÆÄÆ®",
+									"stationID": 185405
+								},
+								{
+									"x": "126.807705",
+									"index": 10,
+									"y": "37.479106",
+									"stationName": "±«¾È»ç°Å¸®.»ï¿ÀÀ¯Ä¡¿ø",
+									"stationID": 112699
+								},
+								{
+									"x": "126.810113",
+									"index": 11,
+									"y": "37.478427",
+									"stationName": "½ÅÀÏÇØÇÇÆ®¸®¾ÆÆÄÆ®",
+									"stationID": 112700
+								},
+								{
+									"x": "126.812797",
+									"index": 12,
+									"y": "37.478887",
+									"stationName": "ºÎ¾ÈÃÊ±³.µ¿¿øÁÖÅÃ",
+									"stationID": 185399
+								},
+								{
+									"x": "126.814325",
+									"index": 13,
+									"y": "37.481641",
+									"stationName": "ÇÑ¾ç½´ÆÛ",
+									"stationID": 185397
+								},
+								{
+									"x": "126.813145",
+									"index": 14,
+									"y": "37.484729",
+									"stationName": "¿ª°î¿ª³²ºÎ",
+									"stationID": 185202
+								},
+								{
+									"x": "126.816526",
+									"index": 15,
+									"y": "37.486177",
+									"stationName": "¿ª°î°í°¡ÀÔ±¸",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 16,
+									"y": "37.487673",
+									"stationName": "À¯ÇÑ´ëÇĞ±³",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 17,
+									"y": "37.489407",
+									"stationName": "¼º°øÈ¸´ëÇĞ±³À¯ÇÑ°ø°í¾Õ",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 18,
+									"y": "37.491171",
+									"stationName": "¼­¿ï°¡µçºô¶ó¾Õ",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 19,
+									"y": "37.494499",
+									"stationName": "¾¾Æ¼¿ùµå",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 20,
+									"y": "37.495651",
+									"stationName": "¿À·ùµ¿¿ª",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 21,
+									"y": "37.496931",
+									"stationName": "¿À·ù1µ¿ÁÖ¹Î¼¾ÅÍ.¿À·ù¹®È­¼¾ÅÍ",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855795",
+									"index": 22,
+									"y": "37.493682",
+									"stationName": "°³ºÀ°í°¡",
+									"stationID": 88588
+								},
+								{
+									"x": "126.857539",
+									"index": 23,
+									"y": "37.493528",
+									"stationName": "°³ºÀ¿ª",
+									"stationID": 101390
+								},
+								{
+									"x": "126.867744",
+									"index": 24,
+									"y": "37.492445",
+									"stationName": "Ã¶»ê¸®¹öºô¾ÆÆÄÆ®",
+									"stationID": 101562
+								},
+								{
+									"x": "126.875797",
+									"index": 25,
+									"y": "37.489296",
+									"stationName": "±¸ÀÏ¿ì¼º¾ÆÆÄÆ®",
+									"stationID": 101713
+								},
+								{
+									"x": "126.87673",
+									"index": 26,
+									"y": "37.486656",
+									"stationName": "µğÁöÅĞ´ÜÁöÀÔ±¸",
+									"stationID": 166950
+								},
+								{
+									"x": "126.876758",
+									"index": 27,
+									"y": "37.484818",
+									"stationName": "µğÁöÅĞ3´ÜÁö.·Ôµ¥Á¤º¸Åë½Å",
+									"stationID": 166951
+								},
+								{
+									"x": "126.878908",
+									"index": 28,
+									"y": "37.483208",
+									"stationName": "µğÁöÅĞ3´ÜÁö.¿µÃ¢½Ç¾÷",
+									"stationID": 101748
+								},
+								{
+									"x": "126.881027",
+									"index": 29,
+									"y": "37.481381",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö¿ª",
+									"stationID": 101810
+								},
+								{
+									"x": "126.88298",
+									"index": 30,
+									"y": "37.476984",
+									"stationName": "»ê¾÷´ÜÁö¹é¾ç»ç",
+									"stationID": 80328
+								}
+							]
+						},
+						"startY": 37.481908,
+						"startX": 126.782108,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 660
+							}
+						],
+						"startName": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 186,
+						"trafficType": 3
+					},
+					{
+						"distance": 1548,
+						"trafficType": 2,
+						"sectionTime": 10,
+						"endY": 37.483909,
+						"endX": 126.895043,
+						"endID": 102173,
+						"stationCount": 4,
+						"endName": "µğÁöÅĞ»ê¾÷1´ÜÁö",
+						"startID": 101825,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.881414",
+									"index": 0,
+									"y": "37.475861",
+									"stationName": "µğÁöÅĞ3´ÜÁö»ç°Å¸®",
+									"stationID": 101825
+								},
+								{
+									"x": "126.887842",
+									"index": 1,
+									"y": "37.477697",
+									"stationName": "±İÃµÆĞ¼Ç¾Æ¿ï·¿»ç°Å¸®.W¸ô",
+									"stationID": 101965
+								},
+								{
+									"x": "126.89086",
+									"index": 2,
+									"y": "37.480059",
+									"stationName": "µğÁöÅĞ´ÜÁö¿À°Å¸®",
+									"stationID": 102054
+								},
+								{
+									"x": "126.892705",
+									"index": 3,
+									"y": "37.481473",
+									"stationName": "¸¸¹ÎÁß¾Ó±³È¸",
+									"stationID": 102113
+								},
+								{
+									"x": "126.895043",
+									"index": 4,
+									"y": "37.483909",
+									"stationName": "µğÁöÅĞ»ê¾÷1´ÜÁö",
+									"stationID": 102173
+								}
+							]
+						},
+						"startY": 37.475861,
+						"startX": 126.881414,
+						"lane": [
+							{
+								"busID": 1128,
+								"busNo": "5536",
+								"type": 12
+							}
+						],
+						"startName": "µğÁöÅĞ3´ÜÁö»ç°Å¸®"
+					},
+					{
+						"sectionTime": 7,
+						"distance": 452,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 72,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 34,
+					"trafficDistance": 14161,
+					"firstStartStation": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³",
+					"mapObj": "7055:1:40:70@1128:1:10:14",
+					"totalStationCount": 34,
+					"totalWalk": 1078,
+					"payment": 1550,
+					"subwayStationCount": 0,
+					"totalDistance": 15239,
+					"busTransitCount": 2,
+					"lastEndStation": "µğÁöÅĞ»ê¾÷1´ÜÁö"
+				}
+			},
+			{
+				"subPath": [
+					{
+						"sectionTime": 7,
+						"distance": 440,
+						"trafficType": 3
+					},
+					{
+						"distance": 12613,
+						"trafficType": 2,
+						"sectionTime": 45,
+						"endY": 37.476984,
+						"endX": 126.88298,
+						"endID": 80328,
+						"stationCount": 30,
+						"endName": "»ê¾÷´ÜÁö¹é¾ç»ç",
+						"startID": 185418,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.782108",
+									"index": 0,
+									"y": "37.481908",
+									"stationName": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³",
+									"stationID": 185418
+								},
+								{
+									"x": "126.78561",
+									"index": 1,
+									"y": "37.482773",
+									"stationName": "ºÎÃµ¿ªÀü¿ìÃ¼±¹",
+									"stationID": 112975
+								},
+								{
+									"x": "126.78964",
+									"index": 2,
+									"y": "37.48249",
+									"stationName": "¼ºÁö¾ÆÆÄÆ®.»ê¼º±³È¸ÀÔ±¸",
+									"stationID": 91631
+								},
+								{
+									"x": "126.793477",
+									"index": 3,
+									"y": "37.481565",
+									"stationName": "¼Ò»ç3°Å¸®.¼¼Á¾º´¿ø",
+									"stationID": 185415
+								},
+								{
+									"x": "126.795383",
+									"index": 4,
+									"y": "37.477638",
+									"stationName": "¼Ò»çÁ¾ÇÕ½ÃÀå",
+									"stationID": 185413
+								},
+								{
+									"x": "126.795384",
+									"index": 5,
+									"y": "37.476124",
+									"stationName": "¼Ò»çÃÊ±³¾Õ»ç°Å¸®",
+									"stationID": 112968
+								},
+								{
+									"x": "126.79644",
+									"index": 6,
+									"y": "37.475162",
+									"stationName": "¼Ò»çÃÊµîÇĞ±³Á¤¹®",
+									"stationID": 185411
+								},
+								{
+									"x": "126.799436",
+									"index": 7,
+									"y": "37.475156",
+									"stationName": "ÇÑ½Å¾ÆÆÄÆ®.KCC½ºÀ§Ã¾¾ÆÆÄÆ®",
+									"stationID": 185409
+								},
+								{
+									"x": "126.801729",
+									"index": 8,
+									"y": "37.476721",
+									"stationName": "»ïÀÍ¼¼¶ó¹Í¾ÆÆÄÆ®.SKVIEW¾ÆÆÄÆ®",
+									"stationID": 185407
+								},
+								{
+									"x": "126.803899",
+									"index": 9,
+									"y": "37.478851",
+									"stationName": "Á¶°ø¾ÆÆÄÆ®",
+									"stationID": 185405
+								},
+								{
+									"x": "126.807705",
+									"index": 10,
+									"y": "37.479106",
+									"stationName": "±«¾È»ç°Å¸®.»ï¿ÀÀ¯Ä¡¿ø",
+									"stationID": 112699
+								},
+								{
+									"x": "126.810113",
+									"index": 11,
+									"y": "37.478427",
+									"stationName": "½ÅÀÏÇØÇÇÆ®¸®¾ÆÆÄÆ®",
+									"stationID": 112700
+								},
+								{
+									"x": "126.812797",
+									"index": 12,
+									"y": "37.478887",
+									"stationName": "ºÎ¾ÈÃÊ±³.µ¿¿øÁÖÅÃ",
+									"stationID": 185399
+								},
+								{
+									"x": "126.814325",
+									"index": 13,
+									"y": "37.481641",
+									"stationName": "ÇÑ¾ç½´ÆÛ",
+									"stationID": 185397
+								},
+								{
+									"x": "126.813145",
+									"index": 14,
+									"y": "37.484729",
+									"stationName": "¿ª°î¿ª³²ºÎ",
+									"stationID": 185202
+								},
+								{
+									"x": "126.816526",
+									"index": 15,
+									"y": "37.486177",
+									"stationName": "¿ª°î°í°¡ÀÔ±¸",
+									"stationID": 112778
+								},
+								{
+									"x": "126.820098",
+									"index": 16,
+									"y": "37.487673",
+									"stationName": "À¯ÇÑ´ëÇĞ±³",
+									"stationID": 185199
+								},
+								{
+									"x": "126.825069",
+									"index": 17,
+									"y": "37.489407",
+									"stationName": "¼º°øÈ¸´ëÇĞ±³À¯ÇÑ°ø°í¾Õ",
+									"stationID": 100785
+								},
+								{
+									"x": "126.831238",
+									"index": 18,
+									"y": "37.491171",
+									"stationName": "¼­¿ï°¡µçºô¶ó¾Õ",
+									"stationID": 162411
+								},
+								{
+									"x": "126.840674",
+									"index": 19,
+									"y": "37.494499",
+									"stationName": "¾¾Æ¼¿ùµå",
+									"stationID": 101030
+								},
+								{
+									"x": "126.843348",
+									"index": 20,
+									"y": "37.495651",
+									"stationName": "¿À·ùµ¿¿ª",
+									"stationID": 101082
+								},
+								{
+									"x": "126.846189",
+									"index": 21,
+									"y": "37.496931",
+									"stationName": "¿À·ù1µ¿ÁÖ¹Î¼¾ÅÍ.¿À·ù¹®È­¼¾ÅÍ",
+									"stationID": 101149
+								},
+								{
+									"x": "126.855795",
+									"index": 22,
+									"y": "37.493682",
+									"stationName": "°³ºÀ°í°¡",
+									"stationID": 88588
+								},
+								{
+									"x": "126.857539",
+									"index": 23,
+									"y": "37.493528",
+									"stationName": "°³ºÀ¿ª",
+									"stationID": 101390
+								},
+								{
+									"x": "126.867744",
+									"index": 24,
+									"y": "37.492445",
+									"stationName": "Ã¶»ê¸®¹öºô¾ÆÆÄÆ®",
+									"stationID": 101562
+								},
+								{
+									"x": "126.875797",
+									"index": 25,
+									"y": "37.489296",
+									"stationName": "±¸ÀÏ¿ì¼º¾ÆÆÄÆ®",
+									"stationID": 101713
+								},
+								{
+									"x": "126.87673",
+									"index": 26,
+									"y": "37.486656",
+									"stationName": "µğÁöÅĞ´ÜÁöÀÔ±¸",
+									"stationID": 166950
+								},
+								{
+									"x": "126.876758",
+									"index": 27,
+									"y": "37.484818",
+									"stationName": "µğÁöÅĞ3´ÜÁö.·Ôµ¥Á¤º¸Åë½Å",
+									"stationID": 166951
+								},
+								{
+									"x": "126.878908",
+									"index": 28,
+									"y": "37.483208",
+									"stationName": "µğÁöÅĞ3´ÜÁö.¿µÃ¢½Ç¾÷",
+									"stationID": 101748
+								},
+								{
+									"x": "126.881027",
+									"index": 29,
+									"y": "37.481381",
+									"stationName": "°¡»êµğÁöÅĞ´ÜÁö¿ª",
+									"stationID": 101810
+								},
+								{
+									"x": "126.88298",
+									"index": 30,
+									"y": "37.476984",
+									"stationName": "»ê¾÷´ÜÁö¹é¾ç»ç",
+									"stationID": 80328
+								}
+							]
+						},
+						"startY": 37.481908,
+						"startX": 126.782108,
+						"lane": [
+							{
+								"busID": 7055,
+								"busNo": "75",
+								"type": 1,
+								"arrmsg1": 660
+							}
+						],
+						"startName": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³"
+					},
+					{
+						"sectionTime": 3,
+						"distance": 207,
+						"trafficType": 3
+					},
+					{
+						"distance": 2572,
+						"trafficType": 2,
+						"sectionTime": 14,
+						"endY": 37.483192,
+						"endX": 126.898299,
+						"endID": 93079,
+						"stationCount": 9,
+						"endName": "±¸·ÎµğÁöÅĞ´ÜÁö¿ìÃ¼±¹",
+						"startID": 122181,
+						"passStopList": {
+							"stations": [
+								{
+									"x": "126.884451",
+									"index": 0,
+									"y": "37.47844",
+									"stationName": "¸¶¸®¿À¾Æ¿ï·¿",
+									"stationID": 122181
+								},
+								{
+									"x": "126.883999",
+									"index": 1,
+									"y": "37.48067",
+									"stationName": "±¹¹Î¿¬±İ°ü¸®°ø´Ü¾Õ",
+									"stationID": 126894
+								},
+								{
+									"x": "126.886225",
+									"index": 2,
+									"y": "37.480024",
+									"stationName": "ÇÑ½ÅITÅ¸¿ö",
+									"stationID": 193903
+								},
+								{
+									"x": "126.888622",
+									"index": 3,
+									"y": "37.477001",
+									"stationName": "LGÀüÀÚ.W¸ô",
+									"stationID": 193905
+								},
+								{
+									"x": "126.890852",
+									"index": 4,
+									"y": "37.476806",
+									"stationName": "°¡»êµ¿ÁÖ¹Î¼¾ÅÍ",
+									"stationID": 93076
+								},
+								{
+									"x": "126.891034",
+									"index": 5,
+									"y": "37.478231",
+									"stationName": "µğÁöÅĞ´ÜÁö¿À°Å¸®",
+									"stationID": 102060
+								},
+								{
+									"x": "126.89086",
+									"index": 6,
+									"y": "37.480059",
+									"stationName": "µğÁöÅĞ´ÜÁö¿À°Å¸®",
+									"stationID": 102054
+								},
+								{
+									"x": "126.893452",
+									"index": 7,
+									"y": "37.48066",
+									"stationName": "ÇÑÈ­ºñÁî¸ŞÆ®·Î",
+									"stationID": 93077
+								},
+								{
+									"x": "126.897315",
+									"index": 8,
+									"y": "37.481669",
+									"stationName": "ÇÑ±¹»ê¾÷±â¼ú½ÃÇè¿ø.µğÁöÅĞÅ¾ÇÁ¶óÀÚ",
+									"stationID": 93078
+								},
+								{
+									"x": "126.898299",
+									"index": 9,
+									"y": "37.483192",
+									"stationName": "±¸·ÎµğÁöÅĞ´ÜÁö¿ìÃ¼±¹",
+									"stationID": 93079
+								}
+							]
+						},
+						"startY": 37.47844,
+						"startX": 126.884451,
+						"lane": [
+							{
+								"busID": 509,
+								"busNo": "±İÃµ07",
+								"type": 3
+							}
+						],
+						"startName": "¸¶¸®¿À¾Æ¿ï·¿"
+					},
+					{
+						"sectionTime": 9,
+						"distance": 571,
+						"trafficType": 3
+					}
+				],
+				"pathType": 2,
+				"info": {
+					"totalTime": 78,
+					"totalWalkTime": -1,
+					"subwayTransitCount": 0,
+					"busStationCount": 39,
+					"trafficDistance": 15185,
+					"firstStartStation": "ºÎÃµ¿ª³²ºÎ.ºÎÃµ³²ÃÊ±³",
+					"mapObj": "7055:1:40:70@509:1:13:22",
+					"totalStationCount": 39,
+					"totalWalk": 1218,
+					"payment": 1650,
+					"subwayStationCount": 0,
+					"totalDistance": 16403,
+					"busTransitCount": 2,
+					"lastEndStation": "±¸·ÎµğÁöÅĞ´ÜÁö¿ìÃ¼±¹"
+				}
+			}
+		],
+		"busCount": 3,
+		"searchType": 0,
+		"subwayCount": 2,
+		"subwayBusCount": 5,
+		"pointDistance": 10308,
+		"outTrafficCheck": 1,
+		"startRadius": 700,
+		"endRadius": 700
+	}
+}

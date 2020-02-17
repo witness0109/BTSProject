@@ -1,15 +1,10 @@
-package com.bts.app.board;
+package com.bts.app.notice;
 
-public class BoardVO {
+public class NoticeVO {
 	int seq;
 	String pw, title, contents, writer, time;
 	
 	
-	@Override
-	public String toString() {
-		return "BoardVO [seq=" + seq + ", pw=" + pw + ", title=" + title + ", contents=" + contents + ", writer="
-				+ writer + ", time=" + time + "]";
-	}
 	public int getSeq() {
 		return seq;
 	}

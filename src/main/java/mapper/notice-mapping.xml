@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="notice">
+  
+  <select id="allboard" resultType="notice">
+select * from notice order by seq desc
+</select>	
+
+
+
+<insert id="insertnotice" parameterType="notice">
+insert into notice(seq, title , contents, writer, pw, time) 
+values((select max(seq)+1 from board), #{title}, #{contents}, #{writer}, #{pw}, sysdate )
+</insert>
+
+<select id="noticedetail" resultType="notice" parameterType="int">
+select * from notice where seq = #{seq}
+</select>
+
+<update id="noticeupdate" parameterType="notice">
+update notice
+set title = #{title},
+	contents = #{contents},
+	pw = #{pw},
+	time = sysdate
+where seq = #{seq}
+</update> 
+
+<delete id="noticedelete" parameterType="int">
+delete from notice where seq = #{seq}
+</delete>
+
+<select id="namecheck" parameterType="notice" resultType="int">
+select count(id) from member where id = #{writer}
+</select>
+
+<select id="getnoticelist" resultType="notice">
+<![CDATA[
+select seq, title, contents, writer, time
+from (select rownum rn, seq, title, contents, writer, time from notice where rownum <= #{pageNum} * #{amount})
+where rn > (#{pageNum}-1) * #{amount}
+order by seq desc
+]]>
+</select>
+
+<select id="getTotalCnt" resultType="int">
+select count(*) from notice
+</select>
+
+  
+  </mapper>

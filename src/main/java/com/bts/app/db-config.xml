@@ -8,6 +8,7 @@
 <typeAliases>
 <typeAlias type="com.bts.app.MemberVO" alias="mem"/>
 <typeAlias type="com.bts.app.board.BoardVO" alias="board"/>
+<typeAlias type="com.bts.app.notice.NoticeVO" alias="notice"/>
 </typeAliases>
 
 
