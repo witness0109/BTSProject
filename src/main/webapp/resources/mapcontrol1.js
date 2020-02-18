@@ -1,5 +1,6 @@
         var lat, lng;
         var clickmarker, startingMarker, destMarker;
+        var geocoder;
         var positions = [];
         var map;
         var url;
@@ -15,29 +16,19 @@
                 center: markerPosition, // 지도의 중심좌표.
                 level: 8 // 지도의 레벨(확대, 축소 정도)
             };
-        
 
             //////////////////////
             map = new kakao.maps.Map(container, options);  //지도생성
 
             // ////////////////////
-             getWeather(map);
-           // 지도 중심 좌표 변경시 얻어오기
+            // getWeather(map);
+          // 지도 중심 좌표 변경시 얻어오기
             kakao.maps.event.addListener(map, 'dragend', function() {
-            	 getWeather(map);
+            	// getWeather(map);
 
             });
             
-            //////////////////////
-        
-            // // 지도를 클릭한 위치에 표출할 마커입니다
-            // var marker = new kakao.maps.Marker({ 
-            //     // 지도 중심좌표에 마커를 생성합니다 
-            //     position: map.getCenter() 
-            // }); 
-            // // 지도에 마커를 표시합니다
-            // marker.setMap(map);
-
+  
             // 지도에 클릭 이벤트를 등록합니다
             // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
             kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
@@ -46,15 +37,9 @@
                 var latlng = mouseEvent.latLng;
 
                 // 마커 위치를 클릭한 위치로 옮깁니다
-                // marker.setPosition(latlng);
-
-                // positions.push(
-                //     {
-                //         title: '',
-                //         latlng: new kakao.maps.LatLng(latlng.Ha, latlng.Ga)
-                //     }
-                // )
+    
                 let clickPosition = new kakao.maps.LatLng(latlng.Ha, latlng.Ga)
+                geocoder = new kakao.maps.services.Geocoder();
 
                 var content = '<div class="wrap"><div class = "setContainer"><div id="startset" onClick="setStarting()">출발지</div><div id="destset" onClick="setDestination()">도착지</div></div>' +
                     '<div onClick="closeOverlay()">닫기</div></div>';
@@ -138,6 +123,13 @@
             
             sy = startingMarker.getPosition().Ha;
             sx = startingMarker.getPosition().Ga;
+
+            searchDetailAddrFromCoords(startingMarker.getPosition(), function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    $('#startaddr').val(result[0].address.address_name);
+                }   
+            });
+
           
         }
         
@@ -172,9 +164,19 @@
                 closeOverlay();
                 ey = destMarker.getPosition().Ha;
                 ex = destMarker.getPosition().Ga;
+
+                searchDetailAddrFromCoords(destMarker.getPosition(), function(result, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        $('#endaddr').val(result[0].address.address_name);
+                    }   
+                });
             
         }
         
+        function searchDetailAddrFromCoords(coords, callback) {
+            // 좌표로 법정동 상세 주소 정보를 요청합니다
+            geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+        }
         
         
         
