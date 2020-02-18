@@ -83,6 +83,13 @@
 <div class="divcontainer">
 		<div id="leftside" >
 			<div>
+			<div class="box">
+					<label for="startaddr">출발지 : </label>
+					<input type ="text" id="startaddr" placeholder="출발주소" readonly="readonly"><br>
+					<label for="startaddr">도착지 : </label>
+					<input type ="text" id="endaddr" placeholder="도착주소" readonly="readonly">
+
+				</div>
 				<button class="findbtn" id="findpath">시내 길찾기</button>
 				<button class="findbtn" id="findpath2">시외 길찾기</button>
 				<div id="searchOption" class="content">
