@@ -124,18 +124,18 @@ function searchTraininformationAJAX(start, end) {
 
 			for (var i = 0; i < train_inf.length; i++) {
 				if ((train_inf[i].trainClass.includes("KTX")) && cnt1 == 0) {
-					str2 += "<table class='traintable'>";
+					str2 += "<table class='traintable'><caption>KTX</caption>";
 					str2 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt1++;
 				}
 
 				if (train_inf[i].trainClass.includes("ITX") && cnt2 == 0) {
-					str3 += "<table class='traintable'>";
+					str3 += "<table class='traintable'><caption>ITX 새마을/청춘</caption>";
 					str3 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt2++;
 				}
 				if (train_inf[i].trainClass.includes("누리로") || train_inf[i].trainClass.includes("무궁화") && cnt3 == 0) {
-					str4 += "<table class='traintable'>";
+					str4 += "<table class='traintable'><caption>무궁화/누리로</caption>";
 					str4 += "<tr><th>열차종류</th><th>열차번호</th><th>출발시간</th><th>도착시간</th><th>소요시간</th><th>노선명</th>";
 					cnt3++;
 				}
@@ -185,28 +185,19 @@ function searchTraininformationAJAX(start, end) {
 			for (var i = 0; i < train_inf.length; i++) {
 				fare_inf = resultObj["result"]["station"][i]["generalFare"];
 
-				if (fare_inf.weekday == undefined
-					|| fare_inf.weekend == undefined
-					|| fare_inf.holiday == undefined) {
-
-					fare_inf.weekday = " 없음 ";
-					fare_inf.weekend = " 없음 ";
-					fare_inf.holiday = " 없음 ";
-				}
-
 				// 열차별로 뽑기 (ktx, 새마을, 무궁화) //undefined 나올시.. 그리고 누리로,통근열차 처리
-				if (train_inf[i].trainClass.includes("KTX")) {
+				if (fare_inf.weekday != undefined && train_inf[i].trainClass.includes("KTX")) {
 					ktx_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
 						+ "</td></tr>";
 
-				} else if (train_inf[i].trainClass.includes("ITX")) {
+				} else if (fare_inf.weekend != undefined && train_inf[i].trainClass.includes("ITX")) {
 
 					sae_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
 						+ "</td></tr>";
 
-				} else if (train_inf[i].trainClass.includes("무궁화")
+				} else if (fare_inf.holiday != undefined && train_inf[i].trainClass.includes("무궁화")
 					|| train_inf[i].trainClass.includes("누리로")) {
 					mu_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
@@ -215,7 +206,29 @@ function searchTraininformationAJAX(start, end) {
 				}
 
 			}
+			
+			if (ktx_fare.length == 0) {
+				ktx_fare = "<tr><td>없음 </td><td>없음</td><td>없음</td></tr>";
+					fare_inf.weekend = " 없음 ";
+					fare_inf.holiday = " 없음 ";
+			}
 
+				if ( sae_fare.length == 0) {
+
+					sae_fare = "<tr><td>없음 </td><td>없음</td><td>없음</td></tr>";
+						fare_inf.weekend = " 없음 ";
+						fare_inf.holiday = " 없음 ";
+				}
+
+			
+				if ( mu_fare.length ==0) {
+					mu_fare = "<tr><td>없음 </td><td>없음</td><td>없음</td></tr>";
+						fare_inf.weekend = " 없음 ";
+						fare_inf.holiday = " 없음 ";
+				}
+
+			
+			
 			console.log(ktx_fare);
 			console.log(sae_fare);
 			console.log(mu_fare);

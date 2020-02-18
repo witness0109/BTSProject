@@ -48,7 +48,7 @@
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var resultObj = JSON.parse(xhr.responseText);
 				
-				
+				str ="";
 				startCityTerminal =resultObj["result"];			
 				str += "<div class='box'><h1> 출발역 선택</h1>";
 

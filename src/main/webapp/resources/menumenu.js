@@ -13,7 +13,7 @@ $('#train_TM').on('click',function (ev) {
         
    });
    $("#map11").css("display","none");
-   $("#leftside").css("width","100%");
+   $("#leftside").css("width","80%");
 });
 
 $('#intercityBusTM').on('click',function (ev) {
@@ -30,7 +30,7 @@ $('#intercityBusTM').on('click',function (ev) {
          
     });
     $("#map11").css("display","none");
-    $("#leftside").css("width","100%");
+    $("#leftside").css("width","80%");
     $("#leftside").css("background-color","none");
  });
 
@@ -48,7 +48,7 @@ $('#intercityBusTM').on('click',function (ev) {
          
     });
     $("#map11").css("display","none");
-    $("#leftside").css("width","100%");
+    $("#leftside").css("width","80%");
     
  });
 
@@ -66,7 +66,7 @@ $('#intercityBusTM').on('click',function (ev) {
          
     });
     $("#map11").css("display","none");
-    $("#leftside").css("width","100%");
+    $("#leftside").css("width","80%");
  });
  $('#subw_TM').on('click',function (ev) {
 	    $.ajax({
@@ -82,5 +82,5 @@ $('#intercityBusTM').on('click',function (ev) {
 	         
 	    });
 	    $("#map11").css("display","none");
-	    $("#leftside").css("width","100%");
+	    $("#leftside").css("width","80%");
 	 });

@@ -63,8 +63,8 @@
 			sat_d_list = r.down.saturday.items.item;
 			sun_d_list = r.down.sunday.items.item;
 			}
-			str += "<h1> 지하철조회</h1>";
-			str += "<table><tr><td><div class='box sbw'><table><caption>평일 상행선</caption>";
+			
+			str = "<table><tr><td><div class='box sbw'><table><caption>평일 상행선</caption>";
 			str += "<tr><th>도착시간</th><th>종착역</th></tr>";
 
 			//평일 상행

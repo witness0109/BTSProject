@@ -89,9 +89,12 @@
 					<label for="startaddr">도착지 : </label>
 					<input type ="text" id="endaddr" placeholder="도착주소" readonly="readonly">
 
-				</div>
+				
 				<button class="findbtn" id="findpath">시내 길찾기</button>
 				<button class="findbtn" id="findpath2">시외 길찾기</button>
+				<button class="findbtn" id="mygeo">내 위치</button>
+				</div>
+				
 				<div id="searchOption" class="content">
 				</div>
 			</div>

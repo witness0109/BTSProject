@@ -1,5 +1,5 @@
         var lat, lng;
-        var clickmarker, startingMarker, destMarker;
+        var clickmarker, startingMarker, destMarker, mymarker;
         var geocoder;
         var positions = [];
         var map;
@@ -21,10 +21,10 @@
             map = new kakao.maps.Map(container, options);  //지도생성
 
             // ////////////////////
-            // getWeather(map);
+            getWeather(map);
           // 지도 중심 좌표 변경시 얻어오기
             kakao.maps.event.addListener(map, 'dragend', function() {
-            	// getWeather(map);
+            	getWeather(map);
 
             });
             
@@ -79,7 +79,7 @@
 
         // 마커 위에 커스텀오버레이를 표시합니다
         // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-        var overlay, startingov, destov; // 커스텀 오버레이 하나 돌려쓰기
+        var overlay, startingov, destov, myov; // 커스텀 오버레이 하나 돌려쓰기
 
         // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다. 마커와 오버레이 모두 제거합니다.
         function closeOverlay() {
@@ -178,5 +178,34 @@
             geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         }
         
+        document.querySelector('#mygeo').addEventListener('click',()=>{
+            navigator.geolocation.getCurrentPosition((pos)=>{
+                lat = pos.coords.latitude;
+                lng = pos.coords.longitude;
+                var moveLatLon = new kakao.maps.LatLng(lat, lng);
+                map.setCenter(moveLatLon);
+               // getWeather(map);
+
+               if(myov != undefined){
+                myov.setMap(null);
+                }
+                if(mymarker!=undefined){
+                    mymarker.setMap(null);
+                }
+                myov = new kakao.maps.CustomOverlay({
+                    content: '<div class="markingov" style="background-color: white;">내 위치</div>',
+                    map: map,
+                    position: new kakao.maps.LatLng(moveLatLon.Ha, moveLatLon.Ga), // 마커를 표시할 위치
+                });
+                mymarker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: new kakao.maps.LatLng(moveLatLon.Ha, moveLatLon.Ga), // 마커를 표시할 위치
+                });
+                map.setLevel(3);
+                myov.setMap(map);
+                mymarker.setMap(map);
+
+            })
+        })
         
         

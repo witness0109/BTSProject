@@ -35,8 +35,10 @@
 
 
 <body>
-	<div>
-		<input type="text" id="stationName"> <select id="subCode">
+<div id="busD">
+		<h3> 지하철 시간표
+		<input type="text" id="stationName"> 
+		<select id="subCode">
 
 			<option value="1">서울1호선</option>
 			<option value="2">서울2호선</option>
@@ -72,6 +74,10 @@
 			<option value="32">부산김해경전철</option>
 		</select>
 		<button onclick="searchSubwayStationAJAX();">click</button>
+		</h3>
+	</div>
+	<div>
+		
 
 	</div>
 	<div id="resultDiv">

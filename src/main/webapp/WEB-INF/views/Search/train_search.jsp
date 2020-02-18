@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title></title>
 <style type="text/css">
-.box {
+.trainresult {
 	width: 400px;
 	height: 200px;
 	border: 1px solid green;
@@ -21,37 +21,39 @@
 
 </head>
 <body>
-	<div>
+
+	<div id="busD">
+		<h3> 기차 시간표
 		<input type="text" id="cityname">
 		<button onclick="searchTrainStationAJAX();">click</button>
-
+		</h3>
 	</div>
-	<div id="resultDiv">
+	<div id="resultDiv" class="trainresult">
 		<!--  <button onclick="window.open('https://192.168.0.17/BTS/login','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">검색</button>  -->
 		<!-- 결과창 -->
 	</div>
 
-	<div id="resultDiv2">
+	<div id="resultDiv2" class="trainresult">
 
 		<!-- 결과창 -->
 	</div>
 
-	<div id="fareDiv">
+	<div id="fareDiv" class="trainresult">
 
 		<!-- 결과창 -->
 	</div>
 
-	<div id="resultDiv3">
+	<div id="resultDiv3" class="trainresult">
 
 		<!-- 결과창 -->
 	</div>
 
-	<div id="resultDiv4">
+	<div id="resultDiv4" class="trainresult">
 
 		<!-- 결과창 -->
 	</div>
 
-	<div id="resultDiv5">
+	<div id="resultDiv5" class="trainresult">
 
 		<!-- 결과창 -->
 	</div>
