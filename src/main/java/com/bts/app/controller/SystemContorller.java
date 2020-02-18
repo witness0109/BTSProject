@@ -37,8 +37,9 @@ public class SystemContorller {
 		int total = service.memberCnt();
 
 		List<MemberVO> list = service.getMemberList(cri);
+		model.addAttribute("manageMember",list);
 		model.addAttribute("paging", new PageMaker(cri,total));
-
+		
 
 		mav.addObject("list", list);
 

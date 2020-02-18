@@ -142,10 +142,27 @@ table tr:hover td {
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 
+	
+
+			$('#boardcss_list_add_button_table').on('click',function(){
+				location.href="./manageMember";
+			});
+			
+			$('#pagingDiv a').click(function(e){
+				e.preventDefault();
+				$('#pageNum').val($(this).attr("href"));
+				pagingForm.submit();
+				
+			});
+			
+			
+	
+		
+		
+		
+		
 						$("#backbtn").click(function() {
 
 							location.href = "./BTSMap";
@@ -256,7 +273,8 @@ table tr:hover td {
 			</c:forEach>
 		</table>
 
-		<div id="pagingDiv" style="display: block; text-align: center;">
+
+		<div id="pagingDiv" style= "text-align: center;">
 			<c:if test="${paging.prev}">
 				<a href="${paging.startPage - 1 }">이전</a>
 			</c:if>
@@ -269,10 +287,9 @@ table tr:hover td {
 			</c:if>
 		</div>
 
-		<form id="pagingFrm" name="pagingForm" action="boardlist" method="get">
-			<input type="hidden" id="pageNum" name="pageNum"
-				value="${paging.cri.pageNum }"> <input type="hidden"
-				id="amount" name="amount" value="${paging.cri.amount }">
+		<form id="pagingFrm" name="pagingForm" action="manageMember" method="get">
+			<input type="hidden" id="pageNum" name="pageNum" value="${paging.cri.pageNum }"> 
+			<input type="hidden" id="amount" name="amount" value="${paging.cri.amount }">
 		</form>
 
 		<div class="member_log" id="result">
