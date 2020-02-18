@@ -23,8 +23,12 @@ $('#list').on('click',function(){
 </head>
 <body>
 <h2>게시글 상세</h2>
+<br>
+<br>
+
 
 <div class="container">
+
 	<div class="form-group">
 		<label>글번호</label>
 		<p>${detail.seq}</p>
