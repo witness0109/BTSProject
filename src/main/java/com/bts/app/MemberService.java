@@ -19,16 +19,16 @@ public interface MemberService {
 	public void membercheck(HttpSession session, String email, String name);
 	
 
-	//¾ÏÈ£Á¶È¸
+	//ï¿½ï¿½È£ï¿½ï¿½È¸
 	public List<String> checkPw(String[] list);
 	
-	//ÀÌ¸ÞÀÏÁ¶È¸
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 	public List<String> checkMail(String[] list);
 
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	public int login(String[] inf);
 	
-	//·Î±×ÀÎ½Ã ÇÊ¿äÇÑ ¸â¹öÁ¶È¸
+	//ï¿½Î±ï¿½ï¿½Î½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 
 	
 	public void logout(HttpSession session);
@@ -38,6 +38,7 @@ public interface MemberService {
 	
 	public String findname(String id);
 
+	
 
 	
 

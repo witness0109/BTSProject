@@ -41,37 +41,37 @@ public class MemberInfoService implements MemberService {
 
 	@Override
 	public void membercheck(HttpSession session, String email, String name) {
-		if (session.getAttribute("id") == null) {// ·Î±×ÀÎ ¾È µÈ »óÅÂ
+		if (session.getAttribute("id") == null) {// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 			String id = email.split("@")[0];
 
-			if (checkID(id) == 0) { // °¡ÀÔÀÌ ¾ÈµÈ »óÅÂ
+			if (checkID(id) == 0) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ ï¿½ï¿½ï¿½ï¿½
 				MemberVO vo = new MemberVO();
 				vo.setId(id);
 				
 
-				// response¿¡¼­ email, name ÆÄ½Ì
+				// responseï¿½ï¿½ï¿½ï¿½ email, name ï¿½Ä½ï¿½
 				vo.setEmail(email.split("_")[1]);
 				vo.setName(name);
 				int result = joinMember(vo);
-				if (result == 1) {// dbÀÛ¾÷ ¼º°ø
-					System.out.println("°¡ÀÔ ¼º°ø -" + id);
+				if (result == 1) {// dbï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -" + id);
 				}
 			}
 
-			session.setAttribute("id", id); // ¼¼¼Ç »ý¼º
+			session.setAttribute("id", id); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
 		}
 	}
 
-	// ºñ¹Ð¹øÈ£ Ã£±â 
+	// ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½ 
 	@Override
 	public List<String> checkPw(String[] list) {
 		 return dao.checkPw(list);
 		
 	}
 
-	//¸ÞÀÏ Á¶È¸
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	@Override
 	public List<String> checkMail(String[] list) {
 	
@@ -97,6 +97,9 @@ public class MemberInfoService implements MemberService {
 	public String findname(String id) {
 		return dao.findname(id);
 	}
+
+
+
 
 
 

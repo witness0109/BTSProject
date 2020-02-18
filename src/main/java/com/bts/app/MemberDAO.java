@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bts.app.board.PagingCriteria;
+
 @Repository
 public class MemberDAO {
 	@Autowired
@@ -59,4 +61,12 @@ public class MemberDAO {
 		return session.selectOne("mem.name",id);
 	}
 
+	public int totalMemberCnt() {
+		return session.selectOne("mem.getMemberCnt");
+	}
+
+	public List<MemberVO> getMemberList(PagingCriteria paging) {
+
+		return session.selectList("mem.getMemberList",paging);
+	}
 }

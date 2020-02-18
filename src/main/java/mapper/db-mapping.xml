@@ -42,10 +42,10 @@
 		where id = #{array[0]} and pw
 		= #{array[1]}
 	</select>
-	
+
 	<select id="name" resultType="String" parameterType="String">
-	select name from member
-	where id=#{id}
+		select name from member
+		where id=#{id}
 	</select>
 
 	<update id="updatemember">
@@ -53,15 +53,18 @@
 		set
 		pw = #{pw},
 		name = #{name},
-		phone = #{phone}
-		where id = 	#{id}
+		phone =
+		#{phone}
+		where id = #{id}
 	</update>
 
 	<!-- 관리자용 -->
 
 	<select id="allmember" resultType="mem">
-		select id,pw,name,email,phone,to_char(indate, 'YY-MM-DD') indate from
-		member where id not in('system')
+		select
+		id,pw,name,email,phone,to_char(indate, 'YY-MM-DD') indate from
+		member
+		where id not in('system')
 	</select>
 
 
@@ -70,6 +73,18 @@
 		id=#{id}
 	</delete>
 
+	<select id="getMemberList" resultType="mem">
+		<![CDATA[
+		select id,pw,name,email,phone,to_char(indate, 'YY-MM-DD') indate
+		from (select rownum rn, id, pw, name, email, phone, indate from member where rownum <= #{pageNum} * #{amount})
+		where rn > (#{pageNum}-1) * #{amount}
+		order by indate desc
+		]]>
+	</select>
+	
+	<select id="getMemberCnt" resultType="int">
+		select count(*) from member
+	</select>
 
 
 

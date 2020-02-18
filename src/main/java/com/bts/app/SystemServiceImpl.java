@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bts.app.board.PagingCriteria;
+
 @Service
 public class SystemServiceImpl implements SystemService {
 
@@ -23,5 +25,19 @@ public class SystemServiceImpl implements SystemService {
 		dao.deleteMember(id);
 		
 	}
+	
+	@Override
+	public int memberCnt() {
+		
+		return dao.totalMemberCnt();
+	}
+
+
+	@Override
+	public List<MemberVO> getMemberList(PagingCriteria paging) {
+		// TODO Auto-generated method stub
+		return dao.getMemberList(paging);
+	}
+
 
 }

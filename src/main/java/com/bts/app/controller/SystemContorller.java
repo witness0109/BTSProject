@@ -32,11 +32,12 @@ public class SystemContorller {
 	private JavaMailSender mailSender;
 	
 	@RequestMapping("/manageMember")
-	public ModelAndView getEmpList() {
+	public ModelAndView getEmpList(PagingCriteria cri, Model model) {
 		ModelAndView mav = new ModelAndView();
+		int total = service.memberCnt();
 
-
-		List<MemberVO> list = service.getAllMem();
+		List<MemberVO> list = service.getMemberList(cri);
+		model.addAttribute("paging", new PageMaker(cri,total));
 
 
 		mav.addObject("list", list);

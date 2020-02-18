@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- <%@page import="java.util.Date" %>
-    <%@page import="java.text.SimpleDateFormat" %>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,86 +134,98 @@ table tr:hover td {
 	background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
 }
 
-.member_log{
-
-	width:400px;
+.member_log {
+	width: 400px;
 	padding: 18px;
 	height: 150px;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-$(document).ready(function () {
+	$(document)
+			.ready(
+					function() {
 
-	$("#backbtn").click(function(){
-	
-		location.href = "./BTSMap";
-	});
-	
-	
-	$(".checkBtn").click(function(){
+						$("#backbtn").click(function() {
 
-	var str = ""
-	var tdArr = new Array(); // 배열 선언
-	var btn = "";
-	var checkBtn = $(this);
-	
-			var tr = checkBtn.parent().parent();
-			var td = tr.children();
+							location.href = "./BTSMap";
+						});
 
-			console.log("클릭한 Row의 모든 데이터 : "+tr.text());
+						$(".checkBtn")
+								.click(
+										function() {
 
-			var id = td.eq(0).text();
-			var pw = td.eq(1).text();
-			var name = td.eq(2).text();
-			var email = td.eq(3).text();
-			var phone = td.eq(4).text();
-			var indate = td.eq(5).text();
+											var str = ""
+											var tdArr = new Array(); // 배열 선언
+											var btn = "";
+											var checkBtn = $(this);
 
-			// 반복문을 이용해서 배열에 값을 담아 사용
-			td.each(function(i){
-			tdArr.push(td.eq(i).text());
-			});
+											var tr = checkBtn.parent().parent();
+											var td = tr.children();
 
-			console.log("배열에 담긴 값 : "+tdArr);
+											console.log("클릭한 Row의 모든 데이터 : "
+													+ tr.text());
 
-			str += " * 회원정보 * <br> "+
-			" 아이디 : <font color='red' name='id'>" + id + "</font><br>" +
-			" 비밀번호 : <font color='red'>" + pw + "</font><br>" +
-			" 이름 : <font color='red'>" + name + "</font><br>" +
-			" 이메일 : <font color='red'>" + email + "</font><br>"+ 
-			" 가입일 : <font color='red'>" + indate + "</font><br>";
+											var id = td.eq(0).text();
+											var pw = td.eq(1).text();
+											var name = td.eq(2).text();
+											var email = td.eq(3).text();
+											var phone = td.eq(4).text();
+											var indate = td.eq(5).text();
 
-			btn += "<input type = 'button' value = '메인화면' id='backbtn'>"+ "&nbsp;" +
-			"<input type='button' value='회원강퇴' class='kick'>";
+											// 반복문을 이용해서 배열에 값을 담아 사용
+											td.each(function(i) {
+												tdArr.push(td.eq(i).text());
+											});
 
+											console.log("배열에 담긴 값 : " + tdArr);
 
-			$("#result").html(str + "<br>" + btn);
+											str += " * 회원정보 * <br> "
+													+ " 아이디 : <font color='red' name='id'>"
+													+ id
+													+ "</font><br>"
+													+ " 비밀번호 : <font color='red'>"
+													+ pw
+													+ "</font><br>"
+													+ " 이름 : <font color='red'>"
+													+ name
+													+ "</font><br>"
+													+ " 이메일 : <font color='red'>"
+													+ email
+													+ "</font><br>"
+													+ " 가입일 : <font color='red'>"
+													+ indate + "</font><br>";
 
-			$('.kick').click(function(){
+											btn += "<input type = 'button' value = '메인화면' id='backbtn'>"
+													+ "&nbsp;"
+													+ "<input type='button' value='회원강퇴' class='kick'>";
 
-			var con = confirm('강퇴하시겠습니까?');
+											$("#result").html(
+													str + "<br>" + btn);
 
-			if(con){
-			location.href = "./kickMember?id="+id;
-			} else {
-			location.href = "./manageMember";
-			}
+											$('.kick')
+													.click(
+															function() {
 
+																var con = confirm('강퇴하시겠습니까?');
 
+																if (con) {
+																	location.href = "./kickMember?id="
+																			+ id;
+																} else {
+																	location.href = "./manageMember";
+																}
 
-			});
-			
-			$("#backbtn").click(function(){
-				
-				location.href = "./BTSMap";
-			});
-		
-			
-			});
-	
-			});
-	
+															});
+
+											$("#backbtn").click(function() {
+
+												location.href = "./BTSMap";
+											});
+
+										});
+
+					});
 </script>
 </head>
 <body>
@@ -227,25 +239,46 @@ $(document).ready(function () {
 				<th>연락처</th>
 				<th>가입일</th>
 				<th>회원조회</th>
-				
+
 			</tr>
 			<c:forEach items="${list}" var="mem">
 				<tr>
-					<td >${mem.id}</td>
+					<td>${mem.id}</td>
 					<td hidden="hidden">${mem.pw}</td>
 					<td>${mem.name}</td>
 					<td>${mem.email}</td>
 					<td>${mem.phone}</td>
 					<td>${mem.indate}</td>
-				
-					<td><input type=button  class="checkBtn" value='조회'></td>
+
+					<td><input type=button class="checkBtn" value='조회'></td>
 				</tr>
 
 			</c:forEach>
 		</table>
-	
-	<div class="member_log" id="result" > &nbsp; <input type = "button" value = "메인화면" id="backbtn"></div> 	
-	
+
+		<div id="pagingDiv" style="display: block; text-align: center;">
+			<c:if test="${paging.prev}">
+				<a href="${paging.startPage - 1 }">이전</a>
+			</c:if>
+			<c:forEach var="num" begin="${paging.startPage}"
+				end="${paging.endPage }">
+				&nbsp;<a href="${num }">${num }</a>&nbsp;
+			</c:forEach>
+			<c:if test="${paging.next}">
+				<a id="next" href="${paging.endPage + 1 }">다음</a>
+			</c:if>
+		</div>
+
+		<form id="pagingFrm" name="pagingForm" action="boardlist" method="get">
+			<input type="hidden" id="pageNum" name="pageNum"
+				value="${paging.cri.pageNum }"> <input type="hidden"
+				id="amount" name="amount" value="${paging.cri.amount }">
+		</form>
+
+		<div class="member_log" id="result">
+			&nbsp; <input type="button" value="메인화면" id="backbtn">
+		</div>
+
 	</div>
 </body>
 </html>
