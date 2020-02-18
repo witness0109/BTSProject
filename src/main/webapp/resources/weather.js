@@ -45,7 +45,7 @@ function getWeather(map) {
     	
     	message += "<h2> 오늘의 날씨</h3><br>";
     	message +=  city+ " " +county +" "+ village + "<br>";
-    	message += "하늘상태 : " + sky + "<br> 현재기온:	" + nowtp +"℃<br>최고기온 :" + maxtp + "℃<br>최저기온 :" +mintp + "℃<br>습도 :" + hum+"%";
+    	message += "하늘상태 : " + sky + "<br>현재기온 : " + nowtp +"℃<br>최고기온 : " + maxtp + "℃<br>최저기온 : " +mintp + "℃<br>습도 : " + hum+"%";
     	var resultDiv = document.getElementById('weather');
         resultDiv.innerHTML = message;
     	

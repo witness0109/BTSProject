@@ -30,7 +30,7 @@
 	}
 
 		//on
-		on.click = function(){
+		on.onclick = function(){
 			
 			location.href = "./checkpw";
 		}
@@ -46,7 +46,7 @@
 				<h1>비밀번호 찾기</h1>
 				<br>
 				<div class="check_pw">
-					<form action="./checkpw" method="post" accept-charset="utf-8" >
+					<form action="./checkpw" method="post" >
 
 						<input type="text" name="id" id="id1" placeholder="Your Id"
 							class="inpt"><br> <input type="text" name="name"

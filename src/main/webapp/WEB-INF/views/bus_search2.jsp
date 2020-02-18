@@ -92,7 +92,7 @@ function totalAJAX(){
 </script>
 
 <div id ="busD">
-<h3> 시내버스 노선 조회
+<h3> 시내버스 노선 조회 <br>
 <input type="text" id="busNo">
 <button onclick="totalAJAX();">찾기</button>
 </h3>

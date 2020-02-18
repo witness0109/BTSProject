@@ -130,20 +130,30 @@ public class MemberController {
 
 	//비밀번호 찾기 메일
 	@RequestMapping(value = "/checkpw", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
-	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name, HttpServletRequest request){
-		
+	public ModelAndView checkPwServiceSuccess(@RequestParam String id, String name){
 		
 		ModelAndView mav = new ModelAndView();
 		List<MemberVO> DB_list = service2.getAllMem();
 		String[] list = new String[2];
 		list[0] = id;
 		list[1] = name;
+		
 		System.out.println(id + name);
 		boolean check = false;
 
 		for (int i = 0; i < DB_list.size(); i++) {
+			String dbname = "";
+			try {			
+				dbname = new String(DB_list.get(i).getName().getBytes(),"UTF-8");
+				list[1] = new String(name.getBytes(),"UTF-8");
+			} catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 
-			if (list[0].equals(DB_list.get(i).getId())&&(list[1].equals(DB_list.get(i).getName()))) {
+			if (list[0].equals(DB_list.get(i).getId())&&(list[1].equals(dbname))) {
+				
 				check = true;
 				break;
 			} else {
@@ -159,7 +169,7 @@ public class MemberController {
 			//맞는 정보일때
 			List<String> c_mail = service.checkMail(list);
 			List<String> c_pw = service.checkPw(list);
-
+			System.out.println(c_mail.size()); 
 			String email = c_mail.get(0);
 			String password = c_pw.get(0);
 

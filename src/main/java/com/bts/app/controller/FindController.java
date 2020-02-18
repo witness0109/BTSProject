@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bts.app.FindService;
-import com.bts.app.FindServiceImpl;
 import com.bts.app.find.ApiConnectService;
+import com.bts.app.find.FindService;
+import com.bts.app.find.FindServiceImpl;
 
 @Controller
 public class FindController {
@@ -27,7 +27,6 @@ public class FindController {
 			@RequestParam double ey) {
 
 		JSONObject map = fservice.findpath(sx, sy, ex, ey);
-		System.out.println(map);
 		return map.toString();
 		// return ((FindServiceImpl) fservice).readOutCityJSON("부천에서구로").toString();
 
@@ -39,7 +38,6 @@ public class FindController {
 			@RequestParam double ey) {
 
 				//		JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
-//		System.out.println(map);
 //		return map.toString();
 		return ((FindServiceImpl) fservice).readOutCityJSON("ddg").toString();
 

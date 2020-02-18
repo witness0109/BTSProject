@@ -24,7 +24,7 @@
 <body>
 
 	<div id="busD">
-		<h3> 기차 시간표
+		<h3> 기차 시간표 <br>
 		<input type="text" id="cityname">
 		<button onclick="searchTrainStationAJAX();">click</button>
 		</h3>

@@ -36,7 +36,7 @@
 
 <body>
 <div id="busD">
-		<h3> 지하철 시간표
+		<h3> 지하철 시간표 <br>
 		<input type="text" id="stationName"> 
 		<select id="subCode">
 

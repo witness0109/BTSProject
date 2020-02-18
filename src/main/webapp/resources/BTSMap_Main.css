@@ -125,12 +125,12 @@ button.findbtn {
 	overflow-y: scroll;
 }
 .divcontainer #leftside input {
-	width: 90%;
+	width: 300px;
 	margin : auto;
 }
 .divcontainer #leftside .box.sbw {
 	width: 400px;
-	height: 500px;
+	height: 350px;
 	border: 2px solid white;
 	border-radius: 5px;
 	padding: 15px;
@@ -299,7 +299,8 @@ button.findbtn {
 
 .divcontainer #leftside .box.train {
 	/*  width: 85%; */
-	height: AUTO;
+	height: auto;
+	max-height : 600px;
 	border: 1px solid red;
 	border-radius: 5px;
 	padding: 15px;

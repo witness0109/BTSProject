@@ -1,4 +1,4 @@
-package com.bts.app;
+package com.bts.app.find;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,25 +19,6 @@ import com.bts.app.find.Point;
 public class FindServiceImpl implements FindService {
 	@Autowired
 	ApiConnectService apiService;
-
-	public static void main(String[] args) {
-		FindServiceImpl fs = new FindServiceImpl();
-
-//		System.out.println(fs.findpath(126.9051651846776, 37.51619692388867, 127.04956901223464, 37.485662474272765)); // 서울
-//		System.out.println(fs.findpath(126.808630, 37.482729, 126.786858, 37.504203)); // 부천
-
-		// System.out.println(fs.findpath(127.349904, 36.360802, 127.378320,
-		// 36.351878));// dj
-		// System.out.println(fs.findpath(126.5600341, 33.2558425, 126.5722428,
-		// 33.2505057));// jeju
-		fs.apiService = new ApiConnectServiceImpl();
-
-		System.out.println(
-				fs.findOutpath(126.89793002823849, 37.488232695178674, 127.34262657500408, 36.366392876840045));// jeju
-//		System.out.println(fs.findpath(126.87949687399517, 35.16042131688744, 126.8110942045558, 35.1373943689147));// 유스퀘어->광주공항
-
-		// System.out.println(fs.findStationTimetable("온수", 1));
-	}
 
 	@Override
 	public JSONObject findpath(double sx, double sy, double ex, double ey) {

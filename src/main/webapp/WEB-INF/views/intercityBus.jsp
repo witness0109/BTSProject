@@ -183,7 +183,7 @@ function replaceAll(str, searchStr1, replaceStr) {
 </script>
 
 	<div id ="busD">
-		<h3> 시외버스 터미널 검색하기
+		<h3> 시외버스 터미널 검색하기 <br>
 		<input type="text" id="startCityTerminal">
 		<button onclick="searchIntercityBusTerminalAJAX();">찾기</button>
 	</h3>
