@@ -47,7 +47,7 @@
 						<li><a id="subw_TM">역 별 지하철 시간표 조회</a></li>
 					</ul>
 				</li>
-				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-bus" aria-hidden="true"></i><span>버스 정보</span><i
+				<li class="sub-menu" ><a href="javascript:void(0);"><i class="fa fa-bus" aria-hidden="true"></i><span>버스 정보</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
 						<li><a id="busTM">시내 버스 노선 조회</a></li>

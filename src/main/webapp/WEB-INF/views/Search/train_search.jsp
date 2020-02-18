@@ -15,6 +15,7 @@
 	margin: 15px;
 	overflow-y: scroll;
 }
+	
 </style>
 
 <script src="./resources/searchtrain.js"></script>

@@ -187,8 +187,28 @@ button.findbtn {
 	margin-left: -240px;
 }
 
-.divcontainer #leftside .trainresult {
+.divcontainer #leftside #resultDiv3 {
 	width: 600px;
+	height: auto;
+	max-height : 600px;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 15px;
+	overflow-y: scroll;
+}
+.divcontainer #leftside #resultDiv4 {
+	width: 600px;
+	height: auto;
+	max-height : 600px;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 15px;
+	overflow-y: scroll;
+}
+.divcontainer #leftside #resultDiv5 {
+	width: 600px;
+	height: auto;
+	max-height : 600px;
 	border-radius: 5px;
 	padding: 15px;
 	margin: 15px;
@@ -369,3 +389,14 @@ table.busT th {
 	width: 120px;
 	border-collapse: collapse;
 }
+
+table#traintable{
+			width: 100%;
+			height: AUTO;
+			margin: auto;
+}
+		table#traintable td,tr{
+			width: 50%;
+			text-align : center;
+			border : 1px solid gray;
+		}

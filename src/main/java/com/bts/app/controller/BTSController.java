@@ -39,10 +39,7 @@ public class BTSController {
 
 		return "login";
 	}
-	
-	@RequestMapping(value = "/BTSMap2", method = RequestMethod.GET)
-	public void of3() {
-	}
+
 	@RequestMapping(value = "/BTSMap", method = RequestMethod.GET)
 	public void of98() {
 	}
