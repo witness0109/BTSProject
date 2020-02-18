@@ -186,19 +186,48 @@ function searchTraininformationAJAX(start, end) {
 				fare_inf = resultObj["result"]["station"][i]["generalFare"];
 
 				// 열차별로 뽑기 (ktx, 새마을, 무궁화) //undefined 나올시.. 그리고 누리로,통근열차 처리
-				if (fare_inf.weekday != undefined && train_inf[i].trainClass.includes("KTX")) {
+				if (train_inf[i].trainClass.includes("KTX")) {
+					
+					if (fare_inf.weekday == undefined) {
+						fare_inf.weekday =" 없음 ";
+					}
+					if (fare_inf.weekend == undefined) {
+						fare_inf.weekend = " 없음 ";
+					}
+					if (fare_inf.holiday == undefined) {
+						fare_inf.holiday = " 없음 ";
+					}
+					
+					
 					ktx_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
 						+ "</td></tr>";
 
-				} else if (fare_inf.weekend != undefined && train_inf[i].trainClass.includes("ITX")) {
-
+				} else if (train_inf[i].trainClass.includes("ITX")) {
+					if (fare_inf.weekday == undefined) {
+						fare_inf.weekday =" 없음 ";
+					}
+					if (fare_inf.weekend == undefined) {
+						fare_inf.weekend = " 없음 ";
+					}
+					if (fare_inf.holiday == undefined) {
+						fare_inf.holiday = " 없음 ";
+					}
 					sae_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
 						+ "</td></tr>";
 
-				} else if (fare_inf.holiday != undefined && train_inf[i].trainClass.includes("무궁화")
+				} else if (train_inf[i].trainClass.includes("무궁화")
 					|| train_inf[i].trainClass.includes("누리로")) {
+					if (fare_inf.weekday == undefined) {
+						fare_inf.weekday =" 없음 ";
+					}
+					if (fare_inf.weekend == undefined) {
+						fare_inf.weekend = " 없음 ";
+					}
+					if (fare_inf.holiday == undefined) {
+						fare_inf.holiday = " 없음 ";
+					}
 					mu_fare = "<tr><td>" + fare_inf.weekday + "</td><td>"
 						+ fare_inf.weekend + "</td><td>" + fare_inf.holiday
 						+ "</td></tr>";
@@ -207,11 +236,7 @@ function searchTraininformationAJAX(start, end) {
 
 			}
 			
-			if (ktx_fare.length == 0) {
-				ktx_fare = "<tr><td>없음 </td><td>없음</td><td>없음</td></tr>";
-					fare_inf.weekend = " 없음 ";
-					fare_inf.holiday = " 없음 ";
-			}
+
 
 				if ( sae_fare.length == 0) {
 
