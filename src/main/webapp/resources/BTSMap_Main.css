@@ -115,21 +115,33 @@
 		}
 
 		.divcontainer #leftside .box {
-			width: 400px;
-			height: AUTO;
-			border: 2px solid white;
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			float: left;
-			color: #ffffff;
-			line-height: 2em;
+			    width: 400px;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    float: left;
+    color: #ffffff;
+    line-height: 2em;
+    overflow-y: scroll;
+		}
+		.divcontainer #leftside .box.sbw {
+			    width: 400px;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    float: left;
+    color: #ffffff;
+    line-height: 2em;
+    overflow-y: scroll;
 		}
 
 		.divcontainer #leftside .box.expbus {
 			/*  width: 85%; */
 			height: AUTO;
-			width: 100%;
 			border: 1px solid violet;
 			border-radius: 5px;
 			padding: 15px;
@@ -146,7 +158,16 @@
 			margin: 15px;
 			overflow-y: scroll;
 		}
-
+		.box table{
+			width: 100%;
+			height: AUTO;
+			margin: auto;
+		}
+		.box table td,tr{
+			width: 50%;
+			text-align : center;
+			border : 1px solid gray;
+		}
 		.divcontainer #leftside .box.train {
 			/*  width: 85%; */
 			height: AUTO;

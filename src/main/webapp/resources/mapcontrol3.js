@@ -77,9 +77,11 @@ function drawOutCityPolyLine(start, center, end) {
 	polyline = new kakao.maps.Polyline({
 		map: map,
 		path: lineArray,
-		strokeWeight: 15,
+		strokeWeight: 10,
 		strokeColor: '#1D2A56',
+		strokeOpacity: 1,
 		strokeStyle: 'solid'
+			
 	});
 	polyarr.push(polyline)
 

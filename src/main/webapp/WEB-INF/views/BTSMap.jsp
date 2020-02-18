@@ -9,353 +9,7 @@
 
 
 
-	<style>
-		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-		@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
-		
-		html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
-		.markingov {
-			position: absolute;
-			width: 80px;
-			margin-left: -40px;
-			bottom: 70px;
-			border: 1px solid black;
-			font-size: 20px;
-			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
-			text-align: center;
-		}
-
-		.wrap {
-			position: absolute;
-			left: 0;
-			bottom: 46px;
-			width: 150px;
-			height: 80px;
-			margin-left: -75px;
-			text-align: center;
-			overflow: hidden;
-			font-size: 20px;
-			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
-			line-height: 1.5;
-			background: #fff;
-		}
-
-		.wrap * {
-			padding: 0;
-			margin: 0;
-		}
-
-		.wrap .setContainer div {
-			display: inline-block;
-			margin: auto;
-			height: 100%;
-			width: 50%;
-		}
-
-		.wrap #startset {
-			background-color: aqua;
-			padding-top: 8px;
-		}
-
-		.wrap #destset {
-			background-color: yellowgreen;
-			padding-top: 8px;
-		}
-
-		button.findbtn {
-			border-radius: 5px;			
-			border: 2px solid #293949;
-			width: auto;
-			padding-left: 5px;
-			color: #23313f;
-			z-index: 1;
-			background-color: #bebebe;
-			font-size: 15px;
-			text-align: center;
-			letter-spacing: 0.1em;
-			cursor: pointer;
-
-		}
-
-		.content {
-			float: left;
-		}
-
-		.divcontainer {
-		left: 240px;
-		margin-right: -240px;
-		height: 100%;
-		width: 100%;
- 		position: absolute;
-		z-index: 1;	
-  		background-color: #23313f;
-  		overflow-x: hidden;
-
-
-		}
-
-		.divcontainer #map11 {
-		width: 75%;
-		height: 100%;	
-		}
-		
-
-		.divcontainer #leftside {
-		
-			padding-top: 5%;
-			padding-left:	1%;
-			padding-right: 1%;
-			width: 25%;
-			height: 100%;
-			float: left;
-			/* background-color: #23313f; */
-			overflow-y: scroll;
-			overflow-x: hidden; 
-  			-ms-overflow-style: none;
-
-		}
-		::-webkit-scrollbar {
-
-			display:none;
-
-		}
-
-		.divcontainer #leftside .box {
-			width: 400px;
-			height: AUTO;
-			border: 2px solid white;
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			float: left;
-			color: #ffffff;
-			line-height: 2em;
-		}
-
-		.divcontainer #leftside .box.expbus {
-			/*  width: 85%; */
-			height: AUTO;
-			width: 100%;
-			border: 1px solid violet;
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			line-height: 2em;
-		}
-		
-		.box {
-			width: 400px;
-			height: AUTO;
-			border: 1px solid green;	
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			overflow-y: scroll;
-		}
-
-		.divcontainer #leftside .box.train {
-			/*  width: 85%; */
-			height: AUTO;
-			border: 1px solid red;
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			line-height: 2em;
-		}
-
 	
-		.sidebar-toggle {
-			margin-left: -240px;
-		}
-
-		.sidebar {
-			width: 240px;
-			height: 100%;
-			background: #293949;
-			position: absolute;
-			-webkit-transition: all 0.3s ease-in-out;
-			-moz-transition: all 0.3s ease-in-out;
-			-o-transition: all 0.3s ease-in-out;
-			-ms-transition: all 0.3s ease-in-out;
-			transition: all 0.3s ease-in-out;
-			z-index: 100;
-		}
-
-		.sidebar #leftside-navigation ul,
-		.sidebar #leftside-navigation ul ul {
-			margin: -2px 0 0;
-			padding: 0;
-		}
-
-		.sidebar #leftside-navigation ul li {
-			list-style-type: none;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-		}
-
-		.sidebar #leftside-navigation ul li.active>a {
-			/* 클릭시 글자 색 */
-			color: #1abc9c;
-		}
-
-		.sidebar #leftside-navigation ul li.active ul {
-			display: block;
-		}
-
-		.sidebar #leftside-navigation ul li a {
-			color: #aeb2b7;
-			text-decoration: none;
-			display: block;
-			padding: 18px 0 18px 25px;
-			font-size: 12px;
-			outline: 0;
-			-webkit-transition: all 200ms ease-in;
-			-moz-transition: all 200ms ease-in;
-			-o-transition: all 200ms ease-in;
-			-ms-transition: all 200ms ease-in;
-			transition: all 200ms ease-in;
-		}
-
-		.sidebar #leftside-navigation ul li a:hover {
-			color: #1abc9c;
-		}
-
-		.sidebar #leftside-navigation ul li a span {
-			display: inline-block;
-		}
-
-		.sidebar #leftside-navigation ul li a i {
-			width: 20px;
-		}
-
-		.sidebar #leftside-navigation ul li a i .fa-angle-left,
-		.sidebar #leftside-navigation ul li a i .fa-angle-right {
-			padding-top: 3px;
-		}
-
-		.sidebar #leftside-navigation ul ul {
-			display: none;
-		}
-
-		.sidebar #leftside-navigation ul ul li {
-			background: #23313f;
-			margin-bottom: 0;
-			margin-left: 0;
-			margin-right: 0;
-			border-bottom: none;
-		}
-
-		.sidebar #leftside-navigation ul ul li a {
-			font-size: 12px;
-			padding-top: 13px;
-			padding-bottom: 13px;
-			color: #aeb2b7;
-		}
-
-		.divcontainer #leftside .box.train {
-			/*  width: 85%; */
-			height: AUTO;
-			border: 1px solid red;
-			border-radius: 5px;
-			padding: 15px;
-			margin: 15px;
-			line-height: 1.5em;
-		}
-
-		.divcontainer #leftside.cd-main-content {
-			left: 240px;
-			float: left;
-			height: 400px;
-			overflow: scroll;
-		}
-
-		table.traintable {
-			text-align: center;
-			border: 1px solid white;
-			width: 100%
-		}
-
-		table.traintable td {
-			width: 33.3%;
-			border: 1px solid white;
-		}
-
-
-		div#weather{
-			/* border : 1px double gold; */
-			
-			padding: 20px 20px 20px 20px;
-			color : white;
-			text-align: justify;
-			font-size: 15px;
-			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
-			letter-spacing: 0.1em;
-			line-height: 1.5em;
-			
-		}
-		h2{
-			text-align: center;
-			font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;	
-			color : white;	
-		}
-	
-		#busD{
-			color: white;
-			font-size: xx-large;
-			letter-spacing: 0.1em;
-			line-height: 1.5em;
-		}
-		
-		#asidedivbtn{
-			text-align: center;
-			bottom : 1%;
-			padding-bottom: 0;
-			position : fixed;
-
-			
-		}
-		.asidebtn{
-			
-			background: none;
-			color: #aeb2b7;
-			border: none;
-			padding-left: 5px;
-		}
-		
-		table.busT {
-		border: 2px solid white;
-		color: white;
-		letter-spacing: 0.1em;
-		line-height: 1.5em;
-		font-size: 20px;
-		padding: 5px 5px 5px 5px;
-		width: 80%;
-		border-collapse: collapse;
-		}
-		
-		table.busT td{
-		border: 2px solid white;
-		text-align: center;		
-		height: auto;
-		border-collapse: collapse;
-		width: 30%;
-
-		}
-		
-		table.busT th{
-		border: 2px solid white;
-		text-align: center;		
-		height: auto;
-		width: 120px;
-		border-collapse: collapse;
-		}
-		
-	
-		</style>
-
 
 <link rel="stylesheet" href="./resources/BTSMap_Main.css">
 
@@ -383,7 +37,7 @@
 			<ul class="nano-content" id="parent">
 
 
-				<li><a href="./BTSMap"><i class="fa fa-dashboard"></i><span>길 찾기</span></a></li>							
+				<li><a href="./BTSMap"><i class="fa fa-map"></i><span>길 찾기</span></a></li>							
 
 
 				<li class="sub-menu"><a href="javascript:void(0);"><i class="fa fa-train"></i><span>열차 정보</span><i
@@ -401,7 +55,7 @@
 						<li><a id="expressBusTM">고속 버스 시간표 조회</a></li>
 					</ul>
 				</li>
-				<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-file"></i><span>MyPage</span><i
+				<li class="sub-menu" id="son"><a href="javascript:void(0);"><i class="fa fa-user-circle"></i><span>MyPage</span><i
 							class="arrow fa fa-angle-right pull-right"></i></a>
 					<ul>
 						<li><a href="./favorites">즐겨 찾기 목록</a></li>
@@ -419,8 +73,8 @@
 		<ul class="nano-content" id="parent">
 		
 		
-		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리"> </i> </a></li>
-		<li class="sub-menu"><a><i class="fa fa-bar-chart-o"><input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> </i> </a></li>
+		<li class="sub-menu"><a><i><input type="button" id="boardbtn"  class= "asidebtn" value="고객의소리"> </i> </a></li>
+		<li class="sub-menu"><a><i><input type="button" id="logoutbtn"  class= "asidebtn" value="로그아웃"> </i> </a></li>
 		</ul>
 		</div>
 		</div>
@@ -447,7 +101,7 @@
 
 	<!-- main content here -->
 	
-
+<script src="https://use.fontawesome.com/9d2aba8fba.js"></script><!--aside 이모티콘-->
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ea5ab23c61a505da910433d441dc2dbe"></script>
 <script type="text/javascript" src="./resources/mapcontrol1.js"></script>
 <script type="text/javascript" src="./resources/mapcontrol2.js"></script>
@@ -457,6 +111,7 @@
 <script src="./resources/pathcontrol1.js"></script>
 <script src="./resources/pathfunction.js"></script>
 <script src="./resources/menumenu.js"></script>
+<script src="./resources/weather.js"></script>
 <script type="text/javascript" src="./resources/whole_control.js"></script>	<!-- Resource jQuery -->
 
 <script>

@@ -142,7 +142,7 @@ function searchExpressBusinformationAJAX(start, end) {
 							"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
 							str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
 							str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
-								+"</td><th>금액</th><td>"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
+								+"</td><th>금액</th><td> 우등:	"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 																
 								}			
 						document.getElementById("resultDiv").innerHTML = str;	
@@ -160,7 +160,7 @@ function searchExpressBusinformationAJAX(start, end) {
 						"<tr><th>출발 터미널</th><td>"+infd[i].startTerminal+"</td><th>도착 터미널</th><td>"+ infd[i].destTerminal+"</td></tr>";
 						str += "<tr><th>스케줄</th><td colspan='3'>"+replaceAll(infd[i].schedule,"(우등)","")+"</td></tr>";
 						str += "<tr><th>소요 시간</th><td>"+infd[i].wasteTime
-							+"</td><th>금액</th><td>"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
+							+"</td><th>금액</th><td>우등:	"+numberFormat(infd[i].specialFare)+"일반:"+numberFormat(infd[i].normalFare)+"</td></tr></table>";
 								
 								
 								}

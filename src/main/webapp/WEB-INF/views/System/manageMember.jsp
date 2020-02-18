@@ -192,7 +192,7 @@ $(document).ready(function () {
 
 			$('.kick').click(function(){
 
-			var con = confirm('Are You Sure About This?');
+			var con = confirm('강퇴하시겠습니까?');
 
 			if(con){
 			location.href = "./kickMember?id="+id;
@@ -244,7 +244,7 @@ $(document).ready(function () {
 			</c:forEach>
 		</table>
 	
-	<div class="member_log" id="result" > &nbsp; <input type = "button" value = "home" id="backbtn"></div> 	
+	<div class="member_log" id="result" > &nbsp; <input type = "button" value = "메인화면" id="backbtn"></div> 	
 	
 	</div>
 </body>

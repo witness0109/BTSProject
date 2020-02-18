@@ -15,6 +15,21 @@
 	margin: 15px;
 	overflow-y: scroll;
 }
+		.box table{
+			width: 100%;
+			height: AUTO;
+			margin: auto;
+		}
+		.box table td,tr{
+			width: 50%;
+			text-align : center;
+			border : 1px solid gray;
+		}
+		.box table h3{
+			width: 100%;
+			text-align : center;
+			margin: auto;	
+		}
 </style>
 </head>
 

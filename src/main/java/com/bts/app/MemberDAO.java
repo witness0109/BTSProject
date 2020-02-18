@@ -24,7 +24,7 @@ public class MemberDAO {
 	}
 
 	public List<String> checkPw(String[] list) {
-
+		System.out.println(list);
 		return session.selectList("mem.pwcheck", list);
 	}
 
