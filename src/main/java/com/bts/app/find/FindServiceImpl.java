@@ -148,7 +148,7 @@ public class FindServiceImpl implements FindService {
 	}
 
 	private int getPayment(String city, String dow) {
-		JSONObject paymentTable = readOutCityJSON("버스요금");
+		JSONObject paymentTable = readOutCityJSON("buspay");
 		if (dow.equals("세종특별시")) {
 			return 1200;
 		}

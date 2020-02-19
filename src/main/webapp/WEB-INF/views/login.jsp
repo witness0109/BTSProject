@@ -4,6 +4,7 @@
 <html lang="kr">
 <head>
 <meta charset="UTF-8">
+   <link rel="shortcut icon" type="image/x-icon" href="https://jjalbang.today/files/jjalboxthumb/2017/12/102_6515.jpg" />
 <title>BTS 대중교통 Login</title>
 <link rel="stylesheet" href="./resources/login_screen.css">
 <!-- CSS reset -->

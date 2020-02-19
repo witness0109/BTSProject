@@ -7,6 +7,7 @@
 
 <head>
 <meta charset="UTF-8">
+   <link rel="shortcut icon" type="image/x-icon" href="https://jjalbang.today/files/jjalboxthumb/2017/12/102_6515.jpg" />
 <title>비밀번호 찾기</title>
 <link rel="stylesheet" href="./resources/login_screen.css">
 
