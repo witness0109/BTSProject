@@ -138,7 +138,7 @@ function findPathCityOut(result) {
 
     }
 
-    let option ='전체<input type="radio" class="pathradio" name="opt" checked value="7"><br>기차<input type="radio" name="opt" value="4"><br>고속, 시외버스<input type="radio" name="opt" value="5">'
+    let option ='전체<input type="radio" class="pathradio" name="opt" checked value="7"><br>기차<input type="radio"  class="pathradio" name="opt" value="4"><br>고속, 시외버스<input type="radio"  class="pathradio" name="opt" value="5">'
     $('#searchOption').html(option)
     $('#searchOption').addClass('box')
     $('#findbox').html(str)
@@ -221,7 +221,7 @@ function findPathCityIn(result) {
         }
     }
 
-    let option = '전체<input type="radio" class="pathradio" name="opt" checked value="0"><br>버스<input type="radio" name="opt" value="1"><br>지하철<input type="radio" name="opt" value="2"><br>버스+지하철<input type="radio" name="opt" value="3">'
+    let option = '전체<input type="radio" class="pathradio" name="opt" checked value="0"><br>버스<input type="radio" name="opt" value="1"  class="pathradio"><br>지하철<input type="radio" name="opt" value="2"  class="pathradio"><br>버스+지하철<input type="radio" name="opt" value="3" class="pathradio">'
     $('#searchOption').html(option)
     $('#searchOption').addClass('box')
     $('#findbox').html(str)
