@@ -22,7 +22,7 @@
 			success : function(authObj) {
 				// 로그인 성공시, API를 호출합니다.
 				Kakao.API.request({
-					url : '/v1/user/me',
+					url : '/v2/user/me',
 					success : function(res) {
 
 						var email = res.kaccount_email;

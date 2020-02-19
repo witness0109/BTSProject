@@ -38,7 +38,6 @@ public class FindController {
 			@RequestParam double ey) {
 
 						JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
-						System.out.println(map.toString());
 		return map.toString();
 //		return ((FindServiceImpl) fservice).readOutCityJSON("ddg").toString();
 

@@ -275,7 +275,7 @@ table tr:hover td {
 		</table>
 
 
-		<div id="pagingDiv" style= "text-align: center;">
+		<div id="pagingDiv" style= "text-align: center; width:50%;">
 			<c:if test="${paging.prev}">
 				<a href="${paging.startPage - 1 }">이전</a>
 			</c:if>
