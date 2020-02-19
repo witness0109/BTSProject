@@ -1,7 +1,7 @@
 var pathArr;
 const findpath_apiurl = 'https://api.odsay.com/v1/api/searchPubTransPathR';
-const findpath_realtime = 'https://192.168.0.17/BTS/findapi/findpath';// need to change addr
-const findoutpath = 'https://192.168.0.17/BTS/findapi/findoutpath';// need to change addr
+const findpath_realtime = './findapi/findpath';// need to change addr
+const findoutpath = './findapi/findoutpath';// need to change addr
 const foldingdivdom = '<div  class="folding" onClick="foldDiv(this)">경로 펼치기</div>'
 const opendivdom = '<div  class="folding" onClick="openPathWindow(this)">상세경로</div>'
 
