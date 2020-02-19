@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <link rel="shortcut icon" type="image/x-icon" href="https://jjalbang.today/files/jjalboxthumb/2017/12/102_6515.jpg" />
 
-<title>Insert title here</title>
+<title>공지사항</title>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 		</style>
