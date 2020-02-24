@@ -105,7 +105,6 @@ public class FindServiceImpl implements FindService {
 					String dow = stationInfo.getString("do");
 					if (stationCityCode == 1000) { // 서울시 정류장
 						JSONArray buslist = processSeoulBus(walktime, busLanes, stationInfo);
-						System.out.println(buslist.length());
 					} else {// 서울 외
 						stationID = stationInfo.getString("localStationID");
 
@@ -136,7 +135,6 @@ public class FindServiceImpl implements FindService {
 							}
 
 							JSONArray buslist = processETCBus(walktime, busLanes, etcInfo);
-							System.out.println(buslist);
 						}
 					}
 					break;
@@ -148,7 +146,7 @@ public class FindServiceImpl implements FindService {
 	}
 
 	private int getPayment(String city, String dow) {
-		JSONObject paymentTable = readOutCityJSON("버스요금");
+		JSONObject paymentTable = readOutCityJSON("buspay");
 		if (dow.equals("세종특별시")) {
 			return 1200;
 		}
@@ -635,7 +633,6 @@ public class FindServiceImpl implements FindService {
 		JSONArray oute = new JSONArray();
 
 		for (Point point : trainStart) {
-			System.out.println("ts시작");
 
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
@@ -647,7 +644,6 @@ public class FindServiceImpl implements FindService {
 			trains.put(tmp);
 		}
 		for (Point point : trainEnd) {
-			System.out.println("te시작");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {
@@ -659,7 +655,6 @@ public class FindServiceImpl implements FindService {
 			traine.put(tmp);
 		}
 		for (Point point : exStart) {
-			System.out.println("exs시작");
 
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
@@ -671,7 +666,6 @@ public class FindServiceImpl implements FindService {
 			exs.put(tmp);
 		}
 		for (Point point : exEnd) {
-			System.out.println("exe시작");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {
@@ -683,7 +677,6 @@ public class FindServiceImpl implements FindService {
 			exe.put(tmp);
 		}
 		for (Point point : outStart) {
-			System.out.println("outs시작");
 			JSONObject tsmap = findpath(sx, sy, point.getX(), point.getY());
 			if (tsmap.has("error")) {
 				continue;
@@ -694,7 +687,6 @@ public class FindServiceImpl implements FindService {
 			outs.put(tmp);
 		}
 		for (Point point : outEnd) {
-			System.out.println("oute시작");
 
 			JSONObject tsmap = findpath(point.getX(), point.getY(), ex, ey);
 			if (tsmap.has("error")) {

@@ -4,6 +4,7 @@
 <html lang="kr">
 <head>
 <meta charset="UTF-8">
+   <link rel="shortcut icon" type="image/x-icon" href="https://jjalbang.today/files/jjalboxthumb/2017/12/102_6515.jpg" />
 <title>BTS 대중교통 Login</title>
 <link rel="stylesheet" href="./resources/login_screen.css">
 <!-- CSS reset -->
@@ -21,7 +22,7 @@
 			success : function(authObj) {
 				// 로그인 성공시, API를 호출합니다.
 				Kakao.API.request({
-					url : '/v1/user/me',
+					url : '/v2/user/me',
 					success : function(res) {
 
 						var email = res.kaccount_email;
