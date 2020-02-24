@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bts.app.find.ApiConnectService;
 import com.bts.app.find.FindService;
-import com.bts.app.find.FindServiceImpl;
 
 @Controller
 public class FindController {
@@ -37,10 +36,10 @@ public class FindController {
 	public String findOutPath(@RequestParam double sx, @RequestParam double sy, @RequestParam double ex,
 			@RequestParam double ey) {
 
-				//		JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
-//		return map.toString();
-		return ((FindServiceImpl) fservice).readOutCityJSON("ddg").toString();
-
+		JSONObject map = fservice.findOutpath(sx, sy, ex, ey);
+		System.out.println(map.toString());
+		return map.toString();
+//		return ((FindServiceImpl) fservice).readOutCityJSON("ddg").toString();
 
 	}
 
